@@ -1,0 +1,6 @@
+var character = {
+  "The Thinker":{
+    
+  }
+
+}

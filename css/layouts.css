@@ -4,10 +4,7 @@
   margin-bottom:1vh;
 }
 
-.menu-bottom-left{
-  height:71vh;
 
-}
 
 .menu-top-right{
   width:61.5vw !important;
@@ -64,6 +61,17 @@ body{
     display:inline-block;
     vertical-align:top;
   }
+  .outerScrollSm{
+    height: 90vh;
+    position:relative;
+    padding:0px;
+    width:100%;
+  }
+  .innerScrollSm{
+    min-height:100%;
+    overflow:auto;
+    width:100%;
+  }
 }
 
 @media only screen and (min-width: 1000px){
@@ -87,17 +95,26 @@ body{
     vertical-align:top;
   }
 
-  .outerScroll{
+  .outerScrollDesktop{
     height: 86vh;
     position:relative;
     padding:0px;
     width:100%;
   }
-  .innerScroll{
+  .outerScrollDesktop-left{
+    height: 71vh;
+
+  }
+  .innerScrollDesktop{
     max-height:100%;
     overflow:auto;
     width:100%;
   }
+  .menu-bottom-left{
+    height:71vh;
+
+  }
+
 }
 
 .panel{
