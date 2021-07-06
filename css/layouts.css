@@ -1,6 +1,5 @@
 
 .menu-top-left{
-  height:25vh;
   margin-bottom:1vh;
 }
 
@@ -105,7 +104,7 @@ body{
     width:100%;
   }
   .menu-bottom-left{
-    height:71vh;
+    height:66vh;
 
   }
   .menu-top-right{
@@ -113,7 +112,9 @@ body{
     height:8vh;
     margin-bottom:4vh;
   }
-
+  .menu-top-left{
+    height:30vh;
+  }
 
 }
 
