@@ -53,27 +53,6 @@
   background: rgba(45, 156, 219, 1);
 }
 
-@media only screen and (min-width: 200px){
-  .leftColumn{
-    max-height:95vh;
-    display:inline-block;
-    width:90%;
-    vertical-align:top;
-  }
-}
-
-@media only screen and (min-width: 1000px){
-  .leftColumn{
-    max-height:95vh;
-    max-width:30em;
-    display:inline-block;
-    width:33%;
-    vertical-align:top;
-    margin-right:20px;
-
-  }
-}
-
 .panel{
   opacity:0.97;
   border-radius:10px;
