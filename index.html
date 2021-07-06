@@ -6,8 +6,8 @@
 <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 -->
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/nav.css">
-
+<link rel="stylesheet" href="css/layouts.css">
+<script src="components/cardBuilder.js"></script>
 
 
 </head>
@@ -15,11 +15,11 @@
 <body>
 
     <img class="background" src="img/tournament_hero.jpeg">
-    <!--<script src="components/topnav.js"></script>-->
+  <!--  <script src="components/topnav.js"></script>-->
 
 <div class="body">
     <div class="leftColumn">
-        <div class="panel">
+        <div class="panel menu-top-left">
           <div class="userListing">
             <img class="userListing-image" src="img/profile.png">
             <div class="userListing-item"><i>Spellbound<br><div style="font-size:.5em;">Apprentice Builder</div></i></div>
@@ -36,12 +36,17 @@
           <button class="menuButton">Genius Shop</button>
           <button class="menuButton">Club</button>
         </div>
-        <div class="panel">
 
-        </div>
+        <div class="panel menu-bottom-left">
+          <div class="outerScroll" style="height:">
+            <div class="innerScroll">
+              <div style="height:1500px;">
+                <h1>Spellbound</h1>
 
-        <div class="panel">
-          <h1>Here's some  Menu Shit</h1>
+
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 
@@ -53,12 +58,38 @@
 
             </div>
         </div>
-        <div class="card">
-          <p>Here's a card Component</p>
-        </div>
-        <div class="card">
-          <p>Here's a card Component</p>
-        </div>
+
+
+          <div class="outerScroll">
+            <div class="innerScroll">
+              <div id="cards" style="height:1500px;">
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+<script>
+for ( var i = 0 ; i < 2 ; i ++){
+    document.getElementById("cards").innerHTML += card({"title":"hello wo.  This is a 40 character title."});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd2"});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd"});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd2"});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd"});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd2"});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd"});
+    document.getElementById("cards").innerHTML += card({"title":"hello workd2"});
+}
+</script>
+
+
     </div>
 </div>
 </body>
