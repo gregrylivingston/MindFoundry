@@ -16,7 +16,7 @@ title: title          string, max char 40
 
 
 function card(data){
-    return `
+    document.getElementById("cards").innerHTML+= `
       <div class="card">
         <div class="card-header">
           <img class="card-header-img" src="img/profile.png">
@@ -29,3 +29,40 @@ function card(data){
     `
 
 }
+
+
+var sampleCards = [
+    {
+      type:"Challenge",
+      subtype:"Accepted",
+      title:"Make a Dance Video",
+      subtitle:"Difficulty: brains brains",
+      img:"img/bandges/dancing4.png"
+    },
+    {
+      type:"Challenge",
+      subtype:"View",
+      title:"Make a Dance Video",
+      subtitle:"Difficulty: brains brains",
+      img:"img/bandges/dancing4.png"
+    },
+    {
+      type:"Challenge",
+      subtype:"Submitted",
+      title:"Make a Dance Video",
+      subtitle:"Difficulty: brains brains",
+      img:"img/bandges/dancing4.png"
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      title:"Make a Dance Video",
+      subtitle:"Difficulty: brains brains",
+      img:"img/bandges/dancing4.png"
+    },
+
+
+
+];
+
+sampleCards.forEach(item=>{card(item);});
