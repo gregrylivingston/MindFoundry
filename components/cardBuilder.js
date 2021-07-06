@@ -77,23 +77,32 @@ var sampleCards = [
       subtitle:"Difficulty: brains brains",
       icon:"img/badges/dancing4.png",
       mediaType:"iframe",
-      media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      media:'  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       description:'',
       footer:'',
+
     },
     {
       type:"Challenge",
       subtype:"Submitted",
       title:"Make a Dance Video",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png"
+      icon:"img/badges/dancing4.png",
+      mediaType:"iframe",
+      media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      description:'',
+      footer:'',
     },
     {
       type:"Challenge",
       subtype:"Completed",
-      title:"Make a Dance Video",
+      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png"
+      icon:"img/badges/dancing4.png",
+      mediaType:"iframe",
+      media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      description:'',
+      footer:'',
     },
 
 
