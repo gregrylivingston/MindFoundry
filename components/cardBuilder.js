@@ -19,6 +19,7 @@ function card(data){
     return `
       <div class="card">
         <p>${data.title}</p>
+        <p>${data.subtitle}</p>
       </div>
     `
 

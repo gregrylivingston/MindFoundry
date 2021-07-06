@@ -1,0 +1,10 @@
+.card{
+  opacity:0.97;
+  border-radius:10px;
+  width:43%;
+  border:2px solid white;
+  display:inline-block;
+  margin:1.5em;
+  background: rgba(45, 156, 219, 0.96);
+  min-height:400px;
+}

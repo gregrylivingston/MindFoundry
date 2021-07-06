@@ -1,0 +1,10 @@
+.menuButton, input, select{
+  display:inline;
+  width:23%;
+  margin:0.5%;
+  border-radius:10px;
+  border:white 2px solid;
+  min-height:3em;
+  vertical-align:top;
+  background: rgba(45, 156, 219, 1);
+}

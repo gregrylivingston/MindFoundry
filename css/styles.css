@@ -40,38 +40,3 @@
   max-width:10%;
   padding-left:.5em;
 }
-
-
-.menuButton{
-  display:inline;
-  width:23%;
-  margin:0.5%;
-  border-radius:10px;
-  border:white 2px solid;
-  min-height:3em;
-  vertical-align:top;
-  background: rgba(45, 156, 219, 1);
-}
-
-.panel{
-  opacity:0.97;
-  border-radius:10px;
-  width:100%;
-  border:2px solid white;
-  margin:1.5em;
-  padding:0.5em;
-  background: rgba(45, 156, 219, 0.96);
-}
-
-.card{
-  opacity:0.97;
-  border-radius:10px;
-  width:43%;
-  border:2px solid white;
-  display:inline-block;
-  margin:1.5em;
-  background: rgba(45, 156, 219, 0.96);
-  min-height:400px;
-}
-
-

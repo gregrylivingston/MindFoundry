@@ -8,11 +8,18 @@
 
 }
 
+
+
 .outerScroll{
   height: 80vh;position:relative;
 }
 .innerScroll{
   max-height:100%;overflow:auto;
+}
+
+.menu-bottom-left>.outerScroll{
+  height:60vh;
+
 }
 
 body{
@@ -62,4 +69,14 @@ body{
     margin-right:20px;
 
   }
+}
+
+.panel{
+  opacity:0.97;
+  border-radius:10px;
+  width:100%;
+  border:2px solid white;
+  margin:1.5em;
+  padding:0.5em;
+  background: rgba(45, 156, 219, 0.96);
 }
