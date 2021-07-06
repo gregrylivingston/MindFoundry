@@ -9,11 +9,18 @@
   min-height:400px;
 }
 
+.card-type{
+  width:100%;
+  text-align:center;
+  margin-top:.2em;
+
+}
 .card-header{
   width:100%;
-  margin-top:15px;
-  margin-top:15px;
+  margin:0px;
+  margin-top:.2em;
   background-color:rgba(200,200,200,0.4);
+  border:4px solid white;
 }
 
 .card-header-img{

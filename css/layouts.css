@@ -29,6 +29,11 @@ body{
   font-weight: bold;
 }
 
+.body{
+  width:100vw;
+  text-align:center;
+}
+
 
 .background{
   object-fit:cover !important;
@@ -41,13 +46,6 @@ body{
   z-index:-1;
 }
 
-.rightColumn{
-  width:60%;
-  max-height:95vh;
-  max-width:60em;
-  display:inline-block;
-  vertical-align:top;
-}
 
 
 @media only screen and (min-width: 200px){
@@ -57,17 +55,34 @@ body{
     width:90%;
     vertical-align:top;
   }
+  .rightColumn{
+    width:60%;
+    max-height:95vh;
+    width:90%;
+    display:inline-block;
+    vertical-align:top;
+  }
 }
 
 @media only screen and (min-width: 1000px){
   .leftColumn{
-    max-height:95vh;
-    max-width:30em;
+    position:absolute;
+    top:1vh;
+    max-height:98vh;
+    left:1vw;
+    width:32vw;
     display:inline-block;
-    width:33%;
     vertical-align:top;
-    margin-right:20px;
+  }
 
+  .rightColumn{
+    position:absolute;
+    right:1vw;
+    top:1vh;
+    width:64vw;
+    height:98vh;
+    display:inline-block;
+    vertical-align:top;
   }
 }
 
@@ -76,7 +91,5 @@ body{
   border-radius:10px;
   width:100%;
   border:2px solid white;
-  margin:1.5em;
-  padding:0.5em;
   background: rgba(45, 156, 219, 0.96);
 }
