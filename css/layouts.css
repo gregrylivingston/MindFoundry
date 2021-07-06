@@ -95,7 +95,7 @@ body{
     width:100%;
   }
   .outerScrollDesktop-left{
-    height: 71vh;
+    height: 64vh;
 
   }
   .innerScrollDesktop{
@@ -104,7 +104,7 @@ body{
     width:100%;
   }
   .menu-bottom-left{
-    height:66vh;
+    height:64vh;
 
   }
   .menu-top-right{
@@ -113,7 +113,7 @@ body{
     margin-bottom:4vh;
   }
   .menu-top-left{
-    height:30vh;
+    height:32vh;
   }
 
 }
