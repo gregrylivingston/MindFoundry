@@ -11,10 +11,14 @@
 
 
 .outerScroll{
-  height: 80vh;position:relative;
+  height: 80vh;
+  position:relative;
+
 }
 .innerScroll{
-  max-height:100%;overflow:auto;
+  max-height:100%;
+  overflow:auto;
+
 }
 
 .menu-bottom-left>.outerScroll{
@@ -92,4 +96,8 @@ body{
   width:100%;
   border:2px solid white;
   background: rgba(45, 156, 219, 0.96);
+}
+
+#cards{
+  vertical-align:top;
 }
