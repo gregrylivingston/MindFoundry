@@ -8,3 +8,28 @@
   background: rgba(45, 156, 219, 0.96);
   min-height:400px;
 }
+
+.card-header{
+  width:100%;
+  margin-top:15px;
+  margin-top:15px;
+  background-color:rgba(200,200,200,0.4);
+}
+
+.card-header-img{
+  display:inline-block;
+  width:15% !important;
+}
+
+.card-title-group{
+  display:inline-block;
+  width:70%;
+}
+
+.card-title{
+  font-size:1.3em;
+}
+
+.card-subtitle{
+
+}

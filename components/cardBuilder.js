@@ -18,8 +18,13 @@ title: title          string, max char 40
 function card(data){
     return `
       <div class="card">
-        <p>${data.title}</p>
-        <p>${data.subtitle}</p>
+        <div class="card-header">
+          <img class="card-header-img" src="img/profile.png">
+          <div class="card-title-group">
+            <div class="card-title">${data.title}</div>
+            <div class="card-subtitle">${data.subtitle}</div>
+          </div>
+        </div>
       </div>
     `
 
