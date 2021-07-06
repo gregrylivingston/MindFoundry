@@ -40,3 +40,17 @@
   max-width:10%;
   padding-left:.5em;
 }
+
+.panelTitle{
+  position:absolute;
+  left:5%;
+  width:20%;
+}
+
+.panelFilters{
+  position:absolute;
+  right:5%;
+  width:40%;
+  top:10px;
+  text-align:right;
+}

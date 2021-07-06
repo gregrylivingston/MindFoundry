@@ -13,6 +13,7 @@
   background: rgba(45, 156, 219, 0.96);
   height:30em;
   vertical-align:top;
+  margin-bottom:4vh;
 }
 
 @media only screen and (min-width: 1000px){

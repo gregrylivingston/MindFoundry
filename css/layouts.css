@@ -12,23 +12,12 @@
 .menu-top-right{
   width:61.5vw !important;
   height:8vh;
-  margin-bottom:1vh;
+  margin-bottom:4vh;
 }
 
 
 
 
-.outerScroll{
-  height: 89vh;
-  position:relative;
-  padding:0px;
-  width:100%;
-}
-.innerScroll{
-  max-height:100%;
-  overflow:auto;
-  width:100%;
-}
 
 .menu-bottom-left>.outerScroll{
   height:60vh;
@@ -96,6 +85,18 @@ body{
     height:98vh;
     display:inline-block;
     vertical-align:top;
+  }
+
+  .outerScroll{
+    height: 86vh;
+    position:relative;
+    padding:0px;
+    width:100%;
+  }
+  .innerScroll{
+    max-height:100%;
+    overflow:auto;
+    width:100%;
   }
 }
 
