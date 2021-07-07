@@ -74,19 +74,29 @@ function card(data){
 
 //***********USERS
 
-  const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec";
+  const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec?callback=loadData";
 
-fetch(url,{
-      method: 'GET',
-    //  body: {},
-      headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
-      }
-  }).then(response => {
-      console.log("success:", response);
-  }).catch(err => {
-      console.log("Error:" + err);
-  });
+   // log the returned data
+    function loadData(e) {
+      console.log("hello world");
+    console.log(e);
+    }
+
+    fetch(url, {
+        method: 'GET',
+        //body: data,
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+        }
+    }).then(response => {
+
+        console.log("success:", response);
+        
+
+    }).catch(err => {
+        console.log("Error:" + err);
+    });
+
 
 
 
