@@ -49,7 +49,10 @@ function card(data){
         </div>
         <div class="card-description">${data.description}
         </div>
-        <div class="card-footer">${data.footer}
+        <div class="card-footer">
+          <div class="card-footer-left">${data.footerLeft}</div>
+          <div class="card-footer-right">${data.footerRight}</div>
+
         </div>
       </div>
     `
@@ -80,7 +83,8 @@ var sampleCards = [
       mediaType:"Image",
       media:"img/badges/dancing4.png",
       description:"You've accepted this challenge.  Bring it on.",
-      footer:'',
+      footerLeft:'',
+      footerRight:'',
 
     },
     {
@@ -93,8 +97,8 @@ var sampleCards = [
       mediaType:"iframe",
       media:'  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       description:'',
-      footer:'',
-
+      footerLeft:'',
+      footerRight:'',
     },
     {
       type:"Challenge",
@@ -106,19 +110,29 @@ var sampleCards = [
       mediaType:"Image",
       media:"img/badges/dancing4.png",
       description:'',
-      footer:'',
+      footerLeft:'',
+      footerRight:'',
     },
     {
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"You've Completed a Challenge",
-      title:"Perform a Monolog",
+      title:"Perform a Monologue",
       subtitle:"Difficulty: brains brains",
       icon:"img/badges/dancing4.png",
       mediaType:"Image",
       media:"img/badges/dancing4.png",
-      description:'',
-      footer:'',
+      description:`<div style="font-size:1.65em;">My Great Monologue</div>
+            <div>
+                <button class="little-button">3 Lightbulbs | [Complete] [Awesome] | Emoticons</button>
+            </div>
+            <div>Posted on 09/27/21 by Spellbound</div>
+
+      `,
+      footerLeft:`  <button class="little-button">+ React</button><button class="little-button">+ Award</button>`,
+      footerRight:`
+        <button class="little-button">+ Share</button><button class="little-button">...</button>`
+      ,
     },
     {
       type:"Challenge",
