@@ -72,33 +72,11 @@ function card(data){
 */
 
 
-//***********USERS
-
-  const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec?callback=loadData";
-
-   // log the returned data
-    function loadData(e) {
-      console.log("hello world");
-    console.log(e);
-    }
-
-    fetch(url, {
-        method: 'GET',
-        //body: data,
-        headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
-        }
-    }).then(response => {
-
-        console.log("success:", response);
-        
-
-    }).catch(err => {
-        console.log("Error:" + err);
-    });
 
 
-
+console.log("dataset --- challenge");
+console.log(data.ChallengeKey);
+console.log();
 
 
 var sampleCards = [
@@ -106,11 +84,11 @@ var sampleCards = [
       type:"Challenge",
       subtype:"Accepted",
       cardTitle:"You've Accepted A Challenge",
-      title:"Make a Dance Video",
+      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
       subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
-      icon:"img/badges/dancing4.png",
+      icon:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
       mediaType:"Image",
-      media:"img/badges/dancing4.png",
+      media:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
       description:"You've accepted this challenge.  Bring it on.",
       footerLeft:'',
       footerRight:'',
@@ -120,11 +98,11 @@ var sampleCards = [
       type:"Challenge",
       subtype:"Available",
       cardTitle:"New Challenge",
-      title:"Make a Dance Video",
-      subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
-      mediaType:"iframe",
-      media:'  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
+      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
+      icon:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
+      mediaType:"Image",
+      media:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
       description:'',
       footerLeft:'',
       footerRight:'',

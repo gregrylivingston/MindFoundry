@@ -1,6 +1,0 @@
-var character = {
-  "The Thinker":{
-    
-  }
-
-}
