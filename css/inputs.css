@@ -16,6 +16,13 @@
 
 }
 
+
+.menuButton-image{
+  width:50%
+
+}
+
+
 .selectButton{
   display:inline;
   width:23%;
@@ -32,32 +39,4 @@
 
 .selectButton:hover{
   background-color:black;
-}
-
-.table-filter-button{
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border:white 2px solid;
-  margin-left:0px;
-  margin-right:0px;
-  display:inline;
-  width:23%;
-  min-height:3em;
-  vertical-align:center;
-
-  background: rgba(45, 156, 219, 1);
-  display: inline-flex;
-  align-items:center;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
-
-}
-
-.table{
-  width:90%;
-}
-
-.table-body{
-  border:white 2px solid;
-  border:solid 1px white;
-
 }
