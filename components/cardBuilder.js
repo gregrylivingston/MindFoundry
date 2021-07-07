@@ -75,24 +75,10 @@ function card(data){
 //***********USERS
 
   const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec";
-//var url = "https://script.google.com/macros/s/AKfy*****ACeR/exec?callback=loadData";
-// Make an AJAX call to Google Script
-jQuery.ajax({
-crossDomain: true,
-url: url,
-method: "GET",
-dataType: "jsonp"
-});
 
- // log the returned data
-  function loadData(e) {
-  console.log("here is the data");
-  console.log(e);
-  }
 
-/*
 (async () => {
-  const rawResponse = await fetch('', {
+  const rawResponse = await fetch(url, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -102,10 +88,9 @@ dataType: "jsonp"
     body: JSON.stringify({a: 1, b: 'Textual content'})
   });
   const content = await rawResponse.json();
-
   console.log(content);
 })();
-*/
+
 
 
 var sampleCards = [
