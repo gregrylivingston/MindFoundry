@@ -72,6 +72,27 @@ function card(data){
 */
 
 
+//***********USERS
+
+  const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec";
+
+
+(async () => {
+  const rawResponse = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'mode': 'no-cors'
+    },
+    body: JSON.stringify({a: 1, b: 'Textual content'})
+  });
+  const content = await rawResponse.json();
+  console.log(content);
+})();
+
+
+
 var sampleCards = [
     {
       type:"Challenge",
@@ -126,11 +147,17 @@ var sampleCards = [
             <div>
                 <button class="little-button">3 Lightbulbs | [Complete] [Awesome] | Emoticons</button>
             </div>
-            <div>Posted on 09/27/21 by Spellbound</div>
+            <div>Posted on 09/27/21 by <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
+                        <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                        <div class="playerWidget-name"><i>Spellbound</i></div>
+                      </div></div>
 
       `,
-      footerLeft:`  <button class="little-button">+ React</button><button class="little-button">+ Award</button>`,
-      footerRight:`
+      footerLeft:`         <div class="playerWidget" onclick="loadMenu('mmenu')">
+                  <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                  <div class="playerWidget-name"><i>Spellbound</i></div>
+                </div>`,
+      footerRight:`  <button class="little-button">+ React</button><button class="little-button">+ Award</button>
         <button class="little-button">+ Share</button><button class="little-button">...</button>`
       ,
     },
@@ -155,8 +182,12 @@ var sampleCards = [
       icon:"img/badges/dancing4.png",
       mediaType:"Image",
       media:"img/badges/dancing4.png",
-      description:'',
-      footer:'',
+      description:``,
+      footerLeft:`          <div class="playerWidget" onclick="loadMenu('mmenu')">
+                  <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                  <div class="playerWidget-name"><i>Spellbound</i></div>
+                </div>
+`,
     },
     {
       type:"Challenge",

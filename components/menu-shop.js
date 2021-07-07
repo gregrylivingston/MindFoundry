@@ -31,14 +31,12 @@ document.write(
             </div>
             <div class="filter-row">
               <div class="filter-row-interior">
-              Backgrounds
-
+                Wallpapers
               </div>
             </div>
             <div class="filter-row">
               <div class="filter-row-interior">
-              Menu-Designs
-
+                Looks
               </div>
             </div>
             <div class="filter-row">

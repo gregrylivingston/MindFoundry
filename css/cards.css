@@ -91,19 +91,21 @@
 .card-description{
   min-height:25%;
   text-align:left;
-  width:80%;
-  margin-left:10%;
-  margin-right:10%;
+  width:96%;
+  margin-left:2%;
+  margin-right:%;
 }
 
 .card-description>div{
   margin-top:.5em;
+  margin-left:2%;
+  margin-right:2%;
 }
 
 .card-footer{
-  width:80%;
-  margin-left:10%;
-  margin-right:10%;
+  width:96%;
+  margin-left:2%;
+  margin-right:2%;
   text-align:left;
 }
 
@@ -111,6 +113,10 @@
   text-align:left;
   width:49%;
   display:inline;
+}
+
+.card-footer-left>.playerWidget{
+  max-width:40%;
 }
 
 .card-footer-right{
