@@ -89,7 +89,7 @@ dataType: "jsonp"
   console.log(e);
   }
 
-
+/*
 (async () => {
   const rawResponse = await fetch('', {
     method: 'POST',
@@ -104,7 +104,7 @@ dataType: "jsonp"
 
   console.log(content);
 })();
-
+*/
 
 
 var sampleCards = [
