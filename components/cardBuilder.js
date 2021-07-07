@@ -76,20 +76,18 @@ function card(data){
 
   const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec";
 
-
-(async () => {
-  const rawResponse = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'mode': 'no-cors'
-    },
-    body: JSON.stringify({a: 1, b: 'Textual content'})
+fetch(url,{
+      method: 'POST',
+      body: {},
+      headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+      }
+  }).then(response => {
+      console.log("success:", response);
+  }).catch(err => {
+      console.log("Error:" + err);
   });
-  const content = await rawResponse.json();
-  console.log(content);
-})();
+
 
 
 
