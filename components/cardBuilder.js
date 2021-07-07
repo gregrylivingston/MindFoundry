@@ -77,8 +77,8 @@ function card(data){
   const url= "https://script.google.com/macros/s/AKfycbzNLHwWzdqrQjLPE0HrIl2KTatkbSM6gLGd2UJpdDh76hwcyiX8hLbeEG472k0MNDZV/exec";
 
 fetch(url,{
-      method: 'POST',
-      body: {},
+      method: 'GET',
+    //  body: {},
       headers: {
           'Content-Type': 'text/plain;charset=utf-8',
       }
