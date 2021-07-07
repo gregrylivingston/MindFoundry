@@ -86,6 +86,7 @@ dataType: "jsonp"
 
  // log the returned data
   function loadData(e) {
+  console.log("here is the data");
   console.log(e);
   }
 
