@@ -1,4 +1,4 @@
-.menuButton, input, select{
+.menuButton, input, select, .selectButton{
   display:inline;
   width:23%;
   margin:0.5%;

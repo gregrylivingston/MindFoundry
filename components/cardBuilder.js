@@ -70,7 +70,7 @@ var sampleCards = [
       footer:'',
 
     },
-  /*  {
+    {
       type:"Challenge",
       subtype:"Available",
       title:"Make a Dance Video",
@@ -103,7 +103,7 @@ var sampleCards = [
       media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       description:'',
       footer:'',
-    },*/
+    },
 
 
 
