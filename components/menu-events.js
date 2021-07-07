@@ -1,31 +1,39 @@
 document.write(
   `
-  <div class="user-menu" id="menu-events">
-      <h1>Events</h1>
+  <div class="user-menu" id="menu-events" style="display:none;">
 
-      <button class="selectButton" style="width:30%;">
-        My Calendar
-      </button>
-      <button class="selectButton" style="width:30%;">
-        Events History
-      </button>
+    <h1>Events</h1>
+      <div style="width:100%;vertical-align:middle;align-items:middle;">
 
-      <button class="selectButton" style="width:30%;">
-        Get Tokens
-      </button>
-
-      <div style="display:inline-block;width:45%;">
+          <button class="selectButton"><span style="font-size:1.5em;display:inline;padding-top:-20px;">All Programs</span>
+          </button>
+        <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/currency/token_league.png" height="64px">
+        </button>
+        <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/currency/token_tournament.png" height="64px">
+        </button>
         <button class="selectButton">
-          Select Program Vertical
+          <span style="font-size:3em;display:inline;padding-top:-20px;">+</span><img src="img/menu/menu_events.png" height="64px">
         </button>
       </div>
 
-      <div style="display:inline-block;width:45%;">
-        <button class="selectButton"> 2<img src="img/currency/token_league.png" height="30px">
-        </button>
-        <button class="selectButton"> 1<img src="img/currency/token_tournament.png" height="30px">
-        </button>
-      </div>
+    <div class="table">
+
+          <button class="table-filter-button">
+              <span style="font-size:1.5em;display:inline;">Calendar</span>
+          </button>
+
+          <button class="table-filter-button">
+              <span style="font-size:1.5em;display:inline;">Progress</span>
+          </button>
+
+          <button class="table-filter-button">
+              <span style="font-size:1.5em;display:inline;">History</span>
+          </button>
+
+          <div class="table-body">
+          <br><br><br><br>
+          </div>
+    </div>
 
 
   </div>

@@ -126,9 +126,6 @@ body{
   width:100%;
   border:2px solid white;
   background: rgba(45, 156, 219, 0.96);
-}
-
-.menuButton-image{
-  width:50%
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
