@@ -60,6 +60,63 @@ function card(data){
 }
 
 
+function createCard(cardSettings){
+
+
+  let type = cardSettings.type;
+  var iconDir = type;
+  var mediaDir = type;
+
+  switch(type){
+    case "Challenge":
+        iconDir = "badge";
+        mediaDir = "badge";
+
+    default:
+  }
+  let title = data[type][cardSettings.index][data[type + "Key"].indexOf("title")];
+  let icon = "img/"+iconDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf("badge")].toLowerCase() +"4.png"
+  let media = "img/"+mediaDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf("badge")].toLowerCase() +"4.png";
+
+  switch (cardSettings.mediaType){
+    case "Image":
+          mediaHTML = "<img src='" + media + "'>";
+          console.log(mediaHTML);
+          break
+    case "iframe":
+          mediaHTML = media;
+          break
+    default:
+          mediaHTML = "";
+  }
+
+    document.getElementById("cards").innerHTML+= `
+      <div class="card">
+
+        <div class="card-type">
+          <div>${cardSettings.cardTitle}</div>
+        </div>
+
+        <div class="card-header">
+          <img class="card-header-img" src=${icon}>
+          <div class="card-title-group">
+            <div class="card-title">${title}</div>
+            <div class="card-subtitle">${cardSettings.subtitle}</div>
+          </div>
+        </div>
+        <div class="media">${mediaHTML}
+        </div>
+        <div class="card-description">${cardSettings.description}
+        </div>
+        <div class="card-footer">
+          <div class="card-footer-left">${cardSettings.footerLeft}</div>
+          <div class="card-footer-right">${cardSettings.footerRight}</div>
+
+        </div>
+      </div>
+    `
+
+}
 /*
 
     Ok all this makes me think notifications should be stacked by item... but what does that mean.
@@ -70,13 +127,57 @@ function card(data){
 
 
 */
+var myCards = [
+    {
+      index:1,
+      type:"Challenge",
+      subtype:"Accepted",
+      cardTitle:"You've Accepted A Challenge",
+      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
+      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
+      mediaType:"Image",
+      description:"You've accepted this challenge.  Bring it on.",
+      footerLeft:'',
+      footerRight:'',
+    },
+    {
+      index:3,
+      type:"Challenge",
+      subtype:"Accepted",
+      cardTitle:"You've Accepted A Challenge",
+      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
+      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
+      mediaType:"Image",
+      description:"You've accepted this challenge.  Bring it on.",
+      footerLeft:'',
+      footerRight:'',
+    },
+    {
+      index:52,
+      type:"Challenge",
+      subtype:"Accepted",
+      cardTitle:"You've Accepted A Challenge",
+      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
+      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
+      mediaType:"Image",
+      description:"You've accepted this challenge.  Bring it on.",
+      footerLeft:'',
+      footerRight:'',
+    },
+    {
+      index:71,
+      type:"Challenge",
+      subtype:"Accepted",
+      cardTitle:"You've Accepted A Challenge",
+      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
+      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
+      mediaType:"Image",
+      description:"You've accepted this challenge.  Bring it on.",
+      footerLeft:'',
+      footerRight:'',
+    },
 
-
-
-
-console.log("dataset --- challenge");
-console.log(data.ChallengeKey);
-console.log();
+  ];
 
 
 var sampleCards = [
@@ -226,4 +327,4 @@ var sampleCards = [
 
 ];
 
-sampleCards.forEach(item=>{card(item);});
+myCards.forEach(item=>{createCard(item);});
