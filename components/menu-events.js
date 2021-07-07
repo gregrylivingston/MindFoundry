@@ -2,10 +2,10 @@ document.write(
   `
   <div class="user-menu" id="menu-events" style="display:none;">
 
-    <h1>Events</h1>
-      <div style="width:100%;vertical-align:middle;align-items:middle;">
+    <div class="submenu-title">Events</div>
+      <div class="submenu-header">
 
-          <button class="selectButton"><span style="font-size:1.5em;display:inline;padding-top:-20px;">All Programs</span>
+          <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">All Programs</span>
           </button>
         <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/currency/token_league.png" height="64px">
         </button>

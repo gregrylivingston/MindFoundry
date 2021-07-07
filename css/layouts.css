@@ -89,14 +89,18 @@ body{
   }
 
   .outerScrollDesktop{
-    height: 86vh;
+    height: 97vh;
     position:relative;
     padding:0px;
     width:100%;
+    padding-left: 2vh
+
   }
   .outerScrollDesktop-left{
     height: 64vh;
-
+    position:relative;
+    padding:0px;
+    width:100%;
   }
   .innerScrollDesktop{
     max-height:100%;
@@ -104,7 +108,7 @@ body{
     width:100%;
   }
   .menu-bottom-left{
-    height:68vh;
+    height:64vh;
 
   }
   .menu-top-right{
@@ -127,5 +131,4 @@ body{
   border:2px solid white;
   background: rgba(45, 156, 219, 0.96);
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-
 }

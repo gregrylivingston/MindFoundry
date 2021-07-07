@@ -35,7 +35,7 @@ function card(data){
       <div class="card">
 
         <div class="card-type">
-          <div>${data.type} ${data.subtype}</div>
+          <div>${data.cardTitle}</div>
         </div>
 
         <div class="card-header">
@@ -47,9 +47,9 @@ function card(data){
         </div>
         <div class="media">${mediaHTML}
         </div>
-        <div class="card-description">
+        <div class="card-description">${data.description}
         </div>
-        <div class="card-footer">
+        <div class="card-footer">${data.footer}
         </div>
       </div>
     `
@@ -57,22 +57,36 @@ function card(data){
 }
 
 
+/*
+
+    Ok all this makes me think notifications should be stacked by item... but what does that mean.
+    Like there are a finite number of base items.  But reactions and awards stack into them, I guess...
+
+
+
+
+
+*/
+
+
 var sampleCards = [
     {
       type:"Challenge",
       subtype:"Accepted",
+      cardTitle:"You've Accepted A Challenge",
       title:"Make a Dance Video",
       subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
       icon:"img/badges/dancing4.png",
       mediaType:"Image",
       media:"img/badges/dancing4.png",
-      description:'',
+      description:"You've accepted this challenge.  Bring it on.",
       footer:'',
 
     },
     {
       type:"Challenge",
       subtype:"Available",
+      cardTitle:"New Challenge",
       title:"Make a Dance Video",
       subtitle:"Difficulty: brains brains",
       icon:"img/badges/dancing4.png",
@@ -85,7 +99,80 @@ var sampleCards = [
     {
       type:"Challenge",
       subtype:"Submitted",
+      cardTitle:"You've Submitted A Challenge",
       title:"Make a Dance Video",
+      subtitle:"Difficulty: brains brains",
+      icon:"img/badges/dancing4.png",
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
+      description:'',
+      footer:'',
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      cardTitle:"You've Completed a Challenge",
+      title:"Perform a Monolog",
+      subtitle:"Difficulty: brains brains",
+      icon:"img/badges/dancing4.png",
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
+      description:'',
+      footer:'',
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      cardTitle:"Monorog Reacted to Your Video",
+      title:"Perform a Monolog",
+      subtitle:"Difficulty: brains brains",
+      icon:"img/badges/dancing4.png",
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
+      description:'',
+      footer:'',
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      cardTitle:"Monorog, Andrew, Smellduro Reacted to Your Video",
+      title:"Perform a Monolog",
+      subtitle:"Difficulty: brains brains",
+      icon:"img/badges/dancing4.png",
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
+      description:'',
+      footer:'',
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      cardTitle:"Monorog has given you an Award",
+      title:"Perform a Monolog",
+      subtitle:"Difficulty: brains brains",
+      icon:"img/badges/dancing4.png",
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
+      description:'',
+      footer:'',
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      cardTitle:"Smellduro Completed a Challenge",
+      title:"Perform a Monolog",
+      subtitle:"Difficulty: brains brains",
+      icon:"img/badges/dancing4.png",
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
+      description:'',
+      footer:'',
+    },
+    {
+      type:"Challenge",
+      subtype:"Completed",
+      cardTitle:"Monorog has given you an Award",
+      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
       icon:"img/badges/dancing4.png",
       mediaType:"iframe",
@@ -96,16 +183,15 @@ var sampleCards = [
     {
       type:"Challenge",
       subtype:"Completed",
+      cardTitle:"Smellduro has earned an Award",
       title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
       icon:"img/badges/dancing4.png",
-      mediaType:"iframe",
-      media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+      mediaType:"Image",
+      media:"img/badges/dancing4.png",
       description:'',
       footer:'',
     },
-
-
 
 ];
 

@@ -80,7 +80,18 @@
   border:solid 1pt black;
   text-align:center;
   margin:2%;
+  max-height:20em;
 }
  .media>img{
-  max-height:15em;
+  height:100%;
+  max-width:100%;
+  max-height:20em;
+}
+
+.card-description{
+  min-height:25%;
+}
+
+.card-footer{
+
 }
