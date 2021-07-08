@@ -1,7 +1,7 @@
 .table-filter-button{
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  border:white 1px solid;
+  border:white 2px solid;
 
 
   margin-left:0px;
@@ -9,7 +9,7 @@
   padding-left:0px;
   padding-right:0px;
   display:inline;
-  width:23%;
+  
   min-height:3em;
   vertical-align:center;
 
@@ -20,11 +20,10 @@
 }
 
 .table{
-  width:90%;
+  width:100%;
 }
 
 .table-body{
-  border:white 2px solid;
-  border:solid 1px white;
+  border-top:solid 2px white;
   margin-top:-1px;
 }

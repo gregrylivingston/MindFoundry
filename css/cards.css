@@ -11,7 +11,7 @@
   border:2px solid white;
   display:inline-block;
   background: rgba(45, 156, 219, 0.96);
-  min-height:30em;
+  min-height:35em;
   vertical-align:top;
   margin-top:2vh;
   margin-bottom:2vh;
@@ -90,11 +90,11 @@
 }
 
 .card-description{
-  min-height:25%;
+
   text-align:left;
   width:96%;
   margin-left:2%;
-  margin-right:%;
+  margin-right:2%;
 }
 
 .card-description>div{

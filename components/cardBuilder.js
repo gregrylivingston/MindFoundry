@@ -17,47 +17,6 @@ img: string           file location of image
 var mediaHTML;
 
 
-function card(data){
-
-  switch (data.mediaType){
-    case "Image":
-          mediaHTML = "<img src='" + data.media + "'>";
-          console.log(mediaHTML);
-          break
-    case "iframe":
-          mediaHTML = data.media;
-          break
-    default:
-          mediaHTML = "";
-  }
-
-    document.getElementById("cards").innerHTML+= `
-      <div class="card">
-
-        <div class="card-type">
-          <div>${data.cardTitle}</div>
-        </div>
-
-        <div class="card-header">
-          <img class="card-header-img" src=${data.icon}>
-          <div class="card-title-group">
-            <div class="card-title">${data.title}</div>
-            <div class="card-subtitle">${data.subtitle}</div>
-          </div>
-        </div>
-        <div class="media">${mediaHTML}
-        </div>
-        <div class="card-description">${data.description}
-        </div>
-        <div class="card-footer">
-          <div class="card-footer-left">${data.footerLeft}</div>
-          <div class="card-footer-right">${data.footerRight}</div>
-
-        </div>
-      </div>
-    `
-
-}
 
 
 function createCard(cardSettings){
@@ -114,18 +73,25 @@ function createCard(cardSettings){
             </div>
           </div>
         </div>
+
+        <button class="menuButton">Details</button>
+        <button class="menuButton">Showcase</button>
+        <button class="menuButton">Submit</button>
+
         <div class="media">${mediaHTML}
         </div>
         <div class="card-description">
 
         <div style="font-size:1.65em;">My Great Monologue</div>
               <div>
-                  <button class="little-button">3 Lightbulbs | [Complete] [Awesome] | Emoticons</button>
+                  <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
+                  
+                  <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
+                              <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                              <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
+                  </div>
               </div>
-              <div>Posted on 09/27/21 by <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
-                          <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-                          <div class="playerWidget-name"><i>Spellbound</i></div>
-                        </div></div>
+
 
 
 
