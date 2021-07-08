@@ -74,9 +74,11 @@ function createCard(cardSettings){
 
     default:
   }
+
+  //get info from spreadsheet database.  data[table][row][column]
   let title = data[type][cardSettings.index][data[type + "Key"].indexOf("title")];
-  let icon = "img/"+iconDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf("badge")].toLowerCase() +"4.png"
-  let media = "img/"+mediaDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf("badge")].toLowerCase() +"4.png";
+  let icon = "img/"+iconDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf(iconDir)].toLowerCase() +"4.png"
+  let media = "img/"+mediaDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf(iconDir)].toLowerCase() +"4.png";
 
   switch (cardSettings.mediaType){
     case "Image":
@@ -133,7 +135,6 @@ var myCards = [
       type:"Challenge",
       subtype:"Accepted",
       cardTitle:"You've Accepted A Challenge",
-      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
       subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
       mediaType:"Image",
       description:"You've accepted this challenge.  Bring it on.",
@@ -141,95 +142,46 @@ var myCards = [
       footerRight:'',
     },
     {
-      index:3,
+      index:6,
       type:"Challenge",
       subtype:"Accepted",
       cardTitle:"You've Accepted A Challenge",
-      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
       subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
       mediaType:"Image",
-      description:"You've accepted this challenge.  Bring it on.",
-      footerLeft:'',
-      footerRight:'',
-    },
-    {
-      index:52,
-      type:"Challenge",
-      subtype:"Accepted",
-      cardTitle:"You've Accepted A Challenge",
-      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
-      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
-      mediaType:"Image",
-      description:"You've accepted this challenge.  Bring it on.",
-      footerLeft:'',
-      footerRight:'',
-    },
-    {
-      index:71,
-      type:"Challenge",
-      subtype:"Accepted",
-      cardTitle:"You've Accepted A Challenge",
-      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
-      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
-      mediaType:"Image",
-      description:"You've accepted this challenge.  Bring it on.",
-      footerLeft:'',
-      footerRight:'',
-    },
-
-  ];
-
-
-var sampleCards = [
-    {
-      type:"Challenge",
-      subtype:"Accepted",
-      cardTitle:"You've Accepted A Challenge",
-      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
-      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
-      icon:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
-      mediaType:"Image",
-      media:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
       description:"You've accepted this challenge.  Bring it on.",
       footerLeft:'',
       footerRight:'',
 
     },
     {
+      index:12,
       type:"Challenge",
       subtype:"Available",
       cardTitle:"New Challenge",
-      title:data.Challenge[1][data.ChallengeKey.indexOf("title")],
       subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
-      icon:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
       mediaType:"Image",
-      media:"img/badges/"+data.Challenge[1][data.ChallengeKey.indexOf("badge")].toLowerCase() +"4.png",
       description:'',
       footerLeft:'',
       footerRight:'',
     },
     {
+      index:16,
       type:"Challenge",
       subtype:"Submitted",
       cardTitle:"You've Submitted A Challenge",
-      title:"Make a Dance Video",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
-      media:"img/badges/dancing4.png",
       description:'',
       footerLeft:'',
       footerRight:'',
     },
     {
+      index:26,
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"You've Completed a Challenge",
-      title:"Perform a Monologue",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
-      media:"img/badges/dancing4.png",
       description:`<div style="font-size:1.65em;">My Great Monologue</div>
             <div>
                 <button class="little-button">3 Lightbulbs | [Complete] [Awesome] | Emoticons</button>
@@ -249,26 +201,22 @@ var sampleCards = [
       ,
     },
     {
+      index:30,
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"Monorog Reacted to Your Video",
-      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
-      media:"img/badges/dancing4.png",
       description:'',
       footer:'',
     },
     {
+      index:36,
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"Monorog, Andrew, Smellduro Reacted to Your Video",
-      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
-      media:"img/badges/dancing4.png",
       description:``,
       footerLeft:`          <div class="playerWidget" onclick="loadMenu('mmenu')">
                   <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
@@ -277,50 +225,46 @@ var sampleCards = [
 `,
     },
     {
+      index:46,
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"Monorog has given you an Award",
-      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
       media:"img/badges/dancing4.png",
       description:'',
       footer:'',
     },
     {
+      index:56,
+
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"Smellduro Completed a Challenge",
-      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
       media:"img/badges/dancing4.png",
       description:'',
       footer:'',
     },
     {
+      index:76,
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"Monorog has given you an Award",
-      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"iframe",
       media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
       description:'',
       footer:'',
     },
     {
+      index:86,
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"Smellduro has earned an Award",
-      title:"Perform a Monolog",
       subtitle:"Difficulty: brains brains",
-      icon:"img/badges/dancing4.png",
       mediaType:"Image",
-      media:"img/badges/dancing4.png",
       description:'',
       footer:'',
     },
