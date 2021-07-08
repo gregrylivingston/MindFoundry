@@ -67,77 +67,79 @@ class card {
     data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
     this.badgeImg = "img/Badge/"+this.badge +"4.png";
     this.mediaType = "Image";
+    this.cardHtml = this.makeCardHtml();
+  }
+  makeCardHtml(){
+      return  `
+        <div class="card playerStyles" id="Challenge${this.index}">
+
+          <div class="card-type">
+            <div>${this.type}</div>
+          </div>
+            ${this.makeCardHeader()}
+
+          <div class="media">
+          Details <p>${this["Description"]}</p>
+          </div>
+          <div class="media">
+            Showcase
+          </div>
+          <div class="media">
+           ${this.makeCardProgressBar()}
+            Submit
+          </div>
+
+          <div class="card-description">
+
+          <div style="font-size:1.65em;">My Great Monologue</div>
+                <div>
+                    <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
+
+                    <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
+                                <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                                <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
+                    </div>
+                </div>
+
+
+
+
+          </div>
+          ${this.makeCardFooter()}
+        </div>
+      `;
   }
   addToFeed(){
+        document.getElementById("cards").innerHTML+=this.cardHtml;
+  }
+  makeCardHeader(){
+    return `<div class="card-header">
+      <img class="card-header-img" src=${this.badgeImg}>
+      <div class="card-title-group">
+        <div class="card-title">${this.title}</div>
+        <div class="card-subtitle">
+        </div>
+      </div>
+    </div>
+    `;
+  }
+  makeCardFooter(){
+    return `
+    <div class="card-footer">
+      <div class="card-footer-left"></div>
+      <div class="card-footer-right">
+          <button class="little-button">+ React</button><button class="little-button">+ Award</button>
+          <button class="little-button">+ Share</button><button class="little-button">...</button>
+      </div>
+    </div>`
+  }
+  makeCardProgressBar(){
+    return `
+      <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
+        <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
+      </div>
+            0 / ${this.maxPoints} <img src='img/menu/menu_geniusshop.png' height='32px'>`
 
-      let media = this.badgeImg;
-
-      switch (this.mediaType){
-        case "Image":
-              mediaHTML = "<img src='" + media + "'>";
-              break
-        case "iframe":
-              mediaHTML = media;
-              break
-        default:
-              mediaHTML = "";
-      }
-
-        document.getElementById("cards").innerHTML+= `
-          <div class="card playerStyles" id="Challenge${this.index}">
-
-            <div class="card-type">
-              <div>${this.type}</div>
-            </div>
-
-            <div class="card-header">
-              <img class="card-header-img" src=${this.badgeImg}>
-              <div class="card-title-group">
-                <div class="card-title">${this.title}</div>
-                <div class="card-subtitle">
-                  <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
-                    <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
-                  </div>
-
-
-                          0 / 30 <img src='img/menu/menu_geniusshop.png' height='32px'>
-
-                </div>
-              </div>
-            </div>
-
-            <button class="menuButton">Details</button>
-            <button class="menuButton">Showcase</button>
-            <button class="menuButton">Submit</button>
-
-            <div class="media">${mediaHTML}
-            </div>
-            <div class="card-description">
-
-            <div style="font-size:1.65em;">My Great Monologue</div>
-                  <div>
-                      <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
-
-                      <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
-                                  <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-                                  <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
-                      </div>
-                  </div>
-
-
-
-
-            </div>
-            <div class="card-footer">
-              <div class="card-footer-left"></div>
-              <div class="card-footer-right">
-                  <button class="little-button">+ React</button><button class="little-button">+ Award</button>
-                  <button class="little-button">+ Share</button><button class="little-button">...</button>
-              </div>
-
-            </div>
-          </div>
-        `;
   }
 }
 
