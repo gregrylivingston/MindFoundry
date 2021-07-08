@@ -1,6 +1,6 @@
 document.write(
   `
-  <div class="user-menu" id="menu-profile">
+  <div class="user-menu" id="menu-Profile">
       <button class="avatarButton" style="width:30%;font-size:14pt;display:inline-block;">
         <p>Avatar<br><img class="avatarButton-image" src="img/avatar/avatar_cuteawil.png" style="display:inline;horizontal-align:left;vertical-align:middle;display:inline;
         padding:3%;align:right;"><br>Cute Awil</p>

@@ -26,7 +26,8 @@
 function loadMenu(menu){
     let els = document.getElementsByClassName("user-menu");
     for ( var i = 0 ; i < els.length ; i ++ ){els[i].style.display="none";}
-    document.getElementById(menu).style.display="";
+    document.getElementById("menu-" + menu).style.display="";
+    getCards(menu);
 }
 
 </script>
@@ -44,25 +45,25 @@ function loadMenu(menu){
   <div class="innerScrollSm">
     <div class="leftColumn">
         <div class="panel menu-top-left">
-          <div class="playerWidget" onclick="loadMenu('menu-profile')">
+          <div class="playerWidget" onclick="loadMenu('Profile')">
             <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
             <div class="playerWidget-name"><i>Spellbound<br><div style="font-size:.5em;">Apprentice Builder</div></i></div>
             <img class="playerWidget-image" src="img/avatar/avatar_girwil.png">
             <img class="playerWidget-image" src="img/avatar/avatar_rocketleague.png">
             <div class="playerWidget-level"><b>Lvl 7</b></div>
           </div>
-          <button class="menuButton" onclick="loadMenu('menu-player')">
+          <button class="menuButton" onclick="loadMenu('Player')">
             <img class="menuButton-image" src="img/menu/menu_usersolo.png"><br>Player
           </button>
-          <button class="menuButton" onclick="loadMenu('menu-crew')">
+          <button class="menuButton" onclick="loadMenu('Squad')">
             <img class="menuButton-image" src="img/menu/menu_usercrew.png"><br>Crew
           </button>
-          <button class="menuButton" onclick="loadMenu('menu-squad')"><img class="menuButton-image" src="img/menu/menu_squad.png"><br>Squad</button>
-          <button class="menuButton" onclick="loadMenu('menu-club')"><img class="menuButton-image" src="img/menu/menu_korora.png"><br>Club</button>
-          <button class="menuButton" onclick="loadMenu('menu-events')"><img class="menuButton-image" src="img/menu/menu_events.png"><br>Events</button>
-          <button class="menuButton" onclick="loadMenu('menu-challenges')"><img class="menuButton-image" src="img/menu/menu_challenges.png"><br>Challenges</button>
-          <button class="menuButton" onclick="loadMenu('menu-shop')"><img class="menuButton-image" src="img/menu/menu_geniusshop.png"><br>Shop</button>
-          <button class="menuButton" onclick="loadMenu('menu-settings')"><img class="menuButton-image" src="img/menu/menu_settings.png"><br>Settings</button>
+          <button class="menuButton" onclick="loadMenu('Buddies')"><img class="menuButton-image" src="img/menu/menu_squad.png"><br>Squad</button>
+          <button class="menuButton" onclick="loadMenu('Club')"><img class="menuButton-image" src="img/menu/menu_korora.png"><br>Club</button>
+          <button class="menuButton" onclick="loadMenu('Event')"><img class="menuButton-image" src="img/menu/menu_events.png"><br>Events</button>
+          <button class="menuButton" onclick="loadMenu('Challenge')"><img class="menuButton-image" src="img/menu/menu_challenges.png"><br>Challenges</button>
+          <button class="menuButton" onclick="loadMenu('Shop')"><img class="menuButton-image" src="img/menu/menu_geniusshop.png"><br>Shop</button>
+          <button class="menuButton" onclick="loadMenu('Settings')"><img class="menuButton-image" src="img/menu/menu_settings.png"><br>Settings</button>
         </div>
 
         <div class="panel menu-bottom-left">

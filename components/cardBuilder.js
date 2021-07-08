@@ -16,7 +16,11 @@ img: string           file location of image
 
 var mediaHTML;
 
+function getCards(menu){
+    document.getElementById("cards").innerHTML = "";
+    for ( var i = 0 ; i < 10 ; i++){ createCard({index:i,type:menu,mediaType:"Image"})};
 
+}
 
 
 function createCard(cardSettings){
@@ -28,6 +32,7 @@ function createCard(cardSettings){
 
   switch(type){
     case "Challenge":
+    case "Event":
         iconDir = "badge";
         mediaDir = "badge";
 
@@ -85,7 +90,7 @@ function createCard(cardSettings){
         <div style="font-size:1.65em;">My Great Monologue</div>
               <div>
                   <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
-                  
+
                   <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
                               <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
                               <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
@@ -115,4 +120,3 @@ function createCard(cardSettings){
     Like there are a finite number of base items.  But reactions and awards stack into them, I guess...
 
 */
-for ( var i = 0 ; i < 40 ; i++){ createCard({index:i,type:"Challenge",mediaType:"Image"})};
