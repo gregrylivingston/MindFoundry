@@ -9,7 +9,7 @@ document.write(
       </button>
           <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Challenges</span>
           </button>
-          <button class="selectButton" style="height:66px;width:48%"><span style="font-size:1.5em;display:inline;">Characters</span>
+          <button class="selectButton" style="height:66px;width:48%" onclick="createCharPopup()"><span style="font-size:1.5em;display:inline;">Characters</span>
           </button>
         <!--  <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Badges</span>
           </button>-->
@@ -52,12 +52,43 @@ document.write(
 //      Character Popup
 
 
-      var charpop = `<div class="largepopup playerStyles">
-        Hello world
-        <button onclick="this.parentElement.remove()">Close</button>
-      </div>
-      `;
 
-        window.onload = function() {
-          console.log("hello so much world.");
-          document.getElementById("popups").innerHTML+=charpop;}
+  function createCharPopup(){
+
+    var charpop =
+
+    `
+    <div class="fill">
+    <div class="popup playerStyles">
+        <div style="width:100%;height:20%;">
+          <div style="width:60%;height:100%;display:inline-block">
+            <h1>Select a Character</h1>
+            <h4>Level up each character by completing challenges and events in their unique set of badges. Earn coin along the way the can be redeemed for prizes.</h4>
+            </div>
+          <div style="width:35%;height:100%;display:inline-block;text-align:right;vertical-align:top;">
+            <button class="menuButton" onclick="this.parentElement.parentElement.parentElement.parentElement.remove()">Close</button>
+
+          </div>
+        </div>
+        <div style="width:100%;height:80%;">
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+          <div class="col3">Hello world</div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    `;
+
+
+                        document.getElementById("popups").innerHTML+=charpop;
+      }

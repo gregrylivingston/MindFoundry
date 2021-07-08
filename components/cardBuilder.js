@@ -12,13 +12,24 @@ img: string           file location of image
 */
 
 
-
-
+const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
 var mediaHTML;
 
 function getCards(menu){
     document.getElementById("cards").innerHTML = "";
-    for ( var i = 0 ; i < 10 ; i++){ createCard({index:i,type:menu,mediaType:"Image"})};
+
+    switch (menu){
+      case "Challenge":for ( var i = 0 ; i < 10 ; i++){ createCard({index:i,type:menu,mediaType:"Image"})};
+        break
+      case "Event":
+        eventBadges.forEach((badge,i)=>{
+           let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
+           createCard({index:i,type:"Event",mediaType:"Image"});
+        })
+      default:
+    }
+
+
 
 }
 

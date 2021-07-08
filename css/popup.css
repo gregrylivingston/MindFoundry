@@ -4,11 +4,29 @@
   left:0px;
 }
 
-.largepopup{
+.fill{
+  background: rgba(0, 0, 0, 0.5);
+  position:fixed;
+  z-index:9;
+  top:0vh;
+  left:0vw;
+  width:100vw;
+  height:100vh;
+}
+.popup{
     position: fixed;
     z-index:10;
-    top:10vh;
-    left:10vw;
-    width:80vw;
-    height:80vh;
+    top:4vh;
+    left:4vw;
+    width:92vw;
+    height:92vh;
+
+}
+
+
+.col3{
+  width:31%;
+  margin:1%;
+  height:31%;
+  display:inline-block;
 }
