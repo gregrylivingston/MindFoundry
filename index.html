@@ -30,7 +30,7 @@ function loadMenu(menu){
     let els = document.getElementsByClassName("user-menu");
     for ( var i = 0 ; i < els.length ; i ++ ){els[i].style.display="none";}
     document.getElementById("menu-" + menu).style.display="";
-    getCards(menu);
+    setCardsByMenu(menu);
 }
 
 </script>

@@ -15,22 +15,51 @@ img: string           file location of image
 const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
 var mediaHTML;
 var cards = [];
+var availableCards = [];
+var availableCardIterator = 0;
 
-function getCards(menu){
+function setCardsByMenu(menu){
+    scroller.scrollTop = 0 ;
     document.getElementById("cards").innerHTML = "";
-
-        var options = cards.filter(c=>c.type==menu);
-        console.log(menu);
-        console.log(options);
-        for ( var i = 0 ; i < 10 ; i++){
-          options[i].addToFeed();
-          };
-
-
-
-
-
+        availableCards = cards.filter(c=>c.type==menu);
+        availableCardIterator = 0;
+        addCardsToFeed();
 }
+
+var nextCard;
+var scroller =   document.getElementById("cards").parentElement;
+var myTarget = undefined;
+scroller.addEventListener('scroll', function() {
+  if (myTarget!==undefined){
+  if(myTarget.getBoundingClientRect().top <= 500){
+    addCardsToFeed();
+  }}
+})
+
+function addCardsToFeed(){
+    for( var i = availableCardIterator + 10 ; availableCardIterator < i ;availableCardIterator++)
+    {
+        nextCard = availableCards[availableCardIterator];
+        (nextCard !== undefined)? nextCard.addToFeed():availableCardIterator=i;
+    }
+    (nextCard !== undefined)?     myTarget = document.querySelector('#'+nextCard.type+nextCard.index):myTarget=undefined;
+
+
+
+/*
+
+    window.onscroll = function(){
+      console.log(document.getElementById(nextCard.type + nextCard.index));
+      console.log(document.getElementById(nextCard.type + nextCard.index).getBoundingClientRect().bottom)
+        if(document.getElementById(nextCard.type + nextCard.index).getBoundingClientRect().bottom <= 1000){
+          addCardsToFeed();
+        }
+    }*/
+}
+
+
+
+
 class card {
   constructor(type, index) {
     this.type = type;
@@ -43,24 +72,11 @@ class card {
   }
   addToFeed(){
 
-      var mediaDir = this.type;
-
-      switch(this.type){
-        case "Challenge":
-        case "Event":
-            mediaDir = "badge";
-
-        default:
-      }
-
-      //get info from spreadsheet database.  data[table][row][column]
-      let title = this.title;
       let media = this.badgeImg;
 
       switch (this.mediaType){
         case "Image":
               mediaHTML = "<img src='" + media + "'>";
-              console.log(mediaHTML);
               break
         case "iframe":
               mediaHTML = media;
@@ -79,7 +95,7 @@ class card {
             <div class="card-header">
               <img class="card-header-img" src=${this.badgeImg}>
               <div class="card-title-group">
-                <div class="card-title">${title}</div>
+                <div class="card-title">${this.title}</div>
                 <div class="card-subtitle">
                   <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
                     <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
