@@ -57,7 +57,7 @@ function createCard(cardSettings){
   }
 
     document.getElementById("cards").innerHTML+= `
-      <div class="card">
+      <div class="card playerStyles">
 
         <div class="card-type">
           <div>${type}</div>
