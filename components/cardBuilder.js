@@ -66,6 +66,7 @@ class card {
     //for Each column in the spreadsheet give this add a key and object pair
     data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
     this.badgeImg = "img/Badge/"+this.badge +"4.png";
+    this.characterImg = "img/Character/" +this.Character + ".png";
     this.mediaType = "Image";
     this.cardHtml = this.makeCardHtml();
   }
@@ -114,12 +115,16 @@ class card {
   }
   makeCardHeader(){
     return `<div class="card-header">
-      <img class="card-header-img" src=${this.badgeImg}>
+      <img class="card-header-img" src=${this.characterImg}>
+
       <div class="card-title-group">
         <div class="card-title">${this.title}</div>
         <div class="card-subtitle">
         </div>
       </div>
+      <img class="card-header-img" src=${this.badgeImg}>
+
+
     </div>
     `;
   }
