@@ -22,12 +22,11 @@ function setCardsByMenu(menu){
     switch (menu){
       case "Challenge":
       case "Event":
-        availableCards = cards.filter(c=>c.type==menu);
+        availableCards = shuffle(cards.filter(c=>c.type==menu));
         break
       default:
-      console.log("load default");
-        availableCards = cards.filter(c=>c.type=="Event" );
-        availableCards.push(... cards.filter(c=>c.type=="Challenge"));
+        availableCards = shuffle(cards.filter(c=>c.type=="Event" ));
+        availableCards.push(... shuffle(cards.filter(c=>c.type=="Challenge")));
     }
     console.log(availableCards.length);
 
