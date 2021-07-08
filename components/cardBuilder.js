@@ -79,8 +79,10 @@ class card {
           </div>
             ${this.makeCardHeader()}
 
+
           <div class="media">
-          Details <p>${this["Description"]}</p>
+
+            <p>${this["Description"]}</p>
           </div>
           <div class="media">
             Showcase
@@ -119,13 +121,15 @@ class card {
 
       <div class="card-title-group">
         <div class="card-title">${this.title}</div>
-        <div class="card-subtitle">
-        </div>
+        <!--<div class="card-subtitle"></div>-->
       </div>
       <img class="card-header-img" src=${this.badgeImg}>
 
 
     </div>
+    <div class="playerStyles" style="width:31%;display:inline-block;text-align:left">${this.Character}</div>
+    <div class="playerStyles" style="width:31%;display:inline-block;">${this.Difficulty}</div>
+    <div class="playerStyles" style="width:31%;display:inline-block;text-align:right;">${this.badge}</div>
     `;
   }
   makeCardFooter(){
