@@ -96,14 +96,22 @@ function createCard(cardSettings){
       <div class="card">
 
         <div class="card-type">
-          <div>${cardSettings.cardTitle}</div>
+          <div>${type}</div>
         </div>
 
         <div class="card-header">
           <img class="card-header-img" src=${icon}>
           <div class="card-title-group">
             <div class="card-title">${title}</div>
-            <div class="card-subtitle">${cardSettings.subtitle}</div>
+            <div class="card-subtitle">
+              <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
+                <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
+              </div>
+
+
+                      0 / 30 <img src='img/menu/menu_geniusshop.png' height='32px'>
+
+            </div>
           </div>
         </div>
         <div class="media">${mediaHTML}
@@ -134,8 +142,6 @@ var myCards = [
       index:1,
       type:"Challenge",
       subtype:"Accepted",
-      cardTitle:"You've Accepted A Challenge",
-      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
       mediaType:"Image",
       description:"You've accepted this challenge.  Bring it on.",
       footerLeft:'',
@@ -146,7 +152,6 @@ var myCards = [
       type:"Challenge",
       subtype:"Accepted",
       cardTitle:"You've Accepted A Challenge",
-      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
       mediaType:"Image",
       description:"You've accepted this challenge.  Bring it on.",
       footerLeft:'',
@@ -158,7 +163,6 @@ var myCards = [
       type:"Challenge",
       subtype:"Available",
       cardTitle:"New Challenge",
-      subtitle:"Difficulty: <img src='img/mf_logo.png' height='16px'><img src='img/mf_logo.png' height='16px'>",
       mediaType:"Image",
       description:'',
       footerLeft:'',
@@ -169,7 +173,6 @@ var myCards = [
       type:"Challenge",
       subtype:"Submitted",
       cardTitle:"You've Submitted A Challenge",
-      subtitle:"Difficulty: brains brains",
       mediaType:"Image",
       description:'',
       footerLeft:'',
@@ -180,7 +183,6 @@ var myCards = [
       type:"Challenge",
       subtype:"Completed",
       cardTitle:"You've Completed a Challenge",
-      subtitle:"Difficulty: brains brains",
       mediaType:"Image",
       description:`<div style="font-size:1.65em;">My Great Monologue</div>
             <div>

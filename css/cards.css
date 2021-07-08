@@ -47,7 +47,7 @@
 
   background-color:rgba(200,200,200,0.8);
   /*border:4px solid white;*/
-  height:15%;
+  height:6em;
   vertical-align:top;
   text-align:left;
 }
@@ -64,6 +64,7 @@
   width:70%;
   vertical-align:top;
   padding-top:4%;
+  padding-bottom:4%;
 }
 
 .card-title{
