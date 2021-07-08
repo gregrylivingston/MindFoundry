@@ -7,9 +7,9 @@ document.write(
 
           <button class="selectButton inactive" style="height:66px;"><span style="font-size:1.5em;display:inline;">All Programs</span>
           </button>
-        <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/currency/token_league.png" height="64px">
+        <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/token_league.png" height="64px">
         </button>
-        <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/currency/token_tournament.png" height="64px">
+        <button class="selectButton"><span style="font-size:3em;display:inline;padding-top:-20px;">2</span><img src="img/token_tourney.png" height="64px">
         </button>
         <button class="selectButton">
           <span style="font-size:3em;display:inline;padding-top:-20px;">+</span><img src="img/menu/menu_events.png" height="64px">

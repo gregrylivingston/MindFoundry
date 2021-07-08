@@ -30,3 +30,24 @@
   height:31%;
   display:inline-block;
 }
+
+.col3>div{
+  vertical-align:middle;
+  display:inline-flex;
+  align-items:center;
+  width:100%;
+  padding-top:.5em;
+}
+
+.col3>div>img{
+  height:3em;
+  max-width:15%;
+  padding-left:3%;
+  padding-right:1.5%;
+}
+
+.col3>div>div{
+  width:75%;
+  padding-left:3%;
+  padding-right:1.5%;
+}
