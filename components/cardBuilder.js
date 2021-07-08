@@ -80,14 +80,14 @@ class card {
             ${this.makeCardHeader()}
 
 
-          <div class="media">
+          <div class="card-section playerStyles">
 
             <p>${this["Description"]}</p>
           </div>
-          <div class="media">
+          <div class="card-section playerStyles">
             Showcase
           </div>
-          <div class="media">
+          <div class="card-section playerStyles">
            ${this.makeCardProgressBar()}
             Submit
           </div>
@@ -124,12 +124,12 @@ class card {
         <!--<div class="card-subtitle"></div>-->
       </div>
       <img class="card-header-img" src=${this.badgeImg}>
+      <div class="" style="width:35%;display:inline-block;text-align:left">${this.Character}</div>
+      <div class="" style="width:23%;display:inline-block;">${brains[difficultyLevels.indexOf(this.Difficulty)]}</div>
+      <div class="" style="width:35%;display:inline-block;text-align:right;">${this.badge.replace("_"," ")}</div>
 
 
     </div>
-    <div class="playerStyles" style="width:31%;display:inline-block;text-align:left">${this.Character}</div>
-    <div class="playerStyles" style="width:31%;display:inline-block;">${this.Difficulty}</div>
-    <div class="playerStyles" style="width:31%;display:inline-block;text-align:right;">${this.badge}</div>
     `;
   }
   makeCardFooter(){
@@ -156,6 +156,17 @@ class card {
 // ** Initialize Cards
 
 const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
+const difficultyLevels = ["Very Easy","Easy","Medium","Hard","Very Hard"];
+const brains = [
+        "<img src='img/brain.png'>",
+        "<img src='img/brain.png'><img src='img/brain.png'>",
+        "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'>",
+        "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'>",
+        "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'> <img src='img/brain.png'>",
+,
+
+
+]
 data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new card("Challenge",i)):'';});
 eventBadges.forEach((badge,i)=>{
    let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
