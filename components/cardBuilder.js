@@ -116,161 +116,37 @@ function createCard(cardSettings){
         </div>
         <div class="media">${mediaHTML}
         </div>
-        <div class="card-description">${cardSettings.description}
+        <div class="card-description">
+
+        <div style="font-size:1.65em;">My Great Monologue</div>
+              <div>
+                  <button class="little-button">3 Lightbulbs | [Complete] [Awesome] | Emoticons</button>
+              </div>
+              <div>Posted on 09/27/21 by <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
+                          <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                          <div class="playerWidget-name"><i>Spellbound</i></div>
+                        </div></div>
+
+
+
         </div>
         <div class="card-footer">
-          <div class="card-footer-left">${cardSettings.footerLeft}</div>
-          <div class="card-footer-right">${cardSettings.footerRight}</div>
+          <div class="card-footer-left"></div>
+          <div class="card-footer-right">
+              <button class="little-button">+ React</button><button class="little-button">+ Award</button>
+              <button class="little-button">+ Share</button><button class="little-button">...</button>
+          </div>
 
         </div>
       </div>
-    `
+    `;
 
 }
+
 /*
 
     Ok all this makes me think notifications should be stacked by item... but what does that mean.
     Like there are a finite number of base items.  But reactions and awards stack into them, I guess...
 
-
-
-
-
 */
-var myCards = [
-    {
-      index:1,
-      type:"Challenge",
-      subtype:"Accepted",
-      mediaType:"Image",
-      description:"You've accepted this challenge.  Bring it on.",
-      footerLeft:'',
-      footerRight:'',
-    },
-    {
-      index:6,
-      type:"Challenge",
-      subtype:"Accepted",
-      cardTitle:"You've Accepted A Challenge",
-      mediaType:"Image",
-      description:"You've accepted this challenge.  Bring it on.",
-      footerLeft:'',
-      footerRight:'',
-
-    },
-    {
-      index:12,
-      type:"Challenge",
-      subtype:"Available",
-      cardTitle:"New Challenge",
-      mediaType:"Image",
-      description:'',
-      footerLeft:'',
-      footerRight:'',
-    },
-    {
-      index:16,
-      type:"Challenge",
-      subtype:"Submitted",
-      cardTitle:"You've Submitted A Challenge",
-      mediaType:"Image",
-      description:'',
-      footerLeft:'',
-      footerRight:'',
-    },
-    {
-      index:26,
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"You've Completed a Challenge",
-      mediaType:"Image",
-      description:`<div style="font-size:1.65em;">My Great Monologue</div>
-            <div>
-                <button class="little-button">3 Lightbulbs | [Complete] [Awesome] | Emoticons</button>
-            </div>
-            <div>Posted on 09/27/21 by <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
-                        <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-                        <div class="playerWidget-name"><i>Spellbound</i></div>
-                      </div></div>
-
-      `,
-      footerLeft:`         <div class="playerWidget" onclick="loadMenu('mmenu')">
-                  <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-                  <div class="playerWidget-name"><i>Spellbound</i></div>
-                </div>`,
-      footerRight:`  <button class="little-button">+ React</button><button class="little-button">+ Award</button>
-        <button class="little-button">+ Share</button><button class="little-button">...</button>`
-      ,
-    },
-    {
-      index:30,
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"Monorog Reacted to Your Video",
-      subtitle:"Difficulty: brains brains",
-      mediaType:"Image",
-      description:'',
-      footer:'',
-    },
-    {
-      index:36,
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"Monorog, Andrew, Smellduro Reacted to Your Video",
-      subtitle:"Difficulty: brains brains",
-      mediaType:"Image",
-      description:``,
-      footerLeft:`          <div class="playerWidget" onclick="loadMenu('mmenu')">
-                  <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-                  <div class="playerWidget-name"><i>Spellbound</i></div>
-                </div>
-`,
-    },
-    {
-      index:46,
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"Monorog has given you an Award",
-      subtitle:"Difficulty: brains brains",
-      mediaType:"Image",
-      media:"img/badges/dancing4.png",
-      description:'',
-      footer:'',
-    },
-    {
-      index:56,
-
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"Smellduro Completed a Challenge",
-      subtitle:"Difficulty: brains brains",
-      mediaType:"Image",
-      media:"img/badges/dancing4.png",
-      description:'',
-      footer:'',
-    },
-    {
-      index:76,
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"Monorog has given you an Award",
-      subtitle:"Difficulty: brains brains",
-      mediaType:"iframe",
-      media:'  <iframe width="100%" src="https://www.youtube.com/embed/xL-XDbMMMSg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-      description:'',
-      footer:'',
-    },
-    {
-      index:86,
-      type:"Challenge",
-      subtype:"Completed",
-      cardTitle:"Smellduro has earned an Award",
-      subtitle:"Difficulty: brains brains",
-      mediaType:"Image",
-      description:'',
-      footer:'',
-    },
-
-];
-
-myCards.forEach(item=>{createCard(item);});
+for ( var i = 0 ; i < 40 ; i++){ createCard({index:i,type:"Challenge",mediaType:"Image"})};
