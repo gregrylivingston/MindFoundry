@@ -12,8 +12,6 @@ img: string           file location of image
 */
 
 
-const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
-var mediaHTML;
 var cards = [];
 var availableCards = [];
 var availableCardIterator = 0;
@@ -21,9 +19,21 @@ var availableCardIterator = 0;
 function setCardsByMenu(menu){
     scroller.scrollTop = 0 ;
     document.getElementById("cards").innerHTML = "";
+    switch (menu){
+      case "Challenge":
+      case "Event":
         availableCards = cards.filter(c=>c.type==menu);
-        availableCardIterator = 0;
-        addCardsToFeed();
+        break
+      default:
+      console.log("load default");
+        availableCards = cards.filter(c=>c.type=="Event" );
+        availableCards.push(... cards.filter(c=>c.type=="Challenge"));
+    }
+    console.log(availableCards.length);
+
+    availableCardIterator = 0;
+    addCardsToFeed();
+
 }
 
 var nextCard;
@@ -44,20 +54,10 @@ function addCardsToFeed(){
     }
     (nextCard !== undefined)?     myTarget = document.querySelector('#'+nextCard.type+nextCard.index):myTarget=undefined;
 
-
-
-/*
-
-    window.onscroll = function(){
-      console.log(document.getElementById(nextCard.type + nextCard.index));
-      console.log(document.getElementById(nextCard.type + nextCard.index).getBoundingClientRect().bottom)
-        if(document.getElementById(nextCard.type + nextCard.index).getBoundingClientRect().bottom <= 1000){
-          addCardsToFeed();
-        }
-    }*/
 }
 
 
+var mediaHTML;
 
 
 class card {
@@ -66,7 +66,6 @@ class card {
     this.index = index;
     //for Each column in the spreadsheet give this add a key and object pair
     data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
-
     this.badgeImg = "img/Badge/"+this.badge +"4.png";
     this.mediaType = "Image";
   }
@@ -143,9 +142,33 @@ class card {
   }
 }
 
-data["Challenge"].forEach((chal,i)=>{cards.push(new card("Challenge",i))});
+
+// ** Initialize Cards
+
+const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
+data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new card("Challenge",i)):'';});
 eventBadges.forEach((badge,i)=>{
    let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
    cards.push(new card("Event",i));
-   console.log("event card created + " +  badge);
 })
+
+
+//  Utiltiies
+
+function shuffle(array) {
+  var currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
