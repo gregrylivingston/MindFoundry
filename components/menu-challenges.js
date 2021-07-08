@@ -1,6 +1,6 @@
 document.write(
   `
-  <div class="user-menu" id="menu-challenges" style="display:none;">
+  <div class="user-menu" id="menu-Challenge" style="display:none;">
 
 
     <div class="submenu-title">Challenges</div>

@@ -44,3 +44,7 @@
 .little-button{
   border-radius:10px;
 }
+
+.inactive{
+  opacity:0;
+}
