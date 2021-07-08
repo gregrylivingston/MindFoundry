@@ -10,11 +10,11 @@
   width:90vw;
   border:2px solid white;
   display:inline-block;
-  min-height:35em;
   vertical-align:top;
   margin-top:2vh;
   margin-bottom:2vh;
   text-align:center;
+  padding-bottom:1em;
 }
 
 
@@ -27,7 +27,6 @@
     display:inline-block;
     margin-right:1vw;
     background: rgba(45, 156, 219, 0.96);
-    height:25em;
   }
 
 }
@@ -90,8 +89,8 @@
 
 .card-section{
   width:95%;
-  border:solid 1pt black;
-  text-align:center;
+  border:solid 2px white;
+  text-align:left;
   margin:2%;
   max-height:20em;
 }
