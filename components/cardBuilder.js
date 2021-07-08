@@ -14,120 +14,122 @@ img: string           file location of image
 
 const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
 var mediaHTML;
+var cards = [];
 
 function getCards(menu){
     document.getElementById("cards").innerHTML = "";
 
-    switch (menu){
-      case "Challenge":for ( var i = 0 ; i < 10 ; i++){ createCard({index:i,type:menu,mediaType:"Image"})};
-        break
-      case "Event":
-        eventBadges.forEach((badge,i)=>{
-           let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
-           createCard({index:i,type:"Event",mediaType:"Image"});
-        })
-      default:
-    }
+        var options = cards.filter(c=>c.type==menu);
+        console.log(menu);
+        console.log(options);
+        for ( var i = 0 ; i < 10 ; i++){
+          options[i].addToFeed();
+          };
+
+
 
 
 
 }
+class card {
+  constructor(type, index) {
+    this.type = type;
+    this.index = index;
+    //for Each column in the spreadsheet give this add a key and object pair
+    data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
 
-
-function createCard(cardSettings){
-
-
-  let type = cardSettings.type;
-  var iconDir = type;
-  var mediaDir = type;
-
-  switch(type){
-    case "Challenge":
-    case "Event":
-        iconDir = "badge";
-        mediaDir = "badge";
-
-    default:
+    this.badgeImg = "img/Badge/"+this.badge +"4.png";
+    this.mediaType = "Image";
   }
+  addToFeed(){
 
-  //get info from spreadsheet database.  data[table][row][column]
-  let title = data[type][cardSettings.index][data[type + "Key"].indexOf("title")];
-  let icon = "img/"+iconDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf(iconDir)].toLowerCase() +"4.png"
-  let media = "img/"+mediaDir+"/"+data[type][cardSettings.index][data[type+"Key"].indexOf(iconDir)].toLowerCase() +"4.png";
+      var mediaDir = this.type;
 
-  switch (cardSettings.mediaType){
-    case "Image":
-          mediaHTML = "<img src='" + media + "'>";
-          console.log(mediaHTML);
-          break
-    case "iframe":
-          mediaHTML = media;
-          break
-    default:
-          mediaHTML = "";
-  }
+      switch(this.type){
+        case "Challenge":
+        case "Event":
+            mediaDir = "badge";
 
-    document.getElementById("cards").innerHTML+= `
-      <div class="card playerStyles">
+        default:
+      }
 
-        <div class="card-type">
-          <div>${type}</div>
-        </div>
+      //get info from spreadsheet database.  data[table][row][column]
+      let title = this.title;
+      let media = this.badgeImg;
 
-        <div class="card-header">
-          <img class="card-header-img" src=${icon}>
-          <div class="card-title-group">
-            <div class="card-title">${title}</div>
-            <div class="card-subtitle">
-              <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
-                <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
+      switch (this.mediaType){
+        case "Image":
+              mediaHTML = "<img src='" + media + "'>";
+              console.log(mediaHTML);
+              break
+        case "iframe":
+              mediaHTML = media;
+              break
+        default:
+              mediaHTML = "";
+      }
+
+        document.getElementById("cards").innerHTML+= `
+          <div class="card playerStyles" id="Challenge${this.index}">
+
+            <div class="card-type">
+              <div>${this.type}</div>
+            </div>
+
+            <div class="card-header">
+              <img class="card-header-img" src=${this.badgeImg}>
+              <div class="card-title-group">
+                <div class="card-title">${title}</div>
+                <div class="card-subtitle">
+                  <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
+                    <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
+                  </div>
+
+
+                          0 / 30 <img src='img/menu/menu_geniusshop.png' height='32px'>
+
+                </div>
               </div>
+            </div>
+
+            <button class="menuButton">Details</button>
+            <button class="menuButton">Showcase</button>
+            <button class="menuButton">Submit</button>
+
+            <div class="media">${mediaHTML}
+            </div>
+            <div class="card-description">
+
+            <div style="font-size:1.65em;">My Great Monologue</div>
+                  <div>
+                      <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
+
+                      <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
+                                  <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                                  <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
+                      </div>
+                  </div>
 
 
-                      0 / 30 <img src='img/menu/menu_geniusshop.png' height='32px'>
+
+
+            </div>
+            <div class="card-footer">
+              <div class="card-footer-left"></div>
+              <div class="card-footer-right">
+                  <button class="little-button">+ React</button><button class="little-button">+ Award</button>
+                  <button class="little-button">+ Share</button><button class="little-button">...</button>
+              </div>
 
             </div>
           </div>
-        </div>
-
-        <button class="menuButton">Details</button>
-        <button class="menuButton">Showcase</button>
-        <button class="menuButton">Submit</button>
-
-        <div class="media">${mediaHTML}
-        </div>
-        <div class="card-description">
-
-        <div style="font-size:1.65em;">My Great Monologue</div>
-              <div>
-                  <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
-
-                  <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
-                              <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-                              <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
-                  </div>
-              </div>
-
-
-
-
-        </div>
-        <div class="card-footer">
-          <div class="card-footer-left"></div>
-          <div class="card-footer-right">
-              <button class="little-button">+ React</button><button class="little-button">+ Award</button>
-              <button class="little-button">+ Share</button><button class="little-button">...</button>
-          </div>
-
-        </div>
-      </div>
-    `;
-
+        `;
+  }
 }
 
-/*
-
-    Ok all this makes me think notifications should be stacked by item... but what does that mean.
-    Like there are a finite number of base items.  But reactions and awards stack into them, I guess...
-
-*/
+data["Challenge"].forEach((chal,i)=>{cards.push(new card("Challenge",i))});
+eventBadges.forEach((badge,i)=>{
+   let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
+   cards.push(new card("Event",i));
+   console.log("event card created + " +  badge);
+})
