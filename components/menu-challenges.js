@@ -7,9 +7,9 @@ document.write(
       <div class="submenu-header">
       <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Showcase</span>
       </button>
-          <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Challenges</span>
+          <button class="selectButton" onclick="createCharPopup()" style="height:66px;"><span style="font-size:1.5em;display:inline;">Challenges</span>
           </button>
-          <button class="selectButton" style="height:66px;width:48%" onclick="createCharPopup()"><span style="font-size:1.5em;display:inline;">Characters</span>
+          <button class="selectButton" style="height:66px;width:48%" onclick="setCardsByMenu('Character')"><span style="font-size:1.5em;display:inline;">Characters</span>
           </button>
         <!--  <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Badges</span>
           </button>-->
@@ -103,26 +103,15 @@ function getCharacterWidget(char){
     let mychar =  data["Character"].filter(x=>x[0] == char)[0];
         badgeHolder = "";
         data["Badge"].filter(x=>x[1]==char).forEach((x,i)=>{
-          badgeHolder+='<img src="img/Badge/' + x[0] + '2.png">';
+          badgeHolder+='<img src="img/Badge/' + x[0] + '2.png" style="display:inline;width:5em;">';
           (i==5)?badgeHolder+='<br>':'';
         })
     return `
     <div class="col3 playerStyles">
       <div>
-            <img src="img/Character/${char}.png">
-            <div style="font-size:1.5em; width:100%;">
-              ${char} &nbsp &nbsp &nbsp &nbsp
-              <br>
-              <div style="font-size:.7em;padding-top:.3em;">
-              Lvl 0
-              <div class="progressBar-outer playerStyles" style="width:50%;">
-                <div class="progressBar-inner" ></div>
-              </div>
-              0 / 10 L
-              </div>
-            </div>
+        <h3>Badges</h3>
       </div>
-      <div style="padding-left:5%;padding-top:.em;font-size:.7em;width:90%">
+      <div style="padding-top:.2em;font-size:.7em;width:90%display:inline-block;">
         ${mychar[1]}
       </div>
       <div>${badgeHolder}</div>

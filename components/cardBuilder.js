@@ -16,10 +16,11 @@ var cards = [];
 var availableCards = [];
 var availableCardIterator = 0;
 
-function setCardsByMenu(menu){
+function setCardsByMenu(menu, cardFilter){
     scroller.scrollTop = 0 ;
     document.getElementById("cards").innerHTML = "";
     switch (menu){
+      case "Character":
       case "Challenge":
       case "Event":
         availableCards = shuffle(cards.filter(c=>c.type==menu));
@@ -28,8 +29,6 @@ function setCardsByMenu(menu){
         availableCards = shuffle(cards.filter(c=>c.type=="Event" ));
         availableCards.push(... shuffle(cards.filter(c=>c.type=="Challenge")));
     }
-    console.log(availableCards.length);
-
     availableCardIterator = 0;
     addCardsToFeed();
 
@@ -40,7 +39,6 @@ var scroller =   document.getElementById("cards").parentElement;
 var myTarget = undefined;
 scroller.addEventListener('scroll', function() {
   if (myTarget!==null){
-    console.log(myTarget.getBoundingClientRect().top);
     if(myTarget.getBoundingClientRect().top <= 500){
       addCardsToFeed();
     }}
@@ -52,10 +50,7 @@ function addCardsToFeed(){
         nextCard = availableCards[availableCardIterator];
         (nextCard !== undefined)? nextCard.addToFeed():availableCardIterator=i;
     }
-    console.log(nextCard);
-    console.log(document.querySelector('#'+nextCard.docId));
     (nextCard !== undefined)? myTarget = document.querySelector('#'+nextCard.docId):myTarget=undefined;
-    console.log(myTarget);
 }
 
 
@@ -72,6 +67,16 @@ class card {
     this.characterImg = "img/Character/" +this.Character + ".png";
     this.mediaType = "Image";
     this.docId = this.type + this.index;
+    if ( this.type=="Character"){
+        this.Character="";
+        this.badge=this.title;
+        this.badgeImg="img/Character/"+this.badge+".png";
+        this.characterImg="img/Character/"+this.badge+".png";
+        this.badge="";
+        this.badgeImg="";
+
+    }
+
     ( brains[difficultyLevels.indexOf(this.Difficulty)] !== undefined ) ? this.brains = brains[difficultyLevels.indexOf(this.Difficulty)]: this.brains="";
     this.cardHtml = this.makeCardHtml();
   }
@@ -132,6 +137,8 @@ class card {
               return makeCardOwnershipWidet()
           case "Event":
               return "hello world Events"
+          case "Character":
+              return getCharacterWidget(this.title)
           default:
               return "this card does not have an inner content type"
       }
@@ -150,21 +157,37 @@ class card {
           </div>`
   }
   makeCardHeader(){
-    return `<div class="card-header">
+    let headerDetails = "";
+    let subtitle = "";
+    if ( this.type == "Challenge" || this.type == "Event"){
+     headerDetails= ` <div class="" style="width:35%;display:inline-block;text-align:left">${this.Character}</div>
+       <div class="" style="width:23%;display:inline-block;">${this.brains}</div>
+       <div class="" style="width:35%;display:inline-block;text-align:right;">${this.badge.replace("_"," ")}</div>
+       `;
+     } else if (this.type == "Character"){
+       subtitle= `<div class="card-subtitle">
+               <div style="font-size:.7em;padding-top:.3em;">
+               Lvl 0
+               <div class="progressBar-outer playerStyles" style="width:50%;">
+                 <div class="progressBar-inner" ></div>
+               </div>
+               0 / 10 L
+               </div>
+               </div>`;
+      }
+       return  `<div class="card-header">
       <img class="card-header-img" src=${this.characterImg}>
 
       <div class="card-title-group">
         <div class="card-title">${this.title}</div>
-        <!--<div class="card-subtitle"></div>-->
+         ${subtitle}
       </div>
       <img class="card-header-img" src=${this.badgeImg}>
-      <div class="" style="width:35%;display:inline-block;text-align:left">${this.Character}</div>
-      <div class="" style="width:23%;display:inline-block;">${this.brains}</div>
-      <div class="" style="width:35%;display:inline-block;text-align:right;">${this.badge.replace("_"," ")}</div>
-
-
+          ${headerDetails}
     </div>
-    `;
+
+    `
+
   }
   makeCardFooter(){
     return `
@@ -179,9 +202,9 @@ class card {
   }
   makeCardProgressBar(){
     return `
-      <div class="w3-border" style="background-color:grey;width:60%;display:inline-block;border-radius:10px;">
-        <div class="w3-grey" style="height:20px;width:20%;background-color:yellow;border-radius:10px;margin:2px;"></div>
-      </div>
+          <div class="progressBar-outer playerStyles" style="width:50%;">
+            <div class="progressBar-inner" ></div>
+          </div>
             0 / ${this.maxPoints} <img src='img/menu/menu_geniusshop.png' height='32px'>`
 
   }
@@ -198,15 +221,16 @@ const brains = [
         "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'>",
         "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'>",
         "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'> <img src='img/brain.png'>",
-,
-
-
-]
+      ];
+//build challenge cards
 data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new card("Challenge",i)):'';});
+//build event cards
 eventBadges.forEach((badge,i)=>{
    let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
    cards.push(new card("Event",i));
 })
+//build character chards
+data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new card("Character",i)):'';});
 
 
 //  Utiltiies
