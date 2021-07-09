@@ -54,50 +54,36 @@ document.write(
 
 
   function createCharPopup(){
+    console.log("hello worl2d");
 
     var charpop =
 
             `
             <div class="fill">
             <div class="popup playerStyles">
-                <div style="width:100%;height:20%;">
-                  <div style="width:60%;height:100%;display:inline-block;padding:1em;padding-left:3em;">
-                    <h1>Select a Character</h1>
-                    <h4>Level up each character by completing challenges and events in their unique set of badges. Earn coin along the way the can be redeemed for prizes.</h4>
-                    </div>
-                  <div style="width:20%;height:100%;display:inline-block;text-align:right;vertical-align:middle;">
-                    <button class="menuButton" onclick="this.parentElement.parentElement.parentElement.parentElement.remove()" style="font-size:2em;">&nbspX&nbsp</button>
+                <div style="width:100%;height:15%;">
+                  <div style="margin-top:1vh;margin-left:1%;width:10%;display:inline-block;text-align:left;vertical-align:middle;">
+                    <button class="menuButton" onclick="this.parentElement.parentElement.parentElement.parentElement.remove()" style="font-size:1.5em;width:3em;">&nbspX&nbsp</button>
 
                   </div>
+                  <div style="width:60%;height:100%;display:inline-block;padding:1em;padding-left:3em;">
+                    <div style="width:50%;display:inline-block;font-size:2em;">Select a Character</div>
+                    <div style="width:48%;display:inline-block">Level up each character by completing challenges and events in their unique set of badges. Earn coin along the way the can be redeemed for prizes.</div>
+
+                    </div>
+
                 </div>
                 <div style="width:100%;height:80%;">
-                  <div class="col3 playerStyles">
-                    <div>
-                          <img src="img/Character/Artist.png">
-                          <div style="font-size:1.5em; width:100%;">
-                            Artist &nbsp &nbsp &nbsp &nbsp
-                            <br>
-                            <div style="font-size:.7em;padding-top:.3em;">
-                            Lvl 0
-                            <div class="progressBar-outer playerStyles" style="width:60%;">
-                              <div class="progressBar-inner" ></div>
-                            </div>
-                            0 / 10 L
-                            </div>
-                          </div>
-                    </div>
-                    <div style="padding-left:5%;padding-top:.em;width:90%">
-                      The Artist Knows what's up.  You better believe it.  Here are some additional words about the artist class.
-                    </div>
-                  </div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
-                  <div class="col3">Hello world</div>
+                  ${getCharacterWidget("Artist")}
+                  ${getCharacterWidget("Builder")}
+                  ${getCharacterWidget("Writer")}
+                  ${getCharacterWidget("Competer")}
+                  ${getCharacterWidget("Negotiator")}
+                  ${getCharacterWidget("Thinker")}
+                  ${getCharacterWidget("Engineer")}
+                  ${getCharacterWidget("Grower")}
+                  ${getCharacterWidget("Scientist")}
+
 
                 </div>
 
@@ -106,7 +92,41 @@ document.write(
             </div>
 
             `;
+            document.body.innerHTML+=charpop;
 
-
-                        document.getElementById("popups").innerHTML+=charpop;
       }
+
+var badgeHolder;
+
+function getCharacterWidget(char){
+
+    let mychar =  data["Character"].filter(x=>x[0] == char)[0];
+        badgeHolder = "";
+        data["Badge"].filter(x=>x[1]==char).forEach((x,i)=>{
+          badgeHolder+='<img src="img/Badge/' + x[0] + '2.png">';
+          (i==5)?badgeHolder+='<br>':'';
+        })
+    return `
+    <div class="col3 playerStyles">
+      <div>
+            <img src="img/Character/${char}.png">
+            <div style="font-size:1.5em; width:100%;">
+              ${char} &nbsp &nbsp &nbsp &nbsp
+              <br>
+              <div style="font-size:.7em;padding-top:.3em;">
+              Lvl 0
+              <div class="progressBar-outer playerStyles" style="width:50%;">
+                <div class="progressBar-inner" ></div>
+              </div>
+              0 / 10 L
+              </div>
+            </div>
+      </div>
+      <div style="padding-left:5%;padding-top:.em;font-size:.7em;width:90%">
+        ${mychar[1]}
+      </div>
+      <div>${badgeHolder}</div>
+    </div>
+    `
+
+}

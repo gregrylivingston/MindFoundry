@@ -25,10 +25,12 @@
 
 
 .col3{
-  width:31%;
-  margin:1%;
+  width:29%;
+  margin-left:1%;
+  margin-bottom:1%;
   height:31%;
   display:inline-block;
+  min-width:320px;
 }
 
 .col3>div{
@@ -36,7 +38,7 @@
   display:inline-flex;
   align-items:center;
   width:100%;
-  padding-top:.5em;
+  padding-top:.2em;
 }
 
 .col3>div>img{
