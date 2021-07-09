@@ -63,14 +63,14 @@ class card {
     this.index = index;
     //for Each column in the spreadsheet give this add a key and object pair
     data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
-    this.badgeImg = "img/Badge/"+this.badge +"4.png";
-    this.characterImg = "img/Character/" +this.Character + ".png";
+    this.badgeImg = '<img class="card-header-img" src="img/Badge/'+this.badge +'4.png">';
+    this.characterImg = '<img class="card-header-img" src="img/Character/'+this.Character +'.png">';
     this.mediaType = "Image";
     this.docId = this.type + this.index;
     if ( this.type=="Character"){
         this.Character="";
         this.badge=this.title;
-        this.badgeImg="img/Character/"+this.badge+".png";
+        this.badgeImg='<img class="card-header-img" src="img/Character/'+this.badge +'4.png">';
         this.characterImg="img/Character/"+this.badge+".png";
         this.badge="";
         this.badgeImg="";
@@ -177,13 +177,13 @@ class card {
                </div>`;
       }
        return  `<div class="card-header">
-      <img class="card-header-img" src=${this.characterImg}>
+          ${this.characterImg}
 
       <div class="card-title-group">
         <div class="card-title">${this.title}</div>
          ${subtitle}
       </div>
-      <img class="card-header-img" src=${this.badgeImg}>
+          ${this.badgeImg}
           ${headerDetails}
     </div>
 
