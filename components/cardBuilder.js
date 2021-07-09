@@ -160,10 +160,11 @@ class card {
     let headerDetails = "";
     let subtitle = "";
     if ( this.type == "Challenge" || this.type == "Event"){
-     headerDetails= ` <div class="" style="width:35%;display:inline-block;text-align:left">${this.Character}</div>
-       <div class="" style="width:23%;display:inline-block;">${this.brains}</div>
-       <div class="" style="width:35%;display:inline-block;text-align:right;">${this.badge.replace("_"," ")}</div>
-       `;
+         headerDetails= ` <div class="" style="width:18%;display:inline-block;text-align:left">${this.Character}</div>
+           <div class="" style="width:60%;display:inline-block;text-align:center">${this.brains}</div>
+           <div class="" style="width:18%;display:inline-block;text-align:right;">${this.badge.replace("_"," ")}</div>
+           `;
+          (this.type == "Challenge")?subtitle=`<div class="card-subtitle">Incomplete</div>`:'';
      } else if (this.type == "Character"){
        subtitle= `<div class="card-subtitle">
                <div style="font-size:.7em;padding-top:.3em;">
@@ -218,10 +219,10 @@ class card {
             (i==5)?badgeHolder+='<br>':'';
           })
       return `
-      <div class="col3 playerStyles">
+      <div class="card-section playerStyles">
         ${this.description}
       </div>
-      <div class="col3 playerStyles">
+      <div class="card-section playerStyles">
         <div>
           <h3>Badges</h3>
         </div>

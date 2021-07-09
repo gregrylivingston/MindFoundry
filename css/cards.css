@@ -52,9 +52,7 @@
 
 .card-header-img{
   display:inline-block;
-  height:90% !important;
-  max-height:4em;
-  padding:2.5%;
+  width:18%;
 }
 
 .card-title-group{
