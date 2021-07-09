@@ -71,7 +71,7 @@ class card {
         this.Character="";
         this.badge=this.title;
         this.badgeImg='<img class="card-header-img" src="img/Character/'+this.badge +'4.png">';
-        this.characterImg="img/Character/"+this.badge+".png";
+        this.characterImg='<img class="card-header-img" src="img/Character/'+this.badge +'.png">';
         this.badge="";
         this.badgeImg="";
 
