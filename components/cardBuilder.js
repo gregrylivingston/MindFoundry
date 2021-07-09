@@ -138,7 +138,7 @@ class card {
           case "Event":
               return "hello world Events"
           case "Character":
-              return getCharacterWidget(this.title)
+              return this.getCharacterWidget()
           default:
               return "this card does not have an inner content type"
       }
@@ -206,6 +206,29 @@ class card {
             <div class="progressBar-inner" ></div>
           </div>
             0 / ${this.maxPoints} <img src='img/menu/menu_geniusshop.png' height='32px'>`
+
+  }
+
+  getCharacterWidget(char){
+
+      let mychar =  data["Character"].filter(x=>x[0] == this.title)[0];
+          badgeHolder = "";
+          data["Badge"].filter(x=>x[1]==this.title).forEach((x,i)=>{
+            badgeHolder+='<img src="img/Badge/' + x[0] + '2.png" style="display:inline;width:5em;">';
+            (i==5)?badgeHolder+='<br>':'';
+          })
+      return `
+      <div class="col3 playerStyles">
+        ${this.description}
+      </div>
+      <div class="col3 playerStyles">
+        <div>
+          <h3>Badges</h3>
+        </div>
+        <div>${badgeHolder}</div>
+      </div>
+
+      `
 
   }
 }

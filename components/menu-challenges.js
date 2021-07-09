@@ -97,25 +97,3 @@ document.write(
       }
 
 var badgeHolder;
-
-function getCharacterWidget(char){
-
-    let mychar =  data["Character"].filter(x=>x[0] == char)[0];
-        badgeHolder = "";
-        data["Badge"].filter(x=>x[1]==char).forEach((x,i)=>{
-          badgeHolder+='<img src="img/Badge/' + x[0] + '2.png" style="display:inline;width:5em;">';
-          (i==5)?badgeHolder+='<br>':'';
-        })
-    return `
-    <div class="col3 playerStyles">
-      <div>
-        <h3>Badges</h3>
-      </div>
-      <div style="padding-top:.2em;font-size:.7em;width:90%display:inline-block;">
-        ${mychar[1]}
-      </div>
-      <div>${badgeHolder}</div>
-    </div>
-    `
-
-}
