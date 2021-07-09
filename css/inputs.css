@@ -6,9 +6,8 @@
   border:white 2px solid;
   min-height:3em;
   vertical-align:center;
-
-  background: rgba(45, 156, 219, 1);
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  background-color:rgba(0,0,0,0);
 
 }
 
@@ -32,17 +31,19 @@
   min-height:3em;
   vertical-align:top;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
-  background: rgba(45, 156, 219, 1);
   display: inline-flex;
   align-items:center;
+  background-color:rgba(0,0,0,0);
+
 }
 
 .selectButton:hover{
-  background-color:black;
 }
 
 .little-button{
   border-radius:10px;
+  background-color:rgba(0,0,0,0);
+
 }
 
 .inactive{

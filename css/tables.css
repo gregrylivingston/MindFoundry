@@ -9,11 +9,10 @@
   padding-left:0px;
   padding-right:0px;
   display:inline;
-  
+
   min-height:3em;
   vertical-align:center;
-
-  background: rgba(45, 156, 219, 1);
+  background-color:rgba(0,0,0,0);
   display: inline-flex;
   align-items:center;
 
