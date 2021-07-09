@@ -20,6 +20,9 @@
 <link rel="stylesheet" href="css/submenus.css">
 
 <script src="data/ssdata.js"></script>
+<script src="js/utility.js"></script>
+
+
 
 <script>
 
@@ -47,29 +50,10 @@ function loadMenu(menu, cardFilter = undefined){
 <div class="body outerScrollSm">
   <div class="innerScrollSm">
     <div class="leftColumn">
-        <div class="panel menu-top-left">
-          <div class="playerWidget" onclick="loadMenu('Profile')">
-            <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-            <div class="playerWidget-name"><i>Spellbound<br><div style="font-size:.5em;">Apprentice Builder</div></i></div>
-            <img class="playerWidget-image" src="img/avatar/avatar_girwil.png">
-            <img class="playerWidget-image" src="img/avatar/avatar_rocketleague.png">
-            <div class="playerWidget-level"><b>Lvl 7</b></div>
-          </div>
-          <button class="menuButton" onclick="loadMenu('Player')">
-            <img class="menuButton-image" src="img/menu/menu_usersolo.png"><br>Player
-          </button>
-          <button class="menuButton" onclick="loadMenu('Squad')">
-            <img class="menuButton-image" src="img/menu/menu_usercrew.png"><br>Squad
-          </button>
-          <button class="menuButton" onclick="loadMenu('Buddies')"><img class="menuButton-image" src="img/menu/menu_squad.png"><br>Buddies</button>
-          <button class="menuButton" onclick="loadMenu('Club')"><img class="menuButton-image" src="img/menu/menu_korora.png"><br>Club</button>
-          <button class="menuButton" onclick="loadMenu('Event')"><img class="menuButton-image" src="img/menu/menu_events.png"><br>Events</button>
-          <button class="menuButton" onclick="loadMenu('Challenge')"><img class="menuButton-image" src="img/menu/menu_challenges.png"><br>Challenges</button>
-          <button class="menuButton" onclick="loadMenu('Shop')"><img class="menuButton-image" src="img/menu/menu_geniusshop.png"><br>Shop</button>
-          <button class="menuButton" onclick="loadMenu('Settings')"><img class="menuButton-image" src="img/menu/menu_settings.png"><br>Settings</button>
-        </div>
+      <script src="components/nav.js"></script>
 
-        <div class="panel menu-bottom-left">
+
+        <div class="panel playerStyles menu-bottom-left">
           <div class="outerScrollDesktop-left">
             <div class="innerScrollDesktop">
               <div>
@@ -108,6 +92,7 @@ function loadMenu(menu, cardFilter = undefined){
 
 
 
+          <script src="js/cardManager.js"></script>
 
 <script src="components/cardBuilder.js"></script>
 

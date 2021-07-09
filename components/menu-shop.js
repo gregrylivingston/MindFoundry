@@ -4,53 +4,73 @@ document.write(
 
         <div class="submenu-title">Shop
         </div>
-        <div class="submenu-header">
 
-            <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Profile Items</span>
-            </button>
-            <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Reactions</span>
-            </button>
-            <button class="selectButton" style="height:66px;">
-              <span style="font-size:1.5em;display:inline;"></span>
-              <img class="menuButton-image" src="img/menu/menu_events.png">
-            </button>
-            <button class="selectButton" style="height:66px;"><span style="font-size:1.5em;display:inline;">Prizes</span>
-            </button>
-        </div>
 
-        <div class="submenu-rows">
-
-            <div class="filter-row">
-              <div class="filter-row-interior">
-              <img src="img/avatar/avatar_builderawil.png" height="32px">
-                Avatars
-                <div class="filter-row-right">
+            <div class="card-section playerStyles" style="width:96%;">
+              <button class="menuButton">
+                <img src="img/avatar/avatar_builderawil.png" height="32px">
                 2/10
-                </div>
-              </div>
-            </div>
-            <div class="filter-row">
-              <div class="filter-row-interior">
-                Wallpapers
-              </div>
-            </div>
-            <div class="filter-row">
-              <div class="filter-row-interior">
-                Looks
-              </div>
-            </div>
-            <div class="filter-row">
-              <div class="filter-row-interior">
-                Badges
-              </div>
-            </div>
-            <div class="filter-row">
-              <div class="filter-row-interior">
-                Taglines
-              </div>
+              </button>
+              <button class="selectButton">
+              <img src="img/avatar/avatar_builderawil.png" height="32px">
+
+                2/10
+              </button>
+              <button class="selectButton">
+                  <i>Master Builders</i>
+                2/10
+              </button>
+              <button class="selectButton">
+                <div class="playerStyles" style="width:50%;height:1em"></div>
+                2/10
+              </button>
             </div>
 
-        </div>
+
+
+            Reactions
+                <div class="card-section playerStyles" style="width:96%;">
+                  <button class="menuButton">
+                    React
+                  </button>
+                  <button class="selectButton">
+                  <img src="img/avatar/avatar_builderawil.png" height="32px">
+                    Award
+                  </button>
+
+
+                      <button class="menuButton" style="width:48%;font-size:2em;">
+                        Tokens
+                        2 <img src="img/token_league.png" style="height:1em">
+                      </button>
+
+
+                    </div>
+
+
+
+
+                    Prizes
+                        <div class="card-section playerStyles" style="width:96%;">
+                          <button class="menuButton">
+                            <img src="img/avatar/avatar_builderawil.png" height="32px">
+                            2/10
+                          </button>
+                          <button class="selectButton">
+                          <img src="img/avatar/avatar_builderawil.png" height="32px">
+
+                            2/10
+                          </button>
+                          <button class="selectButton">
+                              <i>Master Builders</i>
+                            2/10
+                          </button>
+                          <button class="selectButton">
+                            <div class="playerStyles" style="width:50%;height:1em"></div>
+                            2/10
+                          </button>
+                        </div>
+          </div>
 
   </div>
   `
