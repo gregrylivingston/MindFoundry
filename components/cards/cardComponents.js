@@ -1,54 +1,5 @@
 
-  function HCardHeader(card){
-    let headerDetails = "";
-    let subtitle = "";
-
-    switch (card.type){
-      case "Challenge":
-                subtitle= `<div class="card-subtitle">
-                        <div style="font-size:.7em;padding-top:.3em;">
-                            Skill - - - -<br>
-                            Effort - - -
-                        </div>
-                        </div>`;
-                break
-      case "Event":
-              subtitle= `<div class="card-subtitle">
-                      <div style="font-size:.7em;padding-top:.3em;">
-                          Grades 3-5<br>
-
-                      </div>
-                      </div>`;
-
-                break
-      case "Character":
-              subtitle= `<div class="card-subtitle">
-                      <div style="font-size:.7em;padding-top:.3em;">
-                      Lvl 0
-                      <div class="progressBar-outer playerStyles" style="width:50%;">
-                        <div class="progressBar-inner" ></div>
-                      </div>
-                      0 / 10 L
-                      </div>
-                      </div>`;
-              break
-      default:
-
-    }
-
-       return  `<div class="card-header">
-          ${card.badgeImg}
-
-      <div class="card-title-group">
-        <div class="card-title">${card.title}         ${subtitle}</div>
-      </div>
-        <!--  ${card.branchImg}-->
-    </div>
-
-    `
-
-  }
-
+  
 
   var badgeHolder = "";
 

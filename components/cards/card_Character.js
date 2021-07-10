@@ -12,4 +12,16 @@ class character_card extends card{
   hInnerContent(){
     return  this.hDescription() + HCardBadgesByCharacter(this)
   }
+  hSubtitle(){
+            return `<div class="card-subtitle">
+                    <div style="font-size:.7em;padding-top:.3em;">
+                    Lvl 0
+                    <div class="progressBar-outer playerStyles" style="width:50%;">
+                      <div class="progressBar-inner" ></div>
+                    </div>
+                    0 / 10 L
+                    </div>
+                    </div>`;
+
+  }
 }

@@ -21,9 +21,9 @@ class card {
 
 
             ${this.hPreTitle()}
-            ${HCardHeader(this)}
+            ${this.hHeader()}
             ${this.hInnerContent()}
-            ${this.hFooter(this)}
+            ${this.hFooter()}
         </div>
       `;
   }
@@ -81,6 +81,22 @@ class card {
                                   </div>`
 
   }
+  hHeader(card){
+       return  `<div class="card-header">
+          ${this.badgeImg}
+
+      <div class="card-title-group">
+        <div class="card-title">${this.title}         ${this.hSubtitle()}</div>
+      </div>
+        <!--  ${this.branchImg}-->
+    </div>
+
+    `
+
+  }
+  hSubtitle(){
+    return ""
+  }
 
   makeCardProgressBar(){
     return `
@@ -95,17 +111,6 @@ class card {
 
 
 
-
-
-class event_card extends card{
-  constructor(type, index){
-      super(type, index);
-      this.cardHtml = this.makeCardHtml();
-  }
-  hInnerContent(){
-    return this.hDescription()
-  }
-}
 
 
 

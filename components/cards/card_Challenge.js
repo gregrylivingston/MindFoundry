@@ -20,8 +20,16 @@ class challenge_card extends card{
                         <h1>Branch Resource: ${this.branch}</h1>
                       </div>
 
-                    
+
             `
 
+  }
+  hSubtitle(){
+              return `<div class="card-subtitle">
+                      <div style="font-size:.7em;padding-top:.3em;">
+                          Skill - - - -<br>
+                          Effort - - -
+                      </div>
+                      </div>`
   }
 }
