@@ -55,7 +55,7 @@ function HCardFooter(card){
 
               myBadges.forEach(bad=>{
                 badgeHolder+= `
-                  <button class="selectButton playerStyles">
+                  <button class="half-button playerStyles">
                     <img height="32px" src="img/Badge/${bad[0]}2.png">
                     ${bad[0]}
                   </button>
