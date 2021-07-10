@@ -44,9 +44,25 @@ function HCardFooter(card){
 
   }
 
+
+  var badgeHolder = "";
+
             function HCardBadgesByCharacter(card){
               let mychar =  data["Character"].filter(x=>x[0] == card.title)[0];
+              badgeHolder = "<div style='display:inline-block'>";
 
+              let myBadges = data["Badge"].filter(x=>x[1] == card.title);
+
+              myBadges.forEach(bad=>{
+                badgeHolder+= `
+                  <button class="selectButton playerStyles">
+                    <img height="32px" src="img/Badge/${bad[0]}2.png">
+                    ${bad[0]}
+                  </button>
+
+                `;
+              })
+              myBadges+="<div>";
             //looks right in the console, still need to construct new html out of it....
 
 /*            Object.keys(myBadges).forEach(bad=>{
@@ -54,12 +70,10 @@ function HCardFooter(card){
             })
 */
         return `
-        <div class="card-section playerStyles">
           <div>
             <h3>Badges</h3>
           </div>
           <div>${badgeHolder}</div>
-        </div>
 
         `
 

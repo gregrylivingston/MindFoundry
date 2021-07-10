@@ -22,6 +22,8 @@ function setCardsByMenu(menu, cardFilter){
     switch (menu){
       case "Character":
       case "Challenge":
+        availableCards = shuffle(cards.filter(c=>c.type=="Character"));
+        break
       case "Event":
         availableCards = shuffle(cards.filter(c=>c.type==menu));
         break
