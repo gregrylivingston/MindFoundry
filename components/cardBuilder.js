@@ -17,11 +17,10 @@ class card {
     if ( this.type=="Character"){
         this.Character="";
         this.badge=this.title;
-        this.badgeImg='<img class="card-header-img" src="img/Character/'+this.badge +'4.png">';
+        this.badgeImg='<img class="card-header-img" src="img/Character/'+this.title +'.png">';
         this.characterImg='<img style="width:1em;" src="img/Character/'+this.badge +'.png">';
         this.branchImg='';
         this.badge="";
-        this.badgeImg="";
 
     }
 
@@ -33,7 +32,7 @@ class card {
         <div class="card playerStyles" id="${this.docId}">
 
           <div class="card-type">
-            <div>${this.characterImg}${this.type}</div>
+            <div style="display:inline-flex;align-items:center;">${this.characterImg} &nbsp ${this.badge.replace("_"," ")} ${this.type}</div>
           </div>
             ${HCardHeader(this)}
             ${this.makeCardInnerContent()}

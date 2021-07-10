@@ -12,32 +12,47 @@ function HCardFooter(card){
   function HCardHeader(card){
     let headerDetails = "";
     let subtitle = "";
-    if ( card.type == "Challenge" || card.type == "Event"){
-         headerDetails= ` <div class="" style="width:18%;display:inline-block;text-align:left">${card.badge.replace("_"," ")}</div>
-           <div class="" style="width:60%;display:inline-block;text-align:center">${card.brains}</div>
-           <div class="" style="width:18%;display:inline-block;text-align:right;">${card.branch.replace("_"," ").replace("_"," ")}</div>
-           `;
-          (card.type == "Challenge")?subtitle=`<div class="card-subtitle">Incomplete</div>`:'';
-     } else if (card.type == "Character"){
-       subtitle= `<div class="card-subtitle">
-               <div style="font-size:.7em;padding-top:.3em;">
-               Lvl 0
-               <div class="progressBar-outer playerStyles" style="width:50%;">
-                 <div class="progressBar-inner" ></div>
-               </div>
-               0 / 10 L
-               </div>
-               </div>`;
-      }
+
+    switch (card.type){
+      case "Challenge":
+                subtitle= `<div class="card-subtitle">
+                        <div style="font-size:.7em;padding-top:.3em;">
+                            Skill - - - -<br>
+                            Effort - - -
+                        </div>
+                        </div>`;
+                break
+      case "Event":
+              subtitle= `<div class="card-subtitle">
+                      <div style="font-size:.7em;padding-top:.3em;">
+                          Grades 3-5<br>
+                          
+                      </div>
+                      </div>`;
+
+                break
+      case "Character":
+              subtitle= `<div class="card-subtitle">
+                      <div style="font-size:.7em;padding-top:.3em;">
+                      Lvl 0
+                      <div class="progressBar-outer playerStyles" style="width:50%;">
+                        <div class="progressBar-inner" ></div>
+                      </div>
+                      0 / 10 L
+                      </div>
+                      </div>`;
+              break
+      default:
+
+    }
+
        return  `<div class="card-header">
           ${card.badgeImg}
 
       <div class="card-title-group">
-        <div class="card-title">${card.title}</div>
-         ${subtitle}
+        <div class="card-title">${card.title}         ${subtitle}</div>
       </div>
-          ${card.branchImg}
-          ${headerDetails}
+        <!--  ${card.branchImg}-->
     </div>
 
     `
