@@ -20,9 +20,14 @@ function setCardsByMenu(menu, cardFilter){
     scroller.scrollTop = 0 ;
     document.getElementById("cards").innerHTML = "";
     switch (menu){
+      case "Club":
+      case "Squad":
+        availableCards = shuffle(cards.filter(c=>c.type=="Player"&&c.title!="Spellbound"));
+        break
       case "Character":
       case "Challenge":
-        availableCards = shuffle(cards.filter(c=>c.type=="Character"));
+        availableCards = [cards.find(c=>c.type=="Player")];
+        availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
         break
       case "Event":
         availableCards = shuffle(cards.filter(c=>c.type==menu));

@@ -54,3 +54,6 @@ data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
           });
             console.log("branch holder: ");
             console.log(myBadges);
+
+
+    data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new player_card("Player",i)):'';});
