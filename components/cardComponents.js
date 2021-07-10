@@ -1,14 +1,4 @@
-function HCardFooter(card){
-    return `
-    <div class="card-footer">
-      <div class="card-footer-left"></div>
-      <div class="card-footer-right">
-      <button class="little-button">+ React</button><button class="little-button">+ Favorite</button>
-          <button class="little-button">+ React</button><button class="little-button">+ Award</button>
-          <button class="little-button">+ Share</button><button class="little-button">...</button>
-      </div>
-    </div>`
-  }
+
   function HCardHeader(card){
     let headerDetails = "";
     let subtitle = "";
@@ -26,7 +16,7 @@ function HCardFooter(card){
               subtitle= `<div class="card-subtitle">
                       <div style="font-size:.7em;padding-top:.3em;">
                           Grades 3-5<br>
-                          
+
                       </div>
                       </div>`;
 
