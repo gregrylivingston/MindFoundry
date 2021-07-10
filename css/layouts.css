@@ -70,19 +70,19 @@ body{
 @media only screen and (min-width: 1000px){
   .leftColumn{
     position:absolute;
-    top:1vh;
+    top:4em;
     max-height:98vh;
     left:1vw;
-    width:32vw;
+    width:20em;
     display:inline-block;
     vertical-align:top;
   }
 
   .rightColumn{
     position:absolute;
-    right:1vw;
-    top:1vh;
-    width:65vw;
+    right:5vw;
+    top:5em;
+    width:60vw;
     height:98vh;
     display:inline-block;
     vertical-align:top;
