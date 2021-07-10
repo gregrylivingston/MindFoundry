@@ -1,0 +1,37 @@
+
+.playerWidget{
+  width:92%;
+  margin-left:2%;
+  margin-right:2%;
+  margin-top:.5em;
+  margin-bottom:.5em;
+  padding-left:2%;
+  padding-right:2%;
+  padding-top:.2em;
+  padding-bottom:.2em;
+  vertical-align:center;
+  border:2px solid white;
+  border-radius:10px;
+  text-align:left;
+  display:inline-flex;
+}
+.playerWidget-name {
+  display:inline-block;
+  font-size:1.5em;
+  padding-left:2%;
+  width:25%;
+}
+
+.playerWidget-level {
+  display:inline-block;
+  font-size:1.5em;
+  padding-left:5%;
+  width:15%;
+}
+
+
+.playerWidget-image{
+  object-fit:scale-down;
+  max-width:10%;
+  padding-left:5%;
+}

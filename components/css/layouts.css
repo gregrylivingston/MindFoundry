@@ -1,0 +1,132 @@
+
+.menu-top-left{
+  margin-bottom:1vh;
+}
+
+
+
+
+
+
+
+
+.menu-bottom-left>.outerScroll{
+  height:60vh;
+}
+
+body{
+  margin:0px;
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.body{
+  width:100vw;
+  text-align:center;
+}
+
+
+.background{
+  object-fit:cover !important;
+  background-color: #cccccc;
+  min-height:100vh;
+  max-height:100vh;
+  max-width:100vw;
+  margin:0px;
+  position:absolute;
+  z-index:-1;
+}
+
+
+
+@media only screen and (min-width: 200px){
+  .leftColumn{
+    max-height:95vh;
+    display:inline-block;
+    width:90vw;
+    vertical-align:top;
+  }
+  .rightColumn{
+    width:60%;
+    max-height:95vh;
+    width:90vw;
+    display:inline-block;
+    vertical-align:top;
+  }
+  .outerScrollSm{
+    height: 90vh;
+    position:relative;
+    padding:0px;
+    width:100%;
+  }
+  .innerScrollSm{
+    min-height:100%;
+    overflow:auto;
+    width:100%;
+  }
+}
+
+@media only screen and (min-width: 1000px){
+  .leftColumn{
+    position:absolute;
+    top:1vh;
+    max-height:98vh;
+    left:1vw;
+    width:32vw;
+    display:inline-block;
+    vertical-align:top;
+  }
+
+  .rightColumn{
+    position:absolute;
+    right:1vw;
+    top:1vh;
+    width:65vw;
+    height:98vh;
+    display:inline-block;
+    vertical-align:top;
+  }
+
+  .outerScrollDesktop{
+    height: 97vh;
+    position:relative;
+    padding:0px;
+    width:100%;
+    padding-left: 2vh
+
+  }
+  .outerScrollDesktop-left{
+    height: 64vh;
+    position:relative;
+    padding:0px;
+    width:100%;
+  }
+  .innerScrollDesktop{
+    max-height:100%;
+    overflow:auto;
+    width:100%;
+  }
+  .menu-bottom-left{
+    height:64vh;
+
+  }
+  .menu-top-right{
+    width:61.5vw !important;
+    height:4vh;
+    margin-bottom:2vh;
+    background-color:rgba(0,0,0,0) !important;
+    border:0pt !important;
+  }
+  .menu-top-left{
+    height:32vh;
+  }
+
+}
+
+.panel{
+  opacity:0.97;
+  border-radius:10px;
+  width:100%;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
