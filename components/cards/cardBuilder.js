@@ -23,7 +23,7 @@ class card {
             ${this.hPreTitle()}
             ${HCardHeader(this)}
             ${this.hInnerContent()}
-          ${this.hFooter(this)}
+            ${this.hFooter(this)}
         </div>
       `;
   }
@@ -52,6 +52,36 @@ class card {
             </div>
           </div>`
         }
+
+   hOwnerWidget(card){
+    return `<div class="card-section">
+    <div style="font-size:1.65em;">My Great Monologue</div>
+          <div>
+              <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
+              <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
+                          <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
+                          <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>
+              </div>
+          </div>`
+  }
+  hDescription(){ return `<div class="card-section playerStyles"><p style="padding:2%;">${this.Description}</p></div>`}
+  hShowcaseWidget(){
+              return`          <div class="card-section playerStyles" style="vertical-align:top;height:14em;">
+                                    <div style="width:50%;border-right:2px solid white;display:inline-block;height:14em;vertical-align:top;">
+                                        <div style="width:100%;height:45%;border-bottom:1px black solid">Showcase Item 1</div>
+                                        <div style="width:50%;height:41%;display:inline-block;border-right:1px black solid;">Showcase Item 2</div>
+                                        <div style="width:47%;height:41%;display:inline-block;border-left:1px black solid;">Showcase Item 3</div>
+                                        <div style="width:100%;height:15%;text-align:center;">Showcase</div>
+                                    </div>
+                                    <div style="width:45%;display:inline-block;">
+                                      Club Leaderboard<br>
+                                      <img src="img/Club/korora.png" width="80%;"><br>
+                                      Korora
+                                    </div>
+                                  </div>`
+
+  }
+
   makeCardProgressBar(){
     return `
           <div class="progressBar-outer playerStyles" style="width:50%;">
@@ -64,48 +94,7 @@ class card {
 }
 
 
-class challenge_card extends card{
-  constructor(type, index){
-      super(type, index);
-      this.cardHtml = this.makeCardHtml();
-  }
-  hInnerContent(){
-              return `
-                        ${HCardDescription(this)}
-                        ${HCardShowcaseWidget(this)}
-                      <div class="card-section playerStyles">
-                          You have not completed this challenge.
-                          <br>
-                           ${this.makeCardProgressBar()}
-                            <button class="menuButton"><h2>Submit</h2></button>
-                      </div>
-                      <div class="card-section playerStyles">
-                        Link to a resource
-                        <button>More Resources</button>
-                      </div>
-                      <div class="card-section playerStyles">
-                        <h1>${this.branch}</h1>
-                      </div>
-            `
 
-  }
-}
-
-
-class character_card extends card{
-  constructor(type, index){
-      super(type, index);
-      this.Character="";
-      this.badge=this.title;
-      this.badgeImg='<img class="card-header-img" src="img/Character/'+this.title +'.png">';
-      this.characterImg='<img style="width:1em;" src="img/Character/'+this.badge +'.png">';
-      this.branchImg='';
-      this.cardHtml = this.makeCardHtml();
-  }
-  hInnerContent(){
-    return  HCardDescription(this) + HCardBadgesByCharacter(this)
-  }
-}
 
 
 class event_card extends card{
@@ -114,13 +103,13 @@ class event_card extends card{
       this.cardHtml = this.makeCardHtml();
   }
   hInnerContent(){
-    return HCardDescription(this)
+    return this.hDescription()
   }
 }
 
 
 
-class shocase_card extends card{
+class showcase_card extends card{
   constructor(type, index){
       super(type, index);
       this.cardHtml = this.makeCardHtml();
@@ -128,6 +117,6 @@ class shocase_card extends card{
   }
 
   hInnerContent(){
-    return HCardOwnerWidget(this)
+    return hOwnerWidget(this)
   }
 }
