@@ -11,16 +11,16 @@ const brains = [
         "<img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'><img src='img/brain.png'> <img src='img/brain.png'>",
       ];
 //build challenge cards
-data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new card("Challenge",i)):'';});
+data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new challenge_card("Challenge",i)):'';});
 //build event cards
 eventBadges.forEach((badge,i)=>{
    let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
-   cards.push(new card("Event",i));
+   cards.push(new event_card("Event",i));
 })
 //build character chards
-data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new card("Character",i)):'';});
+data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new character_card("Character",i)):'';});
 
-
+//cards.push(new categoryCard("Character"));
 
 
     var branchHolder = {};
