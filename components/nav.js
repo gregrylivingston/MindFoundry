@@ -8,18 +8,20 @@ document.write(`
           <img class="playerWidget-image" src="img/avatar/avatar_rocketleague.png">
           <div class="playerWidget-level"><b>Lvl 7</b></div>
         </div>
-        <button class="menuButton playerStyles" onclick="loadMenu('Player')">
-          <img class="menuButton-image" src="img/menu/menu_usersolo.png"><br>Player
-        </button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Squad')">
-          <img class="menuButton-image" src="img/menu/menu_usercrew.png"><br>Squad
-        </button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Buddies')"><img class="menuButton-image" src="img/menu/menu_squad.png"><br>Buddies</button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Club')"><img class="menuButton-image" src="img/menu/menu_korora.png"><br>Club</button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Event')"><img class="menuButton-image" src="img/menu/menu_events.png"><br>Events</button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Challenge')"><img class="menuButton-image" src="img/menu/menu_challenges.png"><br>Challenges</button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Shop')"><img class="menuButton-image" src="img/menu/menu_geniusshop.png"><br>Genius Shop</button>
-        <button class="menuButton playerStyles" onclick="loadMenu('Settings')"><img class="menuButton-image" src="img/menu/menu_settings.png"><br>Settings</button>
+        <div style="font-size:1em;">
+          <button class="menuButton playerStyles" onclick="loadMenu('Player')">
+            <img class="menuButton-image" src="img/menu/menu_usersolo.png">Player
+          </button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Squad')">
+            <img class="menuButton-image" src="img/menu/menu_usercrew.png">Squad
+          </button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Buddies')"><img class="menuButton-image" src="img/menu/menu_squad.png">Buddies</button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Club')"><img class="menuButton-image" src="img/menu/menu_korora.png">Club</button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Challenge')"><img class="menuButton-image" src="img/menu/menu_challenges.png">Progress</button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Event')"><img class="menuButton-image" src="img/menu/menu_events.png">Events</button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Shop')"><img class="menuButton-image" src="img/menu/menu_geniusshop.png">Shop</button>
+          <button class="menuButton playerStyles" onclick="loadMenu('Settings')"><img class="menuButton-image" src="img/menu/menu_settings.png">Settings</button>
+        </div>
       </div>
 
   `)

@@ -18,7 +18,7 @@ class card {
         this.Character="";
         this.badge=this.title;
         this.badgeImg='<img class="card-header-img" src="img/Character/'+this.badge +'4.png">';
-        this.characterImg='<img style="width:2em;" src="img/Character/'+this.badge +'.png">';
+        this.characterImg='<img style="width:1em;" src="img/Character/'+this.badge +'.png">';
         this.branchImg='';
         this.badge="";
         this.badgeImg="";
