@@ -75,11 +75,11 @@
             })
 */
         return `
-          <div>
-            <h3>Badges</h3>
-          </div>
-          <div>${badgeHolder}</div>
+          <div class="card-section">
+            <div>Badges</div>
 
+            <div>${badgeHolder}</div>
+          </div>
         `
 
     }

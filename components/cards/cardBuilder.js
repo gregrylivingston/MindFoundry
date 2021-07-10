@@ -64,9 +64,9 @@ class card {
               </div>
           </div>`
   }
-  hDescription(){ return `<div class="card-section playerStyles"><p style="padding:2%;">${this.Description}</p></div>`}
+  hDescription(){ return `<div class="card-section playerStyles-section">${this.Description}</div>`}
   hShowcaseWidget(){
-              return`          <div class="card-section playerStyles" style="vertical-align:top;height:14em;">
+              return`          <div class="card-section playerStyles2" style="vertical-align:top;height:14em;">
                                     <div style="width:50%;border-right:2px solid white;display:inline-block;height:14em;vertical-align:top;">
                                         <div style="width:100%;height:45%;border-bottom:1px black solid">Showcase Item 1</div>
                                         <div style="width:50%;height:41%;display:inline-block;border-right:1px black solid;">Showcase Item 2</div>
