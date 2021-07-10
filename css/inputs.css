@@ -1,4 +1,4 @@
-.menuButton, input, select, .avatarButton{
+.menuButton, input, select{
   display:inline-flex;
   width:23%;
   margin-left:0.5%;
