@@ -5,10 +5,10 @@ document.write(`
 
   <div class="playerWidget playerStyles" onclick="loadMenu('Profile')" style="margin-right:15em;">
     <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-    <div class="playerWidget-name"><i>Spellbound<br><div style="font-size:.5em;">Apprentice Builder</div></i></div>
+    <div class="playerWidget-name"><i>Spellbound</i></div>
     <img class="playerWidget-image" src="img/avatar/avatar_girwil.png">
     <img class="playerWidget-image" src="img/avatar/avatar_rocketleague.png">
-    <div class="playerWidget-level"><b>Lvl 7</b></div>
+    <div class="playerWidget-level playerStyles"><b>7</b></div>
   </div>
 
   <div style="width:50%;display:inline-flex;">
