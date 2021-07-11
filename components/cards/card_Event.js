@@ -12,8 +12,8 @@ class event_card extends card{
   }
   hSubtitle(){
     return `<div class="card-subtitle">
-            <div style="font-size:.7em;padding-top:.3em;">
-                ${this.Grade}<br>
+            <div style="font-size:.9em;padding-top:.3em;">
+                Grades ${this.Grade}
 
             </div>
             </div>`;

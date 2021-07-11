@@ -66,12 +66,20 @@ class card {
   }
   hDescription(){ return `<div class="card-section playerStyles-section">${this.Description}</div>`}
   hShowcaseWidget(){
-              return`          <div class="card-section playerStyles2" style="vertical-align:top;height:14em;">
+              return`          <div class="card-section playerStyles2" style="vertical-align:top;">
                                         <h3>Showcase</h3>
-                                        <div style="width:100%;height:45%;border-bottom:1px black solid">Showcase Item 1</div>
-                                        <div style="width:50%;height:41%;display:inline-block;border-right:1px black solid;">Showcase Item 2</div>
-                                        <div style="width:47%;height:41%;display:inline-block;border-left:1px black solid;">Showcase Item 3</div>
-                                        <div style="width:100%;height:15%;text-align:center;">Showcase</div>
+                                        <div style="width:100%;">
+                                          <img src="img/Showcase/landscape_beach.jpeg" style="max-width:100%;object-fit:cover;">
+                                        </div>
+                                        <div style="width:49%;display:inline-block;">
+                                          <img src="img/Showcase/music_performance.jpg" style="width:100%;object-fit:cover;">
+                                        </div>
+                                        <div style="width:49%;display:inline-block;">
+                                          <img src="img/Showcase/music_studio.jpg" style="width:100%;">
+                                        </div>
+                                        <div style="width:100%;text-align:center;">
+                                          <p><button class="selectButton">Showcase</button></p>
+                                        </div>
                                   </div>`
 
   }
