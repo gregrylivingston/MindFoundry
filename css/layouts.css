@@ -18,8 +18,10 @@ body{
   margin:0px;
   font-family: PT Sans;
   font-style: normal;
-  font-weight: bold;
+/*  font-weight: bold;*/
 }
+
+.bold{font-weight:bold;}
 
 .body{
   width:100vw;

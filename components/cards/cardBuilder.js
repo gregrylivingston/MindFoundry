@@ -67,17 +67,11 @@ class card {
   hDescription(){ return `<div class="card-section playerStyles-section">${this.Description}</div>`}
   hShowcaseWidget(){
               return`          <div class="card-section playerStyles2" style="vertical-align:top;height:14em;">
-                                    <div style="width:50%;border-right:2px solid white;display:inline-block;height:14em;vertical-align:top;">
+                                        <h3>Showcase</h3>
                                         <div style="width:100%;height:45%;border-bottom:1px black solid">Showcase Item 1</div>
                                         <div style="width:50%;height:41%;display:inline-block;border-right:1px black solid;">Showcase Item 2</div>
                                         <div style="width:47%;height:41%;display:inline-block;border-left:1px black solid;">Showcase Item 3</div>
                                         <div style="width:100%;height:15%;text-align:center;">Showcase</div>
-                                    </div>
-                                    <div style="width:45%;display:inline-block;">
-                                      Club Leaderboard<br>
-                                      <img src="img/Club/korora.png" width="80%;"><br>
-                                      Korora
-                                    </div>
                                   </div>`
 
   }
@@ -97,7 +91,19 @@ class card {
   hSubtitle(){
     return ""
   }
+  hLeaderboardSolo(){
+      return `
+        <div class="card-section">
+          <h3>Player Leaderboard</h3>
+        </div>
+          `
+  }
+  hLeaderboardClub(){
 
+  }
+  hLeaderboardSquad(){
+
+  }
   makeCardProgressBar(){
     return `
           <div class="progressBar-outer playerStyles" style="width:50%;">
@@ -108,3 +114,5 @@ class card {
   }
 
 }
+
+var badgeHolder;

@@ -26,35 +26,20 @@ class player_card extends card{
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
   hInnerContent(){
-
-
-    return this.hShowcaseWidget()
-
+            return           this.hPlayerProgress() +
+            this.hPlayerFocus() +
+            this.hShowcaseWidget() +
+            this.hReactFeed() +
+            this.hTrophyFeed()
   }
   hPreTitle(){  return `
         <div class="card-type">
           <div style="display:inline-flex;align-items:center;">
-              ${this.title} ${this.type}
+              Player Card
           </div>
         </div>`
       }
 
-  hShowcaseWidget(){
-              return`          <div class="card-section playerStyles2" style="vertical-align:top;height:14em;">
-                                    <div style="width:50%;border-right:2px solid white;display:inline-block;height:14em;vertical-align:top;">
-                                        <div style="width:100%;height:45%;border-bottom:1px black solid">Showcase Item 1</div>
-                                        <div style="width:50%;height:41%;display:inline-block;border-right:1px black solid;">Showcase Item 2</div>
-                                        <div style="width:47%;height:41%;display:inline-block;border-left:1px black solid;">Showcase Item 3</div>
-                                        <div style="width:100%;height:15%;text-align:center;">Showcase</div>
-                                    </div>
-                                    <div style="width:45%;display:inline-block;">
-                                      Club Leaderboard<br>
-                                      <img src="img/Club/korora.png" width="80%;"><br>
-                                      Korora
-                                    </div>
-                                  </div>`
-
-  }
   hHeader(card){
        return  `<div class="card-header">
           ${this.badgeImg}
@@ -69,13 +54,67 @@ class player_card extends card{
 
   }
 
+  hReactFeed(){
+     return `
+        <div class="card-section">
+            <h3>Recent Reactions</h3>
+            <button class="half-button">
+                Yup
+            </button>
+            <button class="half-button">
+                +1
+            </button>
+            <button class="half-button">
+                Yeehaw
+            </button>
+            <button class="half-button">
+                Brew
+            </button>
+            <p><button class="topnav-button playerStyles">More Reactions</button></p>
+        </div>
+     `
+  }
 
-  makeCardProgressBar(){
+  hTrophyFeed(){
     return `
-          <div class="progressBar-outer playerStyles" style="width:50%;">
-            <div class="progressBar-inner" ></div>
-          </div>
-            0 / ${this.maxPoints} <img src='img/menu/menu_geniusshop.png' height='32px'>`
+       <div class="card-section">
+           <h3>Recent Trophies</h3>
+           <button class="half-button">
+               Yup
+           </button>
+           <button class="half-button">
+               +1
+           </button>
+           <button class="half-button">
+               Yeehaw
+           </button>
+           <button class="half-button">
+               Brew
+           </button>
+           <p><button class="topnav-button playerStyles">More Trophies</button></p>
+
+       </div>
+    `
 
   }
+
+  hPlayerProgress(){
+    return `
+        <div class="card-section">
+          <h3>Player Progress</h3>
+        </div>
+        <div class="card-section">
+          <h3>Top Character   |   Top Badges</h3>
+        </div>
+    `
+  }
+
+  hPlayerFocus(){
+      return `
+        <div class="card-section">
+          <h3>Focus Badges</h3>
+        </div>
+      `
+  }
+
 }
