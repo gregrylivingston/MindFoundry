@@ -33,12 +33,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ed6df', end
 }
 
 .card-header{
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3cf4fd+0,1ed6df+100 */
-background: #3cf4fd; /* Old browsers */
-background: -moz-linear-gradient(left,  #3cf4fd 0%, #1ed6df 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #3cf4fd 0%,#1ed6df 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #3cf4fd 0%,#1ed6df 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3cf4fd', endColorstr='#1ed6df',GradientType=1 ); /* IE6-9 */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff1888+0,e1006a+100 */
+  background: #ff1888; /* Old browsers */
+  background: -moz-linear-gradient(left,  #ff1888 0%, #e1006a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #ff1888 0%,#e1006a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #ff1888 0%,#e1006a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1888', endColorstr='#e1006a',GradientType=1 ); /* IE6-9 */
 
 }
 
