@@ -2,12 +2,12 @@
     border-radius:10px;
     border:2px solid white;
 
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5fc1f6+0,3caaea+100 */
-background: #5fc1f6; /* Old browsers */
-background: -moz-linear-gradient(left,  #5fc1f6 0%, #3caaea 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #5fc1f6 0%,#3caaea 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #5fc1f6 0%,#3caaea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc1f6', endColorstr='#3caaea',GradientType=1 ); /* IE6-9 */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1ed6df+0,00b8c1+100 */
+  background: #1ed6df; /* Old browsers */
+  background: -moz-linear-gradient(left,  #1ed6df 0%, #00b8c1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #1ed6df 0%,#00b8c1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #1ed6df 0%,#00b8c1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ed6df', endColorstr='#00b8c1',GradientType=1 ); /* IE6-9 */
 
 }
 
@@ -20,16 +20,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc1f6', end
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
 
 padding:2%;
-}
-
-.card{
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1ed6df+0,00b8c1+100 */
-background: #1ed6df; /* Old browsers */
-background: -moz-linear-gradient(left,  #1ed6df 0%, #00b8c1 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #1ed6df 0%,#00b8c1 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #1ed6df 0%,#00b8c1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ed6df', endColorstr='#00b8c1',GradientType=1 ); /* IE6-9 */
-
 }
 
 .card-header{
