@@ -11,6 +11,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc1f6', end
 
 }
 
+.playerStylesBackground{
+
+
+
+}
+
+.playerStylesButton{
+  
+}
+
 .topnav-button, .avatarButton , .menuButton{
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bee1f0+0,96dcff+100 */
   background: #bee1f0; /* Old browsers */
