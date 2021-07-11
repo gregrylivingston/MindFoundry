@@ -1,21 +1,17 @@
 
-class player_card extends card{
+class shop_card extends card{
 
   constructor(type, index) {
     super(type,index);
     //for Each column in the spreadsheet give this add a key and object pair
     data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
     this.badgeImg = '<img class="card-header-img" src="'+this.badge +'">';
-    this.characterImg = '<img style="height:1em;" src="'+this.profileBadgeLeft +'">';
-    this.branchImg ='<img class="card-header-img" src="'+this.profileBadgeRight +'">';
     this.docId = this.type + this.index;
     this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){
       return  `
         <div class="card playerStyles" id="${this.docId}">
-
-
             ${this.hPreTitle()}
             ${this.hHeader()}
             ${this.hInnerContent()}
@@ -26,17 +22,44 @@ class player_card extends card{
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
   hInnerContent(){
-    return this.hShowcaseWidget()
+    return this.hDescription() + this.hFakeShopWidget()
   }
   hPreTitle(){  return `
         <div class="card-type">
           <div style="display:inline-flex;align-items:center;">
-              Player Card
+              ${this.title} Shop
           </div>
         </div>`
       }
+  hFakeShopWidget(){
+      return `
+        <div class="card-section">
+          <button class="half-button">
+              <img height="30px" src="img/brain.png">
+              2 <img height="30px;" src="img/coin.png">
+          </button>
+          <button class="half-button">
+              <img height="30px" src="img/brain.png">
+              2 <img height="30px;" src="img/coin.png">
+          </button>
+          <button class="half-button">
+              <img height="30px" src="img/brain.png">
+              2 <img height="30px;" src="img/coin.png">
+          </button>
+          <button class="half-button">
+              <img height="30px" src="img/brain.png">
+              2 <img height="30px;" src="img/coin.png">
+          </button>
 
-  hHeader(card){
+              <p>${this.title} Collected: 2/17
+              <br><br>
+              <button class="menuButton">View All</button></p>
+
+        </div>
+      `;
+
+  }
+  hHeader(){
        return  `<div class="card-header">
           ${this.badgeImg}
 

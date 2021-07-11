@@ -11,7 +11,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc1f6', end
 
 }
 
-.topnav-button, .avatarButton, .card-section>p , .menuButton{
+.topnav-button, .avatarButton, .card-section>p , .menuButton {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bee1f0+0,96dcff+100 */
   background: #bee1f0; /* Old browsers */
   background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
@@ -21,27 +21,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc1f6', end
 
 padding:2%;
 }
-
-.card{
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1ed6df+0,00b8c1+100 */
-background: #1ed6df; /* Old browsers */
-background: -moz-linear-gradient(left,  #1ed6df 0%, #00b8c1 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #1ed6df 0%,#00b8c1 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #1ed6df 0%,#00b8c1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ed6df', endColorstr='#00b8c1',GradientType=1 ); /* IE6-9 */
-
-}
-
-.card-header{
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3cf4fd+0,1ed6df+100 */
-background: #3cf4fd; /* Old browsers */
-background: -moz-linear-gradient(left,  #3cf4fd 0%, #1ed6df 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #3cf4fd 0%,#1ed6df 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #3cf4fd 0%,#1ed6df 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3cf4fd', endColorstr='#1ed6df',GradientType=1 ); /* IE6-9 */
-
-}
-
 
 .avatarButton{
   display:inline-flex;

@@ -102,6 +102,12 @@
   border:0px;
 }
 
+.card-section>p{
+  margin-left:20%;
+  margin-right:20%;
+  margin-top:2em;
+  margin-bottom:2em;
+}
 .card-footer{
   width:96%;
   margin-left:2%;

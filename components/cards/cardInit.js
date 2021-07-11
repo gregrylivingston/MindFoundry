@@ -57,3 +57,4 @@ data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
 
 
     data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new player_card("Player",i)):'';});
+    data["Shop"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new shop_card("Shop",i)):'';});

@@ -7,7 +7,7 @@ class challenge_card extends card{
   hInnerContent(){
               return `
                         ${this.hDescription()}
-                        ${this.hShowcaseWidget(this)}
+                        ${this.hShowcaseWidget()}
                       <div class="card-section playerStyles2">
                           You have not completed this challenge.
                           <br>

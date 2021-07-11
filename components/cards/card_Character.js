@@ -12,6 +12,12 @@ class character_card extends card{
   hInnerContent(){
     return  this.hDescription() + HCardBadgesByCharacter(this)
   }
+  hcharacterStatus(){
+
+  }
+  htargetBadge(){
+    
+  }
   hSubtitle(){
             return `<div class="card-subtitle">
                         <div style="font-size:.7em;padding-top:.3em;">
