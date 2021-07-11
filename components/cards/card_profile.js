@@ -117,4 +117,83 @@ class player_card extends card{
       `
   }
 
+  hShowcaseWidget(){
+
+              let playerKey = data["ShowcaseKey"].indexOf("Player");
+              let titleKey = data["ShowcaseKey"].indexOf("title");
+              let challengeKey = data["ShowcaseKey"].indexOf("Challenge");
+              let srcKey = data["ShowcaseKey"].indexOf("src");
+              var imgSources = data["Showcase"].filter(x=>x[playerKey]==this.title);
+              let html="";
+              let htmlAppend="";
+
+              if (  imgSources[0] !== undefined ){
+                let img1 = ( imgSources[0] !== undefined )? imgSources[0][srcKey]: '';
+                let img1Title = ( imgSources[0] !== undefined )? imgSources[0][titleKey]: '';
+                let img1Chal = ( imgSources[0] !== undefined )? imgSources[0][challengeKey]: '';
+                html+=` <div class="card-section playerStyles2" style="vertical-align:top;">
+                          <div style="width:100%;text-align:center;" class="playerStylesButtonHighlight selectButton">
+                              ${this.title}'s Showcase ----  ${imgSources.length} <img src="img/menu/menu_challenges.png"> &nbsp 4 <img src="img/menu/react.png"> &nbsp 2 <img src="img/menu/award.png">
+                              </div>
+
+                              <div style="width:100%;">
+
+                              <div class="media">
+                                <div class="layer">
+                                  <p>${img1Title}</p>
+                                </div>
+                                <div class="bottom-layer">
+                                  <p>${img1Chal}</p>
+                                </div>
+                                <img src="${img1}" style="max-width:100%;object-fit:cover;">
+                              </div>
+                          </div>
+                                          `
+                        htmlAppend="</div>";
+              }
+              if ( imgSources[2] !== undefined){
+                  let img2 = ( imgSources[1] !== undefined )? imgSources[1][srcKey]: '';
+
+                  let img2Title = ( imgSources[1] !== undefined )? imgSources[1][titleKey]: '';
+                  let img2Chal = ( imgSources[1] !== undefined )? imgSources[1][challengeKey]: '';
+                  let img3 = ( imgSources[1] !== undefined )? imgSources[1][srcKey]: '';
+
+                  let img3Title = ( imgSources[2] !== undefined )? imgSources[2][titleKey]: '';
+                  let img3Chal = ( imgSources[2] !== undefined )? imgSources[2][challengeKey]: '';
+                  html+=`    <div style="width:49%;display:inline-block;">
+
+
+                      <div class="media">
+                        <div class="layer">
+                          <p>${img2Title}</p>
+                        </div>
+                        <div class="bottom-layer">
+                          <p>${img2Chal}</p>
+                        </div>
+                        <img src="${img2}" style="max-width:100%;object-fit:cover;">
+                      </div>
+
+                      </div>
+
+                      <div style="width:49%;display:inline-block;">
+
+
+                      <div class="media">
+                        <div class="layer">
+                          <p>${img3Title}</p>
+                        </div>
+                        <div class="bottom-layer">
+                          <p>${img3Chal}</p>
+                        </div>
+                        <img src="${img3}" style="max-width:100%;object-fit:cover;">
+                      </div>
+
+
+                      </div>`;
+              }
+              html+=htmlAppend;
+
+              return html
+
+  }
 }
