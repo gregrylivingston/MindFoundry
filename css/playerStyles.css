@@ -11,7 +11,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc1f6', end
 
 }
 
-.topnav-button, .avatarButton, .card-section>p , .menuButton{
+.topnav-button, .avatarButton , .menuButton{
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bee1f0+0,96dcff+100 */
   background: #bee1f0; /* Old browsers */
   background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */

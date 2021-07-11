@@ -108,3 +108,5 @@ class card {
   }
 
 }
+
+var badgeHolder;
