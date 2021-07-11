@@ -1,7 +1,7 @@
 
 // ** Initialize Cards
 
-const eventBadges = ["Mind Foundry Heroes","Minecraft","Rocket League"];
+const eventBadges = ["Heroes","Minecraft_Masters","Rocket_League_Juniors","Minecraft_Juniors","Rocket_League_Masters"];
 const difficultyLevels = ["Very Easy","Easy","Medium","Hard","Very Hard"];
 const brains = [
         "<img src='img/brain.png'>",
@@ -14,8 +14,12 @@ const brains = [
 data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new challenge_card("Challenge",i)):'';});
 //build event cards
 eventBadges.forEach((badge,i)=>{
-   let eventsInBadge = data["Event"].filter(b=>b[1]==badge);
-   cards.push(new event_card("Event",i));
+   let eventsInBadge = data["Event"].filter(b=>b[2]==badge);
+   console.log(badge);
+   let card = new event_card("Event",i , eventsInBadge);
+       card.title = badge;
+       card.cardHtml = card.makeCardHtml();
+   cards.push(card);
 })
 //build character chards
 data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new character_card("Character",i)):'';});
