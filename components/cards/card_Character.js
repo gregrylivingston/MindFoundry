@@ -16,7 +16,7 @@ class character_card extends card{
 
   }
   htargetBadge(){
-    
+
   }
   hSubtitle(){
             return `<div class="card-subtitle">

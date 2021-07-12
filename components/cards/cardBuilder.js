@@ -53,11 +53,15 @@ class card {
           </div>`
         }
 
-   hOwnerWidget(card){
+   hOwnerWidget(){
     return `<div class="card-section">
-    <div style="font-size:1.65em;">My Great Monologue</div>
+    <div style="font-size:1.65em;">${this.title}</div>
           <div>
-              <button class="little-button">3 <img src='img/menu/menu_geniusshop.png' height='32px'> | :) | Emoticons</button>
+              <button class="little-button">
+                  3 <img src='img/menu/menu_geniusshop.png' height='32px'>
+                  2 <img src='img/menu/react.png' height='32px'>
+                  1 <img src='img/menu/award.png' height='32px'>
+              </button>
               <div class="playerWidget" onclick="loadMenu('mmenu')" style="width:10em !important;">
                           <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
                           <div class="playerWidget-name" style="font-size:.75em;width:80%">Spellbound on 09/27/21</div>

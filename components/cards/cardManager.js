@@ -20,6 +20,9 @@ function setCardsByMenu(menu, cardFilter){
     scroller.scrollTop = 0 ;
     document.getElementById("cards").innerHTML = "";
     switch (menu){
+      case "Showcase":
+        availableCards = shuffle(cards.filter(c=>c.type=="Showcase"));
+        break
       case "Shop":
         availableCards = shuffle(cards.filter(c=>c.type=="Shop"));
         break

@@ -42,6 +42,11 @@ class player_card extends card{
 
   hHeader(card){
        return  `<div class="card-header">
+       ${widget_player( data["Player"][this.index])}
+
+
+        </div>
+       `/*
           ${this.badgeImg}
 
       <div class="card-title-group">
@@ -52,7 +57,7 @@ class player_card extends card{
     ${widget_player( data["Player"][this.index])}
 
     `
-
+*/
   }
 
   hReactFeed(){
@@ -151,7 +156,10 @@ class player_card extends card{
                               </div>
                           </div>
                                           `
-                        htmlAppend="</div>";
+                        htmlAppend=
+                        `<button class="topnav-button playerStyles" onclick="loadMenu('Showcase')">
+                          View Showcase
+                        </div>`;
               }
               if ( imgSources[2] !== undefined){
                   let img2 = ( imgSources[1] !== undefined )? imgSources[1][srcKey]: '';
