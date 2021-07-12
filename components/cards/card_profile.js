@@ -28,9 +28,7 @@ class player_card extends card{
   hInnerContent(){
             return           this.hPlayerProgress() +
             this.hPlayerFocus() +
-            this.hShowcaseWidget() +
-            this.hReactFeed() +
-            this.hTrophyFeed()
+            this.hShowcaseWidget() 
   }
   hPreTitle(){  return `
         <div class="card-type">
@@ -58,50 +56,6 @@ class player_card extends card{
 
     `
 */
-  }
-
-  hReactFeed(){
-     return `
-        <div class="card-section">
-            <h3>Recent Reactions</h3>
-            <button class="half-button">
-                Yup
-            </button>
-            <button class="half-button">
-                +1
-            </button>
-            <button class="half-button">
-                Yeehaw
-            </button>
-            <button class="half-button">
-                Brew
-            </button>
-            <p><button class="topnav-button playerStyles">More Reactions</button></p>
-        </div>
-     `
-  }
-
-  hTrophyFeed(){
-    return `
-       <div class="card-section">
-           <h3>Recent Trophies</h3>
-           <button class="half-button">
-               Yup
-           </button>
-           <button class="half-button">
-               +1
-           </button>
-           <button class="half-button">
-               Yeehaw
-           </button>
-           <button class="half-button">
-               Brew
-           </button>
-           <p><button class="topnav-button playerStyles">More Trophies</button></p>
-
-       </div>
-    `
-
   }
 
   hPlayerProgress(){

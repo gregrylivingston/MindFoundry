@@ -37,4 +37,34 @@ class showcase_card extends card{
                       </div>
                       </div>`
   }
+  hOwnerWidget(){
+   return `<div class="card-section">
+   <div style="font-size:1.65em;">
+       ${this.title}
+   </div>
+         <div>
+             ${widget_playerByName(this.Player)}
+         </div>
+         <div>
+              Challenge Coin:
+              ${this.makeCardProgressBar()}
+         </div>
+
+         `
+ }
+ hFooter(){
+         return `
+         <div class="card-footer">
+           <div class="card-footer-left">
+                 <button class="topnav-button playerStyles"><img src="img/menu/favorite_unchecked.png"></button>
+                 <button class="topnav-button playerStyles">3<img src="img/menu/react.png"></button>
+                 <button class="topnav-button playerStyles">2<img src="img/menu/award.png"></button>
+
+                 </div>
+           <div class="card-footer-right">
+             <button class="topnav-button playerStyles"><img src="img/menu/share.png"></button>
+             <button class="topnav-button playerStyles">...</button>
+           </div>
+         </div>`
+       }
 }

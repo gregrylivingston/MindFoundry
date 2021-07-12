@@ -64,7 +64,7 @@ class card {
                   2 <img src='img/menu/react.png' height='32px'>
                   1 <img src='img/menu/award.png' height='32px'>
               </button>
-              ${widget_player(data["Player"][0])}
+              ${widget_playerByName(this.Player)}
           </div>`
   }
   hDescription(){ return `<div class="card-section playerStyles-section">${this.Description}</div>`}
@@ -115,12 +115,12 @@ class card {
   hLeaderboardSquad(){
 
   }
-  makeCardProgressBar(){
+  makeCardProgressBar(earned = 0, max = 10){
     return `
-          <div class="progressBar-outer playerStyles" style="width:50%;">
+          <div class="progressBar-outer playerStyles" style="width:40%;">
             <div class="progressBar-inner" ></div>
           </div>
-            0 / ${this.maxPoints} <img src='img/menu/menu_geniusshop.png' height='32px'>`
+            ${earned} / ${max} <img src='img/menu/menu_geniusshop.png' height='32px'>`
 
   }
 

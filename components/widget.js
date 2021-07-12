@@ -3,8 +3,6 @@
 
 
 function widget_player(player){
-    console.log("player");
-    console.log(player);
       return `
         <div class="playerWidget " onclick="loadMenu('Challenge')">
           <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("badge")]}">
@@ -15,4 +13,11 @@ function widget_player(player){
         </div>
       `
 
+}
+
+function widget_playerByName(player){
+      console.log(player);
+      console.log(data["Player"].find(x=>x[0]==player));
+      console.log( data["Player"][data["Player"][0].indexOf(player)]);
+      return  widget_player(data["Player"].find(x=>x[0]==player));
 }
