@@ -70,4 +70,11 @@ data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
     data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new showcase_card("Showcase",i)):'';});
 
 
+
+
+
+
+    document.getElementById("nav-player").innerHTML = widget_player(data["Player"][0]);
+
+
 }

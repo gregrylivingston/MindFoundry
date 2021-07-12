@@ -34,7 +34,6 @@ function loadHandler() {
     imagesLoaded++;
     if (imagesLoaded === images.length) {
         document.getElementById("loader").innerHTML = imagesLoaded + "/" + images.length;
-        init();
     }
 }
 

@@ -2,7 +2,7 @@ document.write(`
 
 <div class="topnav playerStyles">
 
-<div class="nav-left"  onclick="loadMenu('Challenge')">
+<div class="nav-left"  id="nav-player" onclick="loadMenu('Challenge')">
   ${widget_player(data["Player"][0])}
 </div>
   <div class="nav-right">

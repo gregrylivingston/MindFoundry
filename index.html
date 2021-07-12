@@ -44,6 +44,10 @@ function loadMenu(menu, cardFilter = undefined){
 <body>
 
 
+
+
+
+
     <div id="loadingScreen">
         Loading...
         <div id="loader"></div>
@@ -58,44 +62,33 @@ function loadMenu(menu, cardFilter = undefined){
   data["Player"].forEach(x=>{
       document.getElementById("user_options").innerHTML+=`
           <div class="card-section" style="max-height:2em;">
-          <button>${widget_player(x)}</button>
+          <button onclick="intialize('${x[0]}')">${widget_player(x)}</button>
           </div>
       `;
   });
 
+  function intialize(p){
+    console.log("init player: " + p);
+    data["Player"].unshift( data["Player"].find(x=>x[0]==p) );
+    document.getElementById("loadingScreen").remove();
+    init();
+    
+  }
 </script>
 
-    <img class="background" src="img/tournament_hero.jpeg">
-    <script src="components/topnav.js"></script>
-">
-    <div class="leftColumn">
 
 
-        <div class="panel playerStyles menu-bottom-left">
-          <div class="outerScrollDesktop-left">
-            <div class="innerScrollDesktop">
-              <div>
+      <img class="background" src="img/tournament_hero.jpeg">
+      <script src="components/topnav.js"></script>
 
+
+      <div class="rightColumn">
+            <div class="outerScrollDesktop">
+              <div class="innerScrollDesktop">
+                <div id="cards" style="height:1500px;">
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="rightColumn">
-
-
-          <div class="outerScrollDesktop">
-            <div class="innerScrollDesktop">
-              <div id="cards" style="height:1500px;">
-
-
-              </div>
-            </div>
-          </div>
-
-
-
 
 
 
