@@ -2,15 +2,9 @@ document.write(`
 
 <div class="topnav playerStyles">
 
-
-  <div class="playerWidget playerStyles" onclick="loadMenu('Challenge')" style="margin-right:15em;">
-    <img class="playerWidget-image" src="img/avatar/avatar_cuteawil.png">
-    <div class="playerWidget-name"><i>Spellbound</i></div>
-    <img class="playerWidget-image" src="img/avatar/avatar_girwil.png">
-    <img class="playerWidget-image" src="img/avatar/avatar_rocketleague.png">
-    <div class="playerWidget-level playerStyles"><b>7</b></div>
-  </div>
-
+<div style="max-width:30em;">
+  ${widget_player(data["Player"][0])}
+</div>
   <div style="width:50%;display:inline-flex;">
 
   <button class="topnav-button playerStyles" onclick="loadMenu('Squad')">
