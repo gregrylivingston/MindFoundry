@@ -45,6 +45,25 @@ function loadMenu(menu, cardFilter = undefined){
 
 <body>
 
+
+  <style>
+      #loadingScreen{
+          position:absolute;
+          top:0vh;
+          height:100vh;
+          left:0vw;
+          width:100vw;
+          background-color:white;
+          z-index:1000;
+
+      }
+  </style>
+    <div id="loadingScreen">
+        Loading...
+        <div id="loader"></div>
+
+    </div>
+
     <img class="background" src="img/tournament_hero.jpeg">
     <script src="components/topnav.js"></script>
 ">

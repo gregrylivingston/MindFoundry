@@ -34,7 +34,8 @@ function loadHandler() {
     imagesLoaded++;
     console.log("Loading...");
     if (imagesLoaded === images.length) {
-      console.log("All assets loaded");
+        document.getElementById("loader").innerHTML = imagesLoaded + "/" + images.length;
+        init();
     }
 }
 
@@ -48,6 +49,20 @@ const preloadImages = [
   "img/token_league.png",
   "img/token_tourney.png",
   "img/tournament_hero.jpeg",
+  "img/menu/award.png",
+  "img/menu/challenge_complete.png",
+  "img/menu/challenge.png",
+  "img/menu/favorite_checked.png",
+  "img/menu/favorite_unchecked.png",
+  "img/menu/menu_events.png",
+  "img/menu/menu_geniusshop.png",
+  "img/menu/menu_korora.png",
+  "img/menu/menu_settings.png",
+  "img/menu/menu_squad.png",
+  "img/menu/menu_usercrew.png",
+  "img/menu/menu_usersolo.png",
+  "img/menu/react.png",
+  "img/menu/share.png",
   "img/Badge/Acting1.png",
   "img/Badge/Acting2.png",
   "img/Badge/Acting3.png",

@@ -1,6 +1,12 @@
 
 // ** Initialize Cards
 
+
+function init (){
+
+
+
+
 const eventBadges = ["Heroes","Minecraft_Masters","Rocket_League_Juniors","Minecraft_Juniors","Rocket_League_Masters"];
 const difficultyLevels = ["Very Easy","Easy","Medium","Hard","Very Hard"];
 const brains = [
@@ -65,3 +71,8 @@ data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
 
     data["Shop"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new shop_card("Shop",i)):'';});
     data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new showcase_card("Showcase",i)):'';});
+
+    console.log("Init Complete");
+    window.alert("load complete");
+    document.getElementById("loadingScreen").remove();
+}
