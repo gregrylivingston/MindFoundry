@@ -38,10 +38,11 @@ class challengeGuide_card extends card{
       }
 
   hHeader(card){
+      var imgSources = data["Showcase"].filter(x=>x[this.index]==this.title);
+
        return  `<div class="card-header">
-       ${widget_player( data["Player"][this.index])}
-
-
+           <h3>Challenge Guide ----  ${imgSources.length} <img height="32px" src="img/menu/menu_challenges.png"> &nbsp 4 <img src="img/menu/react.png"> &nbsp 2 <img src="img/menu/award.png">
+            </h3>
         </div>
        `/*
           ${this.badgeImg}
@@ -58,10 +59,11 @@ class challengeGuide_card extends card{
   }
 
   hPlayerFocus(){
+
+
       return `
         <div class="card-section">
           <h3>Focus Badges</h3>
-          ${widget_playerByName("Spellbound")}
         </div>
       `
   }

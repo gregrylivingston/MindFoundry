@@ -39,16 +39,17 @@ class showcase_card extends card{
   }
   hOwnerWidget(){
    return `<div class="card-section">
-   <div style="font-size:1.65em;">
-       ${this.title}
-   </div>
-         <div>
-             ${widget_playerByName(this.Player)}
-         </div>
-         <div>
-              Challenge Coin:
-              ${this.makeCardProgressBar()}
-         </div>
+             <div style="font-size:1.65em;">
+                 ${this.title}
+             </div>
+                   <div>
+                       ${widget_playerByName(this.Player)}
+                   </div>
+                   <div>
+                        Challenge Coin:
+                        ${this.makeCardProgressBar(1,10)}
+                   </div>
+            </div>
 
          `
  }

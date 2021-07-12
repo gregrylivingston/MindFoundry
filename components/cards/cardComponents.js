@@ -1,5 +1,5 @@
 
-  
+
 
   var badgeHolder = "";
 
@@ -13,7 +13,10 @@
                 badgeHolder+= `
                   <button class="half-button playerStyles">
                     <img height="32px" src="img/Badge/${bad[0]}2.png">
-                    ${bad[0]}
+                    <div style="text-align:left;">
+                      ${bad[0].replace("_"," ").replace("_"," ")}<br>
+                      Level
+                    </div>
                   </button>
 
                 `;
