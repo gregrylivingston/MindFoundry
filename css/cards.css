@@ -25,7 +25,6 @@
     width:30vw;
     border:2px solid white;
     display:inline-block;
-    margin-right:1vw;
     background: rgba(45, 156, 219, 0.96);
   }
 
@@ -98,7 +97,6 @@
 .card-section{
   width:92%;
   text-align:left;
-  padding:4%;
   border:0px;
 }
 
