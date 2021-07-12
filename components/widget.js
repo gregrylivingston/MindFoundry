@@ -3,6 +3,8 @@
 
 
 function widget_player(player){
+    console.log("player");
+    console.log(player);
       return `
         <div class="playerWidget " onclick="loadMenu('Challenge')">
           <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("badge")]}">
