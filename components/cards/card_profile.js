@@ -49,6 +49,7 @@ class player_card extends card{
       </div>
         <!--  ${this.branchImg}-->
     </div>
+    ${widget_player( data["Player"][this.index])}
 
     `
 
@@ -137,15 +138,16 @@ class player_card extends card{
                               </div>
 
                               <div style="width:100%;">
-
+                              <div class="layer2">
+                                <p>${img1Title}</p>
+                              </div>
                               <div class="media">
-                                <div class="layer">
-                                  <p>${img1Title}</p>
-                                </div>
-                                <div class="bottom-layer">
+
+
+                                <img src="${img1}" style="max-width:100%;object-fit:cover;">
+                                <div class="bottom-layer2">
                                   <p>${img1Chal}</p>
                                 </div>
-                                <img src="${img1}" style="max-width:100%;object-fit:cover;">
                               </div>
                           </div>
                                           `
@@ -156,7 +158,7 @@ class player_card extends card{
 
                   let img2Title = ( imgSources[1] !== undefined )? imgSources[1][titleKey]: '';
                   let img2Chal = ( imgSources[1] !== undefined )? imgSources[1][challengeKey]: '';
-                  let img3 = ( imgSources[1] !== undefined )? imgSources[1][srcKey]: '';
+                  let img3 = ( imgSources[2] !== undefined )? imgSources[2][srcKey]: '';
 
                   let img3Title = ( imgSources[2] !== undefined )? imgSources[2][titleKey]: '';
                   let img3Chal = ( imgSources[2] !== undefined )? imgSources[2][challengeKey]: '';
