@@ -27,6 +27,10 @@ class player_card extends card{
 
   hInnerContent(){
             return           this.hPlayerProgress() +
+<<<<<<< HEAD
+=======
+            this.hPlayerFocus() +
+>>>>>>> 387a7db62c1dccb29650f710c00d1f6fe5a48cce
             this.hShowcaseWidget()
   }
   hPreTitle(){  return `
@@ -91,7 +95,14 @@ class player_card extends card{
                 let img1Title = ( imgSources[0] !== undefined )? imgSources[0][titleKey]: '';
                 let img1Chal = ( imgSources[0] !== undefined )? imgSources[0][challengeKey]: '';
                 html+=` <div class="card-section playerStyles2" style="vertical-align:top;">
+<<<<<<< HEAD
                               <h3>${this.title}'s Showcase</h3> 
+=======
+                          <div style="width:100%;text-align:center;" class="playerStylesButtonHighlight selectButton">
+                              ${this.title}'s Showcase ----  ${imgSources.length} <img src="img/menu/menu_challenges.png">
+                              </div>
+
+>>>>>>> 387a7db62c1dccb29650f710c00d1f6fe5a48cce
                               <div style="width:100%;">
                               <div class="layer2">
                                 <p>${img1Title}</p>
@@ -102,6 +113,7 @@ class player_card extends card{
                                 <img src="${img1}" style="max-width:100%;object-fit:cover;">
                                 <div class="bottom-layer2">
                                   <p>${img1Chal}</p>
+                                  <span>&nbsp 4 <img src="img/menu/react.png"> &nbsp 2 <img src="img/menu/award.png"</span>
                                 </div>
                               </div>
                           </div>
