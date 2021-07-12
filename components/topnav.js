@@ -5,7 +5,7 @@ document.write(`
 <div style="max-width:30em;">
   ${widget_player(data["Player"][0])}
 </div>
-  <div style="width:50%;display:inline-flex;">
+  <div class="nav-right">
 
   <button class="topnav-button playerStylesButtonHighlight" onclick="loadMenu('Squad')">
     6<img class="menuButton-image" src="img/menu/menu_usercrew.png">
