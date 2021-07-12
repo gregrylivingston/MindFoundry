@@ -26,12 +26,13 @@ class player_card extends card{
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
   hInnerContent(){
-            return           this.hPlayerProgress() +
-<<<<<<< HEAD
-=======
-            this.hPlayerFocus() +
->>>>>>> 387a7db62c1dccb29650f710c00d1f6fe5a48cce
-            this.hShowcaseWidget()
+            return `
+            <span>3 <img height="32ppx" src="img/menu/menu_challenges.png">
+                &nbsp 4 <img src="img/menu/react.png">
+                &nbsp 2 <img src="img/menu/award.png">
+                </span>
+            ${this.hShowcaseWidget()}
+            `
   }
   hPreTitle(){  return `
         <div class="card-type">
@@ -47,37 +48,7 @@ class player_card extends card{
 
 
         </div>
-       `/*
-          ${this.badgeImg}
-
-      <div class="card-title-group">
-        <div class="card-title">${this.title}         ${this.hSubtitle()}</div>
-      </div>
-        <!--  ${this.branchImg}-->
-    </div>
-    ${widget_player( data["Player"][this.index])}
-
-    `
-*/
-  }
-
-  hPlayerProgress(){
-    return `
-        <div class="card-section">
-          <h3>Player Progress</h3>
-        </div>
-        <div class="card-section">
-          <h3>Top Character   |   Top Badges</h3>
-        </div>
-    `
-  }
-
-  hPlayerFocus(){
-      return `
-        <div class="card-section">
-          <h3>Focus Badges</h3>
-        </div>
-      `
+       `
   }
 
   hShowcaseWidget(){
@@ -94,16 +65,8 @@ class player_card extends card{
                 let img1 = ( imgSources[0] !== undefined )? imgSources[0][srcKey]: '';
                 let img1Title = ( imgSources[0] !== undefined )? imgSources[0][titleKey]: '';
                 let img1Chal = ( imgSources[0] !== undefined )? imgSources[0][challengeKey]: '';
-                html+=` <div class="card-section playerStyles2" style="vertical-align:top;">
-<<<<<<< HEAD
-                              <h3>${this.title}'s Showcase</h3> 
-=======
-                          <div style="width:100%;text-align:center;" class="playerStylesButtonHighlight selectButton">
-                              ${this.title}'s Showcase ----  ${imgSources.length} <img src="img/menu/menu_challenges.png">
-                              </div>
-
->>>>>>> 387a7db62c1dccb29650f710c00d1f6fe5a48cce
-                              <div style="width:100%;">
+                html+=`
+                              <div style="width:96%;">
                               <div class="layer2">
                                 <p>${img1Title}</p>
                               </div>
@@ -113,15 +76,14 @@ class player_card extends card{
                                 <img src="${img1}" style="max-width:100%;object-fit:cover;">
                                 <div class="bottom-layer2">
                                   <p>${img1Chal}</p>
-                                  <span>&nbsp 4 <img src="img/menu/react.png"> &nbsp 2 <img src="img/menu/award.png"</span>
                                 </div>
                               </div>
                           </div>
                                           `
                         htmlAppend=
                         `<button class="topnav-button playerStyles" onclick="loadMenu('Showcase')">
-                          View Showcase
-                        </div>`;
+                          ${this.title}'s Showcase</button>
+                        `;
               }
               if ( imgSources[2] !== undefined){
                   let img2 = ( imgSources[1] !== undefined )? imgSources[1][srcKey]: '';
@@ -168,4 +130,17 @@ class player_card extends card{
               return html
 
   }
+  hFooter(){
+          return `
+          <div class="card-footer">
+            <div class="card-footer-left">
+                  <button class="topnav-button playerStyles"><img src="img/menu/menu_usercrew.png"></button>
+
+                  </div>
+            <div class="card-footer-right">
+              <button class="topnav-button playerStyles"><img src="img/menu/share.png"></button>
+              <button class="topnav-button playerStyles">...</button>
+            </div>
+          </div>`
+        }
 }
