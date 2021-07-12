@@ -27,7 +27,7 @@ class challengeGuide_card extends card{
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
   hInnerContent(){
-            return this.hPlayerFocus()
+            return this.hPlayerFocus() + this.hPlayerProgress()
   }
   hPreTitle(){  return `
         <div class="card-type">
@@ -38,10 +38,11 @@ class challengeGuide_card extends card{
       }
 
   hHeader(card){
+      var imgSources = data["Showcase"].filter(x=>x[data["ShowcaseKey"].indexOf("Player")]==this.title);
+
        return  `<div class="card-header">
-       ${widget_player( data["Player"][this.index])}
-
-
+           <h3>Challenge Guide ----  ${imgSources.length} <img height="32ppx" src="img/menu/menu_challenges.png"> &nbsp 4 <img src="img/menu/react.png"> &nbsp 2 <img src="img/menu/award.png">
+            </h3>
         </div>
        `/*
           ${this.badgeImg}
@@ -58,12 +59,26 @@ class challengeGuide_card extends card{
   }
 
   hPlayerFocus(){
+
+
       return `
         <div class="card-section">
           <h3>Focus Badges</h3>
-          ${widget_playerByName("Spellbound")}
         </div>
       `
   }
+
+
+    hPlayerProgress(){
+      return `
+          <div class="card-section">
+            <h3>Player Progress</h3>
+          </div>
+          <div class="card-section">
+            <h3>Top Character   |   Top Badges</h3>
+          </div>
+      `
+    }
+
 
 }
