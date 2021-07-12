@@ -41,8 +41,8 @@ class challengeGuide_card extends card{
       var imgSources = data["Showcase"].filter(x=>x[data["ShowcaseKey"].indexOf("Player")]==this.title);
 
        return  `<div class="card-header">
-           <h3>Challenge Guide ----  ${imgSources.length} <img height="32ppx" src="img/menu/menu_challenges.png"> &nbsp 4 <img src="img/menu/react.png"> &nbsp 2 <img src="img/menu/award.png">
-            </h3>
+           <h2>Challenge Guide<h3>
+            </h2>
         </div>
        `/*
           ${this.badgeImg}

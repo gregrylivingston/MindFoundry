@@ -19,18 +19,35 @@ function shuffle(array) {
 }
 
 var images = [];
+var imagesLoaded = 0;
 function preload() {
-    for (var i = 0; i < arguments.length; i++) {
-        images[i] = new Image();
-        images[i].src = preload.arguments[i];
+    for (var i = 0; i < preloadImages.length; i++) {
+        let newImage = new Image();
+            newImage.addEventListener("load",loadHandler,false);
+            newImage.src = preloadImages[i];
+            images.push(newImage);
     }
 }
 
-//-- usage --//
+
+function loadHandler() {
+    imagesLoaded++;
+    console.log("Loading...");
+    if (imagesLoaded === images.length) {
+      console.log("All assets loaded");
+    }
+}
 
 
-
-const badgeImages = [
+const preloadImages = [
+  "img/brain.png",
+  "img/coin.png",
+  "img/leagues-hero.jpeg",
+  "img/mf_logo.png",
+  "img/profile.png",
+  "img/token_league.png",
+  "img/token_tourney.png",
+  "img/tournament_hero.jpeg",
   "img/Badge/Acting1.png",
   "img/Badge/Acting2.png",
   "img/Badge/Acting3.png",
@@ -69,4 +86,4 @@ const badgeImages = [
   "img/Badge/Business4.png",
 ];
 
-badgeImages.forEach(x=>preload(x));
+preload();
