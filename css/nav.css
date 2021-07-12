@@ -16,6 +16,11 @@
   display:inline-flex;
 }
 
+.nav-left{
+  width:100%;
+  display:inline-flex;
+}
+
 @media only screen and (min-width: 1000px){
   .topnav{
     position:absolute;
@@ -36,6 +41,10 @@
   .nav-right{
     width:50%;
     position:absolute;
-    right:0px;
+    right:0px;5
+  }
+  .nav-left{
+    width:50%;
+    max-width:30em;
   }
 }

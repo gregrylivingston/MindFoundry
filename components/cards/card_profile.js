@@ -27,10 +27,7 @@ class player_card extends card{
 
   hInnerContent(){
             return `
-            <span>3 <img height="32ppx" src="img/menu/menu_challenges.png">
-                &nbsp 4 <img src="img/menu/react.png">
-                &nbsp 2 <img src="img/menu/award.png">
-                </span>
+      
             ${this.hShowcaseWidget()}
             `
   }

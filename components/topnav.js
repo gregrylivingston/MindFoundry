@@ -2,7 +2,7 @@ document.write(`
 
 <div class="topnav playerStyles">
 
-<div style="max-width:30em;">
+<div class="nav-left">
   ${widget_player(data["Player"][0])}
 </div>
   <div class="nav-right">

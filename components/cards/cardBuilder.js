@@ -38,19 +38,7 @@ class card {
         </div>`
       }
   hFooter(){
-          return `
-          <div class="card-footer">
-            <div class="card-footer-left">
-                  <button class="topnav-button playerStyles"><img src="img/menu/favorite_unchecked.png"></button>
-                  <button class="topnav-button playerStyles"><img src="img/menu/react.png"></button>
-                  <button class="topnav-button playerStyles"><img src="img/menu/award.png"></button>
-
-                  </div>
-            <div class="card-footer-right">
-              <button class="topnav-button playerStyles"><img src="img/menu/share.png"></button>
-              <button class="topnav-button playerStyles">...</button>
-            </div>
-          </div>`
+          return ``
         }
 
    hOwnerWidget(){
