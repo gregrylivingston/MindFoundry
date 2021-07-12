@@ -32,7 +32,6 @@ function preload() {
 
 function loadHandler() {
     imagesLoaded++;
-    console.log("Loading...");
     if (imagesLoaded === images.length) {
         document.getElementById("loader").innerHTML = imagesLoaded + "/" + images.length;
         init();

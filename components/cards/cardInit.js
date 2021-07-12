@@ -21,7 +21,6 @@ data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
 //build event cards
 eventBadges.forEach((badge,i)=>{
    let eventsInBadge = data["Event"].filter(b=>b[2]==badge);
-   console.log(badge);
    let card = new event_card("Event",i , eventsInBadge);
        card.title = badge;
        card.cardHtml = card.makeCardHtml();
@@ -62,8 +61,6 @@ data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
 
             }
           });
-            console.log("branch holder: ");
-            console.log(myBadges);
 
 
     data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new player_card("Player",i)):'';});
@@ -72,7 +69,5 @@ data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new cha
     data["Shop"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new shop_card("Shop",i)):'';});
     data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new showcase_card("Showcase",i)):'';});
 
-    console.log("Init Complete");
-    window.alert("load complete");
-    document.getElementById("loadingScreen").remove();
+
 }

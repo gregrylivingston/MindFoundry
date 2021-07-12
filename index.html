@@ -16,14 +16,12 @@
 <link rel="stylesheet" href="css/tables.css">
 <link rel="stylesheet" href="css/playerWidget.css">
 <link rel="stylesheet" href="css/playerStyles.css">
+<link rel="stylesheet" href="css/init.css">
 <link rel="stylesheet" href="css/showcase.css">
 
-<script src="data/ssdata.js"></script>
 <script src="js/utility.js"></script>
-<script src="components/cards/cardComponents.js"></script>
+<script src="data/ssdata.js"></script>
 <script src="components/widget.js"></script>
-
-
 
 <script>
 
@@ -46,23 +44,26 @@ function loadMenu(menu, cardFilter = undefined){
 <body>
 
 
-  <style>
-      #loadingScreen{
-          position:absolute;
-          top:0vh;
-          height:100vh;
-          left:0vw;
-          width:100vw;
-          background-color:white;
-          z-index:1000;
-
-      }
-  </style>
     <div id="loadingScreen">
         Loading...
         <div id="loader"></div>
-
+        <div id="user_options">
+            <h3>Select a Player</h3>
+            <button onclick="this.parentElement.parentElement.remove()">New User (not logged in)</button>
+          </div>
     </div>
+
+<script>
+
+  data["Player"].forEach(x=>{
+      document.getElementById("user_options").innerHTML+=`
+          <div class="card-section" style="max-height:2em;">
+          <button>${widget_player(x)}</button>
+          </div>
+      `;
+  });
+
+</script>
 
     <img class="background" src="img/tournament_hero.jpeg">
     <script src="components/topnav.js"></script>
@@ -106,6 +107,7 @@ function loadMenu(menu, cardFilter = undefined){
 
 
 
+          <script src="components/cards/cardComponents.js"></script>
 
           <script src="components/cards/cardManager.js"></script>
 
