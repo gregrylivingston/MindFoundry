@@ -5,7 +5,13 @@
           height:100vh;
           left:0vw;
           width:100vw;
-          background-color:white;
           z-index:1000;
+          background-color:#cccccc
 
       }
+
+
+#user_options_korora, #user_options_piwa, #user_options_new{
+  border:2px solid black;
+  padding-bottom: 50px;
+}
