@@ -79,11 +79,7 @@ function creatBranches(){
                 badgeHolder+='<h3>'+branchHolder[i][0]+'</h3>';
                 banchHolder[i].forEach(bad=>{
             //      badgeHolder+='<img src="img/Badge/' + bad[0] + '2.png" style="display:inline;width:5em;">';
-
                 })
-
               }
             });
-
-
 }
