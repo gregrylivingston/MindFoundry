@@ -20,7 +20,7 @@ class shop_card extends card{
       `;
   }
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
-
+//// NOTE:
   hInnerContent(){
     return this.hDescription() + this.hFakeShopWidget()
   }
@@ -29,6 +29,7 @@ class shop_card extends card{
           <div style="display:inline-flex;align-items:center;">
               ${this.title} Shop
           </div>
+
         </div>`
       }
   hFakeShopWidget(){
