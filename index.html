@@ -51,6 +51,9 @@ function loadMenu(menu, cardFilter = undefined){
     <div id="loadingScreen">
         Loading...
         <div id="loader"></div>
+        <div id="user_options_new" class="card">
+            <h3>First Time Visitor</h3>
+          </div>
         <div id="user_options_korora" class="card">
             <h3>Select a Player - Club Korora</h3>
           </div>
@@ -60,7 +63,11 @@ function loadMenu(menu, cardFilter = undefined){
     </div>
 
 <script>
-
+document.getElementById("user_options_new").innerHTML+=`
+    <div class="card-section" style="max-height:2em;">
+    <button style="width:100%" onclick="intialize('${data["Player"][0]}')" class="playerStyles">${widget_player(data["Player"][0])}</button>
+    </div>
+`;
   data["Player"].filter(x=>x[data["PlayerKey"].indexOf("club")]=="Korora").forEach(x=>{
       document.getElementById("user_options_korora").innerHTML+=`
           <div class="card-section" style="max-height:2em;">

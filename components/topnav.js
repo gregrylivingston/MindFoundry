@@ -10,7 +10,6 @@ document.write(`
   <button class="topnav-button playerStylesButtonHighlight" onclick="loadMenu('Squad')">
     6<img class="menuButton-image" src="img/menu/menu_usercrew.png">
   </button>
-  <button class="topnav-button playerStylesButtonHighlight" onclick="loadMenu('Club')">Korora<img class="menuButton-image" src="img/Club/korora.png"></button>
 
 
   <button class="topnav-button playerStylesButtonHighlight" onclick="loadMenu('Event')">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png"></button>
