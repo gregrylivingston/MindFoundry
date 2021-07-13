@@ -27,7 +27,7 @@ class player_card extends card{
 
   hInnerContent(){
             return `
-      
+
             ${this.hShowcaseWidget()}
             `
   }
@@ -47,7 +47,7 @@ class player_card extends card{
         </div>
        `
   }
-
+  
   hShowcaseWidget(){
 
               let playerKey = data["ShowcaseKey"].indexOf("Player");

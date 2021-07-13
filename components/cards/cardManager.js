@@ -30,6 +30,7 @@ function setCardsByMenu(menu, cardFilter){
       case "Squad":
         availableCards = shuffle(cards.filter(c=>c.type=="Player"&&c.title!="Spellbound"));
         break
+      case "Home":
       case "Character":
       case "Challenge":
         availableCards = [cards.find(c=>c.type=="Player")];
