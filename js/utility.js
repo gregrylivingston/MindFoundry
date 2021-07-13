@@ -24,7 +24,7 @@ function preload() {
     for (var i = 0; i < preloadImages.length; i++) {
         let newImage = new Image();
             newImage.addEventListener("load",loadHandler,false);
-            newImage.src = "https://gregrylivingston.github.io/MindFoundry/" + preloadImages[i];
+            newImage.src =  preloadImages[i];
             images.push(newImage);
     }
 }
@@ -37,7 +37,7 @@ function loadHandler() {
     }
 }
 
-
+/*
 const preloadImages = [
   "img/brain.png",
   "img/coin.png",
@@ -97,5 +97,5 @@ const preloadImages = [
   "img/Badge/Business3.png",
   "img/Badge/Business4.png",
 ];
-
+*/
 preload();
