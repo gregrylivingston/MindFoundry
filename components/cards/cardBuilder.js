@@ -109,9 +109,7 @@ class card {
             <div class="progressBar-inner" style="width:${earned*10}%"></div>
           </div>
             ${earned} / ${max} <img src='img/menu/menu_geniusshop.png' height='32px'>`
-
   }
-
 }
 
 var badgeHolder;

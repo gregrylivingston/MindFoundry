@@ -54,7 +54,6 @@ const preloadImages = [
   "img/menu/favorite_unchecked.png",
   "img/menu/menu_events.png",
   "img/menu/menu_geniusshop.png",
-  "img/menu/menu_korora.png",
   "img/menu/menu_settings.png",
   "img/menu/menu_squad.png",
   "img/menu/menu_usercrew.png",

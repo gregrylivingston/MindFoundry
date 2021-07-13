@@ -51,28 +51,39 @@ function loadMenu(menu, cardFilter = undefined){
     <div id="loadingScreen">
         Loading...
         <div id="loader"></div>
-        <div id="user_options">
-            <h3>Select a Player</h3>
-            <button onclick="this.parentElement.parentElement.remove()">New User (not logged in)</button>
+        <div id="user_options_korora" class="card">
+            <h3>Select a Player - Club Korora</h3>
+          </div>
+        <div id="user_options_piwa" class="card">
+            <h3>Select a Player - Headstart Academy</h3>
           </div>
     </div>
 
 <script>
 
-  data["Player"].forEach(x=>{
-      document.getElementById("user_options").innerHTML+=`
+  data["Player"].filter(x=>x[data["PlayerKey"].indexOf("club")]=="Korora").forEach(x=>{
+      document.getElementById("user_options_korora").innerHTML+=`
           <div class="card-section" style="max-height:2em;">
-          <button onclick="intialize('${x[0]}')">${widget_player(x)}</button>
+          <button style="width:100%" onclick="intialize('${x[0]}')" class="playerStyles">${widget_player(x)}</button>
           </div>
       `;
   });
+
+    data["Player"].filter(x=>x[data["PlayerKey"].indexOf("club")]=="Headstart Academy").forEach(x=>{
+        x[data["PlayerKey"].indexOf("club")] = "Piwa";
+        document.getElementById("user_options_piwa").innerHTML+=`
+            <div class="card-section" style="max-height:2em;">
+            <button style="width:100%"  onclick="intialize('${x[0]}')" class="playerStyles">${widget_player(x)}</button>
+            </div>
+        `;
+    });
 
   function intialize(p){
     console.log("init player: " + p);
     data["Player"].unshift( data["Player"].find(x=>x[0]==p) );
     document.getElementById("loadingScreen").remove();
     init();
-    
+
   }
 </script>
 
