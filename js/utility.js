@@ -97,5 +97,6 @@ const preloadImages = [
   "img/Badge/Business3.png",
   "img/Badge/Business4.png",
 ];
-*/
+*//*
 preload();
+*/
