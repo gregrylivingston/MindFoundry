@@ -77,6 +77,21 @@ class challengeGuide_card extends card{
           <div class="card-section">
             <h3>Top Character   |   Top Badges</h3>
           </div>
+
+          <div class="acting_badgeprogress">
+          <p>Acting Level 1<img src="img/badge/acting1.png" style="height:32px;"> 04/20</p>
+            <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
+              <div class="progressBar-inner" style="width:20%;">
+              </div>
+            </div>
+          </div>
+          <div class="animation_badgeprogress">
+          <p>Animation Level 1<img src="img/badge/animation1.png" style="height:32px;"> 10/20</p>
+            <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
+              <div class="progressBar-inner" style="width:50%;">
+              </div>
+            </div>
+          </div>
       `
     }
 
