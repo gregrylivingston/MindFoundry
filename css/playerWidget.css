@@ -15,16 +15,18 @@
   display:inline-block;
   font-size:1.6em;
   padding-left:2%;
-  width:60%;
+  width:35%;
 }
 
-.playerWidget-level {
-  display:inline-block;
-  font-size:1.1em;
-  margin-left:.2em;
-  margin-right:.2em;
+.playerWidget-item {
+  display:inline-flex;
+  font-size:1.5em;
+  font-weight: bold;
+  margin-left:.5em;
+  margin-right:.5em;
   padding:.2em;
   width:15%;
+  align-items:center;
   text-align:center;
   vertical-align:middle;
 }

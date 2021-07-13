@@ -8,11 +8,16 @@ function widget_player(player){
           <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("badge")]}">
           <div class="playerWidget-name"><i>${player[data["PlayerKey"].indexOf("title")]}</i></div>
           <div style="width:50%">
-            <img height="32ppx" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
 
-            <b>3 <img height="32ppx" src="img/menu/menu_challenges.png">
-                &nbsp 2 <img src="img/menu/award.png">
-            </b>
+                <div class="playerWidget-item">
+                  3 <img height="32ppx" src="img/menu/menu_challenges.png">
+                </div>
+                <div class="playerWidget-item">
+                  2 <img style="padding-left:.2em" img src="img/menu/award.png">
+                </div>
+                <div class="playerWidget-item">
+                  <img height="32ppx" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
+                </div>
             </div>
         </div>
       `
