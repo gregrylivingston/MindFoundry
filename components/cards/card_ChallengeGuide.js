@@ -78,9 +78,9 @@ class challengeGuide_card extends card{
             <h3>Top Character</h3>
 
 
-          <img src="img/Character/Artist.png"></img>
+          <p><img src="img/Character/Artist.png"></img></p>
 
-          Spellbound Level 2 Artist Trophy
+          <p>Spellbound Level 2 Artist Trophy</p>
           </div>
 
           <div class="card-section playerStyles" style="width:82%">
