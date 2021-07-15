@@ -74,21 +74,29 @@ class challengeGuide_card extends card{
           <div class="card-section">
             <h3>Player Progress</h3>
           </div>
-          <div class="card-section">
-            <h3>Top Character   |   Top Badges</h3>
+          <div class="card-section playerStyles" style="width:82%;">
+            <h3>Top Character</h3>
+
+
+          <img src="img/Character/Artist.png"></img>
+
+          Spellbound Level 2 Artist Trophy
           </div>
 
-          <div class="acting_badgeprogress">
-          <p>Acting Level 1<img src="img/badge/acting1.png" style="height:32px;"> 04/20</p>
-            <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
-              <div class="progressBar-inner" style="width:20%;">
+          <div class="card-section playerStyles" style="width:82%">
+            <h3>Top Badges<h3>
+            <div class="acting_badgeprogress">
+            <p>Acting Level 1<img src="img/badge/acting1.png" style="height:32px;"> 04/20</p>
+              <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
+                <div class="progressBar-inner" style="width:20%;">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="animation_badgeprogress">
-          <p>Animation Level 1<img src="img/badge/animation1.png" style="height:32px;"> 10/20</p>
-            <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
-              <div class="progressBar-inner" style="width:50%;">
+            <div class="animation_badgeprogress">
+            <p>Animation Level 1<img src="img/badge/animation1.png" style="height:32px;"> 10/20</p>
+              <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
+                <div class="progressBar-inner" style="width:50%;">
+                </div>
               </div>
             </div>
           </div>

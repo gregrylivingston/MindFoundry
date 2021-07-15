@@ -59,7 +59,7 @@ class player_card extends card{
               if (  imgSources[0] !== undefined ){
                 html+=addMediaPreview(imgSources[0]);
                         htmlAppend=
-                        `<button class="topnav-button playerStyles" onclick="loadMenu('Showcase')">
+                        `<button class="topnav-button playerStylesButton" onclick="loadMenu('Showcase')">
                           ${this.title}'s Showcase</button>
                         `;
               } else {
