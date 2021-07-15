@@ -1,22 +1,10 @@
 
-.playerWidget{
-  width:100%;
-  margin-top:.5em;
-  margin-bottom:.5em;
-  padding-top:.2em;
-  padding-bottom:.2em;
-  border-radius:10px;
-  text-align:left;
-  align-items:center;
-  display:inline-flex;
-  height:3em;
-}
 .playerWidget-name {
   display:inline-block;
-  font-size:1.6em;
   padding-left:2%;
   width:35%;
 }
+
 
 .playerWidget-item {
   display:inline-flex;
@@ -25,7 +13,7 @@
   margin-left:.5em;
   margin-right:.5em;
   padding:.2em;
-  width:15%;
+  width:17%;
   align-items:center;
   text-align:center;
   vertical-align:middle;
@@ -37,4 +25,54 @@
   max-width:13%;
   padding:.1em;
   padding-right:.31em;
+}
+
+
+@media only screen and (min-width: 200px){
+  .nav-left>.playerWidget{
+    height:5em;
+    margin-top:2em;
+  }
+  .nav-left>.playerWidget>.playerWidget-name{
+    font-size:4em;
+  }
+  .nav-left>.playerWidget>div>.playerWidget-item{
+    font-size:3em;
+  }
+  .nav-left>.playerWidget>div>.playerWidget-item>.playerWidget-image{
+    object-fit:fill;
+  }
+
+}
+
+
+@media only screen and (min-width: 1000px){
+  .playerWidget,   .nav-left>.playerWidget{
+  height:3em;
+  margin-top:0em;
+
+  }
+  .nav-left>.playerWidget>.playerWidget-name{
+    font-size:1.6em;
+  }
+
+  .nav-left>.playerWidget>div>.playerWidget-item{
+    font-size:1.5em;
+  }
+  .nav-left>.playerWidget>div>.playerWidget-item>.playerWidget-image{
+    object-fit:fill;
+  }
+}
+
+
+.playerWidget{
+  width:100%;
+  margin-top:.5em;
+  margin-bottom:.5em;
+  padding-top:.2em;
+  padding-bottom:.2em;
+  border-radius:10px;
+  text-align:left;
+  align-items:center;
+  display:inline-flex;
 }

@@ -7,7 +7,7 @@ function init (){
     buildPageTopCards();
     BuildCardArrays();
     updateTopNavPlayer(data["Player"][0]);
-
+    loadMenu('Home');
 
 }
 
