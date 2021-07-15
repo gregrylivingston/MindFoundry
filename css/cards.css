@@ -23,12 +23,18 @@
   text-align:center;
   padding-bottom:0px;
 }
-
+@media only screen and (min-width: 200px){
+    .card{
+      font-size:2em;
+    }
+}
 
 @media only screen and (min-width: 1000px){
   .card{
     width:28vw;
     margin:1vw;
+    font-size:1em;
+
   }
 
 }
