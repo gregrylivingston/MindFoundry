@@ -80,12 +80,12 @@ class player_card extends card{
           return `
           <div class="card-footer">
             <div class="card-footer-left">
-                  <button class="topnav-button playerStyles"><img src="img/menu/menu_usercrew.png"></button>
+                  <button class="selectButton playerStyles"><img src="img/menu/menu_usercrew.png"></button>
 
                   </div>
             <div class="card-footer-right">
-              <button class="topnav-button playerStyles"><img src="img/menu/share.png"></button>
-              <button class="topnav-button playerStyles">...</button>
+              <button class="selectButton playerStyles"><img src="img/menu/share.png"></button>
+              <button class="selectButton playerStyles">...</button>
             </div>
           </div>`
         }

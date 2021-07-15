@@ -16,6 +16,10 @@ var cards = [];
 var availableCards = [];
 var availableCardIterator = 0;
 
+function showBadge(b){
+  setCardsByMenu("Badge", b);
+}
+
 function setCardsByMenu(menu, cardFilter){
     scroller.scrollTop = 0 ;
     document.getElementById("cards").innerHTML = "";
@@ -28,7 +32,10 @@ function setCardsByMenu(menu, cardFilter){
         break
       case "Club":
       case "Squad":
-        availableCards = shuffle(cards.filter(c=>c.type=="Player"&&c.title!="Spellbound"));
+        availableCards = shuffle(cards.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
+        break
+      case "Badge":
+        availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.title==cardFilter));
         break
       case "Home":
       case "Character":

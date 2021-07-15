@@ -11,7 +11,7 @@
 
               myBadges.forEach(bad=>{
                 badgeHolder+= `
-                  <button class="half-button playerStyles">
+                  <button class="half-button playerStyles" onclick="showBadge('${bad[0].replace("_"," ").replace("_"," ")}')">
                     <img height="32px" src="img/Badge/${bad[0]}2.png">
                     <div style="text-align:left;">
                       ${bad[0].replace("_"," ").replace("_"," ")}<br>
