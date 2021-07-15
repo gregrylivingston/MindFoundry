@@ -8,6 +8,7 @@
   height:4em;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
   width:25%;
+  justify-content: center;
 }
 
 .nav-right{
@@ -19,7 +20,7 @@
   width:100%;
   display:inline-flex;
 }
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 200px){
   .topnav-button{
     font-size:3em;
 }
@@ -46,6 +47,7 @@
     width:50%;
     position:absolute;
     right:0px;
+    justify-content: flex-end;
   }
   .nav-left{
     width:50%;
@@ -54,5 +56,6 @@
   .topnav-button{
     font-size:1.5em;
     height:1.6em;
+    max-width:5em;
   }
 }
