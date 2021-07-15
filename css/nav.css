@@ -3,17 +3,18 @@
   display:inline-flex;
   vertical-align:center;
   align-items:center;
-  text-align:right;
   margin:.5em 0em .5em .4em;
   padding:.2em 0em .2em 0em;
-  height:1.5em;
+  height:3em;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
   font-size:1.6em;
+  width:25%;
 }
 
 .nav-right{
   width:100%;
   display:inline-flex;
+
 }
 
 .nav-left{
@@ -47,4 +48,7 @@
     width:50%;
     max-width:30em;
   }
+  .topnav-button{
+    height:1.5em;
+}
 }

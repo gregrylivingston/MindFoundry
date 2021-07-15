@@ -47,81 +47,30 @@ class player_card extends card{
         </div>
        `
   }
-  
+
   hShowcaseWidget(){
 
               let playerKey = data["ShowcaseKey"].indexOf("Player");
-              let titleKey = data["ShowcaseKey"].indexOf("title");
-              let challengeKey = data["ShowcaseKey"].indexOf("Challenge");
-              let srcKey = data["ShowcaseKey"].indexOf("src");
               var imgSources = data["Showcase"].filter(x=>x[playerKey]==this.title);
               let html="";
               let htmlAppend="";
+              html+='<div style="width:96%;">';
 
               if (  imgSources[0] !== undefined ){
-                let img1 = ( imgSources[0] !== undefined )? imgSources[0][srcKey]: '';
-                let img1Title = ( imgSources[0] !== undefined )? imgSources[0][titleKey]: '';
-                let img1Chal = ( imgSources[0] !== undefined )? imgSources[0][challengeKey]: '';
-                html+=`
-                              <div style="width:96%;">
-                              <div class="layer2">
-                                <p>${img1Title}</p>
-                              </div>
-                              <div class="media">
-
-
-                                <img src="${img1}" style="max-width:100%;object-fit:cover;">
-                                <div class="bottom-layer2">
-                                  <p>${img1Chal}</p>
-                                </div>
-                              </div>
-                          </div>
-                                          `
+                html+=addMediaPreview(imgSources[0]);
                         htmlAppend=
                         `<button class="topnav-button playerStyles" onclick="loadMenu('Showcase')">
                           ${this.title}'s Showcase</button>
                         `;
+              } else {
+                if ( this.title == data["Player"][0][0] )html+=addShowcaseButton();
               }
               if ( imgSources[2] !== undefined){
-                  let img2 = ( imgSources[1] !== undefined )? imgSources[1][srcKey]: '';
-
-                  let img2Title = ( imgSources[1] !== undefined )? imgSources[1][titleKey]: '';
-                  let img2Chal = ( imgSources[1] !== undefined )? imgSources[1][challengeKey]: '';
-                  let img3 = ( imgSources[2] !== undefined )? imgSources[2][srcKey]: '';
-
-                  let img3Title = ( imgSources[2] !== undefined )? imgSources[2][titleKey]: '';
-                  let img3Chal = ( imgSources[2] !== undefined )? imgSources[2][challengeKey]: '';
-                  html+=`    <div style="width:49%;display:inline-block;">
-
-
-                      <div class="media">
-                        <div class="layer">
-                          <p>${img2Title}</p>
-                        </div>
-                        <div class="bottom-layer">
-                          <p>${img2Chal}</p>
-                        </div>
-                        <img src="${img2}" style="max-width:100%;object-fit:cover;">
-                      </div>
-
-                      </div>
-
-                      <div style="width:49%;display:inline-block;">
-
-
-                      <div class="media">
-                        <div class="layer">
-                          <p>${img3Title}</p>
-                        </div>
-                        <div class="bottom-layer">
-                          <p>${img3Chal}</p>
-                        </div>
-                        <img src="${img3}" style="max-width:100%;object-fit:cover;">
-                      </div>
-
-
-                      </div>`;
-              }
+                  html+='<div style="width:49%;display:inline-block;">';
+                  html+=addMediaPreview(imgSources[1]);
+                  html+='<div style="width:49%;display:inline-block;">';
+                  html+=addMediaPreview(imgSources[2]);
+                }
               html+=htmlAppend;
 
               return html
@@ -140,4 +89,40 @@ class player_card extends card{
             </div>
           </div>`
         }
+}
+
+function addMediaPreview(mediaItem){
+
+  let img1 = mediaItem[data["ShowcaseKey"].indexOf("src")];
+  let img1Title = mediaItem[data["ShowcaseKey"].indexOf("title")];
+  let img1Chal = mediaItem[data["ShowcaseKey"].indexOf("Challenge")];
+  return `
+                <div class="layer2">
+                  <p>${img1Title}</p>
+                </div>
+                <div class="media">
+
+
+                  <img src="${img1}" style="max-width:100%;object-fit:cover;">
+                  <div class="bottom-layer2">
+                    <p>${img1Chal}</p>
+                  </div>
+                </div>
+            </div>
+`
+}
+
+function addShowcaseButton(){
+return ` <div class="layer2">
+    <p></p>
+  </div>
+  <div class="media">
+
+        +
+        Add a showcase to your player card from your completed challenges.
+    <div class="bottom-layer2">
+      <p></p>
+    </div>
+  </div>
+</div>`
 }

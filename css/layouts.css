@@ -49,7 +49,7 @@ body{
   }
   .rightColumn{
     max-height:95vh;
-    width:96vw;
+    width:100%;
     display:inline-block;
     vertical-align:top;
   }

@@ -15,7 +15,7 @@ function widget_player(player){
                 <div class="playerWidget-item">
                   2 <img style="padding-left:.2em" img src="img/menu/award.png">
                 </div>
-                <div class="playerWidget-item" onclick="loadMenu('Club')">
+                <div class="playerWidget-item" onclick="loadMenu('Club')" style="z-index:9999;">
                   <img height="32ppx" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
                 </div>
             </div>
