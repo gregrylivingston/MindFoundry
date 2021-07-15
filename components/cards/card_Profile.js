@@ -47,7 +47,7 @@ class player_card extends card{
         </div>
        `
   }
-  
+
   hShowcaseWidget(){
 
               let playerKey = data["ShowcaseKey"].indexOf("Player");
@@ -78,7 +78,7 @@ class player_card extends card{
                           </div>
                                           `
                         htmlAppend=
-                        `<button class="topnav-button playerStyles" onclick="loadMenu('Showcase')">
+                        `<button class="topnav-button playerStylesButton" onclick="loadMenu('Showcase')">
                           ${this.title}'s Showcase</button>
                         `;
               }
