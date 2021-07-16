@@ -5,7 +5,7 @@
 function widget_player(player){
       return `
         <div class="playerWidget">
-          <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("badge")]}">
+          <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
           <div class="playerWidget-name"><i>${player[data["PlayerKey"].indexOf("title")]}</i></div>
           <div style="width:50%">
 

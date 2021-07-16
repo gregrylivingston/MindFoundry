@@ -10,10 +10,17 @@ class card {
     this.index = index;
     //for Each column in the spreadsheet give this add a key and object pair
     data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
-    this.badgeImg = '<img class="card-header-img" src="img/Badge/'+this.badge +'4.png">';
-    this.characterImg = '<img style="height:1em;" src="img/Character/'+this.Character +'.png">';
-    this.branchImg ='<img class="card-header-img" src="img/branch/'+this.branch +'.png">';
     this.docId = this.type + this.index;
+    this.createBadgeImage();
+  }
+  createBadgeImage(){
+    if (this.imgSrc!==undefined&&this.imgSrc!==false){
+        console.log(this.imgSrc);
+        if (this.imgSrc.indexOf(".png")==-1&&this.imgSrc.indexOf(".jpeg")==-1){
+          this.imgSrc+="1.png"
+        }
+        this.badgeImg = '<img class="card-header-img" src="'+this.imgSrc +'">';
+      }
   }
   makeCardHtml(){
       return  `
