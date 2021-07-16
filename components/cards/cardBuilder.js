@@ -15,7 +15,6 @@ class card {
   }
   createBadgeImage(){
     if (this.imgSrc!==undefined&&this.imgSrc!==false){
-        console.log(this.imgSrc);
         if (this.imgSrc.indexOf(".png")==-1&&this.imgSrc.indexOf(".jpeg")==-1){
           this.imgSrc+="1.png"
         }

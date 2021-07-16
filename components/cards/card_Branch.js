@@ -11,7 +11,7 @@ class branch_card extends card{
 
 
   hInnerContent(){
-    return  this.hDescription() + "this is a branch card wooooohoooo"//+ HCardBadgesByCharacter(this)
+    return  this.hDescription() + this.makeChallenges()//+ HCardBadgesByCharacter(this)
   }
   hcharacterStatus(){
 
@@ -31,4 +31,23 @@ class branch_card extends card{
                     </div>`;
 
   }
+  makeChallenges(){
+        this.challenges = "";
+        let mychallenges = data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf("branch")] == this.title);
+        mychallenges.forEach(x=>{
+
+            this.challenges+=`
+                <div class="card-section playerStyles">
+                  <h3 style="width:100%;display:inline-flex;">
+                        <div style="width:70%">${x[0]}</div>
+
+
+
+
+                </div>
+            `
+        })
+        return this.challenges;
+
+    }
 }
