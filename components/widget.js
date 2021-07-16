@@ -1,7 +1,5 @@
 
 
-
-
 function widget_player(player){
       return `
         <div class="playerWidget">
@@ -23,10 +21,33 @@ function widget_player(player){
             </div>
         </div>
       `
-
 }
+function widget_playerByName(player){return  widget_player(data["Player"].find(x=>x[0]==player));}
 
-function widget_playerByName(player){
 
-      return  widget_player(data["Player"].find(x=>x[0]==player));
+function widget_showcase(filterKey, filterValue){
+                let myKey = data["ShowcaseKey"].indexOf(filterKey);
+                var imgSources = data["Showcase"].filter(x=>x[myKey]==filterValue);
+                let html="";
+                let htmlAppend="";
+                html+='<div style="width:96%;">';
+
+                if (  imgSources[0] !== undefined ){
+                  html+=addMediaPreview(imgSources[0]);
+                          htmlAppend=
+                          `<button class="selectButton playerStylesButton" onclick="loadMenu('Showcase')">
+                            ${this.title}'s Showcase</button>
+                          `;
+                } else {
+                  if ( filterValue == data["Player"][0][0] )html+=addShowcaseButton();
+                }
+                if ( imgSources[2] !== undefined){
+                    html+='<div style="width:49%;display:inline-block;">';
+                    html+=addMediaPreview(imgSources[1]);
+                    html+='<div style="width:49%;display:inline-block;">';
+                    html+=addMediaPreview(imgSources[2]);
+                  }
+                html+=htmlAppend;
+
+                return html
 }

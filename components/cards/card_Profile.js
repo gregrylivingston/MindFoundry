@@ -24,8 +24,7 @@ class player_card extends card{
 
   hInnerContent(){
             return `
-
-            ${this.hShowcaseWidget()}
+            ${widget_showcase("Player",this.title)}
             `
   }
   hPreTitle(){  return `
@@ -45,34 +44,6 @@ class player_card extends card{
        `
   }
 
-  hShowcaseWidget(){
-
-              let playerKey = data["ShowcaseKey"].indexOf("Player");
-              var imgSources = data["Showcase"].filter(x=>x[playerKey]==this.title);
-              let html="";
-              let htmlAppend="";
-              html+='<div style="width:96%;">';
-
-              if (  imgSources[0] !== undefined ){
-                html+=addMediaPreview(imgSources[0]);
-                        htmlAppend=
-                        `<button class="selectButton playerStylesButton" onclick="loadMenu('Showcase')">
-                          ${this.title}'s Showcase</button>
-                        `;
-              } else {
-                if ( this.title == data["Player"][0][0] )html+=addShowcaseButton();
-              }
-              if ( imgSources[2] !== undefined){
-                  html+='<div style="width:49%;display:inline-block;">';
-                  html+=addMediaPreview(imgSources[1]);
-                  html+='<div style="width:49%;display:inline-block;">';
-                  html+=addMediaPreview(imgSources[2]);
-                }
-              html+=htmlAppend;
-
-              return html
-
-  }
   hFooter(){
           return `
           <div class="card-footer">
