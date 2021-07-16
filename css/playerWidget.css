@@ -2,7 +2,6 @@
 .playerWidget-name {
   display:inline-block;
   padding-left:2%;
-  width:35%;
 }
 
 
@@ -10,13 +9,23 @@
   display:inline-flex;
   font-size:1.5em;
   font-weight: bold;
-  margin-left:.5em;
-  margin-right:.5em;
-  padding:.2em;
-  width:27%;
+  padding:.1em;
   align-items:center;
   text-align:center;
   vertical-align:middle;
+}
+
+
+
+.playerWidget-crest {
+  display:inline-flex;
+  font-size:1.5em;
+  font-weight: bold;
+  padding:.1em;
+  align-items:center;
+  text-align:center;
+  vertical-align:middle;
+  justify-content: flex-end;
 }
 
 
@@ -75,4 +84,5 @@
   text-align:left;
   align-items:center;
   display:inline-flex;
+  justify-content:space-between;
 }

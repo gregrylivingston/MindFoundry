@@ -80,3 +80,7 @@ p {
     }
   }
 }
+
+.media>p {
+  text-align:left;
+}

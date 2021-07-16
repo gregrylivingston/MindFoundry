@@ -17,8 +17,8 @@ function widget_player(player){
                     <img class="menuButton-image" src="img/menu/award.png">
 
                 </div>
-                <div class="playerWidget-item" onclick="loadMenu('Club')" style="z-index:9999;">
-                  <img height="32ppx" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
+                <div class="playerWidget-crest" onclick="loadMenu('Club')" style="z-index:9999;">
+                  <img height="50px" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
                 </div>
             </div>
         </div>

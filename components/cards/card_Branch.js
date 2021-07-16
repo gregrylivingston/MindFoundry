@@ -3,20 +3,12 @@ class branch_card extends card{
   constructor(type, index){
       super(type, index);
       this.Character="";
-      this.badgeImg='<img class="card-header-img" src="img/Character/'+this.title +'.png">';
+      this.badgeImg='<img class="card-header-img" src="img/Character/'+this.badge +'.png">';
       this.characterImg='<img style="width:1em;" src="img/Character/'+this.badge +'.png">';
       this.branchImg='';
       this.cardHtml = this.makeCardHtml();
   }
-  makeCardHtml(){
-      return  `
-        <div class="card playerStyles" id="${this.docId}">
 
-
-            ${this.hInnerContent()}
-        </div>
-      `;
-  }
 
   hInnerContent(){
     return  this.hDescription() + "this is a branch card wooooohoooo"//+ HCardBadgesByCharacter(this)
