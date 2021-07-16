@@ -31,7 +31,7 @@ function BuildCardArrays(){
       data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new showcase_card("Showcase",i)):'';});
       data["Badge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new badge_card("Badge",i)):'';});
 
-      const eventBadges = ["Heroes","Minecraft_Masters","Rocket_League_Juniors","Minecraft_Juniors","Rocket_League_Masters"];
+      const eventBadges = ["Heroes","Minecraft Masters","Rocket League Juniors","Minecraft Juniors","Rocket League Masters"];
 
 
       eventBadges.forEach((badge,i)=>{
