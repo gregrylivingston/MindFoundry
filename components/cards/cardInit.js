@@ -45,6 +45,17 @@ function BuildCardArrays(){
       data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new character_card("Character",i)):'';});
 
 
+      data["Badge"].forEach((badge,i)=>{
+         for ( var n=0; n < data["Branch"].length ; n ++ ){
+               if ( data["Branch"][n][1] == badge[0]){
+               cards.push(new branch_card("Branch",n));
+             }
+         }
+
+      });
+
+      //build character chards
+
 }
 
 function updateTopNavPlayer(playerArray){
