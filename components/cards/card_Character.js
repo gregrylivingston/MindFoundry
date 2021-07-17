@@ -5,8 +5,6 @@ class character_card extends card{
       this.Character="";
       this.badge=this.title;
       this.badgeImg='<img class="card-header-img" src="img/Character/'+this.title +'.png">';
-      this.characterImg='<img style="width:1em;" src="img/Character/'+this.badge +'.png">';
-      this.branchImg='';
       this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){
@@ -14,20 +12,8 @@ class character_card extends card{
         <div class="card playerStyles" id="${this.docId}">
           ${widget_cardType(this.characterImg + " " + this.badge + " " + this.type)}
 
-
-          <div class="card-header">
-             ${this.badgeImg}
-            <div class="card-title-group">
-               <div class="card-title">
-                ${this.title}
-                  <div class="card-subtitle">
-                    ${widget_progressBar(2,10)}
-                  </div>
-               </div>
-            </div>
-          </div>
-
-          ${this.hDescription()}
+          ${widget_header(this.badgeImg,this.title,widget_progressBar())}
+          ${widget_description(this.Description)}
           ${HCardBadgesByCharacter(this)}
           ${widget_showcase("Character",this.title)}
           ${this.hFooter()}

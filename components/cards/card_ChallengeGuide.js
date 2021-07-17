@@ -3,12 +3,6 @@ class challengeGuide_card extends card{
 
   constructor(type, index) {
     super(type,index);
-    //for Each column in the spreadsheet give this add a key and object pair
-    data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
-    this.badgeImg = '<img class="card-header-img" src="'+this.badge +'">';
-    this.characterImg = '<img style="height:1em;" src="'+this.profileBadgeLeft +'">';
-    this.branchImg ='<img class="card-header-img" src="'+this.profileBadgeRight +'">';
-    this.docId = this.type + this.index;
     this.type = "challengeGuide";
     this.cardHtml = this.makeCardHtml();
   }

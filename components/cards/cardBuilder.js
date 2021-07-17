@@ -1,9 +1,3 @@
-//header
-//innerContent
-//footer
-
-
-
 class card {
   constructor(type, index) {
     this.type = type;
@@ -22,22 +16,12 @@ class card {
       }
   }
   makeCardHtml(){
-      return  `
-        <div class="card playerStyles" id="${this.docId}">
-
-
-            ${this.hPreTitle()}
-            ${this.hHeader()}
-            ${this.hInnerContent()}
-            ${this.hFooter()}
-        </div>
-      `;
+      return  `<div class="card playerStyles" id="${this.docId}">
+            This card type is missing
+        </div>`;
   }
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
-
-  hFooter(){
-          return ``
-        }
+  hFooter(){return ``}
   hDescription(){ return `<div class="card-section playerStyles-section">${this.Description}</div>`}
 
 }

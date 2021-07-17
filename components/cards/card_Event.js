@@ -5,37 +5,18 @@ class event_card extends card{
       super(type, index);
       this.events = "";
       this.eventsInBadge = eventsInBadge;
-
   }
 
   makeCardHtml(){
       return  `
         <div class="card playerStyles" id="${this.docId}">
             ${widget_cardType(this.characterImg + " " + this.badge + " Events")}
-
-            <div class="card-header">
-               ${this.badgeImg}
-               <div class="card-title-group">
-                 <div class="card-title">${this.title}         ${this.hSubtitle()}
-                 </div>
-               </div>
-           </div>
-
-          ${this.hDescription()}
+            ${widget_header(this.badgeImg,this.title,this.Grade)}
+            ${widget_description(this.Description)}
           ${this.hEventList()}
           ${this.hFooter()}
         </div>
       `;
-  }
-  
-  hSubtitle(){
-    return `<div class="card-subtitle">
-            <div style="font-size:.9em;padding-top:.3em;">
-                Grades ${this.Grade}
-
-            </div>
-            </div>`;
-
   }
 
   hEventList(){

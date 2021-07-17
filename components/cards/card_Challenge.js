@@ -9,15 +9,10 @@ class challenge_card extends card{
       return  `
         <div class="card playerStyles" id="${this.docId}">
             ${widget_cardType(this.branch + " Challenge")}
+            ${widget_header(this.badgeImg,this.title,this.hSubtitle())}
+            ${widget_description(this.Description)}
+            ${widget_showcase("Challenge",this.title)}
 
-            <div class="card-header">
-               ${this.badgeImg}
-
-                <div class="card-title-group">
-                 <div class="card-title">${this.title}         ${this.hSubtitle()}
-                 </div>
-                </div>
-            </div>
 
 
 
@@ -28,8 +23,6 @@ class challenge_card extends card{
   }
   hInnerContent(){
               return `
-                        ${this.hDescription()}
-                        ${widget_showcase("Challenge",this.title)}
                       <div class="card-section playerStyles2">
                           You have not completed this challenge.
                           <br>

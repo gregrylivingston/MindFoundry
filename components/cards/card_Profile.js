@@ -3,9 +3,6 @@ class player_card extends card{
 
   constructor(type, index) {
     super(type,index);
-    //for Each column in the spreadsheet give this add a key and object pair
-    data[this.type+"Key"].forEach((column,i)=> {this[column] = data[this.type][this.index][i]});
-    this.docId = this.type + this.index;
     this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){

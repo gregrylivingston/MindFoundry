@@ -4,8 +4,6 @@ function widget_showcase(filterKey, filterValue){
 
                 let myKey = data["ShowcaseKey"].indexOf(filterKey);
                 var imgSources = data["Showcase"].filter(x=>x[myKey]==filterValue);
-                console.log("showcase search: " +filterKey + filterValue);
-                console.log("matches found: " + imgSources.length);
                 let html="";
                 let htmlAppend="";
                 html+='<div class="card-section">';

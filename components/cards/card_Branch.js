@@ -2,40 +2,20 @@
 class branch_card extends card{
   constructor(type, index){
       super(type, index);
-      this.Character="";
-      this.badgeImg='<img class="card-header-img" src="img/Character/'+this.badge +'.png">';
-      this.characterImg='<img style="width:1em;" src="img/Character/'+this.badge +'.png">';
-      this.branchImg='';
       this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){
       return  `
         <div class="card playerStyles" id="${this.docId}">
             ${widget_cardType(this.title + " Badge")}
-
-
-            <div class="card-header">
-               ${this.badgeImg}
-
-                <div class="card-title-group">
-                 <div class="card-title">${this.title} ${this.hSubtitle()}
-                 </div>
-                </div>
-            </div>
-
-            ${this.hDescription()}
+            ${widget_header(this.badgeImg,this.title,widget_progressBar())}
+            ${widget_description(this.Description)}
             ${this.makeChallenges()}
             ${this.hFooter()}
         </div>
       `;
   }
 
-
-  hSubtitle(){
-            return `<div class="card-subtitle">
-                        ${widget_progressBar()}
-                    </div>`;
-  }
   makeChallenges(){
         this.challenges = "";
         let mychallenges = data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf("branch")] == this.title);

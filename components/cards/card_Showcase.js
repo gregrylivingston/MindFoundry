@@ -4,20 +4,12 @@ class showcase_card extends card{
   constructor(type, index){
       super(type, index);
       this.cardHtml = this.makeCardHtml();
-
   }
   makeCardHtml(){
       return  `
         <div class="card playerStyles" id="${this.docId}">
 
-            <div class="card-header">
-               ${this.badgeImg}
-              <div class="card-title-group">
-                 <div class="card-title">
-                 ${this.title}         ${this.hSubtitle()}
-                 </div>
-              </div>
-            </div>
+            ${widget_header(this.badgeImg,this.title,'<a href="">'+this.Challenge+'</a>')}
 
             <div>
               <img style="max-width:100%" src="${this.src}">
@@ -29,13 +21,6 @@ class showcase_card extends card{
       `;
   }
 
-  hSubtitle(){
-              return `<div class="card-subtitle">
-                      <div style="font-size:.7em;padding-top:.3em;">
-                        <a href="">${this.Challenge}</a>
-                      </div>
-                      </div>`
-  }
   hOwnerWidget(){
    return `<div class="card-section">
              <div style="font-size:1.65em;">
