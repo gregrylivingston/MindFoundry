@@ -3,21 +3,27 @@
 function widget_badgeByCharacter(card){
         var badgeHolder = "";
 
-        data["Badge"].filter(x=>x[data["BadgeKey"].indexOf("Character")] == card.title).forEach(bad=>{
-          badgeHolder+=widget_badge(bad);
-        })
+        var myBadges = shuffle(data["Badge"].filter(x=>x[data["BadgeKey"].indexOf("Character")] == card.title));
+
+        for (var i = 0 ; i < 2 ; i ++)
+        {
+          badgeHolder+=widget_badge(myBadges[i]);
+        }
 
       return `
-              <h3>
-                Badges
-              </h3>
+              <div class="card-section">
+                <h3 style="text-align:left;">
+                  Recommended Badges
+                  <a style="font-size:.6em;">See All</a>
+                </h3>
+              </div>
                 ${badgeHolder}
       `
 }
 
 function widget_badge(bad){
   return`
-  <div style="width:35%;display:inline-block;margin:0px;" class="card-section playerStyles" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
+  <div class="card-section playerStyles" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
     <img height="32px" src="${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png">
     <div style="text-align:left;">
       ${bad[data["BadgeKey"].indexOf("title")]}
