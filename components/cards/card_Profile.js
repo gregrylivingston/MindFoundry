@@ -15,6 +15,7 @@ class player_card extends card{
             ${widget_player( data["Player"][this.index])}
            </div>
            ${widget_showcase("Player",this.title)}
+           ${widget_leaderboard()}
 
             <div class="card-footer">
               <div class="card-footer-left">

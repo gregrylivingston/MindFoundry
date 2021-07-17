@@ -12,7 +12,7 @@ function widget_showcase(filterKey, filterValue){
                   html+=`
                         <div class="card-section">
                           <h3 style="text-align:left;">
-                            Latest Showcase
+                            Latest ${filterValue} Showcase
                             <a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>
                           </h3>
                         </div>
@@ -43,18 +43,17 @@ function addMediaPreview(mediaItem){
   let img1Title = mediaItem[data["ShowcaseKey"].indexOf("title")];
   let img1Chal = mediaItem[data["ShowcaseKey"].indexOf("Challenge")];
   return `
-                <div class="layer2">
-                  <p>${img1Title}</p>
+                <div>
+                  <div style="font-size:1.2em;">${img1Title}</div>
+                  <div style="font-size:0.8em"><a href="">${img1Chal}</a></div>
+
                 </div>
-                <div class="media">
-
-
+                <div>
                   <img src="${img1}" style="max-width:100%;object-fit:cover;">
-                  <div class="bottom-layer2">
-                  </div>
                 </div>
-                <p>${img1Chal}</p>
-
+                <div style="text-align:center;width:100%;">
+                ${widget_playerByName(mediaItem[data["ShowcaseKey"].indexOf("Player")])}
+                </div>
 
 `
 }

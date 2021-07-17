@@ -3,7 +3,7 @@ function widget_challengeRec(myKey, myValue){
     var myChall = `
         <div class="card-section">
           <h3 style="text-align:left;">
-            Recommended Challenges
+            Recommended ${myValue} Challenges
             <a style="font-size:.6em;">See All</a>
           </h3>
         </div>

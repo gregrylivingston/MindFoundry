@@ -13,7 +13,7 @@ function widget_badgeByCharacter(card){
       return `
               <div class="card-section">
                 <h3 style="text-align:left;">
-                  Recommended Badges
+                  Recommended ${card.title} Badges
                   <a style="font-size:.6em;" onclick="showBadgesByCharacter('${card.title}')">See All</a>
                 </h3>
               </div>
