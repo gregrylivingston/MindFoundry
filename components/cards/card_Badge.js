@@ -12,6 +12,8 @@ class badge_card extends card{
             ${widget_description(this.Description)}
             ${widget_showcase("badge",this.title)}
             ${widget_challengeRec("badge",this.title)}
+            ${widget_leaderboard()}
+
             ${this.hFooter()}
         </div>
       `;
