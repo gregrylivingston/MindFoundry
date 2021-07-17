@@ -114,6 +114,8 @@
 .card-section>p{
   margin:.5em 20% .5em 20%;
   text-align:center;
+  width:82%;
+  display: inline-flex;
 }
 
 .card-footer{
@@ -144,4 +146,10 @@
   display:inline;
   text-align:right;
   vertical-align:bottom;
+}
+
+
+.cardWidget{
+  width:82%;
+  display: inline-flex;
 }
