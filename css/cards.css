@@ -2,7 +2,7 @@
 #cards{
     display:flex;
     align-items:flex-start;
-    max-width:100%;
+    width:100%;
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap:wrap;
@@ -12,9 +12,8 @@
   opacity:0.97;
   border-radius:10px;
   width:98%;
-  margin-left:1%;
-  margin-right:1%;
-
+  margin-left:.5%;
+  margin-right:.5%;
   border:2px solid white;
   display:inline-block;
   vertical-align:top;
@@ -31,8 +30,8 @@
 
 @media only screen and (min-width: 1000px){
   .card{
-    width:28vw;
-    margin:1vw;
+    width:31%;
+    margin:.5%;
     font-size:1em;
 
   }

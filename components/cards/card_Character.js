@@ -9,25 +9,30 @@ class character_card extends card{
       this.branchImg='';
       this.cardHtml = this.makeCardHtml();
   }
-  hInnerContent(){
-    return  this.hDescription() + HCardBadgesByCharacter(this) + widget_showcase("Character",this.title)
-  }
-  hcharacterStatus(){
+  makeCardHtml(){
+      return  `
+        <div class="card playerStyles" id="${this.docId}">
+          ${widget_cardType(this.characterImg + " " + this.badge + " " + this.type)}
 
-  }
-  htargetBadge(){
 
-  }
-  hSubtitle(){
-            return `<div class="card-subtitle">
-                        <div style="font-size:.7em;padding-top:.3em;">
-                            Lvl 0
-                            <div class="progressBar-outer playerStyles" style="width:50%;">
-                              <div class="progressBar-inner" ></div>
-                            </div>
-                              0 / 10 L
-                        </div>
-                    </div>`;
+          <div class="card-header">
+             ${this.badgeImg}
+            <div class="card-title-group">
+               <div class="card-title">
+                ${this.title}
+                  <div class="card-subtitle">
+                    ${widget_progressBar(2,10)}
+                  </div>
+               </div>
+            </div>
+          </div>
 
+          ${this.hDescription()}
+          ${HCardBadgesByCharacter(this)}
+          ${widget_showcase("Character",this.title)}
+          ${this.hFooter()}
+        </div>
+      `;
   }
+
 }

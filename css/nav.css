@@ -20,6 +20,13 @@
   width:100%;
   display:inline-flex;
 }
+
+.topnav{
+
+  width:100vw;
+  max-height:5em;
+}
+
 @media only screen and (min-width: 200px){
   .topnav-button{
     font-size:3em;
@@ -31,7 +38,6 @@
     position:absolute;
     top:0vh;
     left:0vw;
-    width:100vw;
     height:3em;
     display:inline-flex;
     align-items:center;
