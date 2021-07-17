@@ -1,4 +1,3 @@
-
 class branch_card extends card{
   constructor(type, index){
       super(type, index);
@@ -25,10 +24,6 @@ class branch_card extends card{
                 <div class="card-section playerStyles">
                   <h3 style="width:100%;display:inline-flex;">
                         <div style="width:70%">${x[0]}</div>
-
-
-
-
                 </div>
             `
         })

@@ -14,7 +14,7 @@ class character_card extends card{
 
           ${widget_header(this.badgeImg,this.title,widget_progressBar())}
           ${widget_description(this.Description)}
-          ${HCardBadgesByCharacter(this)}
+          ${widget_badgeByCharacter(this)}
           ${widget_showcase("Character",this.title)}
           ${this.hFooter()}
         </div>
