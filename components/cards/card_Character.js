@@ -10,7 +10,7 @@ class character_card extends card{
       this.cardHtml = this.makeCardHtml();
   }
   hInnerContent(){
-    return  this.hDescription() + HCardBadgesByCharacter(this)
+    return  this.hDescription() + HCardBadgesByCharacter(this) + widget_showcase("Character",this.title)
   }
   hcharacterStatus(){
 

@@ -37,6 +37,7 @@ function setCardsByMenu(menu, cardFilter){
       case "Badge":
         availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.title==cardFilter));
         availableCards.push(... shuffle(cards.filter(c=>c.type=="Branch"&&c.badge==cardFilter)));
+          console.log(availableCards.length);
         break
       case "Home":
       case "Character":

@@ -12,7 +12,8 @@ class badge_card extends card{
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
   hInnerContent(){
-    return  this.hDescription() //+ HCardBadgesByCharacter(this)
+    return  this.hDescription()  + widget_showcase("badge",this.title)
+//+ HCardBadgesByCharacter(this)
   }
   hcharacterStatus(){
 
