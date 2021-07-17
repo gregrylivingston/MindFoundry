@@ -24,7 +24,7 @@
   font-size:2em;
 }
 
-@media only screen and (min-width: 961px){
+@media only screen and (min-width: 1025px){
   .card{
     width:47%;
     margin:.5%;
