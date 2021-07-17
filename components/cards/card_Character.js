@@ -10,12 +10,14 @@ class character_card extends card{
   makeCardHtml(){
       return  `
         <div class="card playerStyles" id="${this.docId}">
-          ${widget_cardType(this.characterImg + " " + this.badge + " " + this.type)}
+          ${widget_cardType("Character Progress")}
 
           ${widget_header(this.badgeImg,this.title,widget_progressBar())}
           ${widget_description(this.Description)}
           ${widget_badgeByCharacter(this)}
           ${widget_showcase("Character",this.title)}
+          ${widget_challengeRec("Character",this.title)}
+          ${widget_leaderboard()}
           ${this.hFooter()}
         </div>
       `;

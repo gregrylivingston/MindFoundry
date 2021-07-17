@@ -16,7 +16,7 @@ function widget_player(player){
 
                 </div>
                 <div class="playerWidget-crest" onclick="setCardsByMenu('Club')" style="z-index:9999;">
-                  <img height="50px" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
+                  <img height="32px" src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
                 </div>
             </div>
         </div>

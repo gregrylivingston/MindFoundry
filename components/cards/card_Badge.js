@@ -11,6 +11,7 @@ class badge_card extends card{
             ${widget_header(this.badgeImg,this.title,widget_progressBar())}
             ${widget_description(this.Description)}
             ${widget_showcase("badge",this.title)}
+            ${widget_challengeRec("badge",this.title)}
             ${this.hFooter()}
         </div>
       `;
