@@ -7,9 +7,27 @@ class event_card extends card{
       this.eventsInBadge = eventsInBadge;
 
   }
-  hInnerContent(){
-    return this.hDescription() + this.hEventList()
+
+  makeCardHtml(){
+      return  `
+        <div class="card playerStyles" id="${this.docId}">
+            ${widget_cardType(this.characterImg + " " + this.badge + " Events")}
+
+            <div class="card-header">
+               ${this.badgeImg}
+               <div class="card-title-group">
+                 <div class="card-title">${this.title}         ${this.hSubtitle()}
+                 </div>
+               </div>
+           </div>
+
+          ${this.hDescription()}
+          ${this.hEventList()}
+          ${this.hFooter()}
+        </div>
+      `;
   }
+  
   hSubtitle(){
     return `<div class="card-subtitle">
             <div style="font-size:.9em;padding-top:.3em;">
@@ -19,13 +37,7 @@ class event_card extends card{
             </div>`;
 
   }
-  hPreTitle(){  return `
-        <div class="card-type">
-          <div style="display:inline-flex;align-items:center;">
-              ${this.characterImg} &nbsp ${this.badge.replace("_"," ")} Events
-          </div>
-        </div>`
-  }
+
   hEventList(){
       return`
       <h3>Event List</h3>

@@ -8,28 +8,33 @@ class branch_card extends card{
       this.branchImg='';
       this.cardHtml = this.makeCardHtml();
   }
+  makeCardHtml(){
+      return  `
+        <div class="card playerStyles" id="${this.docId}">
+            ${widget_cardType(this.title + " Badge")}
 
 
-  hInnerContent(){
-    return  this.hDescription() + this.makeChallenges()//+ HCardBadgesByCharacter(this)
+            <div class="card-header">
+               ${this.badgeImg}
+
+                <div class="card-title-group">
+                 <div class="card-title">${this.title} ${this.hSubtitle()}
+                 </div>
+                </div>
+            </div>
+
+            ${this.hDescription()}
+            ${this.makeChallenges()}
+            ${this.hFooter()}
+        </div>
+      `;
   }
-  hcharacterStatus(){
 
-  }
-  htargetBadge(){
 
-  }
   hSubtitle(){
             return `<div class="card-subtitle">
-                        <div style="font-size:.7em;padding-top:.3em;">
-                            Lvl 0
-                            <div class="progressBar-outer playerStyles" style="width:50%;">
-                              <div class="progressBar-inner" ></div>
-                            </div>
-                              0 / 10 L
-                        </div>
+                        ${widget_progressBar()}
                     </div>`;
-
   }
   makeChallenges(){
         this.challenges = "";

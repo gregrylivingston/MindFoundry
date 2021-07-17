@@ -4,15 +4,38 @@ class challenge_card extends card{
       super(type, index);
       this.cardHtml = this.makeCardHtml();
   }
+
+  makeCardHtml(){
+      return  `
+        <div class="card playerStyles" id="${this.docId}">
+            ${widget_cardType(this.branch + " Challenge")}
+
+            <div class="card-header">
+               ${this.badgeImg}
+
+                <div class="card-title-group">
+                 <div class="card-title">${this.title}         ${this.hSubtitle()}
+                 </div>
+                </div>
+            </div>
+
+
+
+            ${this.hInnerContent()}
+            ${this.hFooter()}
+        </div>
+      `;
+  }
   hInnerContent(){
               return `
                         ${this.hDescription()}
-                        ${this.hShowcaseWidget()}
+                        ${widget_showcase("Challenge",this.title)}
                       <div class="card-section playerStyles2">
                           You have not completed this challenge.
                           <br>
-                           ${this.makeCardProgressBar()}
-                            <button class="menuButton"><h2>Submit</h2></button>
+                           ${widget_progressBar()}
+                            <button class="menuButton"><h2>Submit</h2>
+                            </button>
                       </div>
                       <div class="playerStyles-cardSection">
                         Link to a resource

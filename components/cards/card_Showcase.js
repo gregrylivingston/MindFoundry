@@ -6,30 +6,29 @@ class showcase_card extends card{
       this.cardHtml = this.makeCardHtml();
 
   }
-  hPreTitle(){
-    return "";
-  }
-  hInnerContent(){
-    return this.hShowcaseItem() + this.hOwnerWidget()
-  }
-  hShowcaseItem(){
-    return `<div>
-      <img style="max-width:100%" src="${this.src}">
-    </div>`
-  }
-  hHeader(card){
-       return  `<div class="card-header">
-          ${this.badgeImg}
+  makeCardHtml(){
+      return  `
+        <div class="card playerStyles" id="${this.docId}">
 
-      <div class="card-title-group">
-        <div class="card-title">${this.title}         ${this.hSubtitle()}</div>
-      </div>
-        <!--  ${this.branchImg}-->
-    </div>
+            <div class="card-header">
+               ${this.badgeImg}
+              <div class="card-title-group">
+                 <div class="card-title">
+                 ${this.title}         ${this.hSubtitle()}
+                 </div>
+              </div>
+            </div>
 
-    `
+            <div>
+              <img style="max-width:100%" src="${this.src}">
+            </div>
 
+            ${this.hOwnerWidget()}
+            ${this.hFooter()}
+        </div>
+      `;
   }
+
   hSubtitle(){
               return `<div class="card-subtitle">
                       <div style="font-size:.7em;padding-top:.3em;">
@@ -47,7 +46,7 @@ class showcase_card extends card{
                    </div>
                    <div>
                         Challenge Coin:
-                        ${this.makeCardProgressBar(1,10)}
+                        ${widget_progressBar(1,10)}
                    </div>
             </div>
 

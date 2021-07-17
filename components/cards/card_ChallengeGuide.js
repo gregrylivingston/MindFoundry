@@ -15,58 +15,18 @@ class challengeGuide_card extends card{
   makeCardHtml(){
       return  `
         <div class="card playerStyles" id="${this.docId}">
+            ${widget_cardType("Challenge Guide")}
 
-
-            ${this.hPreTitle()}
-            ${this.hHeader()}
-            ${this.hInnerContent()}
+            <div class="card-header">
+                <h3>Challenge Guide</h3>
+             </div>
+            ${this.hPlayerProgress()}
             ${this.hFooter()}
         </div>
       `;
   }
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
-  hInnerContent(){
-            return this.hPlayerFocus() + this.hPlayerProgress()
-  }
-  hPreTitle(){  return `
-        <div class="card-type">
-          <div style="display:inline-flex;align-items:center;">
-              Challenge Guide
-          </div>
-        </div>`
-      }
-
-  hHeader(card){
-      var imgSources = data["Showcase"].filter(x=>x[data["ShowcaseKey"].indexOf("Player")]==this.title);
-
-       return  `<div class="card-header">
-           <h2>Challenge Guide<h3>
-            </h2>
-        </div>
-       `/*
-          ${this.badgeImg}
-
-      <div class="card-title-group">
-        <div class="card-title">${this.title}         ${this.hSubtitle()}</div>
-      </div>
-        <!--  ${this.branchImg}-->
-    </div>
-    ${widget_player( data["Player"][this.index])}
-
-    `
-*/
-  }
-
-  hPlayerFocus(){
-
-
-      return `
-        <div class="card-section">
-          <h3>Focus Badges</h3>
-        </div>
-      `
-  }
 
 
     hPlayerProgress(){
