@@ -23,7 +23,6 @@
 
 .topnav{
   width:100vw;
-  max-height:8em;
 }
 
 @media only screen and (min-width: 200px){
@@ -33,7 +32,7 @@
 }
 
 }
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1261px){
   .topnav{
     position:absolute;
     top:0vh;
