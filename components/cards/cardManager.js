@@ -47,7 +47,8 @@ function setCardsByMenu(menu, cardFilter){
         availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
         break
       case "Event":
-        availableCards = shuffle(cards.filter(c=>c.type==menu));
+        availableCards = [cards.find(c=>c.type=="eventGuide")];
+        availableCards.push(... shuffle(cards.filter(c=>c.type==menu)));
         break
       default:
         availableCards = shuffle(cards.filter(c=>c.type=="Event" ));

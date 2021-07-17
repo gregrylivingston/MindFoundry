@@ -1,4 +1,6 @@
-
+//uses the data from the player table.
+//One is created for each player.
+//active player is stored in slot 0.
 class player_card extends card{
 
   constructor(type, index) {
