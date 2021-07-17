@@ -22,14 +22,14 @@
 }
 
 .topnav{
-
   width:100vw;
-  max-height:5em;
+  max-height:8em;
 }
 
 @media only screen and (min-width: 200px){
   .topnav-button{
     font-size:3em;
+    height:2em;
 }
 
 }
