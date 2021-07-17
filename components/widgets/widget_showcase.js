@@ -27,10 +27,9 @@ function widget_showcase(filterKey, filterValue){
                   if ( filterValue == data["Player"][0][0] || filterKey !== "Player")html+=addShowcaseButton();
                 }
                 if ( imgSources[1] !== undefined){
-                    html+='</div><div class="card-section">';
+                    html+='</div><div class="card-section playerStyles">';
                     html+=addMediaPreview(imgSources[1]);
 
-                    html+='</div>'
                   }
                 html+=htmlAppend;
 
