@@ -16,17 +16,27 @@ class branch_card extends card{
   }
 
   makeChallenges(){
-        this.challenges = "";
-        let mychallenges = data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf("branch")] == this.title);
-        mychallenges.forEach(x=>{
+        this.challenges = `
+            <div class="card-section">
+              <h3 style="text-align:left;">
+                Recommended Challenges
+                <a style="font-size:.6em;">See All</a>
+              </h3>
+            </div>
+        `;
+        var mychallenges = shuffle(data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf("branch")] == this.title));
+        console.log(mychallenges.length);
+        for (var i = 0 ; (i < 2 )  ; i ++){
+          if ( mychallenges[i]!== undefined){
+          this.challenges+=`
+              <div class="card-section playerStyles">
+                <h3 style="width:100%;display:inline-flex;">
+                      <div style="width:70%">${mychallenges[i][0]}</div>
+              </div>
+          `
+          }
+        }
 
-            this.challenges+=`
-                <div class="card-section playerStyles">
-                  <h3 style="width:100%;display:inline-flex;">
-                        <div style="width:70%">${x[0]}</div>
-                </div>
-            `
-        })
         return this.challenges;
 
     }

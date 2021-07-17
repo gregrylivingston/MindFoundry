@@ -4,24 +4,32 @@ function widget_showcase(filterKey, filterValue){
 
                 let myKey = data["ShowcaseKey"].indexOf(filterKey);
                 var imgSources = data["Showcase"].filter(x=>x[myKey]==filterValue);
-                let html="";
+                let html=``;
                 let htmlAppend="";
-                html+='<div class="card-section">';
+                html+='';
 
                 if (  imgSources[0] !== undefined ){
+                  html+=`
+                        <div class="card-section">
+                          <h3 style="text-align:left;">
+                            Latest Showcase
+                            <a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>
+                          </h3>
+                        </div>
+                        <div class="card-section playerStyles">
+                        `;
                   html+=addMediaPreview(imgSources[0]);
                           htmlAppend=
-                          `<button class="selectButton playerStylesButton" onclick="loadMenu('Showcase')">
-                            ${this.title}'s Showcase</button>
+                          `
+                        </div>
                           `;
                 } else {
                   if ( filterValue == data["Player"][0][0] || filterKey !== "Player")html+=addShowcaseButton();
                 }
-                if ( imgSources[2] !== undefined){
-                    html+='<div><div style="width:49%;display:inline-block;">';
+                if ( imgSources[1] !== undefined){
+                    html+='</div><div class="card-section">';
                     html+=addMediaPreview(imgSources[1]);
-                    html+='<div style="width:49%;display:inline-block;">';
-                    html+=addMediaPreview(imgSources[2]);
+
                     html+='</div>'
                   }
                 html+=htmlAppend;
@@ -48,20 +56,21 @@ function addMediaPreview(mediaItem){
                 </div>
                 <p>${img1Chal}</p>
 
-            </div>
+
 `
 }
 
 function addShowcaseButton(){
-return ` <div class="layer2">
+return ''
+/*`
+  <div class="layer2">
     <p>Empty Showcase</p>
   </div>
   <div class="media">
-
         This showcase is currently empty.  Be the first to respond to the challenge.
     <div class="bottom-layer2">
       <p></p>
     </div>
   </div>
-</div>`
+`*/
 }
