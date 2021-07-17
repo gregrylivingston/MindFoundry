@@ -94,6 +94,7 @@
   text-align:center;
   margin:2%;
   max-height:20em;
+
 }
  .media>img{
   height:100%;
@@ -107,6 +108,7 @@
   border:0px;
   margin:.7em 3% .7em 3%;
   padding:.7em 3% .7em 3%;
+  vertical-align:top;
 }
 
 .card-section>p{
