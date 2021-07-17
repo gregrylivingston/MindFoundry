@@ -74,7 +74,7 @@ class challengeGuide_card extends card{
           <div class="card-section">
             <h3>Player Progress</h3>
           </div>
-          <div class="card-section playerStyles" style="width:82%;">
+          <div class="card-section playerStyles">
             <h3>Top Character</h3>
 
 
@@ -82,8 +82,8 @@ class challengeGuide_card extends card{
 
           <p>Spellbound Level 2 Artist Trophy</p>
           </div>
-
-          <div class="card-section playerStyles" style="width:82%">
+        <br>
+          <div class="card-section playerStyles">
             <h3>Top Badges<h3>
             <div class="acting_badgeprogress">
             <p>Acting Level 1<img src="img/badge/acting1.png" style="height:32px;"> 04/20</p>
