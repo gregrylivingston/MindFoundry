@@ -28,7 +28,3 @@ function widget_header(badge,title,subtitle){
 function  widget_description(desc){
   return `<div class="card-section playerStyles-section">${desc}</div>`
 }
-
-function widget_footer(){
-
-}

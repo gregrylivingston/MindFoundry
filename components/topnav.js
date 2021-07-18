@@ -12,7 +12,7 @@ document.write(`
   </button>
 
 
-  <button class="topnav-button playerStylesButtonHighlight" onclick="setCardsByMenu('Event')">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png"></button>
+  <button class="topnav-button playerStylesButtonHighlight" onclick="showEvents()">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png"></button>
 
 
     <button class="topnav-button playerStylesButtonHighlight" onclick="setCardsByMenu('Shop')"> 3 <img height="1em" class="menuButton-image" src="img/menu/menu_geniusshop.png"></button>

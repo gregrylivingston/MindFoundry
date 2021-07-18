@@ -14,7 +14,14 @@ class event_card extends card{
             ${widget_header(this.badgeImg,this.title,this.Grade)}
             ${widget_description(this.Description)}
           ${this.hEventList()}
-          ${this.hFooter()}
+
+
+           ${new widget_footer(
+              [widget_fFriend(),widget_fReact()],
+              [widget_fShare(),widget_fMenu()]
+            ).html()}
+
+
         </div>
       `;
   }
@@ -64,18 +71,4 @@ class event_card extends card{
         })
         return this.events
   }
-  hFooter(){
-          return `
-          <div class="card-footer">
-            <div class="card-footer-left">
-                  <button class="topnav-button playerStyles"><img src="img/menu/favorite_unchecked.png"></button>
-                  <button class="topnav-button playerStyles"><img src="img/menu/react.png"></button>
-
-                  </div>
-            <div class="card-footer-right">
-              <button class="topnav-button playerStyles"><img src="img/menu/share.png"></button>
-              <button class="topnav-button playerStyles">...</button>
-            </div>
-          </div>`
-        }
 }

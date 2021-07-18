@@ -17,15 +17,10 @@ class player_card extends card{
            ${widget_showcase("Player",this.title)}
            ${widget_leaderboard()}
 
-            <div class="card-footer">
-              <div class="card-footer-left">
-                    <button class="selectButton playerStyles"><img src="img/menu/menu_usercrew.png"></button>
-              </div>
-              <div class="card-footer-right">
-                <button class="selectButton playerStyles"><img src="img/menu/share.png"></button>
-                <button class="selectButton playerStyles">...</button>
-              </div>
-            </div>
+           ${new widget_footer(
+              [widget_fFriend()],
+              [widget_fShare(),widget_fMenu()]
+            ).html()}
 
         </div>
       `;

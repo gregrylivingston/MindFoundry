@@ -51,7 +51,7 @@ function addMediaPreview(mediaItem){
                   <div style="display:inline-block;width:40%;text-align:right;vertical-align:top;height:100%;">
                     <button class="menuButton playerStyles" style="font-size:1.5em;width:45%;">
                       4
-                      <img class="menuButton-image" src="img/menu/menu_challenges.png">
+                      <img class="menuButton-image" src="img/menu/react.png">
 
                     </button>
                     <button class="menuButton playerStyles"  style="font-size:1.5em;width:45%;">

@@ -16,21 +16,45 @@ var cards = [];
 var availableCards = [];
 var availableCardIterator = 0;
 
-function showBadgesByCharacter(myCharacter){
+function resetCardHolder(){
   scroller.scrollTop = 0 ;
   document.getElementById("cards").innerHTML = "";
-  availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.Character==myCharacter));
   availableCardIterator = 0;
+}
+
+function showBadgesByCharacter(myCharacter){
+  resetCardHolder();
+  availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.Character==myCharacter));
   addCardsToFeed();
 }
 
-function showBadge(b){
-  setCardsByMenu("Badge", b);
+function showBadge(cardFilter){
+  resetCardHolder();
+  availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.title==cardFilter));
+  availableCards.push(... shuffle(cards.filter(c=>c.type=="Branch"&&c.badge==cardFilter)));
+  addCardsToFeed();
+}
+
+function showEvents(){
+  resetCardHolder();
+  availableCards = [cards.find(c=>c.type=="eventGuide")];
+  availableCards.push(... shuffle(cards.filter(c=>c.type=="Event")));
+  addCardsToFeed();
+}
+
+function showChallenges(filterV){
+  console.log("showchallenges +  " + filterV)
+  var thisKey = filterV[0];
+  var thisVal = filterV[1];
+  resetCardHolder();
+  availableCards = shuffle(cards.filter(c=>c.type=="Challenge"));
+  console.log(availableCards);
+  addCardsToFeed();
+
 }
 
 function setCardsByMenu(menu, cardFilter = undefined){
-    scroller.scrollTop = 0 ;
-    document.getElementById("cards").innerHTML = "";
+    resetCardHolder();
     switch (menu){
       case "Showcase":
         availableCards = shuffle(cards.filter(c=>c.type=="Showcase"));
@@ -42,10 +66,6 @@ function setCardsByMenu(menu, cardFilter = undefined){
       case "Squad":
         availableCards = shuffle(cards.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
         break
-      case "Badge":
-        availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.title==cardFilter));
-        availableCards.push(... shuffle(cards.filter(c=>c.type=="Branch"&&c.badge==cardFilter)));
-        break
       case "Home":
       case "Character":
       case "Challenge":
@@ -53,15 +73,10 @@ function setCardsByMenu(menu, cardFilter = undefined){
         availableCards.push(... [cards.find(c=>c.type=="challengeGuide")]);
         availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
         break
-      case "Event":
-        availableCards = [cards.find(c=>c.type=="eventGuide")];
-        availableCards.push(... shuffle(cards.filter(c=>c.type==menu)));
-        break
       default:
         availableCards = shuffle(cards.filter(c=>c.type=="Event" ));
         availableCards.push(... shuffle(cards.filter(c=>c.type=="Challenge")));
     }
-    availableCardIterator = 0;
     addCardsToFeed();
 
 }
