@@ -42,9 +42,9 @@ class challenge_card extends card{
   }
   hSubtitle(){
               return `<div class="card-subtitle">
-                      <div style="font-size:.7em;padding-top:.3em;">
-                          Skill - - - -<br>
-                          Effort - - -
+                      <div style="font-size:.85em;padding-top:.3em;">
+                          Skill: ${widget_level(this.Skill)}<br>
+                          Effort:  ${widget_level(this.Effort)}
                       </div>
                       </div>`
   }

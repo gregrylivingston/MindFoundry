@@ -42,12 +42,12 @@ function showEvents(){
   addCardsToFeed();
 }
 
-function showChallenges(filterV){
-  console.log("showchallenges +  " + filterV)
-  var thisKey = filterV[0];
-  var thisVal = filterV[1];
+function showChallenges(search){
+  console.log("showchallenges +  " + search.column + search.row)
+
   resetCardHolder();
   availableCards = shuffle(cards.filter(c=>c.type=="Challenge"));
+  availableCards = availableCards.filter(c=>c[search.column]==search.row);
   console.log(availableCards);
   addCardsToFeed();
 
