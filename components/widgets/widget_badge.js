@@ -4,7 +4,7 @@ function widget_badgeByCharacter(card){
         var badgeHolder = "";
 
         var myBadges = shuffle(data["Badge"].filter(x=>x[data["BadgeKey"].indexOf("Character")] == card.title));
-
+        console.log(myBadges);
         for (var i = 0 ; i < 2 ; i ++)
         {
           badgeHolder+=widget_badge(myBadges[i]);
