@@ -18,7 +18,7 @@ function widget_challengeRec(myKey, myValue){
 
 function widget_challenge(chall){
   return  `
-  <div class="card-section playerStyles">
+  <div class="card-section playerStylesButton">
     <h3 style="width:100%;display:inline-flex;">
           <div style="width:70%">${chall[0]}</div>
     </h3>

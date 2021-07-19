@@ -49,12 +49,12 @@ function addMediaPreview(mediaItem){
                       <div style="font-size:0.8em"><a href="">${img1Chal}</a></div>
                   </div>
                   <div style="display:inline-block;width:40%;text-align:right;vertical-align:top;height:100%;">
-                    <button class="menuButton playerStyles" style="font-size:1.5em;width:45%;">
+                    <button class="menuButton playerStylesButton" style="font-size:1.5em;width:45%;">
                       4
                       <img class="menuButton-image" src="img/menu/react.png">
 
                     </button>
-                    <button class="menuButton playerStyles"  style="font-size:1.5em;width:45%;">
+                    <button class="menuButton playerStylesButton"  style="font-size:1.5em;width:45%;">
                       2
                       <img class="menuButton-image" src="img/menu/award.png">
                     </button>
@@ -63,7 +63,7 @@ function addMediaPreview(mediaItem){
                 <div>
                   <img src="${img1}" style="width:100%;object-fit:fill;">
                 </div>
-                <div style="text-align:center;width:100%;" class="playerStyles">
+                <div style="text-align:center;width:100%;" class="playerStylesButton">
                 ${widget_playerByName(mediaItem[data["ShowcaseKey"].indexOf("Player")])}
                 </div>
 

@@ -27,7 +27,7 @@ class widget_footer{
 
 function widget_fFriend(){
   return `
-        <button class="selectButton playerStyles">
+        <button class="selectButton playerStylesButton">
           <img src="img/menu/menu_usercrew.png">
         </button>
         `
@@ -36,7 +36,7 @@ function widget_fFriend(){
 
 function widget_fReact(){
   return `
-        <button class="selectButton playerStyles">
+        <button class="selectButton playerStylesButton">
           <img src="img/menu/react.png">
         </button>
         `
@@ -44,12 +44,12 @@ function widget_fReact(){
 
 function widget_fMenu(){
   return `
-      <button class="selectButton playerStyles" onclick="addPopin_menu(this)">...</button>
+      <button class="selectButton playerStylesButton" onclick="addPopin_menu(this)">...</button>
         `
 }
 
 function widget_fShare(){
   return `
-        <button class="selectButton playerStyles" onclick="addPopin_share(this)"><img src="img/menu/share.png"></button>
+        <button class="selectButton playerStylesButton" onclick="addPopin_share(this)"><img src="img/menu/share.png"></button>
         `
 }
