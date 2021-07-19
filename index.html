@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="css/init.css">
 <link rel="stylesheet" href="css/showcase.css">
 
-
+<script src="js/masonry.js"></script>
 <script src="js/utility.js"></script>
 <script src="data/ssdata.js"></script>
 <script src="components/widgets/widget_player.js"></script>
@@ -98,6 +98,15 @@
 
 <script src="components/cards/card_Shop.js"></script>
 <script src="components/cards/card_ChallengeGuide.js"></script>
+
+<script>
+var elem = document.querySelector('#cards');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.card',
+});
+
+</script>
 
 <script src="components/cards/cardInit.js"></script>
 

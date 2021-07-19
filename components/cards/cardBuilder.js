@@ -20,7 +20,18 @@ class card {
             This card type is missing
         </div>`;
   }
-  addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
+  addToFeed(){
+  /*    let el = document.createElement("div");
+      el.classList.add("playerStyles");
+      el.classList.add("card");
+      el.classList.add(this.docId);
+      el.innerHTML = this.makeCardHtml();
+
+      console.log("add card to masonry");
+      console.log(el);
+      msnry.appended(el);
+  */    document.getElementById("cards").innerHTML+=this.cardHtml;
+    }
   hFooter(){return ``}
   hDescription(){ return `<div class="card-section playerStyles-section">${this.Description}</div>`}
 

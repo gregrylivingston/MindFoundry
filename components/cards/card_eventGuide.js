@@ -21,7 +21,6 @@ class eventGuide_card extends card{
         </div>
       `;
   }
-  addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
 
 

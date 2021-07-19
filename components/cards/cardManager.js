@@ -48,7 +48,6 @@ function showChallenges(search){
   resetCardHolder();
   availableCards = shuffle(cards.filter(c=>c.type=="Challenge"));
   availableCards = availableCards.filter(c=>c[search.column]==search.row);
-  console.log(availableCards);
   addCardsToFeed();
 
 }
@@ -98,6 +97,9 @@ function addCardsToFeed(){
         (nextCard !== undefined)? nextCard.addToFeed():availableCardIterator=i;
     }
     (nextCard !== undefined)? myTarget = document.querySelector('#'+nextCard.docId):myTarget=undefined;
+    msnry.reloadItems();
+    msnry.layout();
+
 }
 
 
