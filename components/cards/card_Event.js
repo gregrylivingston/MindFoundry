@@ -54,8 +54,8 @@ class event_card extends card{
                 <div class="card-section playerStyles">
                   <h3 style="width:100%;display:inline-flex;">
                         <div style="width:70%">${x[data["EventKey"].indexOf("eventTitle")]}</div>
-                        <button class="selectButton" style="width:29%;">
-                          <div>Join</div><br>
+                        <button class="half-button" style="display:block;">
+                          <div>Join</div>
                           <div>1 <img src="img/token_${x[data["EventKey"].indexOf("eventType")]}.png" height="40px"></div>
                         </button>
                   </h3>
