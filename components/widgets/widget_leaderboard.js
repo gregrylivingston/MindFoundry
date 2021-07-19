@@ -12,7 +12,6 @@ function widget_leaderboard(){
       ${leaderboard_row(11, "Spellbound")}
       ${leaderboard_row(12, "Harrison")}
       ${leaderboard_row(13,"Kawanabe")}
-      ${leaderboard_row(14,"Davinci")}
 
       <br>
     </div>
