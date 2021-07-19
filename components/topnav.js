@@ -1,6 +1,6 @@
 document.write(`
 
-<div class="topnav playerStyles">
+<div class="topnav">
 
 <div class="nav-left"  id="nav-player" onclick="setCardsByMenu('Home')" >
   ${widget_player(data["Player"][0])}

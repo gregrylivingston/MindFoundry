@@ -68,9 +68,9 @@ body{
 
   .rightColumn{
     position:absolute;
-    left:2vw;
-    top:5em;
-    width:100%;
+    left:0vw;
+    top:3em;
+    width:100vw;
     height:90vh;
   }
 }

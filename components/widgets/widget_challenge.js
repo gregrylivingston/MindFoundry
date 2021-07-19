@@ -1,24 +1,30 @@
 
 function widget_challengeRec(myKey, myValue){
-    var myChall = `
-        <div class="card-section">
+    var myChall = ``;/*
+        <div class="card-section playerStyles">
           <h3 style="text-align:left;" onclick="showChallenges({'column':'${myKey}','row':'${myValue}'})">
-            Recommended ${myValue} Challenges
+            Featured Challenges
             <a style="font-size:.6em;">See All</a>
           </h3>
-        </div>
-    `;
+    `;*/
     var mychallenges = shuffle(data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf(myKey)] == myValue));
     for (var i = 0 ; (i < 2 )  ; i ++){
       if ( mychallenges[i]!== undefined)
-        {myChall+= widget_challenge(mychallenges[i]);}
+        {myChall+= widget_challenge(mychallenges[i],myKey,myValue);}
     }
+  //  myChall+=        "</div>";
+
     return myChall;
 }
 
-function widget_challenge(chall){
+function widget_challenge(chall , myKey, myValue){
   return  `
   <div class="card-section playerStylesButton">
+    <h3 style="text-align:left;" onclick="showChallenges({'column':'${myKey}','row':'${myValue}'})">
+      Featured Challenges
+      <a style="font-size:.6em;">See All</a>
+    </h3>
+
     <h3 style="width:100%;display:inline-flex;">
           <div style="width:70%">${chall[0]}</div>
     </h3>

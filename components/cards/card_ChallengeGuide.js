@@ -10,7 +10,7 @@ class challengeGuide_card extends card{
   }
   makeCardHtml(){
       return  `
-        <div class="card playerStyles" id="${this.docId}">
+        <div class="card playerStyles-bg" id="${this.docId}">
             ${widget_cardType("Challenge Guide")}
 
             <div class="card-header">

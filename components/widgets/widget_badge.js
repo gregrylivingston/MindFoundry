@@ -5,35 +5,43 @@ function widget_badgeByCharacter(card){
 
         var myBadges = shuffle(data["Badge"].filter(x=>x[data["BadgeKey"].indexOf("Character")] == card.title));
         console.log(myBadges);
-        for (var i = 0 ; i < 2 ; i ++)
+        for (var i = 0 ; i < 4 ; i ++)
         {
           badgeHolder+=widget_badge(myBadges[i]);
         }
 
       return `
-              <div class="card-section">
+              <div class="card-section playerStyles">
                 <h3 style="text-align:left;">
                   Recommended ${card.title} Badges
                   <a style="font-size:.6em;" onclick="showBadgesByCharacter('${card.title}')">See All</a>
                 </h3>
-              </div>
                 ${badgeHolder}
+
+              </div>
       `
 }
 
 function widget_badge(bad){
   return`
-  <div class="card-section playerStylesButton" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
-    <img height="32px" src="${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png">
-    <div style="text-align:left;">
+  <div class="card-section badge" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')" style="background:url('${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png');background-size:contain;
+    background-repeat:no-repeat;">
+  <!--  <img height="32px" src="${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png">-->
+    <div style="height:8em;"></div>
+    <div style="width:100%;display:inline-block;">
+      <div class="playerStyles" style="width:32%;display:inline-block;padding:2%;text-align:center;">
+            Lvl 1
+      </div>
+      <div style="width:16%;display:inline-block;">
+      </div>
+      <div class="playerStyles" style="width:32%;display:inline-block;padding:2%;text-align:center;">
+              0/${data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf("badge")] == bad[data["BadgeKey"].indexOf("title")]).length}
+            X
+      </div>
+  </div>
+    <div class="playerStyles" style="text-align:left;padding:2%;text-align:center;">
       ${bad[data["BadgeKey"].indexOf("title")]}
     </div>
-    <div>Next Badge: Level 1</div>
-    ${widget_progressBar()}
-    <div>0 /
-    ${data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf("badge")] == bad[data["BadgeKey"].indexOf("title")]).length}
-    Challenges</div>
-
   </div>
   `
 }

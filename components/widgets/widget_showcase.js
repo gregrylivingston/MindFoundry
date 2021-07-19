@@ -1,25 +1,24 @@
 
 
-function widget_showcase(filterKey, filterValue){
+function widget_showcase(filterKey, filterValue, myIndex = 0){
 
                 let myKey = data["ShowcaseKey"].indexOf(filterKey);
                 var imgSources = data["Showcase"].filter(x=>x[myKey]==filterValue);
-                let html=``;
+                let myTitle = `Featured ${filterValue} Showcase`;
+                let mySubtitle = `<a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>`;
+                let html=`
+                      ${widget_header("",myTitle,mySubtitle)}
+
+                    `;
                 let htmlAppend="";
                 html+='';
 
-                if (  imgSources[0] !== undefined ){
+                if (  imgSources[myIndex] !== undefined ){
                   html+=`
-                        <div class="card-section">
-                          <h3 style="text-align:left;">
-                            Latest ${filterValue} Showcase
-                            <a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>
-                          </h3>
-                        </div>
                         <div class="card-section playerStyles">
                         `;
-                  html+=addMediaPreview(imgSources[0]);
-                          htmlAppend=
+                  html+=addMediaPreview(imgSources[myIndex]);
+                          htmlAppend+=
                           `
                         </div>
                           `;
@@ -29,8 +28,15 @@ function widget_showcase(filterKey, filterValue){
                 if ( imgSources[1] !== undefined){
                     html+='</div><div class="card-section playerStyles">';
                     html+=addMediaPreview(imgSources[1]);
-
                   }
+                  if ( imgSources[2] !== undefined){
+                      html+='</div><div class="card-section playerStyles">';
+                      html+=addMediaPreview(imgSources[2]);
+                    }
+                    if ( imgSources[3] !== undefined){
+                        html+='</div><div class="card-section playerStyles">';
+                        html+=addMediaPreview(imgSources[3]);
+                      }
                 html+=htmlAppend;
 
                 return html
@@ -63,9 +69,7 @@ function addMediaPreview(mediaItem){
                 <div>
                   <img src="${img1}" style="width:100%;object-fit:fill;">
                 </div>
-                <div style="text-align:center;width:100%;" class="playerStylesButton">
                 ${widget_playerByName(mediaItem[data["ShowcaseKey"].indexOf("Player")])}
-                </div>
 
 `
 }

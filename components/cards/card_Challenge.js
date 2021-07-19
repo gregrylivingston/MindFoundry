@@ -11,12 +11,13 @@ class challenge_card extends card{
             ${widget_cardType(this.branch + " Challenge")}
             ${widget_header(this.badgeImg,this.title,this.hSubtitle())}
             ${widget_description(this.Description)}
-            ${widget_showcase("Challenge",this.title)}
 
 
             ${this.hInnerContent()}
             ${widget_resource(this)}
         </div>
+        ${widget_showcase("Challenge",this.title)}
+
       `;
   }
   hInnerContent(){

@@ -10,7 +10,7 @@ class event_card extends card{
   makeCardHtml(){
 
       return  `
-      <div class="card playerStyles" id="${this.docId}">
+      <div class="card playerStyles-bg" id="${this.docId}">
 
             ${widget_cardType(this.characterImg + " " + this.badge + " Events")}
             ${widget_header(this.badgeImg,this.title,this.Grade)}

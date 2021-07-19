@@ -10,7 +10,7 @@ class eventGuide_card extends card{
   }
   makeCardHtml(){
       return  `
-        <div class="card playerStyles" id="${this.docId}">
+        <div class="card playerStyles-bg" id="${this.docId}">
             ${widget_cardType("Event Guide")}
 
             <div class="card-header">

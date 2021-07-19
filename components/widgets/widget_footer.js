@@ -4,11 +4,11 @@ class widget_footer{
       this.leftWidgets="";
       this.rightWidgets="";
       leftWid.forEach(x=>this.leftWidgets+=x);
-      rightWid.forEach(x=>this.rightWidgets+=x);
+      rightWid.forEach(x=>this.leftWidgets+=x);
     }
 
     addLeft(html){this.leftWidgets+=html;}
-    addRight(html){this.rightWidgets+=html;}
+    addRight(html){this.leftWidgets+=html;}
 
     html (){
       return `
