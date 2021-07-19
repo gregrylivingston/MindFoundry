@@ -3,14 +3,20 @@
 function widget_player(player){
       return `
         <div class="playerWidget playerStyles">
-          <img class="playerWidget-image"  height="32px" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
-          <div class="playerWidget-name"><i>${player[data["PlayerKey"].indexOf("title")]}</i></div>
-          <div style="width:50%">
+          <div style="width:42%;align-items:center;display:inline-flex;">
+            <img class="playerWidget-image"  height="32px" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
+            <div class="playerWidget-name">${player[data["PlayerKey"].indexOf("title")]}</div>
+          </div>
+          <div style="width:57%">
 
                 <div class="playerWidget-item"  onclick="setCardsByMenu('Showcase')">
 
                     ${data["Showcase"].filter(x=>x[data["ShowcaseKey"].indexOf("Player")]==player[data["PlayerKey"].indexOf("title")]).length}
                     <img class="menuButton-image" src="img/menu/menu_challenges.png">
+
+                <div class="playerWidget-item"  onclick="setCardsByMenu('Showcase')">
+                </div>
+
                     2
                     <img class="menuButton-image" src="img/menu/award.png">
 

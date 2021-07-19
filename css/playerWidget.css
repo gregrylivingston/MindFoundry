@@ -1,17 +1,14 @@
 
-.playerWidget-name {
-  padding-left:1%;
-}
-
-
 .playerWidget-item {
   display:inline-flex;
-  font-size:1.3em;
+  font-size:1.1em;
   font-weight: bold;
   padding:.05em;
   align-items:center;
   text-align:center;
   vertical-align:middle;
+  padding-right:.5em;
+  padding-left:.5em;
 }
 
 
@@ -21,6 +18,8 @@
   font-size:1.2em;
   font-weight: bold;
   padding:.05em;
+  padding-right:1em;
+  padding-left:1em;
   align-items:center;
   text-align:center;
   vertical-align:middle;
@@ -32,10 +31,15 @@
   object-fit:scale-down;
   max-width:13%;
   padding:.05em;
-  padding-right:.05em;
+  padding-right:1em;
+  padding-left:1em;
+  display:inline-flex;
+
 }
 
-
+.playerWidget-name{
+  display:inline-flex;
+}
 @media only screen and (min-width: 200px){
   .nav-left>.playerWidget{
     height:2em;
@@ -76,12 +80,12 @@
 .playerWidget{
   width:100%;
   max-width:35em;
-  margin-top:.5em;
-  margin-bottom:.5em;
-  padding-top:.2em;
-  padding-bottom:.2em;
+  margin-top:.2em;
+  margin-bottom:.2em;
+  padding-top:0em;
+  padding-bottom:0em;
   border-radius:10px;
   align-items:center;
   display:inline-flex;
-  justify-content:space-around;
+  justify-content:space-between;
 }

@@ -60,7 +60,7 @@ function init_getHeaderstart(){
         <div class="card-section">
           <h2>Select Demo Type</h2>
           <h3>New User</h3>
-          <div class="playerStyles" onclick="intialize('${newplayer[0]}')">
+          <div onclick="intialize('${newplayer[0]}')">
             ${widget_player(data["Player"][0])}
           </div>
           <h3>Online Club</h3>
