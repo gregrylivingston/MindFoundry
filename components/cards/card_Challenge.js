@@ -14,26 +14,19 @@ class challenge_card extends card{
             ${widget_showcase("Challenge",this.title)}
 
 
-
-
             ${this.hInnerContent()}
-            ${this.hFooter()}
+            ${widget_resource(this)}
         </div>
       `;
   }
   hInnerContent(){
               return `
-                      <div class="card-section playerStyles2">
+                      <div class="card-section playerStyles">
                           You have not completed this challenge.
                           <br>
                            ${widget_progressBar()}
                             <button class="menuButton"><h2>Submit</h2>
                             </button>
-                      </div>
-                      <div class="playerStyles-cardSection">
-                        Link to a resource
-                        <button>More Resources</button>
-                        <h1>Branch Resource: ${this.branch}</h1>
                       </div>
 
 
