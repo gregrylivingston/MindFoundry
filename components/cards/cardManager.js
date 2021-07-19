@@ -24,7 +24,8 @@ function resetCardHolder(){
 
 function showBadgesByCharacter(myCharacter){
   resetCardHolder();
-  availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.Character==myCharacter));
+  availableCards = cards.filter(c=>c.type=="Character"&&c.title==myCharacter);
+  availableCards.push(... shuffle(cards.filter(c=>c.type=="Badge"&&c.Character==myCharacter)));
   addCardsToFeed();
 }
 
@@ -69,8 +70,10 @@ function setCardsByMenu(menu, cardFilter = undefined){
       case "Character":
       case "Challenge":
         availableCards = [cards.find(c=>c.type=="Player")];
+        availableCards.push(...[cards.find(c=>c.type=="eventGuide")]);
+
   //      availableCards.push(... [cards.find(c=>c.type=="challengeGuide")]);
-        availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
+  //      availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
         break
       default:
         availableCards = shuffle(cards.filter(c=>c.type=="Event" ));

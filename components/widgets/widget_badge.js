@@ -24,7 +24,7 @@ function widget_badgeByCharacter(card){
 
 function widget_badge(bad){
   return`
-  <div class="card-section badge" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')" style="background:url('${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png');background-size:contain;
+  <div class="badge" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')" style="background:url('${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png');background-size:contain;
     background-repeat:no-repeat;">
   <!--  <img height="32px" src="${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png">-->
     <div style="height:8em;"></div>

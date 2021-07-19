@@ -103,14 +103,25 @@
 }
 
 .card-section{
-  min-width:24em;
-  max-width:36em;
+  min-width:20em;
+  max-width:50em;
   display:inline-block;
   text-align:left;
   border:0px;
-  margin:2em 1em 2em 1em;
+  margin:2em 2% 2em 2%;
   padding:1em 1em 1em 1em;
   vertical-align:top;
+}
+
+.badge{
+    min-width:10em;
+    max-width:25em;
+    display:inline-block;
+    text-align:left;
+    border:0px;
+    margin:2em 2% 2em 2%;
+    padding:1em 1em 1em 1em;
+    vertical-align:top;
 }
 
 .card-section>h3{

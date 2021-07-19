@@ -50,19 +50,16 @@ class player_card extends card{
                 </div>
               </div>
             </div>
-
-
                        ${new widget_footer(
                           [widget_fFriend()],
                           [widget_fShare(),widget_fMenu()]
                         ).html()}
-
         </div>
+
+
         <div class="card playerStyles-bg" class="${this.docId}">
-
-        ${widget_showcase("Player",this.title)}
+          ${widget_showcase("Player",this.title)}
         </div>
-
 
 
       `;
