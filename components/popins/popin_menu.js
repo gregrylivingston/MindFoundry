@@ -9,5 +9,5 @@ function popin_menu(){
 }
 
 function addPopin_menu(el){
-   el.parentElement.parentElement.parentElement.innerHTML+=popin_menu();
+   el.parentElement.innerHTML+=popin_menu();
 }

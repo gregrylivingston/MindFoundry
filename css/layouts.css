@@ -3,7 +3,7 @@ body{
   margin:0px;
   font-family: PT Sans;
   font-style: normal;
-  overflow-x: hidden;
+  overflow-x:hidden;
   overflow-y:hidden;
 }
 
@@ -25,13 +25,15 @@ body{
   height: 89vh;
   position:relative;
   padding:0px;
-  width:100%;
+  width:100vw;
 
 }
 .innerScrollDesktop{
   max-height:100%;
   overflow:auto;
-  width:100%;
+  overflow-x:hidden;
+
+  width:100vw;
 
 }
 
