@@ -91,3 +91,14 @@
     opacity:0.96;
 
 }
+
+.attributeRow{
+  width:94%;
+  padding:1%;
+  margin:1%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  text-align:left;
+
+}

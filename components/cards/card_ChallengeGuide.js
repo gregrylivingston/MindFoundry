@@ -64,8 +64,8 @@ class challengeGuide_card extends card{
 
 function  widget_attributeSummary(char , lvl){
   return `
-        <div style="width:100%;padding:.5em;" onclick="showBadgesByCharacter('${char}')">
-          <img height="30px" style="display:inline-block;width:18%;" src="img/Character/${char}.png">
+        <div class="playerStylesButton attributeRow" onclick="showBadgesByCharacter('${char}')">
+          <img height="30px" style="display:inline-block;" src="img/Character/${char}.png">
           <div style="display:inline-block;width:80%;">
             ${char}
             <div style="max-width:80%;display:inline-block">

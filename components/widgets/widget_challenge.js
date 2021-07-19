@@ -49,6 +49,10 @@ function widget_level(lvl){
         for ( var i = 0 ; i < lvl ; i ++ ){
           myHtml+="<div class='playerStyles' style='height:.5em;width:1.5em;margin-left:.5em;background:white;'></div>"
         }
+        for ( ; i < 5 ; i ++ ){
+          myHtml+="<div class='playerStyles' style='height:.5em;width:1.5em;margin-left:.5em;'></div>"
+
+        }
         myHtml+="</div>"
   return myHtml
 }
