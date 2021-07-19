@@ -11,7 +11,7 @@
 }
 
 .card{
-  opacity:0.97;
+  opacity:0.96;
   width:100vw;
   margin-left:0%;
   margin-right:0%;
@@ -47,12 +47,12 @@
 .card-header{
   width:100%;
   margin:0em 0px .2em 0px;
-  padding:.8em 2% .8em 2%;
+  padding:1.5em 2% 1.5em 2%;
 
   border-bottom:2px white solid;
   /*border-top-left-radius:10px;
   border-top-right-radius:10px;*/
-  box-shadow: 0px 4px 2px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
   text-align:left;
   vertical-align:top;
   display:inline-block;

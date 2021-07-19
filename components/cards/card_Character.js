@@ -19,14 +19,18 @@ class character_card extends card{
     <!--    </div>
         <div class="card playerStyles-bg" class="${this.docId}">
 -->
-          ${widget_leaderboard()}
         </div>
         <div class="card playerStyles-bg" class="${this.docId}">
 
-        ${widget_showcase("Character",this.title)}
+          ${widget_showcase("Character",this.title)}
         </div>
 
+        <div class="card playerStyles-bg" class="${this.docId}">
+          ${widget_header(this.badgeImg,this.title + " Leaderboard",this.Description)}
 
+          ${widget_leaderboard()}
+
+        </div>
 
       `;
       //          ${widget_description(this.Description)}

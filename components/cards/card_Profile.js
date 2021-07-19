@@ -9,13 +9,11 @@ class player_card extends card{
   }
   makeCardHtml(){
       return  `
-        <div class="card playerStyles-bg" id="${this.docId}">
+        <div class="card playerStyles-bg" class="${this.docId}">
             ${widget_cardType("Player Card")}
           <div class="card-header">
             ${widget_player( data["Player"][this.index])}
            </div>
-           ${widget_showcase("Player",this.title)}
-           ${widget_leaderboard()}
 
            ${new widget_footer(
               [widget_fFriend()],
@@ -23,6 +21,13 @@ class player_card extends card{
             ).html()}
 
         </div>
+        <div class="card playerStyles-bg" class="${this.docId}">
+
+        ${widget_showcase("Player",this.title)}
+        </div>
+
+
+
       `;
   }
   addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}

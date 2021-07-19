@@ -4,8 +4,9 @@ function widget_showcase(filterKey, filterValue, myIndex = 0){
 
                 let myKey = data["ShowcaseKey"].indexOf(filterKey);
                 var imgSources = data["Showcase"].filter(x=>x[myKey]==filterValue);
-                let myTitle = `Featured ${filterValue} Showcase`;
-                let mySubtitle = `<a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>`;
+                let myTitle = `${filterValue} Showcase`;
+                    myTitle += `&nbsp <a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>`;
+                let mySubtitle = '';
                 let html=`
                       ${widget_header("",myTitle,mySubtitle)}
 
@@ -70,6 +71,11 @@ function addMediaPreview(mediaItem){
                   <img src="${img1}" style="width:100%;object-fit:fill;">
                 </div>
                 ${widget_playerByName(mediaItem[data["ShowcaseKey"].indexOf("Player")])}
+
+                           ${new widget_footer(
+                              [widget_fFriend()],
+                              [widget_fShare(),widget_fMenu()]
+                            ).html()}
 
 `
 }

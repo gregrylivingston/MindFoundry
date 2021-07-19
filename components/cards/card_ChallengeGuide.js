@@ -11,7 +11,7 @@ class challengeGuide_card extends card{
   makeCardHtml(){
       return  `
         <div class="card playerStyles-bg" id="${this.docId}">
-            ${widget_cardType("Challenge Guide")}
+            ${widget_cardType("Player Progress")}
 
             <div class="card-header">
                 <h3>Challenge Guide</h3>
@@ -26,16 +26,17 @@ class challengeGuide_card extends card{
 
     hPlayerProgress(){
       return `
-          <div class="card-section">
-            <h3>Player Progress</h3>
-          </div>
           <div class="card-section playerStyles">
-            <h3>Top Character</h3>
+            <h3>Attributes</h3>
+
+              ${widget_attributeSummary("Charisma" , 0)}
+              ${widget_attributeSummary("Perception" , 0)}
+              ${widget_attributeSummary("Wisdom" , 1)}
+              ${widget_attributeSummary("Logic" , 1)}
+              ${widget_attributeSummary("Resilience" , 3)}
+              ${widget_attributeSummary("Dexterity" , 0)}
 
 
-          <p><img src="img/Character/Artist.png"></img></p>
-
-          <p>Spellbound Level 2 Artist Trophy</p>
           </div>
         <br>
           <div class="card-section playerStyles">
@@ -58,5 +59,20 @@ class challengeGuide_card extends card{
       `
     }
 
+
+}
+
+function  widget_attributeSummary(char , lvl){
+  return `
+        <div style="width:100%">
+          <img height="30px" style="display:inline-block;width:18%;" src="img/Character/${char}.png">
+          <div style="display:inline-block;width:80%;">
+            ${char}
+            <div style="max-width:80%;display:inline-block">
+              ${widget_level(lvl)}
+            </div>
+          </div>
+        </div>
+  `
 
 }

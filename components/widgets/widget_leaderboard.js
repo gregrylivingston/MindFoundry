@@ -1,18 +1,14 @@
 function widget_leaderboard(){
     return `
-    <div class="card-section">
-      <h3 style="text-align:left;">
-        Leadboard
-        <a style="font-size:.6em;">Players</a>
-        <a style="font-size:.6em;">Clubs</a>
-      </h3>
-    </div>
 
-    <div class="card-section playerStyles">
+
+    <div class="card-section">
       ${leaderboard_row(11, "Spellbound")}
       ${leaderboard_row(12, "Harrison")}
       ${leaderboard_row(13,"Kawanabe")}
-
+      ${leaderboard_row(14, "Davinci")}
+      ${leaderboard_row(15, "Luchos")}
+      ${leaderboard_row(16,"Socrates")}
       <br>
     </div>
     `
