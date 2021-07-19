@@ -3,9 +3,8 @@
   display:inline-flex;
   vertical-align:center;
   align-items:center;
-  margin:.5em 0em .5em .4em;
+  margin:.2em 0em .2em .3em;
   padding:.2em 0em .2em 0em;
-  height:4em;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
   width:25%;
   justify-content: center;
@@ -23,12 +22,14 @@
 
 .topnav{
   width:100vw;
+  max-height:12em;
 }
 
 @media only screen and (min-width: 200px){
   .topnav-button{
-    font-size:3em;
+    font-size:2em;
     height:2em;
+    max-height:15vh;
 }
 
 }
