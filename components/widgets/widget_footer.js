@@ -44,12 +44,12 @@ function widget_fReact(){
 
 function widget_fMenu(){
   return `
-      <button class="selectButton playerStyles" onclick="addPopin(this)">...</button>
+      <button class="selectButton playerStyles" onclick="addPopin_menu(this)">...</button>
         `
 }
 
 function widget_fShare(){
   return `
-        <button class="selectButton playerStyles"><img src="img/menu/share.png"></button>
+        <button class="selectButton playerStyles" onclick="addPopin_share(this)"><img src="img/menu/share.png"></button>
         `
 }
