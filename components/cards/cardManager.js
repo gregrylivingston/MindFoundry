@@ -100,8 +100,7 @@ function addCardsToFeed(){
     msnry.reloadItems();
     msnry.layout();
     setTimeout(() => {msnry.layout(); }, 1000);
-    setTimeout(() => {msnry.layout(); }, 5000);
-    setTimeout(() => {msnry.layout(); }, 10000);
+    setTimeout(() => {msnry.layout(); }, 7000);
 }
 
 
