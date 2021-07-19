@@ -44,7 +44,7 @@ function widget_fReact(){
 
 function widget_fMenu(){
   return `
-      <button class="selectButton playerStyles">...</button>
+      <button class="selectButton playerStyles" onclick="addPopin(this)">...</button>
         `
 }
 
