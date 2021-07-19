@@ -120,13 +120,13 @@
 
 
 .badge{
-    min-width:10em;
+    width:38%;
     max-width:25em;
     display:inline-block;
     text-align:left;
     border:0px;
-    margin:2em 2% 2em 2%;
-    padding:1em 1em 1em 1em;
+    margin:2em 1% 2em 1%;
+    padding:1em 1% 1em 1%;
     vertical-align:top;
 }
 
