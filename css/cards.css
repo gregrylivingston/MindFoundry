@@ -20,9 +20,9 @@
   display:inline-block;
   vertical-align:top;
   margin-top:.5em;
-  margin-bottom:.5em;
+  margin-bottom:1.5em;
   text-align:center;
-  padding-bottom:0px;
+  padding-bottom:.5em;
   font-size:2em;
 }
 
@@ -31,7 +31,6 @@
     width:47%;
     margin:.5%;
     font-size:1em;
-
   }
 }
 @media only screen and (min-width: 1281px){
@@ -39,9 +38,7 @@
     width:31%;
     margin:.5%;
     font-size:1em;
-
   }
-
 }
 
 .card-type{

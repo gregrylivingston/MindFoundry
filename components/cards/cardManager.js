@@ -99,6 +99,7 @@ function addCardsToFeed(){
     (nextCard !== undefined)? myTarget = document.querySelector('#'+nextCard.docId):myTarget=undefined;
     msnry.reloadItems();
     msnry.layout();
+    msnry.layout();
 
 }
 
