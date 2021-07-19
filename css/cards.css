@@ -103,13 +103,13 @@
 }
 
 .card-section{
-  min-width:10em;
-  max-width:30em;
+  min-width:24em;
+  max-width:36em;
   display:inline-block;
   text-align:left;
   border:0px;
-  margin:.5em 3% .5em 3%;
-  padding:.5em 3% .5em 3%;
+  margin:2em 1em 2em 1em;
+  padding:1em 1em 1em 1em;
   vertical-align:top;
 }
 

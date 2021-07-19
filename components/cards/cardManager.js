@@ -69,7 +69,7 @@ function setCardsByMenu(menu, cardFilter = undefined){
       case "Character":
       case "Challenge":
         availableCards = [cards.find(c=>c.type=="Player")];
-        availableCards.push(... [cards.find(c=>c.type=="challengeGuide")]);
+  //      availableCards.push(... [cards.find(c=>c.type=="challengeGuide")]);
         availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
         break
       default:
