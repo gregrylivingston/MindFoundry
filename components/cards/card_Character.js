@@ -17,9 +17,9 @@ class character_card extends card{
           ${widget_badgeByCharacter(this)}
           ${widget_challengeRec("Character",this.title)}
           ${this.hFooter()}
-        </div>
+    <!--    </div>
         <div class="card playerStyles" class="${this.docId}">
-
+-->
           ${widget_showcase("Character",this.title)}
           ${widget_leaderboard()}
         </div>
