@@ -23,7 +23,7 @@ function widget_badgeByCharacter(card){
 
 function widget_badge(bad){
   return`
-  <div class="card-section playerStyles" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
+  <div class="card-section playerStylesButton" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
     <img height="32px" src="${bad[data["BadgeKey"].indexOf("imgSrc")]}1.png">
     <div style="text-align:left;">
       ${bad[data["BadgeKey"].indexOf("title")]}
