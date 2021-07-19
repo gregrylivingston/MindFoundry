@@ -11,6 +11,63 @@ img: string           file location of image
 
 */
 
+var nextSection;
+var sections = [];
+var availableSections = [];
+var availableSectionIterator = 0;
+
+function resetPage(){
+  scroller.scrollTop = 0 ;
+  document.getElementById("cards").innerHTML = "";
+  availableSectionIterator = 0;
+}
+
+function addSectionsToPage(){
+    for( var i = availableSectionIterator + 4 ; availableSectionIterator < i ;availableSectionIterator++)
+    {
+        nextSection = availableSections[availableSectionIterator];
+        (nextSection !== undefined)? nextSection.addToFeed():availableSectionIterator=i;
+    }
+    (nextSection !== undefined)? myTarget = document.querySelector('#'+nextSection.docId):myTarget=undefined;
+    msnry.reloadItems();
+    msnry.layout();
+    setTimeout(() => {msnry.layout(); }, 1000);
+    setTimeout(() => {msnry.layout(); }, 7000);
+}
+
+
+function showPage(page, filterKey = undefined, filterValue = undefined){
+    resetPage();
+    switch (page){
+      case "Home":
+        availableSections = [sections.find(c=>c.type=="Player")];
+        availableSections.push(...[sections.find(c=>c.type=="eventGuide")]);
+        break
+      case "Events":
+        availableSections = [sections.find(c=>c.type=="eventGuide")];
+        availableSections.push(... shuffle(sections.filter(c=>c.type=="Event")));
+        break
+      case "Shop":
+        availableSections = shuffle(sections.filter(c=>c.type=="Shop"));
+        break
+      case "Squad":
+        availableSections = shuffle(sections.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
+        break
+      case "Showcase":
+        availableSections = shuffle(sections.filter(c=>c.type=="Showcase"));
+        break
+
+    }
+    addSectionsToPage();
+
+}
+
+
+
+
+
+
+
 
 var cards = [];
 var availableCards = [];
@@ -36,12 +93,7 @@ function showBadge(cardFilter){
   addCardsToFeed();
 }
 
-function showEvents(){
-  resetCardHolder();
-  availableCards = [cards.find(c=>c.type=="eventGuide")];
-  availableCards.push(... shuffle(cards.filter(c=>c.type=="Event")));
-  addCardsToFeed();
-}
+
 
 function showChallenges(search){
   console.log("showchallenges +  " + search.column + search.row)
@@ -53,35 +105,6 @@ function showChallenges(search){
 
 }
 
-function setCardsByMenu(menu, cardFilter = undefined){
-    resetCardHolder();
-    switch (menu){
-      case "Showcase":
-        availableCards = shuffle(cards.filter(c=>c.type=="Showcase"));
-        break
-      case "Shop":
-        availableCards = shuffle(cards.filter(c=>c.type=="Shop"));
-        break
-      case "Club":
-      case "Squad":
-        availableCards = shuffle(cards.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
-        break
-      case "Home":
-      case "Character":
-      case "Challenge":
-        availableCards = [cards.find(c=>c.type=="Player")];
-        availableCards.push(...[cards.find(c=>c.type=="eventGuide")]);
-
-  //      availableCards.push(... [cards.find(c=>c.type=="challengeGuide")]);
-  //      availableCards.push(...shuffle(cards.filter(c=>c.type=="Character")));
-        break
-      default:
-        availableCards = shuffle(cards.filter(c=>c.type=="Event" ));
-        availableCards.push(... shuffle(cards.filter(c=>c.type=="Challenge")));
-    }
-    addCardsToFeed();
-
-}
 
 var nextCard;
 var scroller =   document.getElementById("cards").parentElement;
@@ -89,7 +112,7 @@ var myTarget = undefined;
 scroller.addEventListener('scroll', function() {
   if (myTarget!==null){
     if(myTarget.getBoundingClientRect().top <= 500){
-      addCardsToFeed();
+      addSectionsToPage();
     }}
 })
 

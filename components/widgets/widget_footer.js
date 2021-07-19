@@ -4,11 +4,11 @@ class widget_footer{
       this.leftWidgets="";
       this.rightWidgets="";
       leftWid.forEach(x=>this.leftWidgets+=x);
-      rightWid.forEach(x=>this.leftWidgets+=x);
+      rightWid.forEach(x=>this.rightWidgets+=x);
     }
 
     addLeft(html){this.leftWidgets+=html;}
-    addRight(html){this.leftWidgets+=html;}
+    addRight(html){this.rightWidgets+=html;}
 
     html (){
       return `
@@ -38,9 +38,21 @@ function widget_fReact(){
         `
 }
 
+function widget_fPin(){
+  return `
+          <img src="img/menu/favorite_unchecked.png">
+        `
+}
+
+function widget_fAward(){
+  return `
+          <img src="img/menu/award.png">
+        `
+}
+
 function widget_fMenu(){
   return `
-        <img onclick="addPopin_menu(this)" src="img/menu/share.png">
+        <img onclick="addPopin_menu(this)" src="img/menu/menu_expand.png">
         `
 }
 
