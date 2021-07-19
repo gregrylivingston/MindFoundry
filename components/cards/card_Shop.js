@@ -39,7 +39,7 @@ class shop_card extends card{
 
               <p>${this.title} Collected: 2/17
               <br><br>
-              <button class="menuButton">View All</button></p>
+              <button class="half-button">View All</button></p>
 
         </div>
       `;
