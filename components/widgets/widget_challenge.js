@@ -20,7 +20,7 @@ function widget_challengeRec(myKey, myValue){
 function widget_challenge(chall , myKey, myValue){
   return  `
   <div class="card-section playerStylesButton">
-    <h3 style="text-align:left;" onclick="showChallenges({'column':'${myKey}','row':'${myValue}'})">
+    <h3 style="text-align:left;" onclick="showPage('Challenge','${myKey}','${myValue}')">
       Featured Challenges
       <a style="font-size:.6em;">See All</a>
     </h3>

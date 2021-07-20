@@ -14,7 +14,7 @@ function widget_badgeByCharacter(card){
               <div class="card-section playerStyles" style="text-align:center;">
                 <h3 style="text-align:left;">
                   Recommended ${card.title} Badges
-                  <a style="font-size:.6em;" onclick="showBadgesByCharacter('${card.title}')">See All</a>
+                  <a style="font-size:.6em;" onclick="showPage('Badge','Character','${card.title}')">See All</a>
                 </h3>
                 ${badgeHolder}
 

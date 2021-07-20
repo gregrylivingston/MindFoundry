@@ -3,10 +3,8 @@
 
 
 function init (){
-
-    buildPageTopCards();
-    BuildCardArrays();
     BuildSectionArrays();
+    buildPageTopCards();
     updateTopNavPlayer(data["Player"][0]);
     showPage('Home');
 
@@ -15,7 +13,7 @@ function init (){
 function buildPageTopCards(){
 
   //build challenge cards
-  data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new challenge_card("Challenge",i)):'';});
+  data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new challenge_card("Challenge",i)):'';});
   //build event cards
 
 

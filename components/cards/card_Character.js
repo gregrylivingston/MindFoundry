@@ -3,7 +3,6 @@ class character_card extends card{
   constructor(type, index){
       super(type, index);
       this.Character="";
-      this.badge=this.title;
       this.badgeImg='<img class="card-header-img" src="img/Character/'+this.title +'.png">';
       this.cardHtml = this.makeCardHtml();
   }

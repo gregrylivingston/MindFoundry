@@ -26,7 +26,11 @@ function addSectionsToPage(){
     for( var i = availableSectionIterator + 4 ; availableSectionIterator < i ;availableSectionIterator++)
     {
         nextSection = availableSections[availableSectionIterator];
-        (nextSection !== undefined)? nextSection.addToFeed():availableSectionIterator=i;
+        if (nextSection !== undefined){
+          nextSection.addToFeed();
+        } else {
+          availableSectionIterator=i
+        }
     }
     (nextSection !== undefined)? myTarget = document.querySelector('#'+nextSection.docId):myTarget=undefined;
     msnry.reloadItems();
@@ -37,6 +41,7 @@ function addSectionsToPage(){
 
 
 function showPage(page, filterKey = undefined, filterValue = undefined){
+  console.log("page" + page + filterValue);
     resetPage();
     switch (page){
       case "Home":
@@ -56,8 +61,20 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
       case "Showcase":
         availableSections = shuffle(sections.filter(c=>c.type=="Showcase"));
         break
-
+      case "Character":
+        availableSections = sections.filter(c=>c.type=="Character"&&c.title==filterValue);
+        availableSections.push(... shuffle(sections.filter(c=>c.type=="Badge"&&c.Character==filterValue)));
+        break
+      case "Badge":
+        availableSections = shuffle(sections.filter(c=>c.type=="Badge"&&c[filterKey]==filterValue));
+        availableSections.push(... shuffle(sections.filter(c=>c.type=="Branch"&&c[filterKey]==filterValue)));
+        break
+      case "Challenge":
+        availableSections = shuffle(sections.filter(c=>c.type=="Challenge"));
+        availableSections = availableSections.filter(c=>c[filterKey]==filterValue);
+        break
     }
+
     addSectionsToPage();
 
 }
@@ -67,46 +84,6 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
 
 
 
-
-
-var cards = [];
-var availableCards = [];
-var availableCardIterator = 0;
-
-function resetCardHolder(){
-  scroller.scrollTop = 0 ;
-  document.getElementById("cards").innerHTML = "";
-  availableCardIterator = 0;
-}
-
-function showBadgesByCharacter(myCharacter){
-  resetCardHolder();
-  availableCards = cards.filter(c=>c.type=="Character"&&c.title==myCharacter);
-  availableCards.push(... shuffle(cards.filter(c=>c.type=="Badge"&&c.Character==myCharacter)));
-  addCardsToFeed();
-}
-
-function showBadge(cardFilter){
-  resetCardHolder();
-  availableCards = shuffle(cards.filter(c=>c.type=="Badge"&&c.title==cardFilter));
-  availableCards.push(... shuffle(cards.filter(c=>c.type=="Branch"&&c.badge==cardFilter)));
-  addCardsToFeed();
-}
-
-
-
-function showChallenges(search){
-  console.log("showchallenges +  " + search.column + search.row)
-
-  resetCardHolder();
-  availableCards = shuffle(cards.filter(c=>c.type=="Challenge"));
-  availableCards = availableCards.filter(c=>c[search.column]==search.row);
-  addCardsToFeed();
-
-}
-
-
-var nextCard;
 var scroller =   document.getElementById("cards").parentElement;
 var myTarget = undefined;
 scroller.addEventListener('scroll', function() {
@@ -115,19 +92,6 @@ scroller.addEventListener('scroll', function() {
       addSectionsToPage();
     }}
 })
-
-function addCardsToFeed(){
-    for( var i = availableCardIterator + 10 ; availableCardIterator < i ;availableCardIterator++)
-    {
-        nextCard = availableCards[availableCardIterator];
-        (nextCard !== undefined)? nextCard.addToFeed():availableCardIterator=i;
-    }
-    (nextCard !== undefined)? myTarget = document.querySelector('#'+nextCard.docId):myTarget=undefined;
-    msnry.reloadItems();
-    msnry.layout();
-    setTimeout(() => {msnry.layout(); }, 1000);
-    setTimeout(() => {msnry.layout(); }, 7000);
-}
 
 
 var mediaHTML;
