@@ -1,5 +1,5 @@
 
-class challenge_card extends card{
+class challenge_card extends section{
   constructor(type, index){
       super(type, index);
       this.cardHtml = this.makeCardHtml();
@@ -7,7 +7,7 @@ class challenge_card extends card{
 
   makeCardHtml(){
       return  `
-        <div class="card playerStyles" id="${this.docId}">
+        <div class="section playerStyles" id="${this.docId}">
             ${widget_cardType(this.branch + " Challenge")}
             ${widget_header(this.badgeImg,this.title,this.hSubtitle())}
             ${widget_description(this.Description)}

@@ -23,7 +23,7 @@ function buildPageTopCards(){
 
 function BuildCardArrays(){
 
-      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new player_card("Player",i)):'';});
+      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new profile_section("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new challengeGuide_card("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new eventGuide_card("Player",i)):'';});
 
@@ -62,7 +62,7 @@ function BuildCardArrays(){
 
 function BuildSectionArrays(){
 
-      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new player_card("Player",i)):'';});
+      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new profile_section("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new challengeGuide_card("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new eventGuide_card("Player",i)):'';});
 

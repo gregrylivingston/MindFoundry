@@ -1,4 +1,4 @@
-class card {
+class section {
   constructor(type, index) {
     this.type = type;
     this.index = index;

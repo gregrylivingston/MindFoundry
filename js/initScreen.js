@@ -15,7 +15,7 @@ document.getElementById("user_options_1").innerHTML = "<h3>Select a Player - Clu
       {document.getElementById("user_options_1").innerHTML += "<br><h3>" + x[data["PlayerKey"].indexOf("userType")]} + "</h3>";
 
       document.getElementById("user_options_1").innerHTML+=`
-          <div class="card-section" style="max-height:2em;" onclick="intialize('${x[0]}')">
+          <div style="height:2em;margin-bottom:2em;" onclick="intialize('${x[0]}')">
             ${widget_player(x)}
           </div>
       `;
@@ -32,7 +32,7 @@ function init_getHeaderstart(){
             {document.getElementById("user_options_1").innerHTML += "<br><h3>" + x[data["PlayerKey"].indexOf("userType")]} + "</h3>";
 
           document.getElementById("user_options_1").innerHTML+=`
-              <div class="card-section" onclick="intialize('${x[0]}')">
+              <div onclick="intialize('${x[0]}')">
                   ${widget_player(x)}
               </div>
           `;
@@ -51,13 +51,8 @@ function init_getHeaderstart(){
 
 
 
-  document.getElementById("user_options_0").innerHTML=`
-        <div class="card-section">
-          <h1>Mind Foundry 2021 Technical Demo</h1>
-        </div>`;
 
   document.getElementById("user_options_1").innerHTML=`
-        <div class="card-section">
           <h2>Select Demo Type</h2>
           <h3>New User</h3>
           <div onclick="intialize('${newplayer[0]}')">
@@ -69,13 +64,12 @@ function init_getHeaderstart(){
           </div>
 
           <h3>Private Club</h3>
-          <div class="playerStyles" onclick="init_getKorora()" style="padding:1em;">
+          <div class="playerStyles" onclick="init_getHeaderstart()" style="padding:1em;">
             Headstart Academy
           </div>
-        </div>`;
+        `;
 
   document.getElementById("user_options_2").innerHTML=`
-        <div class="card-section" style="text-align:left;">
           <h3>Features</h3>
           <div>Mobile First Designs</div>
           <div>Improved curriculum and resource structures</div>
@@ -85,4 +79,4 @@ function init_getHeaderstart(){
 
           <div>Mobile First Designs</div>
 
-        </div>`;
+        `;

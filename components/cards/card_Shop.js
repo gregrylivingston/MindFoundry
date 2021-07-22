@@ -1,5 +1,5 @@
 
-class shop_card extends card{
+class shop_card extends section{
 
   constructor(type, index) {
     super(type,index);
@@ -7,7 +7,7 @@ class shop_card extends card{
   }
   makeCardHtml(){
       return  `
-        <div class="card playerStyles" id="${this.docId}">
+        <div class="section playerStyles" id="${this.docId}">
             ${widget_cardType(this.title + " Shop")}
             ${widget_header(this.badgeImg,this.title,"")}
             ${widget_description(this.Description)}

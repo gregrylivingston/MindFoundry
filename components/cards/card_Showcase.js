@@ -1,13 +1,13 @@
 
 
-class showcase_card extends card{
+class showcase_card extends section{
   constructor(type, index){
       super(type, index);
       this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){
       return  `
-        <div class="card playerStyles" id="${this.docId}">
+        <div class="section playerStyles" id="${this.docId}">
 
             ${widget_header(this.badgeImg,this.title,'<a href="">'+this.Challenge+'</a>')}
 

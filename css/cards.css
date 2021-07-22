@@ -10,18 +10,6 @@
 */
 }
 
-.card{
-  width:100vw;
-  margin-left:0%;
-  margin-right:0%;
-  display:inline-block;
-  vertical-align:top;
-  margin-top:1em;
-  margin-bottom:2em;
-  text-align:left;
-  padding-bottom:.5em;
-  font-size:2em;
-}
 
 .card-section{
   width:26%;
@@ -37,18 +25,6 @@
     width:88%;
   }
 
-}
-@media only screen and (min-width: 1025px){
-  .card{
-/*    width:47%;*/
-    font-size:1em;
-  }
-}
-@media only screen and (min-width: 1281px){
-  .card{
-  /*  width:31%;*/
-    font-size:1em;
-  }
 }
 
 .card-type{

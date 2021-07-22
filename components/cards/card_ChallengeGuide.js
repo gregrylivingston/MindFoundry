@@ -1,7 +1,7 @@
 //uses the data from the player table.
 //One is created for each player.
 //active player is stored in slot 0.
-class challengeGuide_card extends card{
+class challengeGuide_card extends section{
 
   constructor(type, index) {
     super(type,index);
@@ -10,7 +10,7 @@ class challengeGuide_card extends card{
   }
   makeCardHtml(){
       return  `
-        <div class="card playerStyles-bg" id="${this.docId}">
+        <div class="section playerStyles-bg" id="${this.docId}">
             ${widget_cardType("Player Progress")}
 
             <div class="card-header">

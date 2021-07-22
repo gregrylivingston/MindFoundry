@@ -1,0 +1,25 @@
+
+.section{
+  width:100vw;
+  margin-left:0%;
+  margin-right:0%;
+  display:inline-block;
+  vertical-align:top;
+  margin-top:1em;
+  margin-bottom:2em;
+  text-align:left;
+  padding-bottom:.5em;
+  font-size:2em;
+}
+@media only screen and (min-width: 1025px){
+  .section{
+/*    width:47%;*/
+    font-size:1em;
+  }
+}
+@media only screen and (min-width: 1281px){
+  .section{
+  /*  width:31%;*/
+    font-size:1em;
+  }
+}

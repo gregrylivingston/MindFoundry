@@ -33,10 +33,10 @@ function addSectionsToPage(){
         }
     }
     (nextSection !== undefined)? myTarget = document.querySelector('#'+nextSection.docId):myTarget=undefined;
-    msnry.reloadItems();
+  /*  msnry.reloadItems();
     msnry.layout();
     setTimeout(() => {msnry.layout(); }, 1000);
-    setTimeout(() => {msnry.layout(); }, 7000);
+    setTimeout(() => {msnry.layout(); }, 7000);*/
 }
 
 
