@@ -57,6 +57,27 @@
   opacity:0.96;
 }
 
+.footerButton{
+  border-radius:50px;
+  border:2px solid white;
+  background: #bee1f0; /* Old browsers */
+  background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #bee1f0 0%,#96dcff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #bee1f0 0%,#96dcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
+}
+
+.footerButton:hover {
+  border-radius:50px;
+  border:2px solid #CF0569;
+  box-shadow: 2px 2px 8px #CF0569;
+  background: #bee1f0; /* Old browsers */
+  background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #bee1f0 0%,#96dcff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #bee1f0 0%,#96dcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
+}
+
 
 
 .card-header{

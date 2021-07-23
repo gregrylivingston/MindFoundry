@@ -54,7 +54,7 @@ function card_monthly_challenge(chall , myKey, myValue){
 }
 
 function widget_level(lvl){
-        let myHtml = "<div style='display:inline-flex;width:80%;min-width:5em'>";
+        let myHtml = "<div style='display:inline-flex;width:80%;min-width:5em;max-width:15em;'>";
         for ( var i = 0 ; i < lvl ; i ++ ){
           myHtml+="<div class='playerStyles' style='height:.5em;width:10%;margin-left:4%;background:white;'></div>"
         }

@@ -27,39 +27,39 @@ class widget_footer{
 
 function widget_fFriend(){
   return `
-          <img src="img/menu/menu_usercrew.png">
+          <img class="footerButton" src="img/menu/menu_usercrew.png">
         `
 }
 
 
 function widget_fReact(){
   return `
-          <img src="img/menu/react.png">
+          <img class="footerButton"  src="img/menu/react.png">
         `
 }
 
 function widget_fPin(){
   return `
-          <img src="img/menu/favorite_unchecked.png">
+          <img class="footerButton" src="img/menu/favorite_unchecked.png">
         `
 }
 
 function widget_fAward(){
   return `
-          <img src="img/menu/award.png">
+          <img class="footerButton" src="img/menu/award.png">
         `
 }
 
 function widget_fMenu(){
   return `
-        <img onclick="addPopin_menu(this)" src="img/menu/menu_expand.png">
+        <img class="footerButton"  onclick="addPopin_menu(this)" src="img/menu/menu_expand.png">
         `
 }
 
 function widget_fShare(){
   return `
       <!--  <button class="selectButton playerStylesButton">-->
-          <img onclick="addPopin_share(this)" src="img/menu/share.png">
+          <img class="footerButton" onclick="addPopin_share(this)" src="img/menu/share.png">
       <!--  </button>-->
         `
 }
