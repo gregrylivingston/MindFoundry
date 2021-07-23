@@ -1,50 +1,24 @@
-
-class shop_card extends section{
-
-  constructor(type, index) {
-    super(type,index);
-    this.cardHtml = this.makeCardHtml();
-  }
-  makeCardHtml(){
-      return  `
-        <div class="section playerStyles" id="${this.docId}">
-            ${widget_cardType(this.title + " Shop")}
-            ${widget_header(this.badgeImg,this.title,"")}
-            ${widget_description(this.Description)}
-            ${this.hFakeShopWidget()}
-            ${this.hFooter()}
-        </div>
-      `;
-  }
-
-  hFakeShopWidget(){
+function card_shop(shopItem){
       return `
-        <div class="card-section">
-          <button class="half-button">
-              <img height="30px" src="img/brain.png">
-              2 <img height="30px;" src="img/coin.png">
-          </button>
-          <button class="half-button">
-              <img height="30px" src="img/brain.png">
-              2 <img height="30px;" src="img/coin.png">
-          </button>
-          <button class="half-button">
-              <img height="30px" src="img/brain.png">
-              2 <img height="30px;" src="img/coin.png">
-          </button>
-          <button class="half-button">
-              <img height="30px" src="img/brain.png">
-              2 <img height="30px;" src="img/coin.png">
-          </button>
+             <div class="card-section playerStylesCard">
+                <h3>Background</h3>
+                <h2>Dark Mode</h2>
+                <div style="width:100%;height:12em;text-align:center;margin:.5em 0 .5em 0;" class="playerStyles">
+                  <img style="width:50%;" src="">
+                </div>
+                <div style="width:100%;display:inline-flex;justify-content:space-between;">
+                    12 coin
+                 </div>
+                 <div style="width:100%;display:inline-flex;justify-content:space-between;">
 
-              <p>${this.title} Collected: 2/17
-              <br><br>
-              <button class="half-button">View All</button></p>
+                  </div>
+                  <div style="width:100%;display:inline-flex;justify-content:space-between;">
 
-        </div>
-      `;
+                 </div>
 
-  }
-
-
+                            ${new widget_footer(
+                               [widget_fFriend()],
+                               [widget_fShare(),widget_fMenu()]
+                             ).html()}
+             </div>`
 }
