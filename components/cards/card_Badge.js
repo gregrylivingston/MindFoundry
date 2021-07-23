@@ -41,7 +41,7 @@ function card_badge(bad){
 
     </div>
             ${new widget_footer(
-               [widget_fFriend()],
+               [widget_fPin()],
                [widget_fShare(),widget_fMenu()]
              ).html()}
   </div>

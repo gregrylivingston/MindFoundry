@@ -38,9 +38,10 @@ function widget_fReact(){
         `
 }
 
+var pinnedHTML = '<img class="footerButton" src="img/menu/favorite_checked.png" onclick="this.parentElement.innerHTML = widget_fPin()">';
 function widget_fPin(){
   return `
-          <img class="footerButton" src="img/menu/favorite_unchecked.png">
+          <div style="display:inline-flex"><img class="footerButton" src="img/menu/favorite_unchecked.png" onclick="this.parentElement.innerHTML=pinnedHTML"></div>
         `
 }
 
