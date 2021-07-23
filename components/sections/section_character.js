@@ -1,5 +1,5 @@
 
-class character_card extends section{
+class section_character extends section{
   constructor(type, index){
       super(type, index);
       this.Character="";

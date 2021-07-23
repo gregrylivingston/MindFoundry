@@ -17,41 +17,6 @@ function widget_challengeRec(myKey, myValue){
     return myChall;
 }
 
-function card_monthly_challenge(chall , myKey, myValue){
-  return  `
-  <div class="card-section playerStylesCard">
-    <h3 onclick="showPage('Challenge','${myKey}','${myValue}')">
-      July Challenge
-      <!--<a style="font-size:.6em;">See All</a>-->
-    </h3>
-
-    <div style="width:100%;vertical-align:top;" class="">
-      <div style="display:inline-block;width:58%;">
-          <h2>${chall[data["ChallengeKey"].indexOf("title")]}</h2>
-          <div style="font-size:0.8em">
-                <div>
-                  <div style='display:inline-flex;width:18%;'>Skill:</div>
-                  ${widget_level(chall[data["ChallengeKey"].indexOf("Skill")])}
-                </div>
-                <div>
-                  <div style='display:inline-flex;width:18%;'>Effort:</div>
-                  ${widget_level(chall[data["ChallengeKey"].indexOf("Effort")])}
-                </div>
-          </div>
-      </div>
-
-
-    <h3 style="width:100%;display:inline-flex;">
-          <div style="width:70%"></div>
-    </h3>
-      <div>${chall[data["ChallengeKey"].indexOf("submissionType")]}</div>
-      <div>${chall[data["ChallengeKey"].indexOf("Description")]}</div>
-
-
-  </div>
-  `
-
-}
 
 function widget_level(lvl){
         let myHtml = "<div style='display:inline-flex;width:80%;min-width:5em;max-width:15em;'>";

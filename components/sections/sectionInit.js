@@ -13,7 +13,7 @@ function init (){
 function buildPageTopCards(){
 
   //build challenge cards
-  data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new challenge_card("Challenge",i)):'';});
+  data["Challenge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_challenge("Challenge",i)):'';});
   //build event cards
 
 
@@ -69,7 +69,7 @@ function BuildCardArrays(){
 
 function BuildSectionArrays(){
 
-      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new profile_section("Player",i)):'';});
+      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_profile("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new challengeGuide_card("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new eventGuide_card("Player",i)):'';});
 
@@ -96,7 +96,7 @@ function BuildSectionArrays(){
          sections.push(card);
       })
       //build character chards
-      data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new character_card("Character",i)):'';});
+      data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_character("Character",i)):'';});
 
 
       data["Badge"].forEach((badge,i)=>{

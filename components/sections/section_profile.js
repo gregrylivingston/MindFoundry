@@ -1,7 +1,7 @@
 //uses the data from the player table.
 //One is created for each player.
 //active player is stored in slot 0.
-class profile_section extends section{
+class section_profile extends section{
 
   constructor(type, index) {
     super(type,index);
