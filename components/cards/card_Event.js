@@ -12,10 +12,8 @@ class event_card extends section{
       return  `
       <div class="section playerStyles-bg" id="${this.docId}">
 
-            ${widget_cardType(this.characterImg + " " + this.badge + " Events")}
             ${widget_header(this.badgeImg,this.title,this.Grade)}
-            ${widget_description(this.Description)}
-          ${this.hEventList()}
+          ${this.makeEvents()}
 
 
            ${new widget_footer(
@@ -29,20 +27,14 @@ class event_card extends section{
 
   }
 
-  hEventList(){
-      return`
-      <h3>Event List</h3>
-            ${this.makeEvents()}
-       `
-  }
   makeEvents(){
         this.events = "";
         this.eventsInBadge.forEach(x=>{
             var myDays = "";
             if ( x[data["EventKey"].indexOf("eventType")] == "League"){
-                myDays = "On " + x[data["EventKey"].indexOf("Days")];
+                myDays = x[data["EventKey"].indexOf("Days")];
                 myDays = myDays.replace(",", "s and ")+"s ";
-                myDays +=  "at " + x[data["EventKey"].indexOf("startTimeCentral")];
+                myDays +=  "<br>" + x[data["EventKey"].indexOf("startTimeCentral")];
             } else {
                 myDays = "On " + x[data["EventKey"].indexOf("dateStart")] + " at " +  x[data["EventKey"].indexOf("startTimeCentral")];
             }
@@ -52,20 +44,36 @@ class event_card extends section{
 
             this.events+=`
                 <div class="card-section playerStylesCard">
-                  <h3 style="width:100%;display:inline-flex;">
-                        <div style="width:70%">${x[data["EventKey"].indexOf("eventTitle")]}</div>
-                        <button class="half-button" style="display:block;">
-                          <div>Join</div>
-                          <div>1 <img src="img/token_${x[data["EventKey"].indexOf("eventType")]}.png" height="40px"></div>
-                        </button>
-                  </h3>
-                  <br>
-                  ${x[data["EventKey"].indexOf("Task")]}
+                  <h3>League</h3>
+                  <h2>
+                        ${x[data["EventKey"].indexOf("eventTitle")]}
+                  </h2>
+                  <iframe width="100%" style="min-height:12em;" src="https://www.youtube.com/embed/Z_cQoHK2tTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                   <br>
                   ${myDays}
                   <br>
-                  Host: ${x[data["EventKey"].indexOf("host")]}
+                  <button class="selectButton">
+                    <div>Subscribe<img src="img/token_${x[data["EventKey"].indexOf("eventType")]}.png" height="40px"></div>
+                  </button>
+                  <button class="selectButton">
+                    <div>Requirements</div>
+                  </button>
 
+
+                  <div style="margin:.5em 0 .5em 0;">${x[data["EventKey"].indexOf("Task")]}</div>
+                  <div>Host: ${x[data["EventKey"].indexOf("host")]}</div>
+                  <div>July Club Challenge: Martian City</div>
+                  <div>Leaderboard</div>
+                  <div>32 Ratings<br>
+                      <img src="img/menu/favorite_checked.png">
+                      <img src="img/menu/favorite_checked.png">
+                      <img src="img/menu/favorite_checked.png">
+                      <img src="img/menu/favorite_checked.png">
+                      <img src="img/menu/favorite_checked.png">
+                   </div>
+                  <div>Aiden had an amazing time.</div>
+                  <div><a href="">17 Reviews</a></div>
 
 
 
