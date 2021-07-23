@@ -15,7 +15,7 @@ function card_event(x){
         //                  ${x[data["EventKey"].indexOf("Sessions")]} ${x[data["EventKey"].indexOf("SessionsLength")]} Sessions
 
         return`
-            <div class="card-section playerStylesCard">
+            <div class="card playerStylesCard">
               <h3>League</h3>
               <h2>
                     ${x[data["EventKey"].indexOf("eventTitle")]}
@@ -68,4 +68,47 @@ function card_event(x){
             </div>
 
         `
+}
+
+function card_token_league(){
+    return `
+
+        <div class="card playerStylesCard">
+          <h3>League Token</h3>
+          <h2>Join One Tournament</h2>
+          <div style="width:100%;min-height:5em;text-align:center;margin:.5em 0 .5em 0;display:inline-flex;align-items:center;justify-content:center;font-size:2em;" class="playerStyles">
+            <img style="width:50%;" src="img/token_league.png">
+          </div>
+            Spend this token to join a tournament.  Compete for your club.
+          <button style="width:100%;" class="playerStylesButton selectButton">See Tournaments</button>
+          <button style="width:100%;text-align:left;" class="playerStylesButton">
+                <h2>Subscription</h2>
+                <h4><a>Event Pass &nbsp;&nbsp; Next Token: June 1st</a></h4>
+          </button>
+        </div>
+
+
+    `
+}
+
+
+function card_token_tourney(){
+    return `
+
+        <div class="card playerStylesCard">
+          <h3>Tourney Token</h3>
+          <h2>Join One Tournament</h2>
+          <div style="width:100%;min-height:5em;text-align:center;margin:.5em 0 .5em 0;display:inline-flex;align-items:center;justify-content:center;font-size:2em;" class="playerStyles">
+            <img style="width:50%;" src="img/token_tourney.png">
+          </div>
+            Spend this token to join a tournament.  Compete for your club.
+          <button style="width:100%;" class="playerStylesButton selectButton">See Tournaments</button>
+          <button style="width:100%;text-align:left;" class="playerStylesButton">
+                <h2>Subscription</h2>
+                <h4><a>Event Pass &nbsp;&nbsp; Next Token: June 1st</a></h4>
+          </button>
+        </div>
+
+
+    `
 }

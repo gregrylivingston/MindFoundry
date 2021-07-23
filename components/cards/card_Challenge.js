@@ -2,7 +2,7 @@
 function card_monthly_challenge(chall , myKey, myValue){
   let coins = (chall[data["ChallengeKey"].indexOf("Skill")] + chall[data["ChallengeKey"].indexOf("Effort")])  * (chall[data["ChallengeKey"].indexOf("Skill")] + chall[data["ChallengeKey"].indexOf("Effort")]);
   return  `
-  <div class="card-section playerStylesCard">
+  <div class="card playerStylesCard">
     <h3 onclick="showPage('Challenge','${myKey}','${myValue}')" style="display:inline-flex;align-items:center;width:100%;justify-content:center;">
       <!--July -->
       <img style="max-height:1.5em;" src="img/Character/${chall[data["ChallengeKey"].indexOf("Character")]}.png">

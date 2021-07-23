@@ -19,7 +19,7 @@ class section_profile extends section{
 
            ${card_player(player)}
 
-            <div class="card-section playerStyles">
+            <div class="card playerStylesCard">
               <h3>Top Badges<h3>
               <div class="acting_badgeprogress">
               <p>Acting Level 1<img src="img/badge/acting1.png" style="height:32px;"> 04/20</p>
@@ -40,9 +40,6 @@ class section_profile extends section{
         </div>
 
 
-        <div class="card playerStyles-bg" class="${this.docId}">
-          ${widget_showcase("Player",this.title)}
-        </div>
 
 
       `;

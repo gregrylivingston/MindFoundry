@@ -22,10 +22,7 @@ class section_event extends section{
 
   makeEvents(){
         this.events = "";
-        this.eventsInBadge.forEach(x=>{
-            this.events+=card_event(x);
-          
-        })
+        this.eventsInBadge.forEach(x=>{this.events+=card_event(x);})
         return this.events
   }
 }

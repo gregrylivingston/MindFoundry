@@ -10,10 +10,10 @@
 https://www.w3schools.com/howto/howto_css_flip_card.asp
 
 The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.card {
+/*.card {
   background-color: transparent;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
+  perspective: 1000px; /* Remove this if you don't want the 3D effect
+}*/
 
 /* This container is needed to position the front and back side */
 .card-inner {
@@ -60,7 +60,7 @@ The flip card container - set the width and height to whatever you want. We have
 
 
 
-.card-section{
+.card{
   width:25%;
   display:inline-block;
   text-align:left;
@@ -70,10 +70,30 @@ The flip card container - set the width and height to whatever you want. We have
   vertical-align:top;
 }
 @media only screen and (max-width: 1024px){
-  .card-section{
+  .card{
     width:88%;
   }
 
+}
+
+
+.card>h3{
+  text-align:center;
+  font-size:.8em;
+  margin-block-end:1em;
+  margin-block-start:.1em;
+}
+
+.card>h2 , .card-header>h3{
+  margin-block-end:.1em;
+  margin-block-start:.1em;
+}
+
+.card>p{
+  margin:.5em 20% .5em 20%;
+  text-align:center;
+  width:82%;
+  display: inline-flex;
 }
 
 .card-type{
@@ -154,24 +174,6 @@ The flip card container - set the width and height to whatever you want. We have
     vertical-align:top;
 }
 
-.card-section>h3{
-  text-align:center;
-  font-size:.8em;
-  margin-block-end:0em;
-  margin-block-start:.1em;
-}
-
-.card-section>h2{
-  margin-block-end:.1em;
-  margin-block-start:.1em;
-}
-
-.card-section>p{
-  margin:.5em 20% .5em 20%;
-  text-align:center;
-  width:82%;
-  display: inline-flex;
-}
 
 .card-footer{
   width:96%;
@@ -205,10 +207,4 @@ The flip card container - set the width and height to whatever you want. We have
   display:inline;
   text-align:right;
   vertical-align:bottom;
-}
-
-
-.cardWidget{
-  width:82%;
-  display: inline-flex;
 }

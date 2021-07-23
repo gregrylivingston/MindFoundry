@@ -22,7 +22,7 @@ class showcase_card extends section{
   }
 
   hOwnerWidget(){
-   return `<div class="card-section">
+   return `<div class="card">
              <div style="font-size:1.65em;">
                  ${this.title}
              </div>

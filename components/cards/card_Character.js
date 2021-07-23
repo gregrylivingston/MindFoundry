@@ -1,7 +1,7 @@
 
 function card_Character(character){
       return `
-             <div class="card-section playerStylesCard">
+             <div class="card playerStylesCard">
                 <h3>Attribute</h3>
                 <h2>${character.title}</h2>
                 <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="playerStyles">

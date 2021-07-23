@@ -12,7 +12,7 @@ document.getElementById("user_options_1").innerHTML = "<h3>Select a Player - Clu
 
   data["Player"].filter(x=>x[data["PlayerKey"].indexOf("club")]=="Korora").forEach(x=>{
     if ( x[data["PlayerKey"].indexOf("userType")] !== "Player")
-      {document.getElementById("user_options_1").innerHTML += "<br><h3>" + x[data["PlayerKey"].indexOf("userType")]} + "</h3>";
+      {document.getElementById("user_options_1").innerHTML += "<h3>" + x[data["PlayerKey"].indexOf("userType")]} + "</h3>";
 
       document.getElementById("user_options_1").innerHTML+=`
           <div style="height:2em;margin-bottom:2em;" onclick="intialize('${x[0]}')">
@@ -29,7 +29,7 @@ function init_getHeaderstart(){
       data["Player"].filter(x=>x[data["PlayerKey"].indexOf("club")]=="Headstart Academy").forEach(x=>{
           x[data["PlayerKey"].indexOf("club")] = "Piwa";
           if ( x[data["PlayerKey"].indexOf("userType")] !== "Player")
-            {document.getElementById("user_options_1").innerHTML += "<br><h3>" + x[data["PlayerKey"].indexOf("userType")]} + "</h3>";
+            {document.getElementById("user_options_1").innerHTML += "<h3>" + x[data["PlayerKey"].indexOf("userType")]} + "</h3>";
 
           document.getElementById("user_options_1").innerHTML+=`
               <div onclick="intialize('${x[0]}')">

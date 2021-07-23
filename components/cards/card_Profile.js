@@ -1,7 +1,7 @@
 
 function card_player(player){
       return `
-             <div class="card-section playerStylesCard">
+             <div class="card playerStylesCard">
                 <h3>Player</h3>
                 ${widget_player(player)}
                 <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="playerStyles">

@@ -16,7 +16,7 @@ function widget_showcase(filterKey, filterValue, myIndex = 0){
 
                 if (  imgSources[myIndex] !== undefined ){
                   html+=`
-                        <div class="card-section playerStylesCard">
+                        <div class="card playerStylesCard">
                         `;
                   html+=addMediaPreview(imgSources[myIndex]);
                           htmlAppend+=
@@ -27,15 +27,15 @@ function widget_showcase(filterKey, filterValue, myIndex = 0){
                   if ( filterValue == data["Player"][0][0] || filterKey !== "Player")html+=addShowcaseButton();
                 }
                 if ( imgSources[1] !== undefined){
-                    html+='</div><div class="card-section playerStylesCard">';
+                    html+='</div><div class="card playerStylesCard">';
                     html+=addMediaPreview(imgSources[1]);
                   }
                   if ( imgSources[2] !== undefined){
-                      html+='</div><div class="card-section playerStylesCard">';
+                      html+='</div><div class="card playerStylesCard">';
                       html+=addMediaPreview(imgSources[2]);
                     }
                     if ( imgSources[3] !== undefined){
-                        html+='</div><div class="card-section playerStylesCard">';
+                        html+='</div><div class="card playerStylesCard">';
                         html+=addMediaPreview(imgSources[3]);
                       }
                 html+=htmlAppend;

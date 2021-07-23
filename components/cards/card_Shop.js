@@ -1,6 +1,6 @@
 function card_shop(shopItem){
       return `
-             <div class="card-section playerStylesCard">
+             <div class="card playerStylesCard">
                 <h3>Background</h3>
                 <h2>Dark Mode</h2>
                 <div style="width:100%;height:12em;text-align:center;margin:.5em 0 .5em 0;" class="playerStyles">
