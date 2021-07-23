@@ -6,7 +6,7 @@
 
 
 
-/* Flip card styling 
+/* Flip card styling
 https://www.w3schools.com/howto/howto_css_flip_card.asp
 
 The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -158,6 +158,11 @@ The flip card container - set the width and height to whatever you want. We have
   text-align:center;
   font-size:.8em;
   margin-block-end:0em;
+  margin-block-start:.1em;
+}
+
+.card-section>h2{
+  margin-block-end:.1em;
   margin-block-start:.1em;
 }
 

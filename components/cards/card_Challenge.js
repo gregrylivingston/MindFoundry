@@ -1,5 +1,6 @@
 
 function card_monthly_challenge(chall , myKey, myValue){
+  let coins = (chall[data["ChallengeKey"].indexOf("Skill")] + chall[data["ChallengeKey"].indexOf("Effort")])  * (chall[data["ChallengeKey"].indexOf("Skill")] + chall[data["ChallengeKey"].indexOf("Effort")]);
   return  `
   <div class="card-section playerStylesCard">
     <h3 onclick="showPage('Challenge','${myKey}','${myValue}')" style="display:inline-flex;align-items:center;width:100%;justify-content:center;">
@@ -12,36 +13,35 @@ function card_monthly_challenge(chall , myKey, myValue){
       ${chall[data["ChallengeKey"].indexOf("title")]}
     </h2>
 
-    <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;display:inline-flex;flex-wrap:wrap;flex-direction:row;justify-content:space-around;" class="playerStyles">
+
+    <div style="width:100%;height:12em;text-align:center;margin:.5em 0 .5em 0;background-image:url('img/Showcase/painting_harrison_1.jpg');background-size:cover;vertical-align:bottom;" class="playerStyles">
+        <div style="background-color:rgba(255,255,255,0.3);">Showcase</div>
+    </div>
+
+
+    <div style="margin:.2em 0 .2em 0;">${chall[data["ChallengeKey"].indexOf("Description")]}</div>
+
+    <div class="" style="padding:.1em;display:inline-flex;justify-content:space-between;margin:.3em 0 .3em 0;">
+
         <div style="vertical-align:top;width:30%;" class="">
-            ${chall[data["ChallengeKey"].indexOf("submissionType")]}
-            <br>
-            Type
+            Type: ${chall[data["ChallengeKey"].indexOf("submissionType")]}
         </div>
         <div style="vertical-align:top;width:50%" class="">
-              <div style='display:inline-flex;width:15%;'>Skill:</div>
+              <div style='display:inline-flex;width:25%;'>Skill:</div>
               ${widget_level(chall[data["ChallengeKey"].indexOf("Skill")])}
-              <div style='display:inline-flex;width:15%;'>Effort:</div>
+              <div style='display:inline-flex;width:25%;'>Effort:</div>
               ${widget_level(chall[data["ChallengeKey"].indexOf("Effort")])}
         </div>
-        <div style="vertical-align:top;" class="">
-
-            Max Coins: ${chall[data["ChallengeKey"].indexOf("Effort")] * chall[data["ChallengeKey"].indexOf("Effort")]}
-        </div>
 
     </div>
 
+          <button class="playerStylesButton" style="width:100%;padding:.4em;">
+            ${widget_progressBar(0,coins)}
 
-
-    <div>${chall[data["ChallengeKey"].indexOf("Description")]}</div>
-
-    <div class="playerStyles">
-        You have not completed this challenge.
-        <br>
-         ${widget_progressBar()}
-          <button class="menuButton"><h2>Submit</h2>
+            <h2>Submit</h2>
           </button>
-    </div>
+          <br>
+          Resource, Branch
 
   </div>
   `

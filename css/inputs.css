@@ -51,16 +51,15 @@
 }
 
 .half-button{
-    font-size:1.3em;
-    display:inline;
+    font-size:1.1em;
+    display:inline-flex;
     width:48%;
     margin:0.5%;
     border-radius:10px;
     border:white 2px solid;
-    min-height:3em;
+    min-height:2em;
     vertical-align:top;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
-    display: inline-flex;
     align-items:center;
     background: #bee1f0; /* Old browsers */
     background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
@@ -72,7 +71,7 @@
 }
 
 .half-button:hover {
-    font-size:1.3em;
+    font-size:1.1em;
     display:inline;
     width:48%;
     margin:0.5%;
