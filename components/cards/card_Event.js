@@ -11,16 +11,9 @@ class event_card extends section{
 
       return  `
       <div class="section playerStyles-bg" id="${this.docId}">
-
             ${widget_header(this.badgeImg,this.title,this.Grade)}
-          ${this.makeEvents()}
-
-
-           ${new widget_footer(
-              [widget_fFriend(),widget_fReact()],
-              [widget_fShare(),widget_fMenu()]
-            ).html()}
-            </div>
+            ${this.makeEvents()}
+      </div>
 
 
       `;
@@ -48,38 +41,50 @@ class event_card extends section{
                   <h2>
                         ${x[data["EventKey"].indexOf("eventTitle")]}
                   </h2>
-                  <iframe width="100%" style="min-height:12em;" src="https://www.youtube.com/embed/Z_cQoHK2tTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" style="min-height:12em;" src="${this.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                   <br>
-                  ${myDays}
-                  <br>
-                  <button class="selectButton playerStylesButton">
-                    <div>Subscribe<img src="img/token_${x[data["EventKey"].indexOf("eventType")]}.png" height="40px"></div>
-                  </button>
-                  <button class="selectButton playerStylesButton">
-                    <div><br>Info<br><br></div>
-                  </button>
-                  <button class="selectButton playerStylesButton">
-                    <div>Calendar <img src="img/menu/menu_challenges.png"></div>
-                  </button>
-                  <button class="selectButton playerStylesButton">
-                    <div>Awards <img src="img/menu/award.png"></div>
-                  </button>
-                  <div style="margin:.5em 0 .5em 0;">${x[data["EventKey"].indexOf("Description")]}</div>
-                  <div style="margin:.5em 0 .5em 0;">July Challenge: ${x[data["EventKey"].indexOf("Task")]}</div>
-                  <div>Host: ${widget_playerByName(this.host)}</div>
-                  <div>
-                      <img src="img/menu/favorite_checked.png">
-                      <img src="img/menu/favorite_checked.png">
-                      <img src="img/menu/favorite_checked.png">
-                      <img src="img/menu/favorite_checked.png">
-                      <img src="img/menu/favorite_checked.png">
-                      32 Ratings
-                   </div>
-                  <div>Aiden had an amazing time.</div>
-                  <div><a href="">17 Reviews</a></div>
 
 
+                  <button style="width:100%;" class="selectButton playerStylesButton">
+                    <div style="width:100%;">
+                      ${myDays}<br><br>
+                      ${x[data["EventKey"].indexOf("Task")]}
+                    </div>
+                    <div style="width:100%;">
+                       <img src="img/token_${x[data["EventKey"].indexOf("eventType")]}.png" width="50%">
+                       <br>
+                       Subscribe
+                    </div>
+                  </button>
+
+
+
+                  <button class="playerStylesButton">
+                    <div>Awards, Artifacts & Leaderboards <img src="img/menu/award.png"></div>
+                    <div style="margin:.5em 0 .5em 0;">${x[data["EventKey"].indexOf("Description")]}</div>
+                  </button>
+
+                  <button style="width:100%;margin:1em 0 1em 0;" class="playerStylesButton">
+                    <div>
+                        <img src="img/menu/favorite_checked.png">
+                        <img src="img/menu/favorite_checked.png">
+                        <img src="img/menu/favorite_checked.png">
+                        <img src="img/menu/favorite_checked.png">
+                        <img src="img/menu/favorite_checked.png">
+                        32 Ratings
+                     </div>
+                    <div>Aiden had an amazing time.</div>
+                    <div><a href="">17 Reviews</a></div>
+                  </button>
+
+                  <h3>Head Coach ${widget_playerByName(this.host)}</h3>
+
+
+                             ${new widget_footer(
+                                [widget_fFriend(),widget_fReact()],
+                                [widget_fShare(),widget_fMenu()]
+                              ).html()}
 
                 </div>
             `
