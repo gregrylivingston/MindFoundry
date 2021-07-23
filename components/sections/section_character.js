@@ -9,9 +9,9 @@ class character_card extends section{
   makeCardHtml(){
       return  `
         <div class="section playerStyles-bg" class="${this.docId}">
-          ${widget_cardType("Character Progress")}
           ${widget_header(this.badgeImg,this.title + widget_progressBar(),this.Description)}
 
+          ${card_Character(this)}
           ${widget_challengeRec("Character",this.title)}
           ${this.hFooter()}
 

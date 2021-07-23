@@ -10,24 +10,24 @@ function widget_challengeRec(myKey, myValue){
     var mychallenges = shuffle(data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf(myKey)] == myValue));
     for (var i = 0 ; (i < 1 )  ; i ++){
       if ( mychallenges[i]!== undefined)
-        {myChall+= widget_challenge(mychallenges[i],myKey,myValue);}
+        {myChall+= card_monthly_challenge(mychallenges[i],myKey,myValue);}
     }
   //  myChall+=        "</div>";
 
     return myChall;
 }
 
-function widget_challenge(chall , myKey, myValue){
+function card_monthly_challenge(chall , myKey, myValue){
   return  `
   <div class="card-section playerStylesCard">
     <h3 onclick="showPage('Challenge','${myKey}','${myValue}')">
       July Challenge
-      <a style="font-size:.6em;">See All</a>
+      <!--<a style="font-size:.6em;">See All</a>-->
     </h3>
 
     <div style="width:100%;vertical-align:top;" class="">
       <div style="display:inline-block;width:58%;">
-          <div style="font-size:1.2em;">${chall[data["ChallengeKey"].indexOf("title")])}</div>
+          <h2>${chall[data["ChallengeKey"].indexOf("title")]}</h2>
           <div style="font-size:0.8em">
                 <div>
                   <div style='display:inline-flex;width:18%;'>Skill:</div>

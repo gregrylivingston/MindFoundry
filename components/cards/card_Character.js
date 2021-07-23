@@ -1,41 +1,27 @@
 
-class character_card extends section{
-  constructor(type, index){
-      super(type, index);
-      this.Character="";
-      this.badgeImg='<img class="card-header-img" src="img/Character/'+this.title +'.png">';
-      this.cardHtml = this.makeCardHtml();
-  }
-  makeCardHtml(){
-      return  `
-        <div class="section playerStyles-bg" class="${this.docId}">
-          ${widget_cardType("Character Progress")}
-          ${widget_header(this.badgeImg,this.title + widget_progressBar(),this.Description)}
+function card_Character(character){
+      return `
+             <div class="card-section playerStylesCard">
+                <h3>Attribute</h3>
+                <h2>${character.title}</h2>
+                <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="playerStyles">
+                  <img style="width:50%;" src="${character.imgSrc}">
+                </div>
+                <div style="width:100%;display:inline-flex;justify-content:space-between;">
+                    <div class="playerStylesButton attributeRow">
+                        3 &nbsp; <img src="img/brain.png">
+                    </div>
+                    <div class="playerStylesButton attributeRow">
+                        3 &nbsp; <img src="img/menu/award.png">
+                    </div>
+                </div>
+                <div style="margin:.7em 0 .7em 0">
+                  ${character.Description}
+                </div>
 
-          ${widget_challengeRec("Character",this.title)}
-          ${this.hFooter()}
-
-        </div>
-
-
-        <div class="section playerStyles-bg" class="${this.docId}">
-          ${widget_showcase("Character",this.title)}
-        </div>
-
-        <div class="section playerStyles-bg" class="${this.docId}">
-          ${widget_header(this.badgeImg,this.title + " Leaderboard",this.Description)}
-          ${widget_leaderboard()}
-        </div>
-
-        <div class="section playerStyles-bg" class="${this.docId}">
-            ${widget_header('',this.title + " Badges",'')}
-            ${widget_badgeByCharacter(this)}
-        </div>
-
-
-      `;
-      //          ${widget_description(this.Description)}
-
-  }
-
+                            ${new widget_footer(
+                               [widget_fFriend()],
+                               [widget_fShare(),widget_fMenu()]
+                             ).html()}
+             </div>`
 }
