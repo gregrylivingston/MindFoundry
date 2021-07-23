@@ -53,24 +53,28 @@ class event_card extends section{
                   <br>
                   ${myDays}
                   <br>
-                  <button class="selectButton">
+                  <button class="selectButton playerStylesButton">
                     <div>Subscribe<img src="img/token_${x[data["EventKey"].indexOf("eventType")]}.png" height="40px"></div>
                   </button>
-                  <button class="selectButton">
-                    <div>Requirements</div>
+                  <button class="selectButton playerStylesButton">
+                    <div><br>Info<br><br></div>
                   </button>
-
-
-                  <div style="margin:.5em 0 .5em 0;">${x[data["EventKey"].indexOf("Task")]}</div>
-                  <div>Host: ${x[data["EventKey"].indexOf("host")]}</div>
-                  <div>July Club Challenge: Martian City</div>
-                  <div>Leaderboard</div>
-                  <div>32 Ratings<br>
+                  <button class="selectButton playerStylesButton">
+                    <div>Calendar <img src="img/menu/menu_challenges.png"></div>
+                  </button>
+                  <button class="selectButton playerStylesButton">
+                    <div>Awards <img src="img/menu/award.png"></div>
+                  </button>
+                  <div style="margin:.5em 0 .5em 0;">${x[data["EventKey"].indexOf("Description")]}</div>
+                  <div style="margin:.5em 0 .5em 0;">July Challenge: ${x[data["EventKey"].indexOf("Task")]}</div>
+                  <div>Host: ${widget_playerByName(this.host)}</div>
+                  <div>
                       <img src="img/menu/favorite_checked.png">
                       <img src="img/menu/favorite_checked.png">
                       <img src="img/menu/favorite_checked.png">
                       <img src="img/menu/favorite_checked.png">
                       <img src="img/menu/favorite_checked.png">
+                      32 Ratings
                    </div>
                   <div>Aiden had an amazing time.</div>
                   <div><a href="">17 Reviews</a></div>

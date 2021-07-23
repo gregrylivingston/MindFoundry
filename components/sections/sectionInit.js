@@ -32,7 +32,14 @@ function BuildCardArrays(){
       data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new showcase_card("Showcase",i)):'';});
       data["Badge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? cards.push(new badge_card("Badge",i)):'';});
 
-      const eventBadges = ["Heroes","Minecraft Masters League","Minecraft Masters Tourney","Rocket League Juniors","Minecraft Juniors","Rocket League Masters"];
+      const eventBadges = ["Heroes Masters League",
+                          "Heroes Explorers League",
+                          "Minecraft Explorers League",
+                          "Minecraft Masters League",
+                          "Rocket League Explorers Tourney",
+                          "Rocket League Masters Tourney",
+                          "Minecraft Explorers Tourney",
+                          "Minecraft Masters Tourney"];
 
 
       eventBadges.forEach((badge,i)=>{
@@ -71,7 +78,14 @@ function BuildSectionArrays(){
       data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new showcase_card("Showcase",i)):'';});
       data["Badge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new badge_card("Badge",i)):'';});
 
-      const eventBadges = ["Heroes","Minecraft Masters League","Minecraft Masters Tourney","Rocket League Juniors","Minecraft Juniors","Rocket League Masters"];
+      const eventBadges = ["Heroes Masters League",
+                          "Heroes Explorers League",
+                      ,"Minecraft Masters League",
+                      "Minecraft Masters Tourney",
+                      "Minecraft Explorers League",
+                      "Minecraft Explorers Tourney",
+                      "Rocket League Explorers",
+                      "Rocket League Masters"];
 
 
       eventBadges.forEach((badge,i)=>{

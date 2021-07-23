@@ -8,7 +8,6 @@ function widget_leaderboard(){
       ${leaderboard_row(13,"Kawanabe")}
       ${leaderboard_row(14, "Davinci")}
       ${leaderboard_row(15, "Luchos")}
-      ${leaderboard_row(16,"Socrates")}
       <br>
     </div>
     `
