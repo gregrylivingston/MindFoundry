@@ -51,7 +51,7 @@ class event_card extends section{
 //                  ${x[data["EventKey"].indexOf("Sessions")]} ${x[data["EventKey"].indexOf("SessionsLength")]} Sessions
 
             this.events+=`
-                <div class="card-section playerStyles">
+                <div class="card-section playerStylesCard">
                   <h3 style="width:100%;display:inline-flex;">
                         <div style="width:70%">${x[data["EventKey"].indexOf("eventTitle")]}</div>
                         <button class="half-button" style="display:block;">

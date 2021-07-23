@@ -7,7 +7,7 @@ class showcase_card extends section{
   }
   makeCardHtml(){
       return  `
-        <div class="section playerStyles" id="${this.docId}">
+        <div class="section" id="${this.docId}">
 
             ${widget_header(this.badgeImg,this.title,'<a href="">'+this.Challenge+'</a>')}
 

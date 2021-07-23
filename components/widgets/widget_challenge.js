@@ -8,7 +8,7 @@ function widget_challengeRec(myKey, myValue){
           </h3>
     `;*/
     var mychallenges = shuffle(data["Challenge"].filter(x=>x[data["ChallengeKey"].indexOf(myKey)] == myValue));
-    for (var i = 0 ; (i < 2 )  ; i ++){
+    for (var i = 0 ; (i < 1 )  ; i ++){
       if ( mychallenges[i]!== undefined)
         {myChall+= widget_challenge(mychallenges[i],myKey,myValue);}
     }
@@ -19,25 +19,34 @@ function widget_challengeRec(myKey, myValue){
 
 function widget_challenge(chall , myKey, myValue){
   return  `
-  <div class="card-section playerStylesButton">
-    <h3 style="text-align:left;" onclick="showPage('Challenge','${myKey}','${myValue}')">
-      Featured Challenges
+  <div class="card-section playerStylesCard">
+    <h3 onclick="showPage('Challenge','${myKey}','${myValue}')">
+      July Challenge
       <a style="font-size:.6em;">See All</a>
     </h3>
 
+    <div style="width:100%;vertical-align:top;" class="">
+      <div style="display:inline-block;width:58%;">
+          <div style="font-size:1.2em;">${chall[data["ChallengeKey"].indexOf("title")])}</div>
+          <div style="font-size:0.8em">
+                <div>
+                  <div style='display:inline-flex;width:18%;'>Skill:</div>
+                  ${widget_level(chall[data["ChallengeKey"].indexOf("Skill")])}
+                </div>
+                <div>
+                  <div style='display:inline-flex;width:18%;'>Effort:</div>
+                  ${widget_level(chall[data["ChallengeKey"].indexOf("Effort")])}
+                </div>
+          </div>
+      </div>
+
+
     <h3 style="width:100%;display:inline-flex;">
-          <div style="width:70%">${chall[0]}</div>
+          <div style="width:70%"></div>
     </h3>
       <div>${chall[data["ChallengeKey"].indexOf("submissionType")]}</div>
       <div>${chall[data["ChallengeKey"].indexOf("Description")]}</div>
-      <div>
-        <div style='display:inline-flex;width:18%;'>Skill:</div>
-        ${widget_level(chall[data["ChallengeKey"].indexOf("Skill")])}
-      </div>
-      <div>
-        <div style='display:inline-flex;width:18%;'>Effort:</div>
-        ${widget_level(chall[data["ChallengeKey"].indexOf("Effort")])}
-      </div>
+
 
   </div>
   `
@@ -45,12 +54,12 @@ function widget_challenge(chall , myKey, myValue){
 }
 
 function widget_level(lvl){
-        let myHtml = "<div style='display:inline-flex;width:80%'>";
+        let myHtml = "<div style='display:inline-flex;width:80%;min-width:5em'>";
         for ( var i = 0 ; i < lvl ; i ++ ){
-          myHtml+="<div class='playerStyles' style='height:.5em;width:1.5em;margin-left:.5em;background:white;'></div>"
+          myHtml+="<div class='playerStyles' style='height:.5em;width:10%;margin-left:4%;background:white;'></div>"
         }
         for ( ; i < 5 ; i ++ ){
-          myHtml+="<div class='playerStyles' style='height:.5em;width:1.5em;margin-left:.5em;'></div>"
+          myHtml+="<div class='playerStyles' style='height:.5em;width:10%;margin-left:4%;'></div>"
 
         }
         myHtml+="</div>"

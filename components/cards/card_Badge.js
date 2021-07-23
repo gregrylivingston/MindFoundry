@@ -25,7 +25,7 @@ class badge_card extends section{
 
 function card_badge(bad){
   return `
-  <div class="card-section playerStyles" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
+  <div class="card-section playerStylesCard" onclick="showBadge('${bad[data["BadgeKey"].indexOf("title")]}')">
     <h3>Badge</h3>
     <h4>      ${bad[data["BadgeKey"].indexOf("title")]}
     </h4>

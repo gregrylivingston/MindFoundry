@@ -61,18 +61,3 @@ class challengeGuide_card extends section{
 
 
 }
-
-function  widget_attributeSummary(char , lvl){
-  return `
-        <div class="playerStylesButton attributeRow" onclick="showPage('Character','','${char}')">
-          <img height="30px" style="display:inline-block;" src="img/Character/${char}.png">
-          <div style="display:inline-block;width:80%;">
-            ${char}
-            <div style="max-width:80%;display:inline-block">
-              ${widget_level(lvl)}
-            </div>
-          </div>
-        </div>
-  `
-
-}

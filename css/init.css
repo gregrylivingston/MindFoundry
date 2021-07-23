@@ -6,13 +6,10 @@
     left:0vw;
     width:100vw;
     z-index:1000;
-    background-color:#cccccc
-
+    background-color:#cccccc;
+    opacity:0.96;
 }
 
-#loadingScreen{
-  z-index:1000;
-}
 
 
 #user_options_korora, #user_options_piwa, #user_options_new{
