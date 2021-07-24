@@ -10,22 +10,12 @@ class section_challenge extends section{
         <div class="section playerStyles" id="${this.docId}">
             ${widget_header(this.badgeImg,this.title,this.hSubtitle())}
             ${card_monthly_challenge(data["Challenge"][this.index] , '', '')}
-
-            ${this.hInnerContent()}
             ${widget_resource(this)}
         </div>
-        ${widget_showcase("Challenge",this.title)}
-
+        ${card_showcase("Challenge",this.title)}
       `;
   }
-  hInnerContent(){
-              return `
 
-
-
-            `
-
-  }
   hSubtitle(){
               return `<div class="card-subtitle">
                       <div style="font-size:.85em;padding-top:.3em;">

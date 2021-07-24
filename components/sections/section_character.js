@@ -19,7 +19,7 @@ class section_character extends section{
 
 
         <div class="section playerStyles-bg" class="${this.docId}">
-          ${widget_showcase("Character",this.title)}
+          ${card_showcase("Character",this.title)}
         </div>
 
         <div class="section playerStyles-bg" class="${this.docId}">

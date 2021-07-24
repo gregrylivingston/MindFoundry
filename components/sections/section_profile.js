@@ -18,7 +18,7 @@ class section_profile extends section{
 
 
            ${card_player(player)}
-
+           ${card_shopGuide()}
             <div class="card playerStylesCard">
               <h3>Top Badges<h3>
               <div class="acting_badgeprogress">

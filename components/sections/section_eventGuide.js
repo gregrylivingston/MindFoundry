@@ -1,6 +1,4 @@
-//uses the data from the player table.
-//One is created for each player.
-//active player is stored in slot 0.
+
 class section_eventGuide extends section{
 
   constructor(type, index) {

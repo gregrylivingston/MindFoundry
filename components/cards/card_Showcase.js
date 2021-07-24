@@ -1,55 +1,79 @@
 
 
-class showcase_card extends section{
-  constructor(type, index){
-      super(type, index);
-      this.cardHtml = this.makeCardHtml();
-  }
-  makeCardHtml(){
-      return  `
-        <div class="section" id="${this.docId}">
 
-            ${widget_header(this.badgeImg,this.title,'<a href="">'+this.Challenge+'</a>')}
+function card_showcase(filterKey, filterValue, myIndex = 0){
 
-            <div>
-              <img style="max-width:100%" src="${this.src}">
-            </div>
+                let myKey = data["ShowcaseKey"].indexOf(filterKey);
+                var imgSources = data["Showcase"].filter(x=>x[myKey]==filterValue);
+                let myTitle = `${filterValue} Showcase`;
+                    myTitle += `&nbsp <a style="font-size:.6em;" onclick="loadMenu('Showcase')">See All</a>`;
+                let mySubtitle = '';
+                let html=`
+                      ${widget_header("",myTitle,mySubtitle)}
 
-            ${this.hOwnerWidget()}
-            ${this.hFooter()}
-        </div>
-      `;
-  }
+                    `;
+                let htmlAppend="";
+                html+='';
 
-  hOwnerWidget(){
-   return `<div class="card">
-             <div style="font-size:1.65em;">
-                 ${this.title}
-             </div>
-                   <div>
-                       ${widget_playerByName(this.Player)}
-                   </div>
-                   <div>
-                        Challenge Coin:
-                        ${widget_progressBar(1,10)}
-                   </div>
-            </div>
+                if (  imgSources[myIndex] !== undefined ){
+                  html+=`
+                        <div class="card playerStylesCard">
+                        `;
+                  html+=addMediaPreview(imgSources[myIndex]);
+                          htmlAppend+=
+                          `
+                        </div>
+                          `;
+                } else {
+                  //if ( filterValue == data["Player"][0][0] || filterKey !== "Player")html+=addShowcaseButton();
+                }
+                if ( imgSources[1] !== undefined){
+                    html+='</div><div class="card playerStylesCard">';
+                    html+=addMediaPreview(imgSources[1]);
+                  }
+                  if ( imgSources[2] !== undefined){
+                      html+='</div><div class="card playerStylesCard">';
+                      html+=addMediaPreview(imgSources[2]);
+                    }
+                    if ( imgSources[3] !== undefined){
+                        html+='</div><div class="card playerStylesCard">';
+                        html+=addMediaPreview(imgSources[3]);
+                      }
+                html+=htmlAppend;
 
-         `
- }
- hFooter(){
-         return `
-         <div class="card-footer">
-           <div class="card-footer-left">
-                 <button class="topnav-button playerStyles"><img src="img/menu/favorite_unchecked.png"></button>
-                 <button class="topnav-button playerStyles">3<img src="img/menu/react.png"></button>
-                 <button class="topnav-button playerStyles">2<img src="img/menu/award.png"></button>
+                return html
+}
 
-                 </div>
-           <div class="card-footer-right">
-             <button class="topnav-button playerStyles"><img src="img/menu/share.png"></button>
-             <button class="topnav-button playerStyles">...</button>
-           </div>
-         </div>`
-       }
+
+function addMediaPreview(mediaItem){
+
+  let img1 = mediaItem[data["ShowcaseKey"].indexOf("src")];
+  let img1Title = mediaItem[data["ShowcaseKey"].indexOf("title")];
+  let img1Chal = mediaItem[data["ShowcaseKey"].indexOf("Challenge")];
+  let img1Desc = mediaItem[data["ShowcaseKey"].indexOf("Description")];
+  return `      <h3>Artifact</h3>
+                <div style="width:100%;vertical-align:top;" class="">
+                  <div style="display:inline-block;width:58%;">
+                      <div style="font-size:1.2em;">${img1Title}</div>
+                      <div style="font-size:0.8em"><a href="">${img1Chal}</a></div>
+                  </div>
+                  <div style="display:inline-block;width:40%;text-align:right;vertical-align:top;height:100%;">
+
+                  </div>
+                </div>
+                <div>
+                  <img src="${img1}" style="width:100%;object-fit:fill;">
+                </div>
+
+                   ${new widget_footer(
+                      [widget_fPin(),widget_fReact(),widget_fAward()],
+                      [widget_fShare(),widget_fMenu()]
+                    ).html()}
+
+                  <div>
+                    ${img1Desc}
+                  </div>
+                    ${widget_playerByName(mediaItem[data["ShowcaseKey"].indexOf("Player")])}
+
+`
 }
