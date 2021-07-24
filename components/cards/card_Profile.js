@@ -1,10 +1,10 @@
 
 function card_player(player){
       return `
-             <div class="card playerStylesCard">
+             <div class="card playerStylesCard mf-purple">
                 <h3>Player</h3>
                 ${widget_player(player)}
-                <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="playerStyles">
+                <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="highlight">
                   <img style="width:50%;" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
                 </div>
                 <div style="width:100%;display:inline-flex;justify-content:space-between;">

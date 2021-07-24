@@ -22,7 +22,7 @@
 }
 
 
-.playerStyles-bg{
+.playerStyles-bg, .topnav{
   border-top:2px solid white;
   border-bottom:2px solid white;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1ed6df+0,00b8c1+100 */
@@ -92,7 +92,26 @@
 .mf-blue{
   background: #2D9CDB; /* Old browsers */
 }
+.mf-orange{
+  background: #F2994A; /* Old browsers */
+}
+.mf-yellow{
+  background: #F2C94C; /* Old browsers */
+}
+.mf-purple{
+  background: #BB6BD9; /* Old browsers */
+}
 
+.highlight{
+  border-radius:10px;
+  border:2px solid white;
+  background: #bee1f0; /* Old browsers */
+  background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #bee1f0 0%,#96dcff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #bee1f0 0%,#96dcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
+
+}
 /*colors
 
 

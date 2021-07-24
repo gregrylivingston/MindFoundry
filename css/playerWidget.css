@@ -5,41 +5,37 @@
   font-weight: bold;
   padding:.05em;
   align-items:center;
-  text-align:center;
+  justify-content: space-around;
   vertical-align:middle;
   padding-right:.5em;
-  padding-left:.5em;
+  padding-left:1.5em;
 }
 
 
 
 .playerWidget-crest {
   display:inline-flex;
-  font-size:1.2em;
-  font-weight: bold;
-  padding:.05em;
-  padding-right:1em;
-  padding-left:1em;
-  align-items:center;
-  text-align:center;
-  vertical-align:middle;
-  justify-content: flex-end;
+  padding:.05em .2em .05em 0;
+}
+.playerWidget-crest>img{
+   height:3em;;
 }
 
 
 .playerWidget-image{
   object-fit:scale-down;
-  max-width:13%;
+  height:3em;
   padding:.05em;
   padding-right:1em;
-  padding-left:1em;
+  padding-left:.5em;
   display:inline-flex;
-
 }
 
 .playerWidget-name{
-  display:inline-flex;
+    font-weight:bold;
+    font-size:1.5em;
 }
+
 @media only screen and (min-width: 200px){
   .nav-left>.playerWidget{
     height:2em;
