@@ -101,18 +101,22 @@ function widget_fShare(){
 function wHeader(c){
     return `
 
-        <div style="width:100%;display:inline-flex;align-items:center;background:rgba(255,255,255,0);">
-            <div style="width:25%;background:white;border-top-left-radius:20%;border-bottom-right-radius:10px;"">
+        <div style="width:100%;display:inline-flex;align-items:center;">
+            <div style="width:32%;">
                 <button class="headerButton" onclick="viewCard('card${c.index}')">
-                <img src="img/mf_logo.png" style="height:1em;"><!-- flip card for menu & help -->
+
+                  <!-- flip card for menu & help -->
                 </button>
             </div>
-            <div style="width:50%;">
 
+            <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
+            <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
+              <h3>${c.type}</h3>
+              </button>
             </div>
-            <div style="width:25%;background:white;border-top-right-radius:20%;border-bottom-left-radius:10px;">
-              <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
-                <h3>${c.type}</h3>
+            <div style="width:32%;">
+
+
             </div>
         </div>
     `
@@ -121,20 +125,18 @@ function wHeader(c){
 function wRHeader(c){
     return `
 
-    <div style="width:100%;display:inline-flex;background:white;">
-        <div style="width:25%;">
+    <div style="width:100%;display:inline-flex;align-items:center;">
+        <div style="width:32%;">
             <button class="headerButton" onclick="viewCard('card${c.index}')">
             <img src="img/mf_logo.png" style="height:1em;"><!-- flip card for menu & help -->
             </button>
-
-
-
         </div>
-        <div style="width:50%;">
-        </div>
-        <div style="width:25%;background:white;border-top-right-radius:20%;border-bottom-left-radius:10px;">
+        <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
           <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.remove('flipped')">
             <h3>${c.type}</h3>
+            </button>
+        </div>
+        <div style="width:32%;">
         </div>
     </div>
     `

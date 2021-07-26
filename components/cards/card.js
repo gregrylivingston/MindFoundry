@@ -10,6 +10,9 @@ class card {
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
     this.rules = cTypeRules(this.type);
     this.footer = "";
+    this.deck = "";
+    this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
+    if (this.cardsInDeck.length>0){ this.deck=this.cardsInDeck.length;}
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
@@ -75,6 +78,7 @@ class card {
           </div>
 
         </div>
+
       </div>
 
       `;
