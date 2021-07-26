@@ -7,7 +7,7 @@ class section_challenge extends section{
 
   makeCardHtml(){
       return  `
-        <div class="section playerStyles" id="${this.docId}">
+        <div class="section playerStyles-bg" id="${this.docId}">
             ${widget_header(this.badgeImg,this.title,this.hSubtitle())}
             ${card_monthly_challenge(data["Challenge"][this.index] , '', '')}
             ${widget_resource(this)}

@@ -52,15 +52,9 @@ function addMediaPreview(mediaItem){
   let img1Chal = mediaItem[data["ShowcaseKey"].indexOf("Challenge")];
   let img1Desc = mediaItem[data["ShowcaseKey"].indexOf("Description")];
   return `      <h3>Artifact</h3>
-                <div style="width:100%;vertical-align:top;" class="">
-                  <div style="display:inline-block;width:58%;">
-                      <div style="font-size:1.2em;">${img1Title}</div>
+                      <h2>${img1Title}</h2>
                       <div style="font-size:0.8em"><a href="">${img1Chal}</a></div>
-                  </div>
-                  <div style="display:inline-block;width:40%;text-align:right;vertical-align:top;height:100%;">
 
-                  </div>
-                </div>
                 <div>
                   <img src="${img1}" style="width:100%;object-fit:fill;">
                 </div>

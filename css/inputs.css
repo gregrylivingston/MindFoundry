@@ -5,7 +5,7 @@
   margin-bottom:0.2em;
   border-radius:5px;
   border:white 2px solid;
-  min-height:1.5em;
+  min-height:3em;
   vertical-align:center;
   align-items:center;
   text-align:left;
@@ -61,12 +61,7 @@
     vertical-align:top;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
     align-items:center;
-    background: #bee1f0; /* Old browsers */
-    background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #bee1f0 0%,#96dcff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #bee1f0 0%,#96dcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
-    opacity:0.96;
+    justify-content: center;
 
 }
 
@@ -88,6 +83,13 @@
     background: linear-gradient(to right,  #bee1f0 0%,#96dcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
     opacity:0.96;
+
+}
+
+.half-button>p{
+  font-size:.85em;
+  margin-block-end:.2em;
+  margin-block-start:.2em;
 
 }
 

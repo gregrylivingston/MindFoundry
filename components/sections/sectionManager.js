@@ -52,6 +52,11 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
         availableSections = [sections.find(c=>c.type=="eventGuide")];
         availableSections.push(... shuffle(sections.filter(c=>c.type=="Event")));
         break
+      case "League":
+      case "Tourney":
+        availableSections = shuffle(sections.filter(c=>c.type=="Event"));
+        availableSections = availableSections.filter(c=>c["eventType"]==page);
+        break  
       case "Shop":
         availableSections = [sections.find(c=>c.type=="shopGuide")];
         availableSections.push(... shuffle(sections.filter(c=>c.type=="Shop")));

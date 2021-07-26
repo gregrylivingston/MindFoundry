@@ -34,8 +34,8 @@ function card_shopGuide(){
 
            <div class="card playerStylesCard mf-yellow">
               <h3>Coin Stash</h3>
-                ${data["Player"][0][0]}'s Coin Collection
-              <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="highlight">
+                <h2>${data["Player"][0][0]}'s Coin</h2>
+              <div class="highlight cardFrame">
                 <img style="width:50%;" src="img/coin.png">
               </div>
               <div style="width:100%;display:inline-flex;justify-content:space-between;">
@@ -45,6 +45,11 @@ function card_shopGuide(){
                   2021: 12
                   Lifetime: 24
                 </div>
+
+                <div style="width:100%;display:inline-flex;justify-content:space-between;">
+                    Genius Shop
+                    Coins can be redeemed in the Genius Shop.
+               </div>
                 <div style="width:100%;display:inline-flex;justify-content:space-between;">
                     All Transactions
                </div>

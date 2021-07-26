@@ -2,7 +2,7 @@
 function card_player(player){
       return `
              <div class="card playerStylesCard mf-purple">
-                <h3>Player</h3>
+                <h3>${player[data["PlayerKey"].indexOf("userType")]}</h3>
                 ${widget_player(player)}
                 <div style="width:100%;text-align:center;margin:.5em 0 .5em 0;" class="highlight">
                   <img style="width:50%;" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
@@ -19,7 +19,6 @@ function card_player(player){
                    ${widget_attributeSummary("Resilience" , 3)}
                    ${widget_attributeSummary("Dexterity" , 0)}
                  </div>
-
                             ${new widget_footer(
                                [widget_fFriend()],
                                [widget_fShare(),widget_fMenu()]

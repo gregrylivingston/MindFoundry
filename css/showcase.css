@@ -50,12 +50,6 @@
   }
 }
 
-p {
-  font-family: 'Inconsolata', monospace;
-  text-align: center;
-  font-size: 14px;
-  letter-spacing:1px;
-}
 
 .media:hover .layer {
   opacity: 0.8;
