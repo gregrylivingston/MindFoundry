@@ -14,20 +14,12 @@ class section_eventGuide extends section{
             <div class="card-header">
                 <h3>Event Guide</h3>
              </div>
-            ${card_token_tourney()}
-            ${card_token_league()}
-            ${this.hCalendar()}
+            ${myCards.find(x=>x.title=="1 League Token").cardHtml}
+            ${myCards.find(x=>x.title=="1 Tourney  Token").cardHtml}
 
             ${this.hFooter()}
         </div>
       `;
-  }
-
-  hCalendar(){
-      return `<div class="card playerStylesCard">
-      <h3>Calendar</h3>
-      <div>You don't have any events on the calendar.  Here are some events you might enjoy.</div>
-    </div>`
   }
 
 

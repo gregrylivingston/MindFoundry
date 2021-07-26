@@ -12,7 +12,7 @@ class section_challenge extends section{
             ${card_monthly_challenge(data["Challenge"][this.index] , '', '')}
             ${widget_resource(this)}
         </div>
-        ${card_showcase("Challenge",this.title)}
+        ${get_cards("parentCarad",this.title)}
       `;
   }
 

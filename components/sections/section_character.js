@@ -8,10 +8,11 @@ class section_character extends section{
   }
   makeCardHtml(){
       return  `
+
+          ${sectionDeckByTitle(this.title)}
         <div class="section playerStyles-bg" class="${this.docId}">
           ${widget_header(this.badgeImg,this.title + widget_progressBar(),this.Description)}
-
-          ${card_Character(this)}
+          ${myCards.find(x=>x.title==this.title).cardHtml}
           ${widget_challengeRec("Character",this.title)}
           ${this.hFooter()}
 
@@ -19,7 +20,7 @@ class section_character extends section{
 
 
         <div class="section playerStyles-bg" class="${this.docId}">
-          ${card_showcase("Character",this.title)}
+          ${get_cards("parentCard",this.title)}
         </div>
 
         <div class="section playerStyles-bg" class="${this.docId}">

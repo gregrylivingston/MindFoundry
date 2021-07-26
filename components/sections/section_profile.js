@@ -14,7 +14,6 @@ class section_profile extends section{
 
       let allCards = myCards.forEach(x=>x.cardHtml);
 
-
       return  `
         <div class="section playerStyles-bg" class="${this.docId}">
 
@@ -22,25 +21,10 @@ class section_profile extends section{
               <h3>${player[data["PlayerKey"].indexOf("title")]}</h3>
            </div>
 
-           ${card_player(player)}
-           ${card_shopGuide()}
-            <div class="card playerStylesCard">
-              <h3>Top Badges<h3>
-              <div class="acting_badgeprogress">
-              <p>Acting Level 1<img src="img/badge/acting1.png" style="height:32px;"> 04/20</p>
-                <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
-                  <div class="progressBar-inner" style="width:20%;">
-                  </div>
-                </div>
-              </div>
-              <div class="animation_badgeprogress">
-              <p>Animation Level 1<img src="img/badge/animation1.png" style="height:32px;"> 10/20</p>
-                <div class="progressBar-outer playerStyles" style="width:90%;margin-bottom:2px;">
-                  <div class="progressBar-inner" style="width:50%;">
-                  </div>
-                </div>
-              </div>
-            </div>
+           ${myCards.find(x=>x.title==this.title).cardHtml}
+           ${get_cards("title","Genius Shop")}
+           ${get_cards("owner",this.title)}
+          
 
         </div>
 

@@ -20,6 +20,7 @@ function resetPage(){
   scroller.scrollTop = 0 ;
   document.getElementById("cards").innerHTML = "";
   availableSectionIterator = 0;
+  availableSections = [];
 }
 
 function addSectionsToPage(){
@@ -41,10 +42,11 @@ function addSectionsToPage(){
 
 
 function showPage(page, filterKey = undefined, filterValue = undefined){
-  console.log("page" + page + filterValue);
     resetPage();
+    var cardDiv = document.getElementById("cards");
     switch (page){
       case "Home":
+
         availableSections = [sections.find(c=>c.type=="Player")];
         availableSections.push(...[sections.find(c=>c.type=="eventGuide")]);
         break
@@ -58,12 +60,15 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
         availableSections = availableSections.filter(c=>c["eventType"]==page);
         break
       case "Shop":
-        availableSections = []//shuffle(sections.filter(c=>c.type=="Shop"));
-        document.getElementById("cards").innerHTML = sectionDeck("Genius Shop");
-        document.getElementById("cards").innerHTML += breakDecks("Genius Shop");
+        cardDiv.innerHTML = sectionDeckByTitle("Genius Shop");
+        cardDiv.innerHTML += breakDecks("Genius Shop");
         break
       case "Squad":
-        availableSections = shuffle(sections.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
+        cardDiv.innerHTML = sectionDeckByType("Player Card");
+        cardDiv.innerHTML += sectionDeckByType("Coach Card");
+        cardDiv.innerHTML += sectionDeckByType("GM Card");
+
+    //    availableSections = shuffle(sections.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
         break
       case "Showcase":
         availableSections = shuffle(sections.filter(c=>c.type=="Showcase"));
@@ -80,6 +85,9 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
         availableSections = shuffle(sections.filter(c=>c.type=="Challenge"));
         availableSections = availableSections.filter(c=>c[filterKey]==filterValue);
         break
+      case "MF":
+        cardDiv.innerHTML = sectionDeckByType("Deck");
+
     }
 
     addSectionsToPage();

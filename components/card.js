@@ -11,14 +11,16 @@ class card {
     this.rules = cTypeRules(this.type);
     this.footer = "";
     this.deck = "";
+    this.deckReport = "";
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
-    if (this.cardsInDeck.length>0)
-    {
-        this.deck=" deck";
-    }
+    if ( this.type == "Player Card" ) {this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("owner")]==this.title);}
+    this.deck = getDeckClass(this);
+
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
+    if  (this.cardsInDeck.length>0){ this.deckReport = `<button class="mini-deck ${this.rules.defaultColor}" onclick="showDeck('${this.title}')">${this.cardsInDeck.length}</button>`}
+
     this.cardHtml =   this.makeCardHtml();
   }
 
@@ -30,23 +32,11 @@ class card {
             ${wHeader(this)}
 
 
-            <h2>${this.title} &nbsp&nbsp&nbsp ${this.cardsInDeck.length}</h2>
+            <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">${this.deckReport} &nbsp; ${this.title}</div></h2>
             <div class="cardFrame highlight">
               <img src="${this.img}">
             </div>
-            <p>
-              ${this.desc}
-            </p>
-
-            <!--
-            <button  onclick="showPage('Tourney')" class="playerStylesButton half-button" style="height:5em;">
-              <h3>Tourneys</h3>
-            </button>
-            <button class="playerStylesButton half-button" style="height:5em;display:inline-block;text-align:left;">
-                    <p>Event Pass</p>
-                    <p>+1 <img style="height:1em;" src="img/token_tourney.png"> on June 1st</p>
-            </button>
-            -->
+              ${eval(this.desc)}
               ${this.footer}
           </div>
 
@@ -86,18 +76,7 @@ class card {
 
       `;
   }
-  addToFeed(){
-  /*    let el = document.createElement("div");
-      el.classList.add("playerStyles");
-      el.classList.add("card");
-      el.classList.add(this.docId);
-      el.innerHTML = this.makeCardHtml();
-
-      console.log("add card to masonry");
-      console.log(el);
-      msnry.appended(el);
-  */    document.getElementById("cards").innerHTML+=this.cardHtml;
-    }
+  addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
 
 }
 
@@ -124,4 +103,26 @@ function makeAllCards(){
   for ( var i = 0 ; i < data["card"].length ; i ++ ){
     myCards.push(new card(i));
   }
+}
+
+function getDeckClass(d){
+  if (d.cardsInDeck.length>49)
+    { return " deck50";}
+  else if (d.cardsInDeck.length>24)
+    { return" deck25";}
+  else if (d.cardsInDeck.length>11)
+    { return" deck12";}
+  else if (d.cardsInDeck.length>5)
+    { return" deck6";}
+  else if (d.cardsInDeck.length>1)
+    { return" deck3";}
+}
+
+//get all showcase cards based on a key / value pair...
+function get_cards(filterKey, filterValue){
+          var myHtml = "";
+          myCards.filter(x=>x[filterKey]==filterValue).forEach(x=>{
+            myHtml+=x.cardHtml;
+          })
+          return myHtml;
 }

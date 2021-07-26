@@ -19,3 +19,39 @@ function widget_player(player){
       `
 }
 function widget_playerByName(player){return  widget_player(data["Player"].find(x=>x[0]==player));}
+
+
+
+
+function getAllPlayerAttributes(){
+  return `
+    <div class="cardBlock">
+     ${widget_attributeSummary("Charisma" , 0)}
+     ${widget_attributeSummary("Perception" , 0)}
+     </div>
+     <div class="cardBlock">
+    ${widget_attributeSummary("Wisdom" , 1)}
+    ${widget_attributeSummary("Logic" , 1)}
+    </div>
+    <div class="cardBlock">
+
+     ${widget_attributeSummary("Resilience" , 3)}
+     ${widget_attributeSummary("Dexterity" , 0)}
+     </div>
+   `
+}
+
+function  widget_attributeSummary(char , lvl){
+  return `
+        <div class="playerStylesButton half-button" onclick="showPage('Character','','${char}')">
+          ${lvl}<img height="30px" src="img/Character/${char}.png">
+          <div style="display:inline-block;width:80%;padding-left:.3em;">
+            ${char}
+          <!--  <div style="max-width:80%;display:inline-block">
+              ${widget_level(lvl)}
+            </div>-->
+          </div>
+        </div>
+  `
+
+}

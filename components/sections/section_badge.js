@@ -13,7 +13,8 @@ class section_badge extends section{
             ${this.hFooter()}
         </div>
         <div class="section playerStyles-bg" class="${this.docId}">
-          ${card_showcase("badge",this.title)}
+        <h1>This won't actually make showcase</h1>
+          ${get_cards("badge",this.title)}
         </div>
 
       `;
