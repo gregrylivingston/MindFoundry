@@ -4,19 +4,30 @@ class section_shopGuide extends section{
   constructor(type, index) {
     super(type,index);
     this.type = "shopGuide";
-
+    this.shopHtml;
     this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){
+
+      //get deck card
+        this.shopHtml = "";
+        myCards.filter(x=>x.type=="Genius Shop").forEach(x=>this.shopHtml+=x.cardHtml);
+
+
+      //get cards in deck
+    /*    let shopItems = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==shop);
+            shopItems.forEach(x=>{
+              this.shopHtml+= card_shop_item(x);
+            })
+
+        return shophtml
+*/
       return  `
         <div class="section playerStyles-bg" id="${this.docId}">
-            ${widget_header(this.badgeImg,"Genius Shops","")}
+            ${widget_header(this.badgeImg,"Genius Shop","")}
             ${card_shopGuide()}
-            ${card_shop("Style")}
-            ${card_shop("Reaction")}
-            ${card_shop("Token")}
-            ${card_shop("Community")}
-            ${card_shop("Prize")}
+
+            ${this.shopHtml}
 
             ${this.hFooter()}
         </div>

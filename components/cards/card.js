@@ -102,7 +102,6 @@ class card {
 
 function viewCard(c){
   var el = document.getElementById(c);
-    console.log(el.classList);
   if ( el.classList.contains("fullscreen") == true ){
     el.classList.remove("fullscreen");
     el.children[0].classList.remove("fsView");
@@ -115,14 +114,11 @@ function viewCard(c){
 
 }
 
-  var myCards ="";
+  var myCards = [];
 
 function makeAllCards(){
-  myCards ="";
-  console.log(data["card"]);
+  myCards =[];
   for ( var i = 0 ; i < data["card"].length ; i ++ ){
-    myCards+=new card(i).cardHtml;
+    myCards.push(new card(i));
   }
-
-  return myCards
 }

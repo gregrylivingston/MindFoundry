@@ -3,6 +3,7 @@
 
 
 function init (){
+    makeAllCards();
     BuildSectionArrays();
     buildPageTopCards();
     updateTopNavPlayer(data["Player"][0]);
@@ -29,7 +30,6 @@ function BuildSectionArrays(){
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_shopGuide("Player",i)):'';});
 
 
-      data["Shop"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_shop("Shop",i)):'';});
       data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_showcase("Showcase",i)):'';});
       data["Badge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_badge("Badge",i)):'';});
 

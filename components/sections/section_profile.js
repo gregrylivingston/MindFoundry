@@ -8,7 +8,13 @@ class section_profile extends section{
     this.cardHtml = this.makeCardHtml();
   }
   makeCardHtml(){
+
+
       let player = data["Player"][this.index];
+
+      let allCards = myCards.forEach(x=>x.cardHtml);
+
+
       return  `
         <div class="section playerStyles-bg" class="${this.docId}">
 
@@ -16,7 +22,6 @@ class section_profile extends section{
               <h3>${player[data["PlayerKey"].indexOf("title")]}</h3>
            </div>
 
-           ${makeAllCards()}
            ${card_player(player)}
            ${card_shopGuide()}
             <div class="card playerStylesCard">

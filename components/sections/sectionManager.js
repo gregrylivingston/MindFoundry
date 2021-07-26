@@ -56,10 +56,11 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
       case "Tourney":
         availableSections = shuffle(sections.filter(c=>c.type=="Event"));
         availableSections = availableSections.filter(c=>c["eventType"]==page);
-        break  
+        break
       case "Shop":
-        availableSections = [sections.find(c=>c.type=="shopGuide")];
-        availableSections.push(... shuffle(sections.filter(c=>c.type=="Shop")));
+        availableSections = []//shuffle(sections.filter(c=>c.type=="Shop"));
+        document.getElementById("cards").innerHTML = sectionDeck("Genius Shop");
+        document.getElementById("cards").innerHTML += breakDecks("Genius Shop");
         break
       case "Squad":
         availableSections = shuffle(sections.filter(c=>c.type=="Player"&&c.title!=data["Player"][0][0]));
