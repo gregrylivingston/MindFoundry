@@ -12,7 +12,10 @@ class card {
     this.footer = "";
     this.deck = "";
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
-    if (this.cardsInDeck.length>0){ this.deck=this.cardsInDeck.length;}
+    if (this.cardsInDeck.length>0)
+    {
+        this.deck=" deck";
+    }
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
@@ -23,11 +26,11 @@ class card {
       return  `
       <div class="card" id="card${this.index}">
         <div class="card-inner card${this.index}">
-          <div class="flip-card-front playerStylesCard ${this.rules.defaultColor}">
+          <div class="flip-card-front playerStylesCard ${this.rules.defaultColor} ${this.deck}">
             ${wHeader(this)}
 
 
-            <h2>${this.title}</h2>
+            <h2>${this.title} &nbsp&nbsp&nbsp ${this.cardsInDeck.length}</h2>
             <div class="cardFrame highlight">
               <img src="${this.img}">
             </div>
@@ -47,7 +50,7 @@ class card {
               ${this.footer}
           </div>
 
-          <div class="flip-card-back playerStylesCard ${this.rules.defaultColor}">
+          <div class="flip-card-back playerStylesCard ${this.rules.defaultColor} ${this.deck}">
               ${wRHeader(this)}
 
 
