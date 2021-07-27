@@ -73,8 +73,8 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
         availableSections = shuffle(sections.filter(c=>c.type=="Showcase"));
         break
       case "Character":
-        availableSections = sections.filter(c=>c.type=="Character"&&c.title==filterValue);
-        availableSections.push(... shuffle(sections.filter(c=>c.type=="Badge"&&c.Character==filterValue)));
+        cardDiv.innerHTML =sectionDeckByTitle(filterValue);
+
         break
       case "Badge":
         availableSections = shuffle(sections.filter(c=>c.type=="Badge"&&c[filterKey]==filterValue));

@@ -17,6 +17,7 @@ class card {
     } else {
     }
 */
+    console.log(data["card"][this.index]);
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
 
 
@@ -29,6 +30,9 @@ class card {
       case "Player Card":
         this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("owner")]==this.title);
         this.desc+=getAllPlayerAttributes();
+        break
+      case "Virtue Card":
+        this.desc+=wCharProgress()
     }
 
     this.deck = getDeckClass(this);
@@ -54,7 +58,7 @@ class card {
             <div class="cardFrame highlight">
               <img src="${this.img}">
             </div>
-              ${this.desc}
+              <p>${this.desc}</p>
               ${this.footer}
           </div>
 

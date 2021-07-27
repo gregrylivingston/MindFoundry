@@ -35,12 +35,12 @@ function widget_level(lvl){
 
 function wCharProgress(){
     return `
-    <div style="width:100%;display:inline-flex;justify-content:space-between;">
-      <div class="playerStylesButton attributeRow">
+    <div style="display:inline-flex;width:90%;">
+      <div class="half-button">
           3 &nbsp; <img src="img/brain.png">
       </div>
-      <div class="playerStylesButton attributeRow">
+      <div class="half-button">
           3 &nbsp; <img src="img/menu/award.png">
-      </div>
+          </div>
   </div>`
 }
