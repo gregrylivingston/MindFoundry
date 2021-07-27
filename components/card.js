@@ -7,17 +7,6 @@ function cTypeRules(type){
 class card {
   constructor(index) {
     this.index = index;
-  /*  if (data["card"][index][1] == "Decks"){
-       let myplayer = data["card"][2];
-  //     data["cardKey"].forEach((column,i)=> {this[column] = myplayer[i]});
-       console.log(myplayer);
-       console.log(this);
-       console.log(this.type);
-       this.type="Deck";
-    } else {
-    }
-*/
-    console.log(data["card"][this.index]);
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
 
 
@@ -39,7 +28,7 @@ class card {
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
-    if  (this.cardsInDeck.length>0){ this.deckReport = `<button class="mini-deck ${this.rules.defaultColor}" onclick="showDeck('${this.title}')">${this.cardsInDeck.length}</button>`}
+    if  (this.cardsInDeck.length>0){ this.deckReport = `<button class="mini-deck ${this.rules.defaultColor}" onclick="sectionDeckByTitle('${this.title}')">${this.cardsInDeck.length}</button>`}
 
     this.cardHtml =   this.makeCardHtml();
   }

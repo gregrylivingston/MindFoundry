@@ -1,13 +1,5 @@
-function showDeck(deck){
-  resetPage();
-  var cardDiv = document.getElementById("cards");
-      cardDiv.innerHTML = sectionDeckByTitle(deck);
 
-}
-
-//is the param a row or a string...
 function sectionDeckByTitle(deck){
-  console.log(deck);
   //add deck
   var myHtml = myCards.find(x=>x.title==deck).cardHtml;
   //add cards in deck
@@ -19,13 +11,6 @@ function sectionDeckByTitle(deck){
         ${myHtml}
     </div>
   `;
-}
-
-function breakDecks(deck){
-  var myHtml = "";
-  myCards.filter(x=>x.parentCard == deck).forEach(x=>{myHtml+= sectionDeckByTitle(x.title)})
-  return myHtml
-
 }
 
 function sectionDeckByType(deck){
@@ -41,4 +26,12 @@ function sectionDeckByType(deck){
         ${myHtml}
     </div>
   `;
+}
+
+//shows a deck and it's children.
+function breakDecks(deck){
+  var myHtml = sectionDeckByTitle(deck);
+  myCards.filter(x=>x.parentCard == deck).forEach(x=>{myHtml+= sectionDeckByTitle(x.title)})
+  return myHtml
+
 }
