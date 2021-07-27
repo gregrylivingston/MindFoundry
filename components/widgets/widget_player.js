@@ -21,25 +21,6 @@ function widget_playerByName(player){return  widget_player(data["Player"].find(x
 
 
 
-
-function getAllPlayerAttributes(){
-  return `
-    <div class="cardBlock">
-     ${widget_attributeSummary("Charisma" , 0)}
-     ${widget_attributeSummary("Perception" , 0)}
-     </div>
-     <div class="cardBlock">
-    ${widget_attributeSummary("Wisdom" , 1)}
-    ${widget_attributeSummary("Logic" , 1)}
-    </div>
-    <div class="cardBlock">
-
-     ${widget_attributeSummary("Resilience" , 3)}
-     ${widget_attributeSummary("Dexterity" , 0)}
-     </div>
-   `
-}
-
 function  widget_attributeSummary(char , lvl){
   return `
         <div class="playerStylesButton half-button" onclick="showPage('Character','','${char}')">

@@ -8,27 +8,22 @@ class card {
   constructor(index) {
     this.index = index;
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
-
-
     this.rules = cTypeRules(this.type);
-    this.footer = "";
-    this.deck = "";
-    this.deckReport = "";
-    this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
-    switch (this.type){
-      case "Player Card":
-        this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("owner")]==this.title);
-        this.desc+=getAllPlayerAttributes();
-        break
-      case "Virtue Card":
-        this.desc+=wCharProgress()
-    }
+    this.footer="";this.deckReport="";this.deck = "";
 
+//get deck info
+    this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
+      if  (this.cardsInDeck.length>0){ this.deckReport = `<button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">${this.cardsInDeck.length}</button>`}
     this.deck = getDeckClass(this);
+
+
+//add bottom widget by card type
+    ( widget[this.type] !== undefined )? this.desc += widget[this.type](this):'';
+
+//add footer, header, and menu widgets by card type rules
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
-    if  (this.cardsInDeck.length>0){ this.deckReport = `<button class="mini-deck ${this.rules.defaultColor}" onclick="sectionDeckByTitle('${this.title}')">${this.cardsInDeck.length}</button>`}
 
     this.cardHtml =   this.makeCardHtml();
   }
@@ -93,29 +88,10 @@ class card {
 
 
 
-function viewCard(c){
-  var el = document.getElementById(c);
-  if ( el.classList.contains("fullscreen") == true ){
-    el.classList.remove("fullscreen");
-    el.children[0].classList.remove("fsView");
 
-  }
-  else {
-    el.classList.add("fullscreen");
-    el.children[0].classList.add("fsView");
-  }
 
-}
 
-  var myCards = [];
-
-function makeAllCards(){
-  myCards =[];
-  for ( var i = 0 ; i < data["card"].length ; i ++ ){
-    myCards.push(new card(i));
-  }
-}
-
+//add deck size classlist
 function getDeckClass(d){
   if (d.cardsInDeck.length>49)
     { return " deck50";}
@@ -136,4 +112,31 @@ function get_cards(filterKey, filterValue){
             myHtml+=x.cardHtml;
           })
           return myHtml;
+}
+
+
+//See a card in full screen view
+function viewCard(c){
+  var el = document.getElementById(c);
+  if ( el.classList.contains("fullscreen") == true ){
+    el.classList.remove("fullscreen");
+    el.children[0].classList.remove("fsView");
+
+  }
+  else {
+    el.classList.add("fullscreen");
+    el.children[0].classList.add("fsView");
+  }
+
+}
+
+
+//card initializations
+var myCards = [];
+
+function makeAllCards(){
+  myCards =[];
+  for ( var i = 0 ; i < data["card"].length ; i ++ ){
+    myCards.push(new card(i));
+  }
 }

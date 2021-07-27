@@ -2,7 +2,7 @@
 function init (){
     makeAllCards();
     updateTopNavPlayer(data["Player"][0]);
-    showPage('Home');
+    breakDecks('Decks');
 }
 
 function updateTopNavPlayer(playerArray){
@@ -53,14 +53,6 @@ var cardDiv = document.getElementById("cards");
 
 function showPage(page, filterKey = undefined, filterValue = undefined){
     switch (page){
-      case "Home":
-      case "MF":
-        breakDecks("Decks");
-        break
-      case "Events":
-      case "Shop":
-        breakDecks(page);
-        break
       case "Squad":
         cardDiv.innerHTML = sectionDeckByType("Player Card");
         cardDiv.innerHTML += sectionDeckByType("Coach Card");
@@ -69,6 +61,6 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
       case "Character":
         cardDiv.innerHTML =sectionDeckByTitle(filterValue);
         break
-
+      default:
     }
 }

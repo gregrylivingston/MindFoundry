@@ -1,11 +1,3 @@
-function widget_cardType(myCardType){
-    return ``/*
-    <div class="card-type">
-      <div style="display:inline-flex;align-items:center;">
-        ${myCardType}
-      </div>
-    </div>`*/
-}
 
 
 function widget_header(badge,title,subtitle){
@@ -23,8 +15,4 @@ function widget_header(badge,title,subtitle){
                    </div>
                   </div>
               </div>`
-}
-
-function  widget_description(desc){
-  return `<div class="card-section playerStyles-section">${desc}</div>`
 }
