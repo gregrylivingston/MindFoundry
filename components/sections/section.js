@@ -28,7 +28,6 @@ function breakDecks(deck){
 }
 
 function sectionDeckByType(deck){
-  console.log(deck);
   //add deck
     var myHtml = "";
 //  var myHtml = myCards.find(x=>x.type==deck).cardHtml;

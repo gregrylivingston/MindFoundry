@@ -7,7 +7,17 @@ function cTypeRules(type){
 class card {
   constructor(index) {
     this.index = index;
-    data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
+    if (data["card"][index][1] == "Profile"){
+       let myplayer = data["card"][2];
+       data["cardKey"].forEach((column,i)=> {this[column] = myplayer[i]});
+       console.log(myplayer);
+       console.log(this);
+       console.log(this.type);
+       this.type="Deck";
+    } else {
+      data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
+    }
+
     this.rules = cTypeRules(this.type);
     this.footer = "";
     this.deck = "";
