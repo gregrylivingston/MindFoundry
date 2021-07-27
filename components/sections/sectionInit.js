@@ -24,9 +24,7 @@ function buildPageTopCards(){
 
 function BuildSectionArrays(){
 
-      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_profile("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_challengeGuide("Player",i)):'';});
-      data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_eventGuide("Player",i)):'';});
       data["Player"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_shopGuide("Player",i)):'';});
 
 

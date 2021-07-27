@@ -7,6 +7,7 @@ function showDeck(deck){
 
 //is the param a row or a string...
 function sectionDeckByTitle(deck){
+  console.log(deck);
   //add deck
   var myHtml = myCards.find(x=>x.title==deck).cardHtml;
   //add cards in deck

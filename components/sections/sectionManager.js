@@ -46,13 +46,12 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
     var cardDiv = document.getElementById("cards");
     switch (page){
       case "Home":
-
-        availableSections = [sections.find(c=>c.type=="Player")];
-        availableSections.push(...[sections.find(c=>c.type=="eventGuide")]);
+        cardDiv.innerHTML = sectionDeckByTitle("Decks");
         break
       case "Events":
-        availableSections = [sections.find(c=>c.type=="eventGuide")];
-        availableSections.push(... shuffle(sections.filter(c=>c.type=="Event")));
+        cardDiv.innerHTML = sectionDeckByTitle("Events");
+        cardDiv.innerHTML += breakDecks("Events");
+
         break
       case "League":
       case "Tourney":
@@ -86,7 +85,7 @@ function showPage(page, filterKey = undefined, filterValue = undefined){
         availableSections = availableSections.filter(c=>c[filterKey]==filterValue);
         break
       case "MF":
-        cardDiv.innerHTML = sectionDeckByType("Deck");
+        cardDiv.innerHTML = sectionDeckByTitle("Decks");
 
     }
 
