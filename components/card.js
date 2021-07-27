@@ -49,6 +49,7 @@ class card {
          <img src="${this.img}">
        </div>
          <p>${this.desc}</p>
+         ${this.makeCostToken()}
          ${this.footer}
      </div>
      `
@@ -82,11 +83,25 @@ class card {
     </div>
     `
   }
+  makeCostToken(){
+    if ( this.costAmount > 0 ){
+      return `
+        <button class="half-button">
+          ${this.costAmount} <img src="${currencyImg[this.costType]}">
+        </button>
+      `
+    }
+    return ``
+  }
 
 
 }
 
-
+var currencyImg={
+    "League Token":"img/token_league.png",
+    "Tourney Token":"img/token_tourney.png",
+    "Coin":"img/coin.png",
+}
 
 
 
