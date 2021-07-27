@@ -51,40 +51,27 @@
 }
 
 .half-button{
-    font-size:1.1em;
     display:inline-flex;
     width:48%;
     margin:0.5%;
-    border-radius:10px;
+    border-radius:.5em;
     border:white 2px solid;
     min-height:2em;
-    font-size:1.5em;
+    font-size:1.2em;
     vertical-align:top;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
     align-items:center;
     justify-content: center;
-
 }
 
 .half-button:hover {
-    font-size:1.1em;
-    display:inline;
-    width:48%;
-    margin:0.5%;
-    border-radius:10px;
     border:#CF0569 2px solid;
-    min-height:3em;
-    vertical-align:top;
-    display: inline-flex;
-    align-items:center;
     box-shadow: 2px 2px 8px #CF0569;
     background: #bee1f0; /* Old browsers */
     background: -moz-linear-gradient(left,  #bee1f0 0%, #96dcff 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left,  #bee1f0 0%,#96dcff 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right,  #bee1f0 0%,#96dcff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee1f0', endColorstr='#96dcff',GradientType=1 ); /* IE6-9 */
-    opacity:0.96;
-
 }
 
 .half-button>p{

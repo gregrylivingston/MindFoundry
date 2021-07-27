@@ -46,9 +46,55 @@ widget["Mind Foundry"]= function (c){
       <button class="playerStylesButton half-button">
         Join Now
       </button>
-      <a href="" class="half-button">
+      <button class="half-button" style="background:none;">
         Sign In
-      </a>
+      </button>
     </div>
   `
+}
+
+var costWidget = function(c){
+    if ( c.costAmount > 0 ){
+      return `
+      <div class="cardBlock">
+        <button class="half-button">
+          ${c.costAmount} <img src="${currencyImg[c.costType]}">
+        </button>
+    </div>
+      `
+    }
+    return ``
+
+}
+
+widget["Background"] = costWidget;
+widget["Avatar"] = costWidget;
+widget["Tokens"] = costWidget;
+widget["Reaction Pack"] = costWidget;
+widget["Award"] = costWidget;
+widget["Prize"] = costWidget;
+
+
+widget["League"] = function(c){
+    if ( c.costAmount > 0 ){
+      return `
+      <div class="cardBlock">
+        <button class="half-button">
+          ${c.Days}<br>${c.startTimeCentral}
+        </button>
+        <button class="half-button">
+          ${c.costAmount} <img src="${currencyImg[c.costType]}">
+        </button>
+    </div>
+      `
+    }
+    return ``
+}
+widget["Tourney"] = widget["League"];
+
+
+var currencyImg={
+    "League Token":"img/token_league.png",
+    "Tourney Token":"img/token_tourney.png",
+    "Coin":"img/coin.png",
 }

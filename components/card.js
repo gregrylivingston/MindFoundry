@@ -18,7 +18,8 @@ class card {
 
 
 //add bottom widget by card type
-    ( widget[this.type] !== undefined )? this.desc += widget[this.type](this):'';
+    this.cardWidget = "";
+    ( widget[this.type] !== undefined )? this.cardWidget = widget[this.type](this):'';
 
 //add footer, header, and menu widgets by card type rules
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
@@ -49,7 +50,7 @@ class card {
          <img src="${this.img}">
        </div>
          <p>${this.desc}</p>
-         ${this.makeCostToken()}
+         ${this.cardWidget}
          ${this.footer}
      </div>
      `
@@ -79,31 +80,9 @@ class card {
         </div>
         <p>Receive 5 <img src="img/coin.png" style="height:1em;"> when someone joins Mind Foundry from your shared post.
         </p>
-
-    </div>
-    `
+    </div>`
   }
-  makeCostToken(){
-    if ( this.costAmount > 0 ){
-      return `
-        <button class="half-button">
-          ${this.costAmount} <img src="${currencyImg[this.costType]}">
-        </button>
-      `
-    }
-    return ``
-  }
-
-
 }
-
-var currencyImg={
-    "League Token":"img/token_league.png",
-    "Tourney Token":"img/token_tourney.png",
-    "Coin":"img/coin.png",
-}
-
-
 
 
 //add deck size classlist
@@ -136,15 +115,12 @@ function viewCard(c){
   if ( el.classList.contains("fullscreen") == true ){
     el.classList.remove("fullscreen");
     el.children[0].classList.remove("fsView");
-
   }
   else {
     el.classList.add("fullscreen");
     el.children[0].classList.add("fsView");
   }
-
 }
-
 
 //card initializations
 var myCards = [];

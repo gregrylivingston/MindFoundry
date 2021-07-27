@@ -44,7 +44,6 @@
 }
 
 .playerStylesButton:hover {
-  border-radius:1.5em;
   border:2px solid #CF0569;
   box-shadow: 2px 2px 8px #CF0569;
   background: #bee1f0; /* Old browsers */
