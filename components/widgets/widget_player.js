@@ -10,7 +10,6 @@ function widget_player(player){
             <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
             <div class="playerWidget-name">${player[data["PlayerKey"].indexOf("title")]}</div>
             <div class="playerWidget-item"  onclick="setCardsByMenu('Showcase')">
-                ${data["Showcase"].filter(x=>x[data["ShowcaseKey"].indexOf("Player")]==player[data["PlayerKey"].indexOf("title")]).length}
                     <img class="menuButton-image" src="img/menu/award.png">
             </div>
 
