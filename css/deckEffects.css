@@ -1,0 +1,71 @@
+
+.mini-deck{
+  border:2px white solid;
+  border-radius:.2em;
+  box-shadow: 1px -1px 1px white,
+   2px -2px 1px white,
+   3px -3px 1px gray,
+   4px -4px 1px white,
+   5px -5px 1px white;
+   font-size:.7em;
+   font-weight:bolder;
+   width:1.6em;
+   height:2em;
+   text-align:center;
+   padding-left:0px;
+   padding-right:0px;
+}
+
+.deck3{
+  box-shadow: 1px -1px 1px white,
+    2px -2px 1px white,
+    3px -3px 1px gray,
+    4px -4px 1px white,
+    5px -5px 1px white;
+}
+
+.deck6{
+  box-shadow: 1px -1px 1px white,
+    2px -2px 1px white,
+    3px -3px 1px gray,
+    4px -4px 1px white,
+    5px -5px 1px white,
+    6px -6px 1px gray,
+    7px -7px 1px white;
+}
+
+.deck12{
+  box-shadow: 1px -1px 1px white,
+    2px -2px 1px white,
+    3px -3px 1px gray,
+    4px -4px 1px white,
+    5px -5px 1px white,
+    6px -6px 1px gray,
+    7px -7px 1px white,
+    8px -8px 1px white,
+    9px -9px 1px gray,
+    10px -10px 1px white,
+    11px -11px 1px white,
+    12px -12px 1px gray,
+    13px -13px 1px white,
+    14px -14px 1px white,
+    15px -15px 1px gray;
+}
+
+.deck25, .deck50{
+  box-shadow: 1px -1px 1px white,
+    2px -2px 1px white,
+    3px -3px 1px gray,
+    4px -4px 1px white,
+    5px -5px 1px white,
+    6px -6px 1px gray,
+    7px -7px 1px white,
+    8px -8px 1px white,
+    9px -9px 1px gray,
+    10px -10px 1px white,
+    11px -11px 1px white,
+    12px -12px 1px gray,
+    13px -13px 1px white,
+    14px -14px 1px white,
+    15px -15px 1px gray;
+}

@@ -43,12 +43,6 @@ body{
 }
 
 @media only screen and (min-width: 200px){
-  .leftColumn{
-    max-height:95vh;
-    display:none;
-    width:98vw;
-    vertical-align:top;
-  }
   .rightColumn{
     max-height:95vh;
     width:100%;
@@ -58,15 +52,6 @@ body{
 }
 
 @media only screen and (min-width: 1261px){
-  .leftColumn{
-    position:absolute;
-    top:4em;
-    max-height:98vh;
-    left:1vw;
-    width:20em;
-    vertical-align:top;
-    min-height:100px;
-  }
 
   .rightColumn{
     position:absolute;

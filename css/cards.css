@@ -3,84 +3,12 @@
     width:100vw;
 }
 
-.mini-deck{
-  border:2px white solid;
-  border-radius:.2em;
-  box-shadow: 1px -1px 1px white,
-   2px -2px 1px white,
-   3px -3px 1px gray,
-   4px -4px 1px white,
-   5px -5px 1px white;
-   font-size:.7em;
-   font-weight:bolder;
-   width:1.6em;
-   height:2em;
-   text-align:center;
-   padding-left:0px;
-   padding-right:0px;
-}
-
-.deck3{
-  box-shadow: 1px -1px 1px white,
-    2px -2px 1px white,
-    3px -3px 1px gray,
-    4px -4px 1px white,
-    5px -5px 1px white;
-}
-
-.deck6{
-  box-shadow: 1px -1px 1px white,
-    2px -2px 1px white,
-    3px -3px 1px gray,
-    4px -4px 1px white,
-    5px -5px 1px white,
-    6px -6px 1px gray,
-    7px -7px 1px white;
-}
-
-.deck12{
-  box-shadow: 1px -1px 1px white,
-    2px -2px 1px white,
-    3px -3px 1px gray,
-    4px -4px 1px white,
-    5px -5px 1px white,
-    6px -6px 1px gray,
-    7px -7px 1px white,
-    8px -8px 1px white,
-    9px -9px 1px gray,
-    10px -10px 1px white,
-    11px -11px 1px white,
-    12px -12px 1px gray,
-    13px -13px 1px white,
-    14px -14px 1px white,
-    15px -15px 1px gray;
-}
-
-.deck25, .deck50{
-  box-shadow: 1px -1px 1px white,
-    2px -2px 1px white,
-    3px -3px 1px gray,
-    4px -4px 1px white,
-    5px -5px 1px white,
-    6px -6px 1px gray,
-    7px -7px 1px white,
-    8px -8px 1px white,
-    9px -9px 1px gray,
-    10px -10px 1px white,
-    11px -11px 1px white,
-    12px -12px 1px gray,
-    13px -13px 1px white,
-    14px -14px 1px white,
-    15px -15px 1px gray;
-}
-
 /* Flip card styling
 https://www.w3schools.com/howto/howto_css_flip_card.asp
 
 The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .card {
   perspective: 1000px; /* Remove this if you don't want the 3D effect*/
-
 }
 
 /* This container is needed to position the front and back side */
@@ -90,7 +18,6 @@ The flip card container - set the width and height to whatever you want. We have
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-
 }
 
 .flipped {
@@ -111,18 +38,10 @@ The flip card container - set the width and height to whatever you want. We have
   backface-visibility: hidden;
 }
 
-
-
 /* Style the back side */
 .flip-card-back {
   transform: rotateY(180deg);
 }
-
-
-
-
-
-
 
 
 
@@ -159,7 +78,7 @@ h4 {
 }
 
 
- .card>div>div>h2 {
+ h2 {
   margin-block-end:.2em;
   margin-block-start:-2px;
   text-align:left;
@@ -169,17 +88,6 @@ h4 {
   border-bottom:1px solid white;*/
 }
 
-.card>h2 , .card-header>h3{
-  margin-block-end:.1em;
-  margin-block-start:.1em;
-  padding:.2em 0 .2em 0;
-  margin-left:-5%;
-  width:110%;
-  text-align:center;
-  background-color:rgba(255,255,255,0.25);
-  /*border-top:1px solid white;
-  border-bottom:1px solid white;*/
-}
 p{
   width:86%;
   margin:0em 7% 0em 7%;
@@ -189,6 +97,14 @@ p{
 }
 
 
+.cardBlock{
+  width:90%;
+  margin:.2em 5% .2em 5%;
+  text-align:left;
+  display:inline-flex;
+  justify-content:space-between;
+}
+
 .cardFrame{
   width:90%;
   height:10em;
@@ -197,13 +113,6 @@ p{
   align-items:center;
 }
 
-.cardBlock{
-  width:90%;
-  margin:.2em 5% .2em 5%;
-  text-align:left;
-  display:inline-flex;
-  justify-content:space-between;
-}
 
 .cardFrame>img{
   max-height:100%;
@@ -218,65 +127,7 @@ li{
   margin-bottom:.3em;
 }
 
-.card-type{
-  width:100%;
-  text-align:center;
-  margin-top:.2em;
-  margin-bottom:.2em;
-  height:1em;
-}
-.card-header{
-  width:100vw;
-  margin:0em 0px .2em 0px;
-  padding:.5em 2% .5em 2%;
 
-  border-bottom:2px white solid;
-  /*border-top-left-radius:10px;
-  border-top-right-radius:10px;*/
-  box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
-  text-align:left;
-  vertical-align:top;
-  display:inline-block;
-
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#164e6e+0,2d9cdb+100 */
-  background: rgba(60,180,240,.9); /* Old browsers */
-  background: -moz-linear-gradient(left,  rgba(60,180,240,.1) 0%, #2d9cdb 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  rgba(60,180,240,.1) 0%,#2d9cdb 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  rgba(60,180,240,.9) 0%,#2d9cdb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(60,180,240,.9)', endColorstr='#2d9cdb',GradientType=1 ); /* IE6-9 */
-
-}
-
-.card-header-img{
-  height:3.5em;
-  display:inline-block;
-
-}
-
-.card-title-group{
-  width:85%;
-  vertical-align:top;
-  display:inline-block;
-
-}
-
-.card-title{
-  font-size:1.3em;
-  width:80%;
-}
-
-
-
-.badge{
-    width:38%;
-    max-width:25em;
-    display:inline-block;
-    text-align:left;
-    border:0px;
-    margin:2em 1% 2em 1%;
-    padding:1em 1% 1em 1%;
-    vertical-align:top;
-}
 
 
 .card-footer{
@@ -311,21 +162,4 @@ li{
   display:inline;
   text-align:right;
   vertical-align:bottom;
-}
-
-.fullscreen{
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100vw;
-  height:100vh;
-  background:rgba(20,20,20,.9);
-  z-index:9999;
-  margin:0px;
-  transition:transition 2s;
-}
-
-.fsView{
-  max-width:30vw;
-  margin:2em;
 }

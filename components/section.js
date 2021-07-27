@@ -2,7 +2,7 @@
 function init (){
     makeAllCards();
     updateTopNavPlayer(data["Player"][0]);
-    breakDecks('Decks');
+    breakDecks('Mind Foundry');
 }
 
 function updateTopNavPlayer(playerArray){

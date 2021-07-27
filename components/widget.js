@@ -33,3 +33,20 @@ widget["Virtue Card"]= function (c){
         </div>
 </div>`
 }
+
+widget["Mind Foundry"]= function (c){
+  return `
+    An incredible online helping children discover their inner genius.
+    <ul>
+      <liLive online events promoting healthy cooperation and competition.</li>
+      <li>Challenges and rewards promoting creation, innovation, and sharing.</li>
+      <li>Clubs, Prizes, Group Programs and More.</li>
+    </ul>
+    <button class="playerStylesButton half-button">
+      Join Now
+    </button><br>
+    <a href="" class="half-button">
+      Sign In
+    </a>
+  `
+}

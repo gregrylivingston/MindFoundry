@@ -5,14 +5,12 @@ function widget_header(badge,title,subtitle){
               <div class="card-header">
                  ${badge}
 
-                  <div class="card-title-group">
-                   <div class="card-title">${title}
-                   </div>
+                   <h1>${title}
+                   </h1>
                    <div class="card-subtitle">
                                <div style="font-size:.7em;padding-top:.3em;">
                                   ${subtitle}
                                </div>
-                   </div>
                   </div>
               </div>`
 }
