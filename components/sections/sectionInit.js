@@ -31,23 +31,6 @@ function BuildSectionArrays(){
       data["Showcase"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_showcase("Showcase",i)):'';});
       data["Badge"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_badge("Badge",i)):'';});
 
-      const eventBadges = ["Heroes Masters League",
-                          "Heroes Explorers League",
-                      ,"Minecraft Masters League",
-                      "Minecraft Masters Tourney",
-                      "Minecraft Explorers League",
-                      "Minecraft Explorers Tourney",
-                      "Rocket League Explorers",
-                      "Rocket League Masters"];
-
-
-      eventBadges.forEach((badge,i)=>{
-         let eventsInBadge = data["Event"].filter(b=>b[2]==badge);
-         let card = new section_event("Event",i , eventsInBadge);
-             card.title = badge;
-             card.cardHtml = card.makeCardHtml();
-         sections.push(card);
-      })
       //build character chards
       data["Character"].forEach((chal,i)=>{ (chal[0].length > 1 ) ? sections.push(new section_character("Character",i)):'';});
 

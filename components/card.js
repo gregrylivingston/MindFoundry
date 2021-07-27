@@ -25,9 +25,13 @@ class card {
     this.deck = "";
     this.deckReport = "";
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
-    if ( this.type == "Player Card" ) {this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("owner")]==this.title);}
-    this.deck = getDeckClass(this);
+    switch (this.type){
+      case "Player Card":
+        this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("owner")]==this.title);
+        this.desc+=getAllPlayerAttributes();
+    }
 
+    this.deck = getDeckClass(this);
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
@@ -35,6 +39,8 @@ class card {
 
     this.cardHtml =   this.makeCardHtml();
   }
+
+
 
   makeCardHtml(){
       return  `
@@ -48,7 +54,7 @@ class card {
             <div class="cardFrame highlight">
               <img src="${this.img}">
             </div>
-              ${eval(this.desc)}
+              ${this.desc}
               ${this.footer}
           </div>
 
