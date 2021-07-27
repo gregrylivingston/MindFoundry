@@ -44,61 +44,61 @@ class card {
     this.cardHtml =   this.makeCardHtml();
   }
 
-
-
   makeCardHtml(){
       return  `
       <div class="card" id="card${this.index}">
         <div class="card-inner card${this.index}">
-          <div class="flip-card-front playerStylesCard ${this.rules.defaultColor} ${this.deck}">
-            ${wHeader(this)}
-
-
-            <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">${this.deckReport} &nbsp; ${this.title}</div></h2>
-            <div class="cardFrame highlight">
-              <img src="${this.img}">
-            </div>
-              <p>${this.desc}</p>
-              ${this.footer}
-          </div>
-
-          <div class="flip-card-back playerStylesCard ${this.rules.defaultColor} ${this.deck}">
-              ${wRHeader(this)}
-
-
-
-              <h2>${this.type} Info</h2>
-
-              <div style="height:14em;">
-                ${this.rules.info}
-              </div>
-              <h4 style="text-align:left;">Menu</h4>
-              <p style="display:inline-flex;width:100%;width:90%;margin:0em 5% 0em 5%;">
-                  <button class="menuButton">Report issue</button><br>
-                  <button class="menuButton">Ask for Help</button><br>
-              </p>
-              <h4>Share</h4>
-              <div style="display:inline-flex;width:90%;margin:0em 5% 0em 5%;">
-                  <button class="menuButton">Link</button><br>
-                  <button class="menuButton">Facebook</button><br>
-                  <button class="menuButton">Twitter</button><br>
-                  <button class="menuButton playerStyles">Email</button>
-              </div>
-              <p>Receive 5 <img src="img/coin.png" style="height:1em;"> when someone joins Mind Foundry from your shared post.
-              </p>
-
-
-
-
-          </div>
-
+            ${this.makeCardFront()}
+            ${this.makeCardBack()}
         </div>
-
       </div>
-
       `;
   }
-  addToFeed(){document.getElementById("cards").innerHTML+=this.cardHtml;}
+  makeCardFront(){
+     return `
+     <div class="flip-card-front playerStylesCard ${this.rules.defaultColor} ${this.deck}">
+       ${wHeader(this)}
+
+
+       <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">${this.deckReport} &nbsp; ${this.title}</div></h2>
+       <div class="cardFrame highlight">
+         <img src="${this.img}">
+       </div>
+         <p>${this.desc}</p>
+         ${this.footer}
+     </div>
+     `
+  }
+
+  makeCardBack(){
+    return `
+    <div class="flip-card-back playerStylesCard ${this.rules.defaultColor} ${this.deck}">
+        ${wRHeader(this)}
+
+        <h2>${this.type} Info</h2>
+
+        <div style="height:14em;">
+          ${this.rules.info}
+        </div>
+        <h4 style="text-align:left;">Menu</h4>
+        <p style="display:inline-flex;width:100%;width:90%;margin:0em 5% 0em 5%;">
+            <button class="menuButton">Report issue</button><br>
+            <button class="menuButton">Ask for Help</button><br>
+        </p>
+        <h4>Share</h4>
+        <div style="display:inline-flex;width:90%;margin:0em 5% 0em 5%;">
+            <button class="menuButton">Link</button><br>
+            <button class="menuButton">Facebook</button><br>
+            <button class="menuButton">Twitter</button><br>
+            <button class="menuButton playerStyles">Email</button>
+        </div>
+        <p>Receive 5 <img src="img/coin.png" style="height:1em;"> when someone joins Mind Foundry from your shared post.
+        </p>
+
+    </div>
+    `
+  }
+
 
 }
 
