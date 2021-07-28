@@ -4,6 +4,26 @@ function cTypeRules(type){
     return rules
 }
 
+function nextCard(el){
+    let myCardDiv = el.parentElement.parentElement;
+    let card = myCards.find(x=>x.index==myCardDiv.id);
+    let deckIt = document.getElementById("deckIt" + myCardDiv.id).innerHTML;
+    myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);
+    myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt][1]).innerCardHtml + myCardDiv.innerHTML;
+    document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(document.getElementById("deckIt" + myCardDiv.id).innerHTML) + 1;
+}
+
+function previousCard(el){
+  let myCardDiv = el.parentElement.parentElement;
+  let card = myCards.find(x=>x.index==myCardDiv.id);
+  let deckIt = document.getElementById("deckIt" + myCardDiv.id).innerHTML;
+  deckIt =  deckIt - 1;
+  console.log(deckIt);
+  myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);
+  myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt][1]).innerCardHtml + myCardDiv.innerHTML;
+  document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(document.getElementById("deckIt" + myCardDiv.id).innerHTML) - 1;
+}
+
 class card {
   constructor(index) {
     this.index = index;
@@ -14,7 +34,19 @@ class card {
 
 //get deck info
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
-      if  (this.cardsInDeck.length>0){ this.deckReport = `<button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">${this.cardsInDeck.length}</button>`}
+      if  (this.cardsInDeck.length>0)
+      {
+          this.deckReport = `
+          <h2 style="width:100%;text-align:center;">
+            <button class="playerStylesButton" style="height:4em;width:4em;" onclick="previousCard(this)"><</button>
+              <div id="deckIt${this.index}" style="display:inline-block;">0</div> /
+              <button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">
+                 ${this.cardsInDeck.length}
+              </button>
+            <button class="playerStylesButton" style="height:4em;width:4em;" onclick="nextCard(this)">></button>
+          </h2>
+            `
+      }
     this.deck = getDeckClass(this);
 
 
@@ -28,16 +60,33 @@ class card {
     }
 
     this.cardHtml =   this.makeCardHtml();
+    this.innerCardHtml = this.makeInnerCardHtml();
   }
 
   makeCardHtml(){
       return  `
-      <div class="card" id="card${this.index}">
+    <div class="card-wrapper" id="${this.index}">
+      <div class="card">
         <div class="card-inner card${this.index}">
             ${this.makeCardFront()}
             ${this.makeCardBack()}
         </div>
       </div>
+      ${this.deckReport}
+
+    </div>
+
+      `;
+  }
+  makeInnerCardHtml(){
+      return  `
+      <div class="card">
+        <div class="card-inner card${this.index}">
+            ${this.makeCardFront()}
+            ${this.makeCardBack()}
+          </div>
+        </div>
+
       `;
   }
   makeCardFront(){
@@ -46,7 +95,7 @@ class card {
        ${wHeader(this)}
 
 
-       <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">${this.deckReport} &nbsp; ${this.title}</div></h2>
+       <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">&nbsp; ${this.title}</div></h2>
        <div class="cardFrame highlight">
           ${this.media}
        </div>
@@ -55,7 +104,7 @@ class card {
          <p>${this.desc}</p>
          ${this.cardWidget}
       </div>
-      
+
          ${this.footer}
      </div>
      `
@@ -112,6 +161,8 @@ function get_cards(filterKey, filterValue){
           })
           return myHtml;
 }
+
+
 
 
 //See a card in full screen view
