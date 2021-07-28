@@ -13,7 +13,6 @@ function updateTopNavPlayer(playerArray){
 
 function sectionDeckByTitle(deck){
   //add deck
-  console.log(deck);
   let myDeck = myCards.find(x=>x.title==deck);
 
   var myHtml = myCards.find(x=>x.title==deck).cardHtmlNoDeckReport;

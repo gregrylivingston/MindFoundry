@@ -1,6 +1,5 @@
 function cTypeRules(type){
     let rules = {};
-    console.log(type);
     data["cardType"].find(x=>x[0]==type).forEach((x,i)=>{rules[data["cardTypeKey"][i]]=x;});
     return rules
 }
@@ -63,6 +62,12 @@ class card {
 //add bottom widget by card type
     this.cardWidget = "";
     ( widget[this.type] !== undefined )? this.cardWidget = widget[this.type](this):'';
+
+
+    this.parentWidget = "";
+    if ( widget[data["card"].find(x=>x[1]==this.parentCard)[0]] !== undefined ){
+        this.parentWidget = widget[data["card"].find(x=>x[1]==this.parentCard)[0]](this);
+    }
 
 //add footer, header, and menu widgets by card type rules
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
@@ -147,6 +152,7 @@ class card {
 
         <div style="height:14em;">
           ${this.rules.desc}
+          ${this.parentWidget}
         </div>
 
         <!--<h4 style="text-align:left;">Menu</h4>
