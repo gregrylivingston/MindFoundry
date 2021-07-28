@@ -8,9 +8,13 @@ function nextCard(el){
     let myCardDiv = el.parentElement.parentElement;
     let card = myCards.find(x=>x.index==myCardDiv.id);
     let deckIt = document.getElementById("deckIt" + myCardDiv.id).innerHTML;
+    deckIt = Number(deckIt)+1;
+    if ( deckIt > card.cardsInDeck.length ){ deckIt = 0}
     myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);
-    myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt][1]).innerCardHtml + myCardDiv.innerHTML;
-    document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(document.getElementById("deckIt" + myCardDiv.id).innerHTML) + 1;
+    if (deckIt != 0 )
+      {myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt-1][1]).innerCardHtml + myCardDiv.innerHTML;}
+    else {myCardDiv.innerHTML = card.innerCardHtml + myCardDiv.innerHTML;}
+    document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(deckIt);
 }
 
 function previousCard(el){
@@ -18,10 +22,16 @@ function previousCard(el){
   let card = myCards.find(x=>x.index==myCardDiv.id);
   let deckIt = document.getElementById("deckIt" + myCardDiv.id).innerHTML;
   deckIt =  deckIt - 1;
-  console.log(deckIt);
+  if ( deckIt < 0 ){ deckIt = card.cardsInDeck.length;}
   myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);
-  myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt][1]).innerCardHtml + myCardDiv.innerHTML;
-  document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(document.getElementById("deckIt" + myCardDiv.id).innerHTML) - 1;
+  document.getElementById("deckIt" + myCardDiv.id).innerHTML = deckIt;
+  if ( deckIt != 0 ){ //FOR NON TITLE  CARD OF DECK
+    myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt-1][1]).innerCardHtml + myCardDiv.innerHTML;
+    document.getElementById("deckIt" + myCardDiv.id).style.display="inline-block";
+  } else { // FOR TITLE CARD OF DECK
+    myCardDiv.innerHTML = card.innerCardHtml + myCardDiv.innerHTML;
+    document.getElementById("deckIt" + myCardDiv.id).style.display="none";
+  }
 }
 
 class card {
@@ -151,6 +161,8 @@ function getDeckClass(d){
     { return" deck6";}
   else if (d.cardsInDeck.length>1)
     { return" deck3";}
+  else if (d.cardsInDeck.length>0)
+    { return" deck2";}
 }
 
 //get all showcase cards based on a key / value pair...

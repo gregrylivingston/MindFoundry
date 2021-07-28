@@ -103,7 +103,7 @@ function wHeader(c){
 
         <div style="width:100%;display:inline-flex;align-items:center;">
             <div style="width:32%;">
-                <button class="headerButton" onclick="viewCard('card${c.index}')">
+                <button class="headerButton" onclick="viewCard('${c.index}')">
 
                   <!-- flip card for menu & help -->
                 </button>
@@ -115,7 +115,7 @@ function wHeader(c){
               </button>
             </div>
             <div style="width:32%;text-align:right;">
-                <button class="headerButton" style="text-align:right;" onclick="viewCard('card${c.index}')">
+                <button class="headerButton" style="text-align:right;" onclick="viewCard('${c.index}')">
                 <img src="img/eye.svg" style="height:1.5em;">
                 </button>
 
