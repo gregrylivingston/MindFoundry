@@ -12,8 +12,15 @@ function nextCard(el){
     if ( deckIt > card.cardsInDeck.length ){ deckIt = 0}
     myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);myCardDiv.removeChild(myCardDiv.firstChild);
     if (deckIt != 0 )
-      {myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt-1][1]).innerCardHtml + myCardDiv.innerHTML;}
-    else {myCardDiv.innerHTML = card.innerCardHtml + myCardDiv.innerHTML;}
+    {
+      myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt-1][1]).innerCardHtml + myCardDiv.innerHTML;
+      document.getElementById("deckIt" + myCardDiv.id + "Parent").style.display = "inline-block";
+    }
+    else
+    {
+      myCardDiv.innerHTML = card.innerCardHtml + myCardDiv.innerHTML;
+      document.getElementById("deckIt" + myCardDiv.id + "Parent").style.display = "none";
+    }
     document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(deckIt);
 }
 
@@ -27,10 +34,10 @@ function previousCard(el){
   document.getElementById("deckIt" + myCardDiv.id).innerHTML = deckIt;
   if ( deckIt != 0 ){ //FOR NON TITLE  CARD OF DECK
     myCardDiv.innerHTML = myCards.find(x=>x.title==card.cardsInDeck[deckIt-1][1]).innerCardHtml + myCardDiv.innerHTML;
-    document.getElementById("deckIt" + myCardDiv.id).style.display="inline-block";
+    document.getElementById("deckIt" + myCardDiv.id + "Parent").style.display="inline-block";
   } else { // FOR TITLE CARD OF DECK
     myCardDiv.innerHTML = card.innerCardHtml + myCardDiv.innerHTML;
-    document.getElementById("deckIt" + myCardDiv.id).style.display="none";
+    document.getElementById("deckIt" + myCardDiv.id + "Parent").style.display="none";
   }
 }
 
@@ -47,13 +54,20 @@ class card {
       if  (this.cardsInDeck.length>0)
       {
           this.deckReport = `
-          <h2 style="width:100%;text-align:center;">
-            <button class="playerStylesButton" style="height:4em;width:4em;" onclick="previousCard(this)"><</button>
-              <div id="deckIt${this.index}" style="display:inline-block;">0</div> /
-              <button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">
-                 ${this.cardsInDeck.length}
-              </button>
-            <button class="playerStylesButton" style="height:4em;width:4em;" onclick="nextCard(this)">></button>
+          <h2 style="width:95%;text-align:center;padding-left:5%;">
+            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;" onclick="previousCard(this)"><</button>
+              <div style="width:30%;display:inline-flex;justify-content:center;">
+                <div id="deckIt${this.index}Parent" style="display:none;">
+                  <div id="deckIt${this.index}" style="display:inline-block;">
+                    0
+                  </div>
+                  / &nbsp;
+                </div>
+                <button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">
+                   ${this.cardsInDeck.length}
+                </button>
+              </div>
+            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;" onclick="nextCard(this)">></button>
           </h2>
             `
       }
