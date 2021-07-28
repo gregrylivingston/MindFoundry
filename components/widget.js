@@ -36,7 +36,7 @@ widget["Virtue Card"]= function (c){
 
 widget["Mind Foundry"]= function (c){
   return `
-    An incredible online experience helping children discover their inner genius.
+    <p>An incredible online experience helping children discover their inner genius.</p>
     <ul>
       <li>Live online events promoting healthy cooperation and competition.</li>
       <li>Challenges and rewards promoting creation, innovation, and sharing.</li>
@@ -86,6 +86,23 @@ widget["League"] = function(c){
           ${c.costAmount} <img src="${currencyImg[c.costType]}">
         </button>
     </div>
+
+      <div class="cardBlock">
+        <button class="half-button" style="width:100%;">
+          17 Reviews &nbsp;
+          <img src="img/menu/favorite_checked.png">
+          <img src="img/menu/favorite_checked.png">
+          <img src="img/menu/favorite_checked.png">
+          <img src="img/menu/favorite_checked.png">
+          <img src="img/menu/favorite_checked.png">
+
+        </button>
+      </div>
+      <div class="cardBlock">
+        <button class="half-button" style="width:100%;font-size:.8em">
+          Coach &nbsp; ${widget_playerByName(c.owner)}
+        </button>
+      </div>
       `
     }
     return ``
@@ -97,4 +114,25 @@ var currencyImg={
     "League Token":"img/token_league.png",
     "Tourney Token":"img/token_tourney.png",
     "Coin":"img/coin.png",
+}
+
+widget["Events"] = function (c){
+  var ages;
+  (c.title.indexOf("Master")>-1) ? ages = `<button class="half-button">Ages 11-13</button>`: ages = `<button class="half-button">Ages 8-10</button>`;
+
+  return `
+  <div class="cardBlock" style="padding-left:46%;">
+    ${ages}
+  </div>
+
+  <div class="cardBlock">
+    <button class="half-button">
+      1 <img src="img/token_tourney.png">
+      1 <img src="img/token_league.png">
+    </button>
+    <button class="half-button">
+      View Events
+    </button>
+  </div>
+`
 }

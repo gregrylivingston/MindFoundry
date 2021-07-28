@@ -10,6 +10,7 @@ class card {
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
     this.rules = cTypeRules(this.type);
     this.footer="";this.deckReport="";this.deck = "";
+    ( this.img.indexOf("img")>-1 )? this.media= `<img src="${this.img}">`:this.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
 //get deck info
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
@@ -47,7 +48,7 @@ class card {
 
        <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">${this.deckReport} &nbsp; ${this.title}</div></h2>
        <div class="cardFrame highlight">
-         <img src="${this.img}">
+          ${this.media}
        </div>
          <p>${this.desc}</p>
          ${this.cardWidget}

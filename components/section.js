@@ -45,6 +45,7 @@ function breakDecks(deck){
   var myHtml = sectionDeckByTitle(deck);
   myCards.filter(x=>x.parentCard == deck).forEach(x=>{myHtml+= sectionDeckByTitle(x.title)})
   cardDiv.innerHTML = myHtml;
+  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
 
 }
 
