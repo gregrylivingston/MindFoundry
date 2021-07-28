@@ -1,6 +1,7 @@
 
 .fullscreen{
   position:fixed;
+  display:inline-block;
   top:0px;
   left:0px;
   width:100vw;
@@ -9,6 +10,10 @@
   z-index:9999;
   margin:0px;
   transition:transition 2s;
+}
+
+.fullscreen>div{
+  max-width: 25em !important;
 }
 
 .fsView{

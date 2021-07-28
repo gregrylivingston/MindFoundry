@@ -49,14 +49,16 @@ class card {
     this.footer="";this.deckReport="";this.deck = "";
     ( this.img.indexOf("img")>-1 )? this.media= `<img src="${this.img}">`:this.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
+    
+
 //get deck info
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
       if  (this.cardsInDeck.length>0)
       {
           this.deckReport = `
-          <h2 style="width:95%;text-align:center;padding-left:5%;">
-            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;" onclick="previousCard(this)"><</button>
-              <div style="width:30%;display:inline-flex;justify-content:center;">
+          <h2 style="width:95%;text-align:center;padding:0 5% 0 5%">
+            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="previousCard(this)"><</button>
+              <div style="width:30%;display:inline-flex;justify-content:center;max-width:10em">
                 <div id="deckIt${this.index}Parent" style="display:none;">
                   <div id="deckIt${this.index}" style="display:inline-block;">
                     0
@@ -67,7 +69,7 @@ class card {
                    ${this.cardsInDeck.length}
                 </button>
               </div>
-            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;" onclick="nextCard(this)">></button>
+            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="nextCard(this)">></button>
           </h2>
             `
       }

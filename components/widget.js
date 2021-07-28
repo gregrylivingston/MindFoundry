@@ -36,19 +36,6 @@ widget["Virtue Card"]= function (c){
 
 widget["Mind Foundry"]= function (c){
   return `
-    <p>An incredible online experience helping children discover their inner genius.</p>
-    <ul>
-      <li>Live online events promoting healthy cooperation and competition.</li>
-      <li>Challenges and rewards promoting creation, innovation, and sharing.</li>
-      <li>Clubs, Prizes, Group Programs and More.</li>
-    </ul>
-    <div class="cardBlock">
-      <button class="playerStylesButton half-button">
-        Join Now
-      </button>
-      <button class="half-button" style="background:none;">
-        Sign In
-      </button>
-    </div>
+
   `
 }
