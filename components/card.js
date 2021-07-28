@@ -50,8 +50,12 @@ class card {
        <div class="cardFrame highlight">
           ${this.media}
        </div>
+
+       <div class="cardDesc">
          <p>${this.desc}</p>
          ${this.cardWidget}
+      </div>
+      
          ${this.footer}
      </div>
      `

@@ -163,3 +163,9 @@ li{
   text-align:right;
   vertical-align:bottom;
 }
+
+.cardDesc{
+  width:100%;
+  display:inline-block;
+  height:16em;
+}

@@ -5,22 +5,22 @@ widget["Player Card"] = function(c){
   return `
 
   <div class="cardBlock">
-   ${widget_attributeSummary("Charisma" , 0)}
-   ${widget_attributeSummary("Perception" , 0)}
+     ${widget_attributeSummary("Charisma" , 0)}
+     ${widget_attributeSummary("Perception" , 0)}
    </div>
    <div class="cardBlock">
-  ${widget_attributeSummary("Wisdom" , 1)}
-  ${widget_attributeSummary("Logic" , 1)}
+    ${widget_attributeSummary("Wisdom" , 1)}
+    ${widget_attributeSummary("Logic" , 1)}
   </div>
   <div class="cardBlock">
-
-   ${widget_attributeSummary("Resilience" , 3)}
-   ${widget_attributeSummary("Dexterity" , 0)}
+     ${widget_attributeSummary("Resilience" , 3)}
+     ${widget_attributeSummary("Dexterity" , 0)}
    </div>
-
   `
-
 }
+widget["Coach Card"] = widget["Player Card"];
+widget["GM Card"] = widget["Player Card"];
+
 
 widget["Virtue Card"]= function (c){
   return `
@@ -53,26 +53,35 @@ widget["Mind Foundry"]= function (c){
   `
 }
 
-var costWidget = function(c){
+widget["Background"] = function(c){
     if ( c.costAmount > 0 ){
       return `
       <div class="cardBlock">
-        <button class="half-button">
-          ${c.costAmount} <img src="${currencyImg[c.costType]}">
+        <button class="half-button" style="width:100%">
+          Unlock for ${c.costAmount} &nbsp;<img src="${currencyImg[c.costType]}">
         </button>
-    </div>
-      `
+    </div>`
     }
     return ``
-
 }
 
-widget["Background"] = costWidget;
-widget["Avatar"] = costWidget;
-widget["Tokens"] = costWidget;
-widget["Reaction Pack"] = costWidget;
-widget["Award"] = costWidget;
-widget["Prize"] = costWidget;
+widget["Avatar"] = widget["Background"];
+widget["Reaction Pack"] = widget["Background"];
+
+widget["Tokens"] = function(c){
+    if ( c.costAmount > 0 ){
+      return `
+      <div class="cardBlock">
+        <button class="half-button" style="width:100%">
+          Purchase for ${c.costAmount} &nbsp; <img src="${currencyImg[c.costType]}">
+        </button>
+    </div>`
+    }
+    return ``
+}
+
+widget["Award"] = widget["Tokens"];
+widget["Prize"] = widget["Tokens"];
 
 
 widget["League"] = function(c){
@@ -83,7 +92,7 @@ widget["League"] = function(c){
           ${c.Days}<br>${c.startTimeCentral}
         </button>
         <button class="half-button">
-          ${c.costAmount} <img src="${currencyImg[c.costType]}">
+          Join for ${c.costAmount} &nbsp;<img src="${currencyImg[c.costType]}">
         </button>
     </div>
 
@@ -99,7 +108,7 @@ widget["League"] = function(c){
         </button>
       </div>
       <div class="cardBlock">
-        <button class="half-button" style="width:100%;font-size:.8em">
+        <button class="half-button" style="width:100%;font-size:.8em" onclick="cardDiv.innerHTML = sectionDeckByTitle('${c.owner}')">
           Coach &nbsp; ${widget_playerByName(c.owner)}
         </button>
       </div>
@@ -118,21 +127,20 @@ var currencyImg={
 
 widget["Events"] = function (c){
   var ages;
-  (c.title.indexOf("Master")>-1) ? ages = `<button class="half-button">Ages 11-13</button>`: ages = `<button class="half-button">Ages 8-10</button>`;
+  (c.title.indexOf("Master")>-1) ? ages = `<button style="width:100%" class="half-button">Ages 11-13</button>`: ages = `<button style="width:100%" class="half-button">Ages 8-10</button>`;
 
-  return `
-  <div class="cardBlock" style="padding-left:46%;">
-    ${ages}
-  </div>
-
-  <div class="cardBlock">
-    <button class="half-button">
-      1 <img src="img/token_tourney.png">
-      1 <img src="img/token_league.png">
-    </button>
-    <button class="half-button">
-      View Events
-    </button>
-  </div>
-`
+  return `<br><br>
+    <div class="cardBlock">
+      <button class="half-button" onclick="breakDecks('Events')">
+        1 <img src="img/token_tourney.png">
+        1 <img src="img/token_league.png">
+      </button>
+      <button class="half-button" onclick="cardDiv.innerHTML = sectionDeckByTitle('${c.title}')">
+        View Events
+      </button>
+    </div>
+    <div class="cardBlock">
+      ${ages}
+    </div>
+    `
 }

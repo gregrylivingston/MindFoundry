@@ -16,6 +16,7 @@ function sectionDeckByTitle(deck){
   var myHtml = myCards.find(x=>x.title==deck).cardHtml;
   //add cards in deck
   myCards.filter(x=>(x.parentCard==deck||x.owner==deck)).forEach(x=>myHtml+=x.cardHtml);
+  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
 
   return  `
     <div class="section playerStyles-bg">
@@ -31,6 +32,7 @@ function sectionDeckByType(deck){
 //  var myHtml = myCards.find(x=>x.type==deck).cardHtml;
   //add cards in deck
   myCards.filter(x=>x.type==deck).forEach(x=>myHtml+=x.cardHtml);
+  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
 
   return  `
     <div class="section playerStyles-bg">
@@ -43,7 +45,9 @@ function sectionDeckByType(deck){
 //shows a deck and it's children.
 function breakDecks(deck){
   var myHtml = sectionDeckByTitle(deck);
-  myCards.filter(x=>x.parentCard == deck).forEach(x=>{myHtml+= sectionDeckByTitle(x.title)})
+  myCards.filter(x=>x.parentCard == deck).forEach(x=>{
+    if ( x.cardsInDeck.length>0 ){ myHtml+= sectionDeckByTitle(x.title)}
+  })
   cardDiv.innerHTML = myHtml;
   document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
 
