@@ -14,7 +14,9 @@ function updateTopNavPlayer(playerArray){
 function sectionDeckByTitle(deck){
   //add deck
   console.log(deck);
-  var myHtml = myCards.find(x=>x.title==deck).cardHtml;
+  let myDeck = myCards.find(x=>x.title==deck);
+
+  var myHtml = myCards.find(x=>x.title==deck).cardHtmlNoDeckReport;
   //add cards in deck
   myCards.filter(x=>(x.parentCard==deck||x.owner==deck)).forEach(x=>myHtml+=x.cardHtml);
   document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari

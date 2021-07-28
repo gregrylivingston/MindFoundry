@@ -1,5 +1,6 @@
 function cTypeRules(type){
     let rules = {};
+    console.log(type);
     data["cardType"].find(x=>x[0]==type).forEach((x,i)=>{rules[data["cardTypeKey"][i]]=x;});
     return rules
 }
@@ -47,32 +48,15 @@ class card {
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
     this.rules = cTypeRules(this.type);
     this.footer="";this.deckReport="";this.deck = "";
-    ( this.img.indexOf("img")>-1 )? this.media= `<img src="${this.img}">`:this.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+    ( this.img.indexOf("img")>-1 )? this.media= `<img src="${this.img}">`:this.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    ( this.rules.img.indexOf("img")>-1 )? this.rules.media= `<img src="${this.rules.img}">`:this.rules.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.rules.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-    
+
 
 //get deck info
     this.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("parentCard")]==this.title);
       if  (this.cardsInDeck.length>0)
-      {
-          this.deckReport = `
-          <h2 style="width:95%;text-align:center;padding:0 5% 0 5%">
-            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="previousCard(this)"><</button>
-              <div style="width:30%;display:inline-flex;justify-content:center;max-width:10em">
-                <div id="deckIt${this.index}Parent" style="display:none;">
-                  <div id="deckIt${this.index}" style="display:inline-block;">
-                    0
-                  </div>
-                  / &nbsp;
-                </div>
-                <button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">
-                   ${this.cardsInDeck.length}
-                </button>
-              </div>
-            <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="nextCard(this)">></button>
-          </h2>
-            `
-      }
+      { this.makeDeckReport();}
     this.deck = getDeckClass(this);
 
 
@@ -84,11 +68,22 @@ class card {
     if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
-
+    this.cardHtmlNoDeckReport =   this.makeCardHtmlNoDeckReport();
     this.cardHtml =   this.makeCardHtml();
     this.innerCardHtml = this.makeInnerCardHtml();
   }
-
+  makeCardHtmlNoDeckReport(){
+      return `
+    <div class="card-wrapper" id="${this.index}">
+      <div class="card">
+        <div class="card-inner card${this.index}">
+            ${this.makeCardFront()}
+            ${this.makeCardBack()}
+        </div>
+      </div>
+    </div>
+      `;
+  }
   makeCardHtml(){
       return  `
     <div class="card-wrapper" id="${this.index}">
@@ -141,12 +136,20 @@ class card {
     <div class="flip-card-back playerStylesCard ${this.rules.defaultColor} ${this.deck}">
         ${wRHeader(this)}
 
-        <h2>${this.type} Info</h2>
+
+        <h2 style="display:inline-flex;width:100%;">
+          <div style="width:90%;">&nbsp; ${this.type}</div>
+        </h2>
+        <div class="cardFrame highlight">
+           ${this.rules.media}
+        </div>
+
 
         <div style="height:14em;">
-          ${this.rules.info}
+          ${this.rules.desc}
         </div>
-        <h4 style="text-align:left;">Menu</h4>
+
+        <!--<h4 style="text-align:left;">Menu</h4>
         <p style="display:inline-flex;width:100%;width:90%;margin:0em 5% 0em 5%;">
             <button class="menuButton">Report issue</button><br>
             <button class="menuButton">Ask for Help</button><br>
@@ -159,8 +162,28 @@ class card {
             <button class="menuButton playerStyles">Email</button>
         </div>
         <p>Receive 5 <img src="img/coin.png" style="height:1em;"> when someone joins Mind Foundry from your shared post.
-        </p>
-    </div>`
+        </p>    -->
+    </div>
+`
+  }
+  makeDeckReport(){
+    this.deckReport = `
+    <h2 style="width:95%;text-align:center;padding:0 5% 0 5%">
+      <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="previousCard(this)"><</button>
+        <div style="width:30%;display:inline-flex;justify-content:center;max-width:10em">
+          <div id="deckIt${this.index}Parent" style="display:none;">
+            <div id="deckIt${this.index}" style="display:inline-block;">
+              0
+            </div>
+            / &nbsp;
+          </div>
+          <button class="mini-deck ${this.rules.defaultColor}" onclick="breakDecks('${this.title}')">
+             ${this.cardsInDeck.length}
+          </button>
+        </div>
+      <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="nextCard(this)">></button>
+    </h2>
+      `;
   }
 }
 

@@ -110,11 +110,15 @@ function wHeader(c){
             </div>
 
             <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
-            <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
+            <button class="headerButton" onclick="">
               <h3>${c.type}</h3>
               </button>
             </div>
             <div style="width:32%;text-align:right;">
+                <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
+                <img src="img/info-circle.svg" style="height:1.5em;">
+                </button>
+
                 <button class="headerButton" style="text-align:right;" onclick="viewCard('${c.index}')">
                 <img src="img/eye.svg" style="height:1.5em;">
                 </button>
@@ -131,14 +135,15 @@ function wRHeader(c){
         <div style="width:32%;">
 
         </div>
-        <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
-          <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.remove('flipped')">
-            <h3>${c.type}</h3>
-            </button>
+        <div style="width:34%;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
+
         </div>
         <div style="width:32%;text-align:right;">
+              <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.remove('flipped')">
+              <img src="img/info-circle.svg" style="height:1.5em;">
+              </button>
             <button class="headerButton" style="text-align:right;" onclick="viewCard('card${c.index}')">
-            <img src="img/eye.svg" style="height:1.5em;">
+              <img src="img/eye.svg" style="height:1.5em;">
             </button>
         </div>
     </div>
