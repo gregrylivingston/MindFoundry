@@ -23,7 +23,7 @@ function widget_playerByName(player){return  widget_player(data["Player"].find(x
 
 function  widget_attributeSummary(char , lvl){
   return `
-        <div class="playerStylesButton half-button" onclick="showPage('Character','','${char}')">
+        <div class="half-button" onclick="showPage('Character','','${char}')">
           ${lvl}<img height="30px" src="img/Character/${char}.png">
           <div style="display:inline-block;width:80%;padding-left:.3em;">
             ${char}
