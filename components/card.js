@@ -1,4 +1,5 @@
 function cTypeRules(type){
+  console.log(type);
     let rules = {};
     data["cardType"].find(x=>x[0]==type).forEach((x,i)=>{rules[data["cardTypeKey"][i]]=x;});
     return rules
@@ -63,7 +64,6 @@ class card {
     this.cardWidget = "";
     ( widget[this.type] !== undefined )? this.cardWidget = widget[this.type](this):'';
 
-console.log(this);
     this.parentWidget = "";
     if ( widget[data["card"].find(x=>x[1]==this.parentCard)[0]] !== undefined ){
         this.parentWidget = widget[data["card"].find(x=>x[1]==this.parentCard)[0]](this);

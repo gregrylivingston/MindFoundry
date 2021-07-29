@@ -10,18 +10,8 @@ widget["League"] = function(c){
           Join for ${c.costAmount} &nbsp;<img src="${currencyImg[c.costType]}">
         </button>
     </div>
+    ${getReviews()}
 
-      <div class="cardBlock">
-        <button class="half-button" style="width:100%;">
-          17 Reviews &nbsp;
-          <img src="img/menu/favorite_checked.png">
-          <img src="img/menu/favorite_checked.png">
-          <img src="img/menu/favorite_checked.png">
-          <img src="img/menu/favorite_checked.png">
-          <img src="img/menu/favorite_checked.png">
-
-        </button>
-      </div>
       <div class="cardBlock">
         <button class="half-button" style="width:100%;font-size:.8em" onclick="cardDiv.innerHTML = sectionDeckByTitle('${c.owner}')">
           Coach &nbsp; ${widget_playerByName(c.owner)}
@@ -62,4 +52,26 @@ widget["Events"] = function (c){
       ${ages}
     </div>
     `
+}
+
+widget["Testimonial"] = function(c){
+    return `
+      ${getReviews(c)}
+    `
+}
+
+function getReviews(){
+  return `
+  <div class="cardBlock" onclick="breakDecks('Testimonials')">
+    <button class="half-button" style="width:100%;">
+      17 Reviews &nbsp;
+      <img src="img/menu/favorite_checked.png">
+      <img src="img/menu/favorite_checked.png">
+      <img src="img/menu/favorite_checked.png">
+      <img src="img/menu/favorite_checked.png">
+      <img src="img/menu/favorite_checked.png">
+
+    </button>
+  </div>
+  `
 }

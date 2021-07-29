@@ -10,7 +10,7 @@ document.write(`
 </div>
 
   <div class="nav-right">
-    <button style="width:30%;" class="topnav-button playerStylesButton" onclick="showPage('Squad')">
+    <button style="width:30%;" class="topnav-button playerStylesButton" onclick="breakDecks('Profile Cards')">
       6<img class="menuButton-image" src="img/menu/menu_usercrew.png">
     </button>
     <button style="width:30%;"  class="topnav-button playerStylesButton" onclick="breakDecks('Events')">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png">
