@@ -21,8 +21,8 @@ function sectionDeckByTitle(deck){
   document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
 
   return  `
-    <div class="section playerStyles-bg">
-        ${widget_header("",deck,"")}
+    <div class="section">
+    <!--    ${widget_header("",deck,"")}-->
         ${myHtml}
     </div>
   `;
