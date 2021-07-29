@@ -46,6 +46,8 @@ body{
   .rightColumn{
     max-height:95vh;
     width:100%;
+    left:0vw;
+
     display:inline-block;
     vertical-align:top;
   }

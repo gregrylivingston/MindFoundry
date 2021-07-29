@@ -63,14 +63,14 @@ class card {
     this.cardWidget = "";
     ( widget[this.type] !== undefined )? this.cardWidget = widget[this.type](this):'';
 
-
+console.log(this);
     this.parentWidget = "";
     if ( widget[data["card"].find(x=>x[1]==this.parentCard)[0]] !== undefined ){
         this.parentWidget = widget[data["card"].find(x=>x[1]==this.parentCard)[0]](this);
     }
 
 //add footer, header, and menu widgets by card type rules
-    if ( this.rules.fPin==true || this.rules.fFriend==true || this.rules.fReact==true || this.fAward==true){
+    if ( this.rules.fPin==true || this.rules.fReact==true || this.fAward==true){
       this.footer = new wFooter(this.rules).html()
     }
     this.cardHtmlNoDeckReport =   this.makeCardHtmlNoDeckReport();
@@ -174,7 +174,7 @@ class card {
   }
   makeDeckReport(){
     this.deckReport = `
-    <h2 style="width:95%;text-align:center;padding:0 5% 0 5%">
+    <h2 style="width:80%;text-align:center;padding:0 5% 0 5%">
       <button class="playerStylesButton" style="height:2em;width:4em;width:30%;max-width:10em" onclick="previousCard(this)"><</button>
         <div style="width:30%;display:inline-flex;justify-content:center;max-width:10em">
           <div id="deckIt${this.index}Parent" style="display:none;">

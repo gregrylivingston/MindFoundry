@@ -10,14 +10,14 @@ document.write(`
 </div>
 
   <div class="nav-right">
-    <button class="topnav-button playerStylesButton" onclick="showPage('Squad')">
+    <button style="width:30%;" class="topnav-button playerStylesButton" onclick="showPage('Squad')">
       6<img class="menuButton-image" src="img/menu/menu_usercrew.png">
     </button>
-    <button class="topnav-button playerStylesButton" onclick="breakDecks('Events')">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png">
+    <button style="width:30%;"  class="topnav-button playerStylesButton" onclick="breakDecks('Events')">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png">
     </button>
 
 
-    <button class="topnav-button playerStylesButton" onclick="breakDecks('Genius Shop')"> 3 <img height="1em" class="menuButton-image" src="img/menu/menu_geniusshop.png"></button>
+    <button style="width:30%;"  class="topnav-button playerStylesButton" onclick="breakDecks('Genius Shop')"> 3 <img height="1em" class="menuButton-image" src="img/menu/menu_geniusshop.png"></button>
 
   </div>
 </div>

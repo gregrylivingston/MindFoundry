@@ -3,68 +3,40 @@
     width:100vw;
 }
 
-/* Flip card styling
-https://www.w3schools.com/howto/howto_css_flip_card.asp
-
-The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-.card {
-  perspective: 1000px; /* Remove this if you don't want the 3D effect*/
-}
-
-/* This container is needed to position the front and back side */
-.card-inner {
-  height:32em;
-  width: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flipped {
-  transform: rotateY(180deg) !important;
-}
-
-.flipped > .flip-card-front > div > button {
-  display:none;
-  transition: display 0.8s;
-}
-
-/* Position the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* Style the back side */
-.flip-card-back {
-  transform: rotateY(180deg);
-}
 
 .card{
-  width:100%;
+  width:92%;
   display:inline-block;
   text-align:left;
   border:0px;
-  margin:.5em 2% 1em 2%;
-  padding:0em 1em 1em 1em;
+  margin:.5em 1% 1em 1%;
+  padding:0em 1% 1em 1%;
   vertical-align:top;
 }
 
 .card-wrapper{
-  width:25%;
+  width:88%;
   display:inline-block;
   text-align:left;
   border:0px;
-  margin:1em 2% 1em 2%;
-  padding:0em 1em 1em 1em;
+  margin:1em 1% 1em 1%;
+  padding:0em 1% 1em 1%;
   vertical-align:top;
 }
-@media only screen and (max-width: 1024px){
+
+@media screen
+  and (min-device-width: 900px)
+  and (max-device-width: 1200px){
   .card-wrapper{
-    width:88%;
+    width:45%;
+  }
+
+}
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px){
+  .card-wrapper{
+    width:28%;
   }
 
 }

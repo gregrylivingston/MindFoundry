@@ -55,13 +55,6 @@ class widget_footer{
     }
 
 }
-var friendHTML = '<img class="footerButton" src="img/menu/favorite_checked.png" onclick="this.parentElement.innerHTML = widget_fFriend()">';
-
-function widget_fFriend(){
-  return `
-        <div style="display:inline-flex"><img class="footerButton" src="img/menu/menu_usercrew.png" onclick="this.parentElement.innerHTML=friendHTML"></div>
-        `
-}
 
 
 function widget_fReact(){
@@ -70,10 +63,10 @@ function widget_fReact(){
         `
 }
 
-var pinnedHTML = '<img class="footerButton" src="img/menu/favorite_checked.png" onclick="this.parentElement.innerHTML = widget_fPin()">';
+var pinnedHTML = '<img class="footerButton" src="img/bookmark-heart.svg" onclick="this.parentElement.innerHTML = widget_fPin()">';
 function widget_fPin(){
   return `
-          <div style="display:inline-flex"><img class="footerButton" src="img/menu/favorite_unchecked.png" onclick="this.parentElement.innerHTML=pinnedHTML"></div>
+          <div style="display:inline-flex"><img class="footerButton" src="img/bookmark.svg" onclick="this.parentElement.innerHTML=pinnedHTML"></div>
         `
 }
 
