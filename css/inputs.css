@@ -96,3 +96,8 @@
   text-align:left;
 
 }
+
+input{
+  width:100%;
+  background:white;
+}

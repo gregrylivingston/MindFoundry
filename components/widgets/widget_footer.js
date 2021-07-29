@@ -110,7 +110,7 @@ function wHeader(c){
             </div>
 
             <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
-            <button class="headerButton" onclick="">
+            <button onclick="breakDecks('${c.type}')" style="background:none;border:none;">
               <h3>${c.type}</h3>
               </button>
             </div>
