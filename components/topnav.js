@@ -3,7 +3,10 @@ document.write(`
 <div class="topnav">
 
 <div class="nav-left"  id="nav-player" onclick="breakDecks('Mind Foundry')" >
-  ${widget_player(data["Player"][0])}
+  <button class="topnav-button playerStylesButton" style="background-color:white;border:0px;" onclick="breakDecks('Mind Foundry')">
+    <img class="menuButton-image" src="img/mf_logo.png">
+  </button>
+<!--  ${widget_player(data["Player"][0])}-->
 </div>
 
   <div class="nav-right">
@@ -15,9 +18,7 @@ document.write(`
 
 
     <button class="topnav-button playerStylesButton" onclick="breakDecks('Genius Shop')"> 3 <img height="1em" class="menuButton-image" src="img/menu/menu_geniusshop.png"></button>
-    <button class="topnav-button playerStylesButton" style="background-color:white;border:0px;" onclick="breakDecks('Mind Foundry')">
-      <img class="menuButton-image" src="img/mf_logo.png">
-    </button>
+
   </div>
 </div>
 </div>

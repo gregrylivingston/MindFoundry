@@ -1,7 +1,7 @@
 
 function init (){
     makeAllCards();
-    updateTopNavPlayer(data["Player"][0]);
+  //  updateTopNavPlayer(data["Player"][0]);
     breakDecks('Mind Foundry');
 }
 
@@ -38,7 +38,7 @@ function sectionDeckByType(deck){
 
   return  `
     <div class="section playerStyles-bg">
-        ${widget_header("",deck,"")}
+      <!--  ${widget_header("",deck,"")}-->
         ${myHtml}
     </div>
   `;

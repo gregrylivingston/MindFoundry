@@ -23,6 +23,7 @@
 .topnav{
   width:100vw;
   max-height:12em;
+  background:rgba(0,0,0,0);
 }
 
 @media only screen and (min-width: 200px){

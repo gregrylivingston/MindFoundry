@@ -143,7 +143,7 @@ class card {
 
 
         <h2 style="display:inline-flex;width:100%;">
-          <div style="width:90%;">&nbsp; ${this.type}</div>
+          <div style="width:90%;" onclick="breakDecks('${this.type}')">&nbsp; ${this.type}</div>
         </h2>
         <div class="cardFrame highlight">
            ${this.rules.media}
