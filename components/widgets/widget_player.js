@@ -7,7 +7,7 @@ function widget_player(player){
             <img src="img/club/${player[data["PlayerKey"].indexOf("club")]}.png">
           </div>
           <div style="width:90%;align-items:center;display:inline-flex;justify-content:start;">
-            <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("imgSrc")]}">
+            <img class="playerWidget-image" src="${player[data["PlayerKey"].indexOf("avatar")]}">
             <div class="playerWidget-name">${player[data["PlayerKey"].indexOf("title")]}</div>
             <div class="playerWidget-item"  onclick="setCardsByMenu('Showcase')">
                     <img class="menuButton-image" src="img/menu/award.png">
