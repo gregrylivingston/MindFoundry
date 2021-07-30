@@ -2,7 +2,7 @@
 function init (){
     makeAllCards();
   //  updateTopNavPlayer(data["Player"][0]);
-    breakDecks('Mind Foundry');
+    breakDecks('Demo');
 }
 
 function updateTopNavPlayer(playerArray){
@@ -12,10 +12,7 @@ function updateTopNavPlayer(playerArray){
 
 
 function sectionDeckByTitle(deck){
-  //add deck
-  let myDeck = myCards.find(x=>x.title==deck);
-
-  var myHtml = myCards.find(x=>x.title==deck).cardHtmlNoDeckReport;
+  var myHtml = "";//myCards.find(x=>x.title==deck).cardHtmlNoDeckReport;
   //add cards in deck
   myCards.filter(x=>(x.parentCard==deck||x.owner==deck)).forEach(x=>myHtml+=x.cardHtml);
   document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari

@@ -1,9 +1,10 @@
-function cTypeRules(type){
+function getCardTypeRules(type){
   console.log(type);
     let rules = {};
     data["cardType"].find(x=>x[0]==type).forEach((x,i)=>{rules[data["cardTypeKey"][i]]=x;});
     return rules
 }
+
 
 function nextCard(el){
     let myCardDiv = el.parentElement.parentElement;
@@ -46,11 +47,9 @@ class card {
   constructor(index) {
     this.index = index;
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
-    this.rules = cTypeRules(this.type);
     this.footer="";this.deckReport="";this.deck = "";
-    ( this.img.indexOf("img")>-1 )? this.media= `<img src="${this.img}">`:this.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-    ( this.rules.img.indexOf("img")>-1 )? this.rules.media= `<img src="${this.rules.img}">`:this.rules.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.rules.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-
+    this.rules = getCardTypeRules(this.type);
+    this.getCardMediaRules();
 
 
 //get deck info
@@ -192,6 +191,17 @@ class card {
     </h2>
       `;
   }
+  getCardMediaRules(){
+    if (this.img.indexOf("svg")>-1 ){
+      this.media= `<img style="object-fit:fill;" src="${this.img}">`
+    }
+    else if (this.img.indexOf("img")>-1 ){
+      this.media= `<img src="${this.img}">`
+    } else if ( this.img.indexOf("youtube")>-1){
+      this.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    } else {this.media='';}
+   ( this.rules.img.indexOf("img")>-1 )? this.rules.media= `<img src="${this.rules.img}">`:this.rules.media = `<iframe width="100%" style="height:100%;border-radius:.5em" src="${this.rules.img}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+ }
 }
 
 
@@ -249,12 +259,12 @@ function makeAllCards(){
 function getOwnerWidget(c){
     var challenge;
     (c.type=="Challenge")?challenge = c:challenge = myCards.find(x=>x.title==c.owner);
+    var html = "";
 
     if (challenge !==undefined )
     {
       var branch = myCards.find(x=>x.title==challenge.owner);
 
-              let html = "";
               try{
                 let badge = myCards.find(x=>x.title==branch.owner);
                 html+=`
@@ -280,9 +290,10 @@ function getOwnerWidget(c){
                 html+=`
 
             `;
-            return html
 
           }
     }
+    return html
+
 
 }

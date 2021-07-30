@@ -90,6 +90,8 @@ p{
   height:10em;
   text-align:center;
   margin:.5em 5% .5em 5%;
+  display:inline-flex;
+  justify-content:space-around;
   align-items:center;
 }
 
@@ -97,7 +99,7 @@ p{
 .cardFrame>img{
   max-height:100%;
   max-width:100%;
-  object-fit:scale-down;
+  object-fit:cover;
   height:100%;
 }
 
