@@ -2,22 +2,27 @@ document.write(`
 
 <div class="topnav">
 
-<div class="nav-left"  id="nav-player" onclick="breakDecks('Mind Foundry')" >
-  <button class="topnav-button playerStylesButton" style="background-color:white;border:0px;" onclick="breakDecks('Mind Foundry')">
+<div class="nav-left"  id="nav-player" onclick="breakDecks('Mind Foundry Decks')" >
+  <button class="topnav-button playerStylesButton" style="background-color:white;border:0px;" onclick="breakDecks('Mind Foundry Decks')">
     <img class="menuButton-image" src="img/mf_logo.png">
   </button>
 <!--  ${widget_player(data["Player"][0])}-->
 </div>
 
   <div class="nav-right">
-    <button style="width:30%;" class="topnav-button playerStylesButton" onclick="breakDecks('Profile Cards')">
-      6<img class="menuButton-image" src="img/menu/menu_usercrew.png">
+    <button style="width:30%;" class="topnav-button playerStylesButton mf-orange" onclick="breakDecks('Create')">
+      <img class="menuButton-image" src="img/Create.svg"> Create
     </button>
-    <button style="width:30%;"  class="topnav-button playerStylesButton" onclick="breakDecks('Events')">1<img class="menuButton-image" src="img/token_tourney.png">2<img class="menuButton-image" src="img/token_league.png">
+    <button class="topnav-button playerStylesButton mf-blue2" onclick="breakDecks('Collaborate')">
+      <img class="menuButton-image" src="img/Collaborate.svg"> Collaborate
+    </button>
+    <button class="topnav-button playerStylesButton mf-red" onclick="breakDecks('Compete')">
+      <img class="menuButton-image" src="img/Compete.svg"> Compete
     </button>
 
-
-    <button style="width:30%;"  class="topnav-button playerStylesButton" onclick="breakDecks('Genius Shop')"> 3 <img height="1em" class="menuButton-image" src="img/menu/menu_geniusshop.png"></button>
+    <button class="topnav-button playerStylesButton mf-yellow" onclick="breakDecks('Genius Shop')">
+      <imgclass="menuButton-image" src="img/Share.svg"> Share
+    </button>
 
   </div>
 </div>

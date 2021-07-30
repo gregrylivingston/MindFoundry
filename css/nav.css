@@ -22,13 +22,13 @@
 
 .topnav{
   width:100vw;
-  max-height:12em;
+  max-height:4em;
   background:rgba(0,0,0,0);
 }
 
 @media only screen and (min-width: 200px){
   .topnav-button{
-    font-size:2em;
+    font-size:1.6em;
     height:2em;
     max-height:15vh;
 }
@@ -61,10 +61,11 @@
     max-width:40em;
   }
   .topnav-button{
-    font-size:1.5em;
+    font-size:1.4em;
     height:1.6em;
-    max-width:5em;
+    max-width:10em;
     width:25%;
+    padding:.3em;
 
   }
 }

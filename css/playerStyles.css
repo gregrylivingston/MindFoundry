@@ -86,27 +86,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1888', endColorstr='#e1006a',GradientType=1 ); /* IE6-9 */
 }
 
-.mf-red{background:#EB5757}
-.mf-orange{
-  background: #F2994A; /* Old browsers */
-}
-.mf-yellow{
-  background: #F2C94C; /* Old browsers */
-}
-.mf-purple1{
-  background: #BB6BD9; /* Old browsers */
-}
-.mf-purple2{
-  background:#BB6BD9
-}
-
-.mf-blue3{background: #56CCF2;}
-.mf-blue2{background:#2D9CDB;}
-.mf-blue1{background: #2F80ED;}
-.mf-green3{background: #6FCF97;}
-.mf-green2{background:#27AE60;}
-.mf-green1{background: #219653;}
-
 
 
 .highlight{

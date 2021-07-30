@@ -16,7 +16,7 @@
 
 
 .menuButton-image{
- height:1.4em;
+ height:1.1em;
  padding-left:.2em;
  padding-right:.2em;
 }
@@ -52,7 +52,7 @@
 
 .half-button{
     display:inline-flex;
-    width:48%;
+    width:46%;
     margin:0.5%;
     border-radius:.5em;
     border:white 2px solid;

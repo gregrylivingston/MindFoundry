@@ -60,6 +60,51 @@ widget["Testimonial"] = function(c){
     `
 }
 
+widget["Create"]= function(c){
+  return `
+    <div class="cardBlock">
+    <button class="half-button" style="height:2.5em;width:100%;font-size:1.4em">
+      Points &nbsp;&nbsp; 0 &nbsp;<img src="img/Create.svg" style="height:1.2em;"> 
+    </button>
+    </div>
+    <div class="cardBlock">
+        <div style="width:32%;style:inline-block;">
+              <button class="half-button" style="height:4em;display:inline-block;">
+                <img src="img/file-play.svg" style="height:2em"><br>
+                3
+            </button>
+            <button class="half-button" style="height:4em;display:inline-block;">
+                <img src="img/file-music.svg" style="height:2em">
+                0
+            </button>
+        </div>
+        <div style="width:32%;style:inline-block;">
+            <button class="half-button" style="height:4em;display:inline-block;">
+                <img src="img/file-code.svg" style="height:2em">
+                0
+            </button>
+            <button class="half-button" style="height:4em;display:inline-block;">
+                  <img src="img/file-text.svg" style="height:2em">
+                  0
+              </button>
+        </div>
+        <div style="width:32%;style:inline-block;">
+              <button class="half-button" style="height:4em;display:inline-block;">
+                  <img src="img/file-richtext.svg" style="height:2em">
+                  0
+              </button>
+              <button class="half-button" style="height:4em;display:inline-block;">
+                  <img src="img/file-image.svg" style="height:2em">
+                  0
+              </button>
+        </div>
+    </div>
+
+
+
+`
+}
+
 function getReviews(){
   return `
   <div class="cardBlock" onclick="breakDecks('Testimonials')">
