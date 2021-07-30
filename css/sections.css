@@ -1,13 +1,13 @@
 
 .section{
-  width:100vw;
-  margin-left:0%;
-  margin-right:0%;
+  width:96%;
+  margin-left:2%;
+  margin-right:2%;
   display:inline-block;
+  text-align:left;
   vertical-align:top;
   margin-top:1em;
   margin-bottom:2em;
-  text-align:left;
   padding-bottom:.5em;
   font-size:2em;
 }

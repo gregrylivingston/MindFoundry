@@ -1,6 +1,7 @@
 
 #cards{
     width:100vw;
+    text-align:center;
 }
 
 
@@ -15,7 +16,9 @@
 }
 
 .card-wrapper{
-  width:88%;
+  width:96%;
+  min-width:18em;
+  max-width:28em;
   display:inline-block;
   text-align:left;
   border:0px;

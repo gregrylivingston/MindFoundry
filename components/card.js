@@ -119,7 +119,7 @@ class card {
      <div class="flip-card-front playerStylesCard ${this.rules.defaultColor} ${this.deck}">
        ${wHeader(this)}
        <h2 style="display:inline-flex;width:100%;">
-          <div style="width:90%;">${this.parentCard}/ &nbsp; ${this.title}</div>
+          <div style="width:90%;"><!--${this.parentCard}/ &nbsp; -->${this.title}</div>
        </h2>
        <div class="cardFrame highlight">
           ${this.media}
