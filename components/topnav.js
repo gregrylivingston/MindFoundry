@@ -21,7 +21,7 @@ document.write(`
     </button>
 
     <button class="topnav-button playerStylesButton mf-yellow" onclick="breakDecks('Share')">
-      <imgclass="menuButton-image" src="img/Share.svg"> Share
+      <img class="menuButton-image" src="img/Share.svg"> Share
     </button>
 
   </div>
