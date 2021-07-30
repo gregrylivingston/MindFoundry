@@ -119,14 +119,15 @@ class card {
      return `
      <div class="flip-card-front playerStylesCard ${this.rules.defaultColor} ${this.deck}">
        ${wHeader(this)}
-
-
-       <h2 style="display:inline-flex;width:100%;"><div style="width:90%;">&nbsp; ${this.title}</div></h2>
+       <h2 style="display:inline-flex;width:100%;">
+          <div style="width:90%;">${this.parentCard}/ &nbsp; ${this.title}</div>
+       </h2>
        <div class="cardFrame highlight">
           ${this.media}
        </div>
 
        <div class="cardDesc">
+         <h4>${getOwnerWidget(this)}</h4>
          <p>${this.desc}</p>
          ${this.cardWidget}
       </div>
@@ -243,4 +244,45 @@ function makeAllCards(){
   for ( var i = 0 ; i < data["card"].length ; i ++ ){
     myCards.push(new card(i));
   }
+}
+
+function getOwnerWidget(c){
+    var challenge;
+    (c.type=="Challenge")?challenge = c:challenge = myCards.find(x=>x.title==c.owner);
+
+    if (challenge !==undefined )
+    {
+      var branch = myCards.find(x=>x.title==challenge.owner);
+
+              let html = "";
+              try{
+                let badge = myCards.find(x=>x.title==branch.owner);
+                html+=`
+                <div class="half-button">
+                  <div style="width:100%;">
+                    ${badge.type}: ${badge.title}
+                  </div><br>
+                  <div>
+                    <img src="${badge.img}" height="30px">
+                  </div>
+                </div>
+                <div class="half-button">
+                  <div style="width:100%;">
+                    ${branch.type}: ${branch.title}
+                  </div><br>
+                  <div>
+                    <img src="${branch.img}" height="30px">
+                  </div>
+                </div>
+
+              `}
+              catch{console.log("fail");}finally{
+                html+=`
+
+            `;
+            return html
+
+          }
+    }
+
 }

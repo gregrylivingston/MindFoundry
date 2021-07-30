@@ -92,6 +92,13 @@ function widget_fShare(){
 
 
 function wHeader(c){
+      var type = c.type;
+      if  (type.indexOf("Badge")>0){
+          let virtue = type.substring(0,type.indexOf("Bad")-1);
+          let virtueImg = `<img src="img/${virtue}.svg">`
+          type = virtueImg + "&nbsp;"+type.substring(type.indexOf("Bad"),type.length);
+      }
+
     return `
 
         <div style="width:100%;display:inline-flex;align-items:center;">
@@ -103,8 +110,8 @@ function wHeader(c){
             </div>
 
             <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
-            <button onclick="breakDecks('${c.type}')" style="background:none;border:none;">
-              <h3>${c.type}</h3>
+            <button onclick="breakDecks('${c.type}')" style="background:none;border:none;;">
+              <h3 style="display:inline-flex;align-items:center">${type}</h3>
               </button>
             </div>
             <div style="width:32%;text-align:right;">
