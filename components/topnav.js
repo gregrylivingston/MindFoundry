@@ -2,10 +2,14 @@ document.write(`
 
 <div class="topnav">
 
-<div class="nav-left"  id="nav-player" onclick="breakDecks('Mind Foundry Decks')" >
-  <button class="topnav-button playerStylesButton" style="background-color:white;border:0px;" onclick="breakDecks('Mind Foundry Decks')">
+<div class="nav-left"  id="nav-player">
+  <button class="topnav-button playerStylesButton" style="background-color:white;border:0px;width:25%;" onclick="breakDecks('Mind Foundry Decks')">
     <img class="menuButton-image" src="img/mf_logo.png">
   </button>
+  <div class="searchBar" style="display:inline-flex;" style="width:70%;">
+      <img src="img/search.svg" style="height:1em;padding:0 .5em 0 .5em;">
+    <input id="search" style="background:none;font-size:.9em;border:none;" placeholder="Mind Foundry" style="width:80%;">
+  </div>
 <!--  ${widget_player(data["Player"][0])}-->
 </div>
 

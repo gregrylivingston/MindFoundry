@@ -1,36 +1,17 @@
 
 function init (){
     makeAllCards();
-  //  updateTopNavPlayer(data["Player"][0]);
     breakDecks('Demo');
 }
+var cardDiv = document.getElementById("cards");
 
-function updateTopNavPlayer(playerArray){
-  document.getElementById("nav-player").innerHTML = widget_player(playerArray);
-}
-
-
-
-function sectionDeckByTitle(deck){
-  var myHtml = "";//myCards.find(x=>x.title==deck).cardHtmlNoDeckReport;
-  //add cards in deck
-  myCards.filter(x=>(x.parentCard==deck||x.owner==deck)).forEach(x=>myHtml+=x.cardHtml);
-  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
-
-  return  `
-    <div class="section">
-    <!--    ${widget_header("",deck,"")}-->
-        ${myHtml}
-    </div>
-  `;
-}
 
 function sectionDeckByType(deck){
   //add deck
     var myHtml = "";
-//  var myHtml = myCards.find(x=>x.type==deck).cardHtml;
+//  var myHtml = myCards.find(x=>x.type==deck).makeCardHtml;
   //add cards in deck
-  myCards.filter(x=>x.type==deck).forEach(x=>myHtml+=x.cardHtml);
+  myCards.filter(x=>x.type==deck).forEach(x=>myHtml+=x.makeCardHtml());
   document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
 
   return  `
@@ -41,30 +22,29 @@ function sectionDeckByType(deck){
   `;
 }
 
-//shows a deck and it's children.
 function breakDecks(deck){
-  var myHtml = sectionDeckByTitle(deck);
-//  myCards.filter(x=>x.parentCard == deck).forEach(x=>{
-//    if ( x.cardsInDeck.length>0 ){ myHtml+= sectionDeckByTitle(x.title)}
-//  })
-  cardDiv.innerHTML = myHtml;
-  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0; // For Safari
+ var myHtml = "";
+
+myCards.filter(x=>(x.parentCard==deck||x.owner==deck)).forEach(x=>myHtml+=x.makeCardHtml());
+document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0;
+  cardDiv.innerHTML = `
+    <div class="section">
+    <!--    ${widget_header("",deck,"")}-->
+        ${myHtml}
+    </div>
+  `;
 
 }
 
 
-var cardDiv = document.getElementById("cards");
 
-function showPage(page, filterKey = undefined, filterValue = undefined){
-    switch (page){
-      case "Squad":
-        cardDiv.innerHTML = sectionDeckByType("Player Card");
-        cardDiv.innerHTML += sectionDeckByType("Coach Card");
-        cardDiv.innerHTML += sectionDeckByType("GM Card");
-        break
-      case "Character":
-        cardDiv.innerHTML =sectionDeckByTitle(filterValue);
-        break
-      default:
-    }
+
+
+//get all showcase cards based on a key / value pair...
+function get_cards(filterKey, filterValue){
+          var myHtml = "";
+          myCards.filter(x=>x[filterKey]==filterValue).forEach(x=>{
+            myHtml+=x.makeCardHtml();
+          })
+          return myHtml;
 }

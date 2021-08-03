@@ -8,6 +8,7 @@
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
   justify-content: center;
   width:100%;
+  max-width:8.5em;
 }
 
 .nav-right{
@@ -16,8 +17,14 @@
 }
 
 .nav-left{
-  width:25%;
+  width:100%;
+  display:inline-block;
+}
+
+.searchBar{
   display:inline-flex;
+  align-items:center;
+  width:73%;
 }
 
 .topnav{
@@ -28,7 +35,7 @@
 
 @media only screen and (min-width: 200px){
   .topnav-button{
-    font-size:1.6em;
+    font-size:2em;
     height:2em;
     max-height:15vh;
 }
@@ -57,12 +64,11 @@
     justify-content: flex-end;
   }
   .nav-left{
-    width:56%;
-    max-width:40em;
+    width:48%;
   }
   .topnav-button{
     font-size:1.4em;
-    height:1.6em;
+    height:1.8em;
     max-width:10em;
     width:25%;
     padding:.3em;

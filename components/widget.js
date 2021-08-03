@@ -1,41 +1,39 @@
 var widget = {};
 
-widget["Player Card"] = function(c){
-  c.cardsInDeck = data["card"].filter(x=>x[data["cardKey"].indexOf("owner")]==this.title);
-  return `
-
-  <div class="cardBlock">
-     ${widget_attributeSummary("Charisma" , 0)}
-     ${widget_attributeSummary("Perception" , 0)}
-   </div>
-   <div class="cardBlock">
-    ${widget_attributeSummary("Wisdom" , 1)}
-    ${widget_attributeSummary("Logic" , 1)}
-  </div>
-  <div class="cardBlock">
-     ${widget_attributeSummary("Resilience" , 3)}
-     ${widget_attributeSummary("Dexterity" , 0)}
-   </div>
-  `
-}
-widget["Coach Card"] = widget["Player Card"];
-widget["GM Card"] = widget["Player Card"];
 
 
-widget["Virtue Card"]= function (c){
-  return `
-  <div style="display:inline-flex;width:90%;">
-    <div class="half-button">
-        3 &nbsp; <img src="img/brain.png">
-    </div>
-    <div class="half-button">
-        3 &nbsp; <img src="img/menu/award.png">
-        </div>
-</div>`
-}
 
-widget["Mind Foundry"]= function (c){
-  return `
+function getOwnerWidget(c){
+    var challenge;
+    (c.type=="Challenge")?challenge = c:challenge = myCards.find(x=>x.title==c.owner);
+    var html = "";
 
-  `
+    if (challenge !==undefined )
+    {
+      var branch = myCards.find(x=>x.title==challenge.owner);
+              try{
+                let badge = myCards.find(x=>x.title==branch.owner);
+                html+=`
+                <div class="half-button">
+                  <div style="width:100%;">
+                    ${badge.type}: ${badge.title}
+                  </div><br>
+                  <div>
+                    <img src="${badge.img}" height="30px">
+                  </div>
+                </div>
+                <div class="half-button">
+                  <div style="width:100%;">
+                    ${branch.type}: ${branch.title}
+                  </div><br>
+                  <div>
+                    <img src="${branch.img}" height="30px">
+                  </div>
+                </div>
+              `}
+              catch{console.log("fail");}finally{
+                html+=`  `;
+          }
+    }
+    return html
 }
