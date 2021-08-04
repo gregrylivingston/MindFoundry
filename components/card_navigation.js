@@ -84,29 +84,36 @@ function getDeckCSSClass(d){
     if ( el.classList.contains("fullscreen") == true ){
       el.classList.remove("fullscreen");
       el.children[0].classList.remove("fsView");
+    //  el.children[1].classList.remove("fsView");
+      document.getElementsByClassName("viewMenu")[0].remove();
+
     }
     else {
       el.classList.add("fullscreen");
       el.children[0].classList.add("fsView");
+  //    el.children[1].classList.add("fsView");
+
       el.innerHTML += getSocial();
     }
   }
 
 function getSocial(){
   return `
-  <h4 style="text-align:left;">Menu</h4>
-  <p style="display:inline-flex;width:100%;width:90%;margin:0em 5% 0em 5%;">
-      <button class="menuButton">Report issue</button><br>
-      <button class="menuButton">Ask for Help</button><br>
-  </p>
-  <h4>Share</h4>
-  <div style="display:inline-flex;width:90%;margin:0em 5% 0em 5%;">
-      <button class="menuButton">Link</button><br>
-      <button class="menuButton">Facebook</button><br>
-      <button class="menuButton">Twitter</button><br>
-      <button class="menuButton playerStyles">Email</button>
+  <div class="viewMenu">
+    <h4 style="text-align:left;">Menu</h4>
+    <p style="display:inline-flex;width:100%;width:90%;margin:0em 5% 0em 5%;">
+        <button class="menuButton">Report issue</button><br>
+        <button class="menuButton">Ask for Help</button><br>
+    </p>
+    <h4>Share</h4>
+    <div style="display:inline-flex;width:90%;margin:0em 5% 0em 5%;">
+        <button class="menuButton">Link</button><br>
+        <button class="menuButton">Facebook</button><br>
+        <button class="menuButton">Twitter</button><br>
+        <button class="menuButton playerStyles">Email</button>
+    </div>
+    <p>Receive 5 <img src="img/coin.png" style="height:1em;"> when someone joins Mind Foundry from your shared post.
+    </p>
   </div>
-  <p>Receive 5 <img src="img/coin.png" style="height:1em;"> when someone joins Mind Foundry from your shared post.
-  </p>
   `
 }

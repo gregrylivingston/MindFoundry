@@ -90,3 +90,26 @@ body{
     font-size:1em;
   }
 }
+
+.viewMenu{
+  display:inline-block;
+  background:white;
+}
+
+@media only screen and (min-width: 1025px){
+  .viewMenu{
+/*    width:47%;*/
+    font-size:1em;
+    height:100vh;
+    width:50%;
+    position:absolute;
+    right:0px;
+    top:0px;
+  }
+}
+@media only screen and (min-width: 1281px){
+  .section{
+  /*  viewMenu:31%;*/
+    font-size:1em;
+  }
+}

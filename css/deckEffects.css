@@ -150,17 +150,20 @@ The flip card container - set the width and height to whatever you want. We have
   width:100vw !important;
   max-width:100vw !important;
   height:100vh;
-  background:rgba(20,20,20,.9);
+  background:rgba(255,255,255,.2);
   z-index:9999;
   margin:0px;
   transition:transition 2s;
 }
 
-.fullscreen>div{
-/*  max-width: 25em !important;*/
+.fullscreen>h2{
+  max-width: 20em !important;
+  position:fixed;
+  left:0px;
+  margin-left:0%;
 }
 
-.fsView{
+.fullscreen>.card{
   max-width:30vw;
   margin:2em;
 }

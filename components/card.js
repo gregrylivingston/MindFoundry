@@ -5,6 +5,7 @@ class card {
     //Add this cards info as key-object pairs for the card
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
     //Add the card type rules as key-object pairs for this card
+    console.log(this.title , this.type);
     this.rules = {}; data["cardType"].find(x=>x[0]==this.type).forEach((x,i)=>{this.rules[data["cardTypeKey"][i]]=x;});
 
     //Build media frame for the card depending on imgSrc field contents
