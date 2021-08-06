@@ -7,6 +7,11 @@ function getHomePage(){
             <h1>Profile</h1>
             ${get_cards("title","Spellbound")}
             ${get_cards("title","Rewards")}
+
+            <button class="bubbly-button">Click me!</button>
+
+
+
           </div>
 
           <div class="page-section mf-blue2">
@@ -18,7 +23,6 @@ function getHomePage(){
             <h1>Friends</h1>
             ${get_cards("title","Harrison")}
             ${get_cards("title","YoungerPetr")}
-
           </div>
 
 
