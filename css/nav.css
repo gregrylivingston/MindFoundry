@@ -1,6 +1,5 @@
 
 .topnav-button{
-  display:inline-flex;
   vertical-align:center;
   align-items:center;
   margin:.2em 0em .2em .3em;
@@ -10,6 +9,8 @@
   max-width:8.5em;
   background:none;
   border:none;
+  display:inline-flex;
+
 }
 
 .nav-right{
@@ -19,7 +20,9 @@
 
 .nav-left{
   width:100%;
-  display:inline-block;
+  display:inline-flex;
+  justify-content: space-between;
+  align-items:center;
 }
 
 .searchBar{
@@ -32,20 +35,36 @@
 
 .topnav{
   width:100vw;
-  max-height:4em;
+  max-height:6.5em;
   background:rgba(0,0,0,0);
   background:white;
+
 }
 
+.menuButton-image{
+ height:4em;
+ padding-left:.2em;
+ padding-right:.2em;
+}
 @media only screen and (min-width: 200px){
   .topnav-button{
     font-size:2em;
-    height:2em;
+    height:3em;
     max-height:15vh;
-}
+    width:15%;
+    flex-direction:column;
+  }
+  .menuButton-image{
+    display:block;
+    height:1em;
+  }
 
 }
 @media only screen and (min-width: 1261px){
+
+  .menuButton-image{
+   height:2em;
+ }
   .topnav{
     position:absolute;
     top:0vh;
@@ -61,6 +80,7 @@
     border-top-left-radius:0px !important;
   }
 
+
   .nav-right{
     width:50%;
     position:absolute;
@@ -68,13 +88,15 @@
     justify-content: flex-end;
   }
   .nav-left{
-    width:70%;
+    width:60%;
   }
   .topnav-button{
     font-size:14px;
     max-width:10em;
-    width:25%;
+    width:20%;
     padding:.3em;
+    flex-direction:row;
 
   }
+
 }

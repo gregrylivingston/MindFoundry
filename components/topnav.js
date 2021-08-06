@@ -3,11 +3,11 @@ document.write(`
 <div class="topnav">
 
 <div class="nav-left"  id="nav-player">
-  <button class="topnav-button" style="background-color:white;border:0px;height:3em;" onclick="getHomePage()">
+  <button class="topnav-button"  onclick="getHomePage()">
     <img class="menuButton-image" src="img/mf_logo.png">
   </button>
-  
-  <button style="width:30%;" class="topnav-button" onclick="getCreatePage()">
+
+  <button class="topnav-button" onclick="getCreatePage()">
     <img class="menuButton-image" src="img/Create.svg"> Create
   </button>
   <button class="topnav-button" onclick="breakDecks('Collaborate')">
