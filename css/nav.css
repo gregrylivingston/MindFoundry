@@ -68,11 +68,10 @@
     justify-content: flex-end;
   }
   .nav-left{
-    width:48%;
+    width:70%;
   }
   .topnav-button{
-    font-size:16px;
-    height:1.8em;
+    font-size:14px;
     max-width:10em;
     width:25%;
     padding:.3em;

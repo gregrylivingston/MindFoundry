@@ -82,7 +82,7 @@ function activateCards(){
                 styleElem.innerHTML = "";
                 this.removeAttribute("style");
                 x = setTimeout(function() {
-                  this.addClass("animated");
+                  this.classList.add("animated");
                 },2500);
               });
     }
