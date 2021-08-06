@@ -5,7 +5,7 @@ class card {
     //Add this cards info as key-object pairs for the card
     data["cardKey"].forEach((column,i)=> {this[column] = data["card"][this.index][i]});
     //Add the card type rules as key-object pairs for this card
-    console.log(this.title , this.type);
+  //  console.log(this.title , this.type);
     this.rules = {}; data["cardType"].find(x=>x[0]==this.type).forEach((x,i)=>{this.rules[data["cardTypeKey"][i]]=x;});
 
     //Build media frame for the card depending on imgSrc field contents
@@ -50,7 +50,7 @@ class card {
   makeInnerCardHtml(){
       return  `
       <div class="card">
-        <div class="card-inner card${this.index}">
+        <div class="card-inner playerStylesCard card${this.index} ${this.deck}">
             ${this.makeCardFront()}
             ${this.makeCardBack()}
           </div>
@@ -59,7 +59,7 @@ class card {
   }
   makeCardFront(){
      return `
-     <div class="flip-card-front playerStylesCard ${this.rules.defaultColor} ${this.deck}">
+     <div class="flip-card-front  ${this.rules.defaultColor}"  style="border-radius:1em;">
        ${wHeader(this)}
        <h2 style="display:inline-flex;width:100%;">
           <div style="width:90%;"><!--${this.parentCard}/ &nbsp; -->${this.title}</div>
@@ -68,7 +68,7 @@ class card {
           ${this.media}
        </div>
        <div class="cardDesc">
-         <h4>${getOwnerWidget(this)}</h4>
+      <!--   <h4>${getOwnerWidget(this)}</h4>-->
          <p>${this.desc}</p>
          ${this.cardWidget}
       </div>
@@ -79,7 +79,7 @@ class card {
 
   makeCardBack(){
     return `
-    <div class="flip-card-back playerStylesCard ${this.rules.defaultColor} ${this.deck}">
+    <div class="flip-card-back ${this.rules.defaultColor}" style="border-radius:1em;">
         ${wRHeader(this)}
         <h2 style="display:inline-flex;width:100%;">
           <div style="width:90%;" onclick="breakDecks('${this.type}')">&nbsp; ${this.type}</div>

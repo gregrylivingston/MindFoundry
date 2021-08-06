@@ -17,6 +17,7 @@ function nextCard(el){
       document.getElementById("deckIt" + myCardDiv.id + "Parent").style.display = "none";
     }
     document.getElementById("deckIt" + myCardDiv.id).innerHTML = Number(deckIt);
+    activateCards();
 }
 
 function previousCard(el){
@@ -34,6 +35,7 @@ function previousCard(el){
     myCardDiv.innerHTML = card.innerCardHtml + myCardDiv.innerHTML;
     document.getElementById("deckIt" + myCardDiv.id + "Parent").style.display="none";
   }
+  activateCards();
 }
 
 
@@ -95,6 +97,7 @@ function getDeckCSSClass(d){
 
       el.innerHTML += getSocial();
     }
+    activateCards();
   }
 
 function getSocial(){

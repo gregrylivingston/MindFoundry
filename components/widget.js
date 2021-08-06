@@ -1,6 +1,31 @@
 var widget = {};
 
+widget["Player Card"] = function (c){
+  let html =
+  `
+    <div class="cardBlock">
+      <div class="half-button mf-orange" style="display:inline-block;">
 
+          <img src="img/Create.svg"> Create <br>
+          Lvl0
+          Crds:4
+          Bdgs:2
+      </div>
+      <div class="half-button mf-blue2">
+          <img src="img/Collaborate.svg">
+      </div>
+    </div>
+    <div class="cardBlock">
+      <div class="half-button mf-red">
+          <img src="img/Compete.svg">
+      </div>
+      <div class="half-button mf-yellow">
+          <img src="img/Share.svg">
+      </div>
+    </div>
+  `;
+  return html;
+}
 
 
 function getOwnerWidget(c){

@@ -5,10 +5,11 @@
   align-items:center;
   margin:.2em 0em .2em .3em;
   padding:.2em 0em .2em 0em;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
   justify-content: center;
   width:100%;
   max-width:8.5em;
+  background:none;
+  border:none;
 }
 
 .nav-right{
@@ -25,12 +26,15 @@
   display:inline-flex;
   align-items:center;
   width:73%;
+  font-size:.6em;
+  max-width:20em;
 }
 
 .topnav{
   width:100vw;
   max-height:4em;
   background:rgba(0,0,0,0);
+  background:white;
 }
 
 @media only screen and (min-width: 200px){
@@ -46,7 +50,7 @@
     position:absolute;
     top:0vh;
     left:0vw;
-    height:3em;
+    height:4em;
     display:inline-flex;
     align-items:center;
     z-index:100;
@@ -67,7 +71,7 @@
     width:48%;
   }
   .topnav-button{
-    font-size:1.4em;
+    font-size:16px;
     height:1.8em;
     max-width:10em;
     width:25%;

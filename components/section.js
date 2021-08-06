@@ -33,6 +33,7 @@ document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0;
         ${myHtml}
     </div>
   `;
+  activateCards();
 
 }
 

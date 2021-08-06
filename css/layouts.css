@@ -5,7 +5,22 @@ body{
   font-style: normal;
   overflow-x:hidden;
   overflow-y:hidden;
-  font-size:.8em;
+  font-size:1em;
+}
+
+h1{
+  font-size:2em;
+}
+
+.topbar{
+  display:inline-block;
+  align-items:center;
+}
+
+.page-section{
+  width:100%;
+  text-align:left;
+  padding:1.5em 5% 1em 5%;
 }
 
 .body{
