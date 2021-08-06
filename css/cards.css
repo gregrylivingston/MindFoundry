@@ -16,9 +16,10 @@
 }
 
 .card-wrapper{
-  width:96%;
   min-width:18em;
-  max-width:28em;
+  width:36em;
+  max-width:96%;
+
   display:inline-block;
   text-align:left;
   border:0px;
@@ -33,7 +34,7 @@
   and (min-device-width: 900px)
   and (max-device-width: 1200px){
   .card-wrapper{
-    width:45%;
+    width:40%;
   }
 
 }
