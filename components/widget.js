@@ -1,4 +1,5 @@
 var widget = {};
+var widget_back = {};
 
 widget["Player Card"] = function (c){
   let html =

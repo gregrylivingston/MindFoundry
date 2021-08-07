@@ -7,42 +7,55 @@ function getHomePage(){
             <h1>Profile</h1>
             ${get_cards("title","Spellbound")}
 
-            <div class="card-wrapper">
-              Notices
+            <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;">
+              <h1 style="display:inline-block;width:30%;">Notifications</h1>
               <button class="topnav-button highlight">
                 20 <img src="img/coin.png" style="height:1em;">
               </button>
               <button class="topnav-button highlight">
-                Friend
+                Friends
               </button>
               <button class="topnav-button highlight">
-                Event
+                Club
               </button>
               <div style="width:100%">
-
-                    ${getNoticeRow("img/info/profile-card.png",'Youve been awarded an exciting card pack.')}
+                    ${getNoticeRow("img/info/profile-card.png",'New Player Card Pack.')}
+                    ${getNoticeRow("img/info/profile-card.png",'2021 Bonus Pack')}
                     ${getNoticeRow("img/avatar/avatar_tinkerawil.png",'Friend request from Gregry')}
 
               </div>
             </div>
 
+            <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;">
+              <h1 style="display:inline-block;">Events</h1>
+                <button class="topnav-button highlight">
+                  My Events
+                </button>
+                <button class="topnav-button highlight">
+                  1-Time
+                </button>
+                <button class="topnav-button highlight">
+                  Ongoing
+                </button>
+              <div style="width:100%">
+                    ${getNoticeRow("img/info/profile-card.png",'Minecraft Creative League. Mondays and Wednesday at 2pm.')}
+                    ${getNoticeRow("img/token_tourney.png",'You have an Tourney League Token.  See whats coming up here.')}
+                    ${getNoticeRow("img/token_league.png",'You have an unlimited League Token.  See whats coming up here.')}
 
-
-
+              </div>
+            </div>
           </div>
 
-          <div class="page-section mf-blue2">
-            <h1>Events</h1>
-            ${get_cards("title","Minecraft Explorers")}
-          </div>
-
-          <div class="page-section mf-yellow">
-            <h1>Friends</h1>
-            ${get_cards("title","Harrison")}
+          <div class="page-section mf-purple1">
+            <h1>Social</h1>
+            ${get_cards("title","Friends")}
+            ${get_cards("title","Korora")}
             ${get_cards("title","YoungerPetr")}
           </div>
-
-
+          <div class="page-section mf-yellow">
+               <h1>Rewards</h1>
+               ${get_cards("title","Rewards")}
+          </div>
           <div class="page-section mf-orange">
                <h1>Create</h1>
                ${get_cards("title","Create")}

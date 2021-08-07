@@ -26,17 +26,15 @@ class card {
 
     //place the parent cards widget on the back of the cards.  This probably doesn't make sense.
     //Shouldn't the card type widget be placed on the back instead?
-    this.parentWidget = "";
-    if ( widget[data["card"].find(x=>x[1]==this.parentCard)[0]] !== undefined ){
-        this.parentWidget = widget[data["card"].find(x=>x[1]==this.parentCard)[0]](this);
-    }
+    this.backWidget = "";
+    ( widget_back[this.type] !== undefined )? this.backWidget = widget_back[this.type](this):'';
+
 
 //add footer, header, and menu widgets by card type rules
 //Probably need to be redone to include more views generally.
-    if ( this.rules.fPin==true ||
-        this.rules.fReact==true ||
-        this.fAward==true ||
-        this.title=="Create"
+    if (
+        this.title=="Create" || this.title=="Collaborate" || this.title=="Compete" || this.title=="Share" ||
+        this.type=="Player Card" || this.type=="Badge"
       ){
       this.footer = new wFooter(this.rules).html()
     }
@@ -91,12 +89,13 @@ class card {
         <h2 style="display:inline-flex;width:100%;">
           <div style="width:90%;" onclick="breakDecks('${this.type}')">&nbsp; ${this.type}</div>
         </h2>
-        <div class="cardFrame highlight">
+      <!--  <div class="cardFrame highlight">
            ${this.rules.media}
         </div>
+        -->
         <div style="height:14em;">
           ${this.rules.desc}
-          ${this.parentWidget}
+          ${this.backWidget}
         </div>
     </div>
     `}

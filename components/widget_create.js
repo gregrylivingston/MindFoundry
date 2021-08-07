@@ -1,49 +1,44 @@
 
 widget["Create"]= function(c){
   return `
+
     <div class="cardBlock">
-          <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;">
-            Rank 9
-          </div>
-          <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;">
-            7 <img src="img/Create.svg" style="height:1em;">
-          </div>
-          <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;">
-             2
-            <img src="img/resource.svg" style="height:1em;">
-          </div>
-    </div>
-    <div class="cardBlock">
-        <div style="width:32%;style:inline-block;">
-              <button class="half-button" style="height:4em;display:inline-block;">
+        <div style="width:33%;style:inline-block;">
+            <button class="createButton" onclick="breakDecks('Video Badges')">
                 <img src="img/file-play.svg" style="height:2em"><br>
                 3
             </button>
-            <button class="half-button" style="height:4em;display:inline-block;">
+            <button class="createButton" onclick="breakDecks('Audio Badges')">
                 <img src="img/file-music.svg" style="height:2em">
                 0
             </button>
         </div>
-        <div style="width:32%;style:inline-block;">
-            <button class="half-button" style="height:4em;display:inline-block;">
+        <div style="width:33%;style:inline-block;">
+            <button class="createButton" onclick="breakDecks('Code Badges')">
                 <img src="img/file-code.svg" style="height:2em">
                 0
             </button>
-            <button class="half-button" style="height:4em;display:inline-block;">
-                  <img src="img/file-text.svg" style="height:2em">
-                  0
-              </button>
+            <button class="createButton" onclick="breakDecks('Writing Badges')">
+                <img src="img/file-text.svg" style="height:2em">
+                0
+            </button>
         </div>
-        <div style="width:32%;style:inline-block;">
-              <button class="half-button" style="height:4em;display:inline-block;">
+        <div style="width:33%;style:inline-block;">
+              <button class="createButton" onclick="breakDecks('Project Badges')">
                   <img src="img/file-richtext.svg" style="height:2em">
                   0
               </button>
-              <button class="half-button" style="height:4em;display:inline-block;">
+              <button class="createButton" onclick="breakDecks('Image Badges')">
                   <img src="img/file-image.svg" style="height:2em">
                   0
               </button>
         </div>
+    </div>
+    <div class="cardBlock" style="align-items:center;margin-top:1em">
+        <div style="width:60%">Update one badge from all 6 groups to reach the next level
+        and unlock Level 2 Creator rewards.
+        </div>
+        <button class="createButton">Lvl 2 Rewards</button>
     </div>
 
 
@@ -51,87 +46,99 @@ widget["Create"]= function(c){
 `
 }
 
+widget["Collaborate"] = widget["Create"];
+
 widget["Create Badges"]= function(c){
   return`
-  <button class="half-button" style="height:4em">
-      <div>
-        <div style="font-size:2em;display:inline-flex;align-items:center;">
-          0 / ${c.cardsInDeck.length}
-          <img src="img/badge.svg" style="height:1em">
+    <button class="half-button" style="height:4em">
+        <div>
+          <div style="font-size:2em;display:inline-flex;align-items:center;">
+            0 / ${c.cardsInDeck.length}
+            <img src="img/badge.svg" style="height:1em">
+          </div>
+          <div style="font-size:.8em;">Badges</div>
         </div>
-        <div style="font-size:.8em;">Badges</div>
-      </div>
-  </button>
-  <button class="half-button" style="height:4em">
-      <div>
-        <div style="font-size:2em;display:inline-flex;align-items:center;">22<img src="img/Create.svg" style="height:1em"></div>
-        <div style="font-size:.8em;">Points</div>
-      </div>
-  </button>
-  <button class="half-button" style="height:4em">
-      <div>
-        <div style="font-size:2em;display:inline-flex;align-items:center;">1/23<img src="img/challenge.svg" style="height:1em"></div>
-        <div style="font-size:.8em;">Challenges</div>
-      </div>
-  </button>
-  <button class="half-button" style="height:4em">
-      <div>
-        <div style="font-size:2em;display:inline-flex;align-items:center;">14<img src="img/resource.svg" style="height:1em"></div>
-        <div style="font-size:.8em;">Resources</div>
-      </div>
-  </button>
+    </button>
+    <button class="half-button" style="height:4em">
+        <div>
+          <div style="font-size:2em;display:inline-flex;align-items:center;">22<img src="img/Create.svg" style="height:1em"></div>
+          <div style="font-size:.8em;">Points</div>
+        </div>
+    </button>
+    <button class="half-button" style="height:4em">
+        <div>
+          <div style="font-size:2em;display:inline-flex;align-items:center;">1/23<img src="img/challenge.svg" style="height:1em"></div>
+          <div style="font-size:.8em;">Challenges</div>
+        </div>
+    </button>
+    <button class="half-button" style="height:4em">
+        <div>
+          <div style="font-size:2em;display:inline-flex;align-items:center;">14<img src="img/resource.svg" style="height:1em"></div>
+          <div style="font-size:.8em;">Resources</div>
+        </div>
+    </button>
   `
 }
 
+widget["Challenge Pack"] = function(c){
+  return `
+  <div class="cardBlock">
 
-
-widget["Badge"]= function(c){
-    var html = `
-
-
-    `;
-    c.cardsInDeck.forEach(x=>{
-      html+=`<br>
-      <div class="cardBlock">
-        <button class="half-button" style="height:2em;width:100%;padding:0em .5em 0 .5em;">
-            <div style="display:inline-block;width:80%;text-align:left;">
-              <div style="font-size:1em;">${x[1]}</div>
-              </div>
-
-          <!--    <div style="font-size:1.6em;display:inline-flex;align-items:center;justify-content:space-around;width:50%;">
-                0/7
-                2
-                2
-              </div>-->
-        </button>
+      <button class="half-button" style="height:3em">
+          <div>
+            <div style="font-size:1.5em;display:inline-flex;align-items:center;">
+                0
+                <img src="img/Create.svg" style="height:1em"></div>
+            <div style="font-size:.8em;">Points</div>
+          </div>
+      </button>
+      <button class="half-button" style="height:3em;">
+          <div>
+            <div style="font-size:1.5em;display:inline-flex;align-items:center;">
+              0 / ${c.cardsInDeck.length}
+              <img src="img/challenge.svg" style="height:1em"></div>
+            <div style="font-size:.8em;">Challenges</div>
+          </div>
+      </button>
       </div>
-      `
-    })
-      html+=`
       <div class="cardBlock">
-
-          <button class="half-button" style="height:3em;width:30%;">
-              <div>
-                <div style="font-size:1.5em;display:inline-flex;align-items:center;">22<img src="img/Create.svg" style="height:1em"></div>
-                <div style="font-size:.8em;">Points</div>
-              </div>
-          </button>
-          <button class="half-button" style="height:3em;width:30%;">
-              <div>
-                <div style="font-size:1.5em;display:inline-flex;align-items:center;">1/23<img src="img/challenge.svg" style="height:1em"></div>
-                <div style="font-size:.8em;">Challenges</div>
-              </div>
-          </button>
-          <button class="half-button" style="height:3em;width:30%;">
+          <button class="half-button" style="height:3em;">
               <div>
                 <div style="font-size:1.5em;display:inline-flex;align-items:center;">14<img src="img/resource.svg" style="height:1em"></div>
                 <div style="font-size:.8em;">Resources</div>
               </div>
           </button>
-          </div>
+          <button class="half-button" style="height:3em;">
+              <div>
+                <div style="font-size:1.5em;display:inline-flex;align-items:center;">14<img src="img/resource.svg" style="height:1em"></div>
+                <div style="font-size:.8em;">Community Showcase</div>
+              </div>
+          </button>
+      </div>
+  `
+}
 
+widget_back["Challenge Pack"]= function(c){
+    var html = ``;
+    c.cardsInDeck.forEach((x,i)=>{
+      html+=`
+      <div class="cardBlock">
+        <button class="half-button" style="height:2em;width:100%;padding:1em .5em 1em .5em;justify-content:space-between;">
+            <div style="display:inline-block;width:10%;text-align:left;">
+                <input type="checkbox">
+            </div>
+            <div style="display:inline-block;width:10%;text-align:left;">
+                ${i+1} <img src="img/challenge.svg" style="height:1em">
+            </div>
+            <div style="display:inline-block;width:76%;text-align:left;">
+              <div style="font-size:1em;">${x[1]}</div>
+            </div>
 
+        </button>
+      </div>
       `
+    })
+
   return html
 
 }

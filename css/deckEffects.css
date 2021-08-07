@@ -281,9 +281,10 @@ The flip card container - set the width and height to whatever you want. We have
   margin-left:10px;
   margin-right:-10px;
   border-radius:1em;
+
 }
 
-.card:before {
+.lvl2Card:before , .card:before{
   background-position: 50% 50%;
   background-size: 300% 300%;
   background-image: linear-gradient(
@@ -302,7 +303,21 @@ The flip card container - set the width and height to whatever you want. We have
 
 }
 
-.card:after {
+.lvl2Card:after , .card:after{
+  background-image: linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+  transition: all .33s ease;
+  mix-blend-mode: color-dodge;
+  opacity: .75;
+  background-position: 50% 50%;
+  background-size: 160%;
+  background-blend-mode: overlay;
+  z-index: 2;
+  filter: brightness(1) contrast(1);
+  pointer-events: none;
+
+}
+
+.lvl3Card:after {
   pointer-events: none;
   opacity: 1;
   background-image: url("https://assets.codepen.io/13471/sparkles.gif"),

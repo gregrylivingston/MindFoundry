@@ -16,10 +16,9 @@
 }
 
 .card-wrapper{
-  min-width:18em;
-  width:36em;
-  max-width:96%;
-
+  min-width:20em;
+  width:96%;
+  max-width:50em;
   display:inline-block;
   text-align:left;
   border:0px;

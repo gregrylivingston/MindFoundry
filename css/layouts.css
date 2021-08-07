@@ -18,9 +18,10 @@ h1{
 }
 
 .page-section{
-  width:100%;
+  width:96%;
   text-align:left;
-  padding:1.5em 5% 1em 5%;
+  padding:1.5em 2% 1em 2%;
+  display:inline-block;
 }
 
 .body{

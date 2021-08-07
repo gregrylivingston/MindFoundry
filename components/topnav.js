@@ -10,10 +10,10 @@ document.write(`
   <button class="topnav-button" onclick="getCreatePage()">
     <img class="menuButton-image" src="img/Create.svg"> Create
   </button>
-  <button class="topnav-button" onclick="breakDecks('Collaborate')">
+  <button class="topnav-button" onclick="getCollaboratePage()">
     <img class="menuButton-image" src="img/Collaborate.svg"> Collaborate
   </button>
-  <button class="topnav-button" onclick="breakDecks('Compete')">
+  <button class="topnav-button" onclick="getCompetePage()">
     <img class="menuButton-image" src="img/Compete.svg"> Compete
   </button>
 

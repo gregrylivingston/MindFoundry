@@ -1,26 +1,15 @@
 class wFooter{
   constructor(cardRules){
-    this.leftWid = [];
-    this.rightWid = [];
-    (cardRules.fPin==true)?this.rightWid.push(widget_fPin()):'';
-    (cardRules.fFriend==true)?this.rightWid.push(widget_fFriend()):'';
-    (cardRules.fReact==true)?this.leftWid.push(widget_fReact()):'';
-    (cardRules.fAward==true)?this.leftWid.push(widget_fAward()):'';
-
-    this.leftWidgets="";
-    this.rightWidgets="";
-    this.leftWid.forEach(x=>this.leftWidgets+=x);
-    this.rightWid.forEach(x=>this.rightWidgets+=x);
   }
-
-  addLeft(html){this.leftWidgets+=html;}
-  addRight(html){this.rightWidgets+=html;}
-
   html (){
     return `
   <div class="card-footer">
+    <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.5em;">
+        2
+        <img src="img/resource.svg" style="height:1em;">
+    </div>
     <div class="card-footer-left">
-        <div class="rating">
+        <div class="rating" style="border-top-right-radius:.5em;border-top-left-radius:.5em">
         Beginner
         </div>
         <div class="rating">
@@ -38,6 +27,10 @@ class wFooter{
         </div>
 
     </div>
+    <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.5em">
+       Rank #9
+    </div>
+
   </div>
   `
   }
@@ -97,7 +90,7 @@ function wHeader(c){
 
     return `
 
-        <div style="width:100%;display:inline-flex;align-items:${alignItems};">
+        <div style="width:100%;display:inline-flex;align-items:${alignItems};height:1.4em;">
             <div style="width:32%;">
                 ${widget_fPin()}
 
@@ -109,7 +102,7 @@ function wHeader(c){
 
             <div style="width:34%;margin-top:${topmargin};background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
             <button onclick='breakDecks(${type})' style="background:none;border:none;">
-              <h3 style="display:inline-flex;align-items:center">${type}</h3>
+              <div style="display:inline-flex;align-items:center">${type}</div>
               </button>
             </div>
             <div style="width:32%;text-align:right;">
