@@ -42,17 +42,18 @@ function previousCard(el){
 //add deck size classlist
 function getDeckCSSClass(d){
   if (d.cardsInDeck.length>49)
-    { return " deck50";}
+    { return " playerStylesCard deck50";}
   else if (d.cardsInDeck.length>24)
-    { return" deck25";}
+    { return" playerStylesCard deck25";}
   else if (d.cardsInDeck.length>11)
-    { return" deck12";}
+    { return" playerStylesCard deck12";}
   else if (d.cardsInDeck.length>5)
-    { return" deck6";}
+    { return" playerStylesCard deck6";}
   else if (d.cardsInDeck.length>1)
-    { return" deck3";}
+    { return" playerStylesCard deck3";} //deck3
   else if (d.cardsInDeck.length>0)
-    { return" deck2";}
+    { return" playerStylesCard deck2";}
+  else { return " playerStylesCard"}
 }
 
 

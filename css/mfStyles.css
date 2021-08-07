@@ -1,3 +1,8 @@
+:root{
+  --mf-blue3: #56CCF2;
+}
+
+
 .mf-red{background:#EB5757}
 .mf-orange{
   background: #F2994A; /* Old browsers */
@@ -18,3 +23,17 @@
 .mf-green3{background: #6FCF97;}
 .mf-green2{background:#27AE60;}
 .mf-green1{background: #219653;}
+
+
+
+.notice-row {
+  display:inline-block;
+  width:100%;
+  margin:1%;
+  padding:1%;
+  vertical-align:top;
+}
+.notice-row>div{
+  display:inline-block;
+  vertical-align:top;
+}

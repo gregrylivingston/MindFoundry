@@ -33,7 +33,11 @@ class card {
 
 //add footer, header, and menu widgets by card type rules
 //Probably need to be redone to include more views generally.
-    if ( this.rules.fPin==true || this.rules.fReact==true || this.fAward==true){
+    if ( this.rules.fPin==true ||
+        this.rules.fReact==true ||
+        this.fAward==true ||
+        this.title=="Create"
+      ){
       this.footer = new wFooter(this.rules).html()
     }
   //  this.makeCardHtml =   this.makeCardHtml();
@@ -48,9 +52,10 @@ class card {
       `;
   }
   makeInnerCardHtml(){
+    if (this.type == "Challenge Pack"){this.deck = "mf-blue3 box"}
       return  `
       <div class="card">
-        <div class="card-inner playerStylesCard card${this.index} ${this.deck}">
+        <div class="card-inner card${this.index} ${this.deck}">
             ${this.makeCardFront()}
             ${this.makeCardBack()}
           </div>
@@ -58,19 +63,21 @@ class card {
       `;
   }
   makeCardFront(){
+    let cardHeaderText = (this.type=="Challenge Pack")?this.parentCard:this.title;
      return `
      <div class="flip-card-front  ${this.rules.defaultColor}"  style="border-radius:1em;">
        ${wHeader(this)}
        <h2 style="display:inline-flex;width:100%;">
-          <div style="width:90%;"><!--${this.parentCard}/ &nbsp; -->${this.title}</div>
+          <div style="width:90%;">${this.title}</div>
        </h2>
        <div class="cardFrame highlight">
           ${this.media}
        </div>
        <div class="cardDesc">
       <!--   <h4>${getOwnerWidget(this)}</h4>-->
+        ${this.cardWidget}
+
          <p>${this.desc}</p>
-         ${this.cardWidget}
       </div>
          ${this.footer}
      </div>

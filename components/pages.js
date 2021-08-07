@@ -12,14 +12,6 @@ function getCreatePage(){
 
 
         <div style="width:100%;display:inline-flex;">
-            <h2 class="card-section" style="margin-left:2em;">
-                &nbsp;<br>
-                Rank: 28
-                &nbsp;
-                Pts: 52
-                &nbsp;
-
-            </h2>
             <p>
                 <b>Create cards</b> are exciting <b>solo challenges.</b>
                 Each completed challenge earns a <b>showcase card</b> and <b>coins</b> that can be exchanged
@@ -28,47 +20,8 @@ function getCreatePage(){
         </div>
     </div>
 
-    <br><br><br>
-    <div style="width:100%;display:inline-flex;">
+      ${get_cards("title","Create")}
 
-          <button class="playerStylesButton mf-orange"
-                style="padding:0 1.5em 0 1.5em;margin-left:2em;"
-                onclick="breakDecks('Create')"
-                >
-            <h5>Badges</h5>
-          </button>
-          <div>
-              <table>
-                <tr>
-                    <th>
-                      Noob
-                    </th>
-                    <th>
-                      Beginner
-                    </th>
-                    <th>
-                      Player
-                    </th>
-                    <th>
-                      Master
-                    </th>
-                    <th>
-                      Genius
-                    </th>
-                </tr>
-                <tr>
-                  <td>6</td><td>2</td><td>0</td><td>0</td><td>0</td>
-                </tr>
-              </table>
-          </div>
-
-          <p>
-              Players are divided into Starters, Beginners,  Players, Advanced Players, and Geniuses.
-              Achieve 6 Create Badges in the appropriate badge level to get promoted into the relevant league.
-
-          </p>
-      </div>
-      <br><br><brr>
 
 
     </div>
@@ -85,7 +38,7 @@ function getCreatePage(){
 
               </h1>
               ${get_cards("title","New Challenge")}
-              ${get_cards("title","Breakdancing")}
+              ${get_cards("title","Dance Production Studio")}
          </div>
 
          <div class="page-section mf-red">
@@ -132,4 +85,6 @@ function getSharePage(){
           </div>
         `;
         activateCards();
+        boxinit();
+
       }

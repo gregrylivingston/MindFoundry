@@ -6,9 +6,26 @@ function getHomePage(){
           <div class="page-section mf-yellow">
             <h1>Profile</h1>
             ${get_cards("title","Spellbound")}
-            ${get_cards("title","Rewards")}
 
-            <button class="bubbly-button">Click me!</button>
+            <div class="card-wrapper">
+              Notices
+              <button class="topnav-button highlight">
+                20 <img src="img/coin.png" style="height:1em;">
+              </button>
+              <button class="topnav-button highlight">
+                Friend
+              </button>
+              <button class="topnav-button highlight">
+                Event
+              </button>
+              <div style="width:100%">
+
+                    ${getNoticeRow("img/info/profile-card.png",'Youve been awarded an exciting card pack.')}
+                    ${getNoticeRow("img/avatar/avatar_tinkerawil.png",'Friend request from Gregry')}
+
+              </div>
+            </div>
+
 
 
 
@@ -44,4 +61,20 @@ function getHomePage(){
           </div>
         `;
         activateCards();
+}
+
+
+
+function getNoticeRow(img,text){
+    return `
+    <div class="notice-row">
+        <div class="" style="width:20%;height:4em;">
+          <img style="height:4em" src="${img}">
+        </div>
+        <div class="highlight playerStyles" style="width:65%;height:4em;padding:.5em;">
+        ${text}
+        </div>
+    </div>`
+
+
 }

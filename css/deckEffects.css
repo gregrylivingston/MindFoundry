@@ -66,7 +66,7 @@
     11px -11px 1px white,
     12px -12px 1px gray,
     13px -13px 1px white,
-    14px -14px 1px white,
+    14px -14px 1px white;
 }
 
 .deck25, .deck50{
@@ -173,6 +173,52 @@ The flip card container - set the width and height to whatever you want. We have
 
 .cardpack{
 }
+
+
+
+.box
+   {
+       position: relative;
+   }
+.box>div{
+  border-radius:0em !important;
+  outline: 2px white solid;
+}
+  .box::before
+   {
+       content: '';
+       display: inline-block;
+       background: var(--mf-blue3);
+       width: 101%;
+       height: 22px;
+       transform: skewX(-40deg);
+       position: absolute;
+       top: -24px;
+       left: 8px;
+       border: 2px solid white;
+       border-bottom:none;
+   }
+
+  .box::after
+   {
+       border: 2px solid white;
+       content: '';
+       display: inline-block;
+       background: var(--mf-blue3);
+       width: 20px;
+       height: 100%;
+       transform: skewY(-50deg);
+       position: absolute;
+       top: -15px;
+       left: 100%;
+       border-top-right-radius:.5em;
+
+   }
+
+
+
+
+
 
 
 

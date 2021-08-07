@@ -20,41 +20,29 @@ class wFooter{
     return `
   <div class="card-footer">
     <div class="card-footer-left">
-        ${this.leftWidgets}
-    </div>
-    <div class="card-footer-right">
-        ${this.rightWidgets}
+        <div class="rating">
+        Beginner
+        </div>
+        <div class="rating">
+            <input type="radio" name="rating" id="rating-5" checked>
+             <label for="rating-5"></label>
+             <input type="radio" name="rating" id="rating-4" checked>
+             <label for="rating-4"></label>
+             <input type="radio" name="rating" id="rating-3" checked>
+             <label for="rating-3"></label>
+             <input type="radio" name="rating" id="rating-2" checked>
+             <label for="rating-2"></label>
+             <input type="radio" name="rating" id="rating-1" checked>
+             <label for="rating-1"></label>
+             <br>
+        </div>
+
     </div>
   </div>
   `
   }
 }
 
-class widget_footer{
-    constructor(leftWid,rightWid){
-      this.leftWidgets="";
-      this.rightWidgets="";
-      leftWid.forEach(x=>this.leftWidgets+=x);
-      rightWid.forEach(x=>this.rightWidgets+=x);
-    }
-
-    addLeft(html){this.leftWidgets+=html;}
-    addRight(html){this.rightWidgets+=html;}
-
-    html (){
-      return `
-    <div class="card-footer">
-      <div class="card-footer-left">
-          ${this.leftWidgets}
-      </div>
-      <div class="card-footer-right">
-          ${this.rightWidgets}
-      </div>
-    </div>
-    `
-    }
-
-}
 
 
 function widget_fReact(){
@@ -63,12 +51,6 @@ function widget_fReact(){
         `
 }
 
-var pinnedHTML = '<img class="footerButton" src="img/bookmark-heart.svg" onclick="this.parentElement.innerHTML = widget_fPin()">';
-function widget_fPin(){
-  return `
-          <div style="display:inline-flex"><img class="footerButton" src="img/bookmark.svg" onclick="this.parentElement.innerHTML=pinnedHTML"></div>
-        `
-}
 
 function widget_fAward(){
   return `
@@ -91,8 +73,22 @@ function widget_fShare(){
 }
 
 
+var pinnedHTML = '<img class="footerButton" src="img/bookmark-heart.svg" onclick="this.parentElement.innerHTML = widget_fPin()">';
+function widget_fPin(){
+  return `
+          <div style="display:inline-flex"><img class="footerButton" src="img/bookmark.svg" onclick="this.parentElement.innerHTML=pinnedHTML"></div>
+        `
+}
+
 function wHeader(c){
       var type = c.type;
+      var topmargin ="-16px";
+      var alignItems="center"
+      if (c.type=="Challenge Pack"){
+        type = c.parentCard
+        topmargin = "0px";
+        alignItems="top"
+      }
       if  (type.indexOf("Badge")>0){
           let virtue = type.substring(0,type.indexOf("Bad")-1);
           let virtueImg = `<img src="img/${virtue}.svg">`
@@ -101,20 +97,23 @@ function wHeader(c){
 
     return `
 
-        <div style="width:100%;display:inline-flex;align-items:center;">
+        <div style="width:100%;display:inline-flex;align-items:${alignItems};">
             <div style="width:32%;">
+                ${widget_fPin()}
+
                 <button class="headerButton" onclick="viewCard('${c.index}')">
 
                   <!-- flip card for menu & help -->
                 </button>
             </div>
 
-            <div style="width:34%;margin-top:-16px;background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
-            <button onclick="breakDecks('${c.type}')" style="background:none;border:none;;">
+            <div style="width:34%;margin-top:${topmargin};background:white;border-bottom-right-radius:1em;border-bottom-left-radius:1em;">
+            <button onclick='breakDecks(${type})' style="background:none;border:none;">
               <h3 style="display:inline-flex;align-items:center">${type}</h3>
               </button>
             </div>
             <div style="width:32%;text-align:right;">
+
                 <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
                 <img src="img/info-circle.svg" style="height:1.5em;">
                 </button>
