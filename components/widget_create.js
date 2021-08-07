@@ -14,7 +14,7 @@ widget["Create"]= function(c){
             </button>
         </div>
         <div style="width:33%;style:inline-block;">
-            <button class="createButton" onclick="breakDecks('Code Badges')">
+            <button class="createButton" onclick="breakDecks('Coding Badges')">
                 <img src="img/file-code.svg" style="height:2em">
                 0
             </button>
@@ -89,7 +89,7 @@ widget["Challenge Pack"] = function(c){
             <div style="font-size:1.5em;display:inline-flex;align-items:center;">
                 0
                 <img src="img/Create.svg" style="height:1em"></div>
-            <div style="font-size:.8em;">Points</div>
+            <div style="font-size:.8em;">Solo Points</div>
           </div>
       </button>
       <button class="half-button" style="height:3em;">
@@ -97,10 +97,31 @@ widget["Challenge Pack"] = function(c){
             <div style="font-size:1.5em;display:inline-flex;align-items:center;">
               0 / ${c.cardsInDeck.length}
               <img src="img/challenge.svg" style="height:1em"></div>
-            <div style="font-size:.8em;">Challenges</div>
+            <div style="font-size:.8em;">Solo Challenges</div>
           </div>
       </button>
       </div>
+
+      <div class="cardBlock">
+
+          <button class="half-button" style="height:3em">
+              <div>
+                <div style="font-size:1.5em;display:inline-flex;align-items:center;">
+                    0
+                    <img src="img/Create.svg" style="height:1em"></div>
+                <div style="font-size:.8em;">Club Points</div>
+              </div>
+          </button>
+          <button class="half-button" style="height:3em;">
+              <div>
+                <div style="font-size:1.5em;display:inline-flex;align-items:center;">
+                  0 / ${c.cardsInDeck.length}
+                  <img src="img/challenge.svg" style="height:1em"></div>
+                <div style="font-size:.8em;">Club Challenges</div>
+              </div>
+          </button>
+          </div>
+      <p>${c.desc}</p>
       <div class="cardBlock">
           <button class="half-button" style="height:3em;">
               <div>

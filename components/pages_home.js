@@ -19,9 +19,9 @@ function getHomePage(){
                 Club
               </button>
               <div style="width:100%">
-                    ${getNoticeRow("img/info/profile-card.png",'New Player Card Pack.')}
-                    ${getNoticeRow("img/info/profile-card.png",'2021 Bonus Pack')}
+                    ${getNoticeRow("img/info/profile-card.png",'2021 New Player Bonus Pack')}
                     ${getNoticeRow("img/avatar/avatar_tinkerawil.png",'Friend request from Gregry')}
+                    ${getNoticeRow("img/coin.png",'Login Streak Bonus - 1 Day - 1 Coin')}
 
               </div>
             </div>
@@ -68,7 +68,7 @@ function getHomePage(){
                <h1>Compete</h1>
                ${get_cards("title","Compete")}
           </div>
-          <div class="page-section mf-purple">
+          <div class="page-section mf-yellow">
                <h1>Share</h1>
                ${get_cards("title","Share")}
           </div>

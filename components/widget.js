@@ -5,24 +5,25 @@ widget["Player Card"] = function (c){
   let html =
   `
     <div class="cardBlock">
-      <div class="half-button mf-orange" style="display:inline-block;">
-
-          <img src="img/Create.svg"> Create <br>
-          Lvl0
-          Crds:4
-          Bdgs:2
+      <div class="half-button mf-orange" onclick="getCreatePage()">
+          <img src="img/Create.svg">
       </div>
-      <div class="half-button mf-blue2">
+      <div class="half-button mf-blue2"  onclick="getCollaboratePage()">
           <img src="img/Collaborate.svg">
       </div>
     </div>
     <div class="cardBlock">
-      <div class="half-button mf-red">
+      <div class="half-button mf-red" onclick="getCompetePage()">
           <img src="img/Compete.svg">
       </div>
-      <div class="half-button mf-yellow">
+      <div class="half-button mf-yellow" onclick="getSharePage()">
           <img src="img/Share.svg">
       </div>
+    </div>
+    <div class="cardBlock" style="align-items:center;margin-top:1em">
+        <div style="width:60%">Level Up the 4 Core Skills to Advance Your Player Level
+        </div>
+        <button class="createButton">Lvl 2 Rewards</button>
     </div>
   `;
   return html;
