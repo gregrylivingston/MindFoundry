@@ -26,7 +26,7 @@ class wFooter{
     </div>
   </div>
   `
-    } else {
+} else if ( this.c.type == "GM Card"){
       return `
       <div class="card-footer">
         <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.5em;">
@@ -49,6 +49,28 @@ class wFooter{
         </div>
       </div>`
 
+    }else{
+      return `
+      <div class="card-footer">
+        <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.5em;">
+            43 <img src="img/resource.svg" style="height:1em;">
+        </div>
+        <div class="card-footer-left">
+            <div class="rating" style="border-top-right-radius:.5em;border-top-left-radius:.5em">
+               Advanced
+            </div>
+            <div class="rating">
+                <div class="checked"></div>
+                <div class="checked"></div>
+                <div class="checked"></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.5em">
+           Rank #19
+        </div>
+      </div>`
     }
   }
 }

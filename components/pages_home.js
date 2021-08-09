@@ -8,54 +8,34 @@ function getHomePage(){
 
             ${get_cards("title","Spellbound")}
 
-            <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;">
-              <h1 style="display:inline-block;width:30%;">Notifications</h1>
-              <button class="topnav-button highlight">
-                20 <img src="img/coin.png" style="height:1em;">
-              </button>
-              <button class="topnav-button highlight">
-                Friends
-              </button>
-              <button class="topnav-button highlight">
-                Club
-              </button>
-              <div style="width:100%">
+            <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;height:35em;overflow-y:scroll;">
+              <!-- Important / Events / Inventory / Showcase-->
+              <div style="width:98%;display:inline-flex;align-items:center;justify-content:space-between;">
+                  <button class="topnav-button playerStylesButton" style="width:23%">
+                    Notes
+                  </button>
+                  <button class="topnav-button playerStylesButton" style="width:23%">
+                    Events
+                  </button>
+                  <button class="topnav-button playerStylesButton" style="width:23%">
+                    Inventory
+                  </button>
+                  <button class="topnav-button playerStylesButton" style="width:23%">
+                    Showcase
+                  </button>
+                </div>
+              <div style="width:96%;margin-top:1em;">
                     ${getNoticeRow("img/info/profile-card.png",
-                        `2021 New Player Bonus Pack<br>
-                         <button class="half-button" onclick="openDeck('New Player Starter Pack');">
-                            View
-                        </button>
-                        <button class="half-button" onclick="this.parentElement.remove()">
-                           Dismiss
-                       </button>`
+                        `2021 New Player Bonus Pack
+                      `, "openDeck('New Player Starter Pack')"
                       )}
                     ${getNoticeRow("img/avatar/avatar_tinkerawil.png",
-                          `Friend request from Gregry<br>
-                           <button class="half-button" onclick="openDeck('Gregry');">
-                              View
-                          </button>
-                          <button class="half-button" onclick="this.parentElement.remove()">
-                              Dismiss
-                         </button>
-                          `
+                          `Friend request from Gregry
+                          `, "openDeck('Gregry')"
                     )}
-                    ${getNoticeRow("img/coin.png",'Login Streak Bonus - 1 Day - 1 Coin')}
-
-              </div>
-            </div>
-
-            <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;">
-              <h1 style="display:inline-block;">Events</h1>
-                <button class="topnav-button highlight">
-                  My Events
-                </button>
-                <button class="topnav-button highlight">
-                  1-Time
-                </button>
-                <button class="topnav-button highlight">
-                  Ongoing
-                </button>
-              <div style="width:100%">
+                    ${getNoticeRow("img/coin.png",
+                    `Login Streak Bonus - 1 Day - 1 Coin`
+                  )}
                     ${getNoticeRow("img/info/profile-card.png",'Minecraft Creative League. Mondays and Wednesday at 2pm.')}
                     ${getNoticeRow("img/token_tourney.png",'You have an Tourney League Token.  See whats coming up here.')}
                     ${getNoticeRow("img/token_league.png",'You have an unlimited League Token.  See whats coming up here.')}
@@ -97,14 +77,22 @@ function getHomePage(){
 
 
 
-function getNoticeRow(img,text){
+function getNoticeRow(img,text,action){
     return `
-    <div class="notice-row">
-        <div class="" style="width:20%;height:4em;">
+    <div class="notice-row highlight" >
+        <div class="" style="width:12%;height:4em;" onclick="${action}">
           <img style="height:4em" src="${img}">
         </div>
-        <div class="highlight playerStyles" style="width:65%;height:4em;padding:.5em;">
+        <div class="" style="width:58%;font-size:1.1em;padding:.5em;" onclick="${action}">
         ${text}
+        </div>
+        <div style="width:20%;">
+           <button class="half-button playerStylesButton" onclick="${action}">
+               <img src="img/check2-circle.svg">
+          </button>
+           <button class="half-button playerStylesButton" style="z-index:100;" onclick="this.parentElement.parentElement.remove()">
+              <img src="img/x-circle.svg">
+          </button>
         </div>
     </div>`
 

@@ -30,13 +30,13 @@
 
 
 .notice-row {
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
   width:100%;
   margin:.2em 1% .2em 1%;
   padding:1%;
-  vertical-align:top;
 }
 .notice-row>div{
-  display:inline-block;
-  vertical-align:top;
+  display:inline-flex;
 }
