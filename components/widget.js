@@ -43,3 +43,4 @@ widget["Tokens"]= function(c){
 
 widget["Card Pack"] = widget["Tokens"];
 widget["Award Pack"] = widget["Tokens"];
+widget["Challenge"] = widget["Tokens"];

@@ -11,17 +11,21 @@ function getHomePage(){
             <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;height:35em;overflow-y:scroll;">
               <!-- Important / Events / Inventory / Showcase-->
               <div style="width:98%;display:inline-flex;align-items:center;justify-content:space-between;">
-                  <button class="topnav-button playerStylesButton" style="width:23%">
-                    Notes
+                  <button class="topnav-button playerStylesButton tooltip" style="width:23%">
+                   <img src="img/exclamation-lg.svg">
+                   <div class="tooltiptext">Notifications</div>
                   </button>
-                  <button class="topnav-button playerStylesButton" style="width:23%">
-                    Events
+                  <button class="topnav-button playerStylesButton tooltip" style="width:23%">
+                    <img src="img/calendar.svg">
+                    <div class="tooltiptext">Events</div>
                   </button>
-                  <button class="topnav-button playerStylesButton" style="width:23%">
-                    Inventory
+                  <button class="topnav-button playerStylesButton tooltip" style="width:23%">
+                    <img src="img/columns-gap.svg">
+                    <div class="tooltiptext">Inventory</div>
                   </button>
-                  <button class="topnav-button playerStylesButton" style="width:23%">
-                    Showcase
+                  <button class="topnav-button playerStylesButton tooltip" style="width:23%">
+                    <img src="img/collection-play.svg">
+                    <div class="tooltiptext">Showcase</div>
                   </button>
                 </div>
               <div style="width:96%;margin-top:1em;">
@@ -37,8 +41,8 @@ function getHomePage(){
                     `Login Streak Bonus - 1 Day - 1 Coin`
                   )}
                     ${getNoticeRow("img/info/profile-card.png",'Minecraft Creative League. Mondays and Wednesday at 2pm.')}
-                    ${getNoticeRow("img/token_tourney.png",'You have an Tourney League Token.  See whats coming up here.')}
-                    ${getNoticeRow("img/token_league.png",'You have an unlimited League Token.  See whats coming up here.')}
+                    ${getNoticeRow("img/token_league.png",'You have a League Unlimited Pass.',"openDeck('1 Month League Unlimited Pass')")}
+                    ${getNoticeRow("img/token_tourney.png",'You have a Tourney Unlimited Pass.',"openDeck('1 Month Tourney Unlimited Pass')")}
 
               </div>
             </div>

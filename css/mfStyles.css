@@ -1,6 +1,7 @@
 :root{
   --mf-blue3: #56CCF2;
-  --mf-blue2: #2D9CDB;
+  --mf-blue2Shadow:rgb(35,136,200);
+  --mf-blue2:#2D9CDB;
   --mf-redOpaque: rgba(235,87,87,.9);
   --mf-emerald: #32B7C0;
 }
