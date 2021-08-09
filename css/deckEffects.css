@@ -111,7 +111,7 @@ The flip card container - set the width and height to whatever you want. We have
   height:32em;
   width: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform .8s;
   transform-style: preserve-3d;
 }
 

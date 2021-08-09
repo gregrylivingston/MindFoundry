@@ -1,8 +1,11 @@
 :root{
   --mf-blue3: #56CCF2;
+  --mf-blue2: #2D9CDB;
+  --mf-redOpaque: rgba(235,87,87,.9);
+  --mf-emerald: #32B7C0;
 }
 
-
+.mf-emerald{background: var(--mf-emerald)}
 .mf-red{background:#EB5757}
 .mf-orange{
   background: #F2994A; /* Old browsers */

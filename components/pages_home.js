@@ -3,8 +3,8 @@ function getHomePage(){
   document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0;
   document.getElementById("cards").innerHTML =
   `
-          <div class="page-section mf-yellow">
-            <h1>Spellbound  <img src="img/question-circle.svg"></h1>
+          <div class="page-section mf-emerald">
+            <h1>Spellbound  <img src="img/question-circle.svg" onclick="document.getElementById('tutorial').style.display='';"></h1>
 
             ${get_cards("title","Spellbound")}
 
@@ -20,7 +20,12 @@ function getHomePage(){
                 Club
               </button>
               <div style="width:100%">
-                    ${getNoticeRow("img/info/profile-card.png",'2021 New Player Bonus Pack')}
+                    ${getNoticeRow("img/info/profile-card.png",
+                        `2021 New Player Bonus Pack<br>
+                         <button class="half-button" onclick="openDeck('');">
+                            Open
+                        </button>`
+                      )}
                     ${getNoticeRow("img/avatar/avatar_tinkerawil.png",'Friend request from Gregry')}
                     ${getNoticeRow("img/coin.png",'Login Streak Bonus - 1 Day - 1 Coin')}
 

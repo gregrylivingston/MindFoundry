@@ -121,3 +121,18 @@ function getSocial(){
   </div>
   `
 }
+
+function openDeck(deckName = null){
+  document.getElementById("unlockCards").style.display="";
+  document.getElementById("unlockCards").innerHTML = `
+
+
+    <h1>Unlock</h1>
+     ${get_cards("title","New Player Starter Pack")}
+    <button class="half-button" onclick="this.parentElement.style.display='none';">Close Popup</button>
+
+
+
+  `
+
+}

@@ -64,3 +64,10 @@ function getOwnerWidget(c){
     }
     return html
 }
+
+widget["Tokens"]= function(c){
+  return c.desc
+}
+
+widget["Card Pack"] = widget["Tokens"];
+widget["Award Pack"] = widget["Tokens"];

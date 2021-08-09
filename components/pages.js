@@ -4,7 +4,7 @@ function getCreatePage(){
     <div class="mf-orange page-section">
       <div class="topbar">
         <div style="width:100%;display:inline-flex;">
-          <h1>Create
+          <h1>Create <img src="img/question-circle.svg" onclick="document.getElementById('tutorial').style.display='';">
           </h1>
         </div>
         <div style="width:100%;display:inline-flex;">
@@ -65,7 +65,7 @@ function getSharePage(){
   document.getElementById("cards").innerHTML =
   `
           <div class="page-section mf-yellow">
-            <h1>Share</h1>
+            <h1>Share <img src="img/question-circle.svg" onclick="document.getElementById('tutorial').style.display='';"></h1>
             ${get_cards("title","Share")}
           </div>
 
@@ -86,7 +86,7 @@ function getCollaboratePage(){
   document.getElementById("cards").innerHTML =
   `
           <div class="page-section mf-blue2">
-            <h1>Collaborate</h1>
+            <h1>Collaborate <img src="img/question-circle.svg" onclick="document.getElementById('tutorial').style.display='';"></h1>
             <p>
                 <b>Create cards</b> are exciting <b>solo challenges.</b>
                 Each completed challenge earns a <b>showcase card</b> and <b>coins</b> that can be exchanged
@@ -116,7 +116,7 @@ function getCompetePage(){
   document.getElementById("cards").innerHTML =
   `
           <div class="page-section mf-red">
-            <h1>Compete</h1>
+            <h1>Compete <img src="img/question-circle.svg" onclick="document.getElementById('tutorial').style.display='';"></h1>
             <p>
                 <b>Compete cards</b> include <b>monthly or daily competition challenges.</b>
                 Clubs compete in live Tourneys, Leagues, and Gameshows as well as monthly<br>

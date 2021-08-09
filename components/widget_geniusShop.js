@@ -15,7 +15,7 @@ widget["Avatar"] = widget["Background"];
 widget["Reaction Pack"] = widget["Background"];
 widget["Card Style"] = widget["Background"];
 
-
+/*
 widget["Tokens"] = function(c){
     if ( c.costAmount > 0 ){
       return `
@@ -28,9 +28,8 @@ widget["Tokens"] = function(c){
     return ``
 }
 
-widget["Award Pack"] = widget["Tokens"];
 widget["Prize"] = widget["Tokens"];
-
+*/
 
 widget["Genius Shop"] = function(c){
     switch (c.title){

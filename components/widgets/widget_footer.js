@@ -108,7 +108,7 @@ function wHeader(c){
             <div style="width:32%;text-align:right;">
 
                 <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
-                <img src="img/info-circle.svg" style="height:1.5em;">
+                <img src="img/tornado.svg" style="height:1.5em;">
                 </button>
 
                 <button class="headerButton" style="text-align:right;" onclick="viewCard('${c.index}')">
@@ -132,7 +132,7 @@ function wRHeader(c){
         </div>
         <div style="width:32%;text-align:right;">
               <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.remove('flipped')">
-              <img src="img/info-circle.svg" style="height:1.5em;">
+              <img src="img/tornado.svg" style="height:1.5em;">
               </button>
             <button class="headerButton" style="text-align:right;" onclick="viewCard('card${c.index}')">
               <img src="img/eye.svg" style="height:1.5em;">
