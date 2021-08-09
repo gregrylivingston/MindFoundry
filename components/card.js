@@ -36,7 +36,7 @@ class card {
         this.title=="Create" || this.title=="Collaborate" || this.title=="Compete" || this.title=="Share" ||
         this.type=="Player Card" || this.type=="Badge" ||this.type=="GM Card" || this.type=="Coach Card"
       ){
-      this.footer = new wFooter(this.rules).html()
+      this.footer = new wFooter(this).html()
     }
   //  this.makeCardHtml =   this.makeCardHtml();
     this.innerCardHtml = this.makeInnerCardHtml();

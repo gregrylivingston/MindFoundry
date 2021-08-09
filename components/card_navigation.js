@@ -134,5 +134,6 @@ function openDeck(deckName = null){
 
 
   `
+  activateCards();
 
 }
