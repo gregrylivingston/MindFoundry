@@ -77,7 +77,7 @@ function wHeader(c){
       var type = c.type;
       var topmargin ="-16px";
       var alignItems="center"
-      if (c.type=="Challenge Pack"){
+      if (c.type=="Challenge Pack" || c.type=="Card Pack"){
         type = c.parentCard
         topmargin = "0px";
         alignItems="top"
