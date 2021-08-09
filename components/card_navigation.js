@@ -128,7 +128,7 @@ function openDeck(deckName = null){
 
 
     <h1>Unlock</h1>
-     ${get_cards("title","New Player Starter Pack")}
+     ${get_cards("title",deckName)}
     <button class="half-button" onclick="this.parentElement.style.display='none';">Close Popup</button>
 
 

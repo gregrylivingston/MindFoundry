@@ -34,7 +34,7 @@ class card {
 //Probably need to be redone to include more views generally.
     if (
         this.title=="Create" || this.title=="Collaborate" || this.title=="Compete" || this.title=="Share" ||
-        this.type=="Player Card" || this.type=="Badge"
+        this.type=="Player Card" || this.type=="Badge" ||this.type=="GM Card" || this.type=="Coach Card"
       ){
       this.footer = new wFooter(this.rules).html()
     }

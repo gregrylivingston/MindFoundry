@@ -13,17 +13,11 @@ class wFooter{
         Beginner
         </div>
         <div class="rating">
-            <input type="radio" name="rating" id="rating-5" checked>
-             <label for="rating-5"></label>
-             <input type="radio" name="rating" id="rating-4" checked>
-             <label for="rating-4"></label>
-             <input type="radio" name="rating" id="rating-3" checked>
-             <label for="rating-3"></label>
-             <input type="radio" name="rating" id="rating-2" checked>
-             <label for="rating-2"></label>
-             <input type="radio" name="rating" id="rating-1" checked>
-             <label for="rating-1"></label>
-             <br>
+            <div class="checked"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
     </div>

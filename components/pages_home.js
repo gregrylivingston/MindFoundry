@@ -22,11 +22,23 @@ function getHomePage(){
               <div style="width:100%">
                     ${getNoticeRow("img/info/profile-card.png",
                         `2021 New Player Bonus Pack<br>
-                         <button class="half-button" onclick="openDeck('');">
-                            Open
-                        </button>`
+                         <button class="half-button" onclick="openDeck('New Player Starter Pack');">
+                            View
+                        </button>
+                        <button class="half-button" onclick="this.parentElement.remove()">
+                           Dismiss
+                       </button>`
                       )}
-                    ${getNoticeRow("img/avatar/avatar_tinkerawil.png",'Friend request from Gregry')}
+                    ${getNoticeRow("img/avatar/avatar_tinkerawil.png",
+                          `Friend request from Gregry<br>
+                           <button class="half-button" onclick="openDeck('Gregry');">
+                              View
+                          </button>
+                          <button class="half-button" onclick="this.parentElement.remove()">
+                              Dismiss
+                         </button>
+                          `
+                    )}
                     ${getNoticeRow("img/coin.png",'Login Streak Bonus - 1 Day - 1 Coin')}
 
               </div>
