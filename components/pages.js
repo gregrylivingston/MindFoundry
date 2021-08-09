@@ -127,11 +127,6 @@ function getCompetePage(){
 
 
           <div class="page-section mf-purple">
-               ${get_cards("title","Join A Club")}
-               ${get_cards("title","Korora")}
-          </div>
-
-          <div class="page-section mf-red">
             <h1>Join Live</h1>
                ${get_cards("title","Leagues")}
                ${get_cards("title","Tourneys")}

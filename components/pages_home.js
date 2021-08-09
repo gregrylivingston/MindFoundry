@@ -4,7 +4,8 @@ function getHomePage(){
   document.getElementById("cards").innerHTML =
   `
           <div class="page-section mf-yellow">
-            <h1>Profile</h1>
+            <h1>Spellbound  <img src="img/question-circle.svg"></h1>
+
             ${get_cards("title","Spellbound")}
 
             <div class="card-wrapper" style="border: white solid 2px;border-radius:1.5em;">
@@ -50,6 +51,7 @@ function getHomePage(){
             <h1>Social</h1>
             ${get_cards("title","Friends")}
             ${get_cards("title","Korora")}
+            ${get_cards("title","Join A Club")}
             ${get_cards("title","YoungerPetr")}
           </div>
           <div class="page-section mf-yellow">

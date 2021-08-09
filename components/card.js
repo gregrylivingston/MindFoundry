@@ -74,8 +74,6 @@ class card {
        <div class="cardDesc">
       <!--   <h4>${getOwnerWidget(this)}</h4>-->
         ${this.cardWidget}
-
-         <p>${this.desc}</p>
       </div>
          ${this.footer}
      </div>
