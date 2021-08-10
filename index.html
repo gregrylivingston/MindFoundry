@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="css/special.css">
 <link rel="stylesheet" href="css/dictionary.css">
 
-
+<script src="js/dictionary.js"></script>
 <script src="js/masonry.js"></script>
 <script src="js/ssdata.js"></script>
 <script src="components/widgets/widget_player.js"></script>
@@ -89,28 +89,18 @@
         <script>
             for (var i = 0 ; i < data["cardGroups"].length ; i ++ ){
               document.write(`
-                <button class="tutorialHeader">
+                <button class="tutorialHeader" onclick="makeDictionaryByGroup('${data["cardGroups"][i][0]}')">
                   <div class="mini-deck ${[data["cardGroups"][i][2]]}">
                     <img src="${data["cardGroups"][i][1]}" style="height:1.6em;">
                   </div> &nbsp;
                   ${data["cardGroups"][i][0]}
                 </button>
-
                 `);
             }
         </script>
 
     </div>
-    <div>
-      <script>
-          for (var i = 0 ; i < data["cardType"].length ; i ++ ){
-            document.write(`
-                    <div>
-                        ${data["cardType"][i][0]}
-                    </div>
-              `);
-          }
-      </script>
+    <div id="dictionary-inner">
     </div>
   </div>
   <div id="unlockCards" style="display:none;" class="popups">

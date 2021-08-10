@@ -50,11 +50,30 @@ class card {
     </div>
       `;
   }
+  makeCardHtmlFlipped(){
+      return  `
+    <div class="card-wrapper" id="${this.index}">
+      ${this.makeInnerCardHtmlFlipped()}
+      ${this.deckReport}
+    </div>
+      `;
+  }
   makeInnerCardHtml(){
     if (this.type == "Challenge Pack" || this.type=="Card Pack"){this.deck = "mf-blue3 box"}
       return  `
       <div class="card ${this.specialStyle}">
         <div class="card-inner card${this.index} ${this.deck}">
+            ${this.makeCardFront()}
+            ${this.makeCardBack()}
+          </div>
+        </div>
+      `;
+  }
+  makeInnerCardHtmlFlipped(){
+    if (this.type == "Challenge Pack" || this.type=="Card Pack"){this.deck = "mf-blue3 box"}
+      return  `
+      <div class="card ${this.specialStyle}">
+        <div class="card-inner card${this.index} ${this.deck} flipped">
             ${this.makeCardFront()}
             ${this.makeCardBack()}
           </div>
