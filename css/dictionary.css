@@ -10,9 +10,6 @@
   vertical-align:top;
 }
 .tutorialHeader{
-    background:none;
-    border:1px solid black;
-    border-radius:.5em;
     padding:.2em;
     height:3em;
     display:inline-flex;

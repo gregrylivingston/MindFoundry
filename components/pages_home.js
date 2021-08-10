@@ -4,7 +4,7 @@ function getHomePage(){
   document.getElementById("cards").innerHTML =
   `
           <div class="page-section mf-emerald">
-            <h1>Spellbound  <img src="img/question-circle.svg" onclick="document.getElementById('tutorial').style.display='';"></h1>
+            <h1>Spellbound  <img src="img/question-circle.svg" onclick="makeDictionaryByGroup('Player Types').style.display='';"></h1>
 
             ${get_cards("title","Spellbound")}
 
@@ -29,20 +29,6 @@ function getHomePage(){
                   </button>
                 </div>
               <div id="Notifications" class="notificationList">
-                    ${getNoticeRow("img/info/profile-card.png",
-                        `2021 New Player Bonus Pack
-                      `, "openDeck('New Player Starter Pack')"
-                      )}
-                    ${getNoticeRow("img/avatar/avatar_tinkerawil.png",
-                          `Friend request from Gregry
-                          `, "openDeck('Gregry')"
-                    )}
-                    ${getNoticeRow("img/coin.png",
-                    `Login Streak Bonus - 1 Day - 1 Coin`
-                  )}
-                    ${getNoticeRow("img/info/profile-card.png",'Minecraft Creative League. Mondays and Wednesday at 2pm.')}
-                    ${getNoticeRow("img/token_league.png",'You have a League Unlimited Pass.',"openDeck('1 Month League Unlimited Pass')")}
-                    ${getNoticeRow("img/token_tourney.png",'You have a Tourney Unlimited Pass.',"openDeck('1 Month Tourney Unlimited Pass')")}
 
               </div>
               <div id="Events" class="notificationList" style="display:none;">
@@ -87,6 +73,7 @@ function getHomePage(){
                ${get_cards("title","Share")}
           </div>
         `;
+        buildNotices();
         activateCards();
 }
 
@@ -99,7 +86,23 @@ function showNotificationList(myId){
 
 
 function getNoticeRow(img,text,action){
-    return `
+    var myButtons = "";
+    if ( text.indexOf("Card Pack") > 1 ){
+      myButtons = `
+        <button class="half-button playerStylesButton" style="width:100%" onclick="${action}">
+             View
+        </button>`;
+    } else {
+       myButtons = `
+         <button class="half-button playerStylesButton" onclick="${action}">
+              <img src="img/check2-circle.svg">
+         </button>
+          <button class="half-button playerStylesButton" style="z-index:100;" onclick="this.parentElement.parentElement.remove()">
+             <img src="img/x-circle.svg">
+         </button>
+         `;
+    }
+    document.getElementById("Notifications").innerHTML+= `
     <div class="notice-row highlight" >
         <div class="" style="width:8%;height:2.5em;padding-left:.5em;" onclick="${action}">
           <img style="height:2.5em" src="${img}">
@@ -108,15 +111,28 @@ function getNoticeRow(img,text,action){
         ${text}
         </div>
         <div style="width:20%;">
-           <button class="half-button playerStylesButton" onclick="${action}">
-               <img src="img/check2-circle.svg">
-          </button>
-           <button class="half-button playerStylesButton" style="z-index:100;" onclick="this.parentElement.parentElement.remove()">
-              <img src="img/x-circle.svg">
-          </button>
+          ${myButtons}
         </div>
     </div>`
 
+
+}
+
+function buildNotices(){
+    getNoticeRow("img/info/profile-card.png",
+        `2021 New Player Bonus Pack
+      `, "openDeck('New Player Pack')"
+    );
+    getNoticeRow("img/avatar/avatar_tinkerawil.png",
+          `Friend request from Gregry
+          `, "openDeck('Gregry')"
+    );
+    getNoticeRow("img/coin.png",
+    `Login Streak Bonus - 1 Day - 1 Coin`
+    );
+    getNoticeRow("img/info/profile-card.png",'Minecraft Creative League. Mondays and Wednesday at 2pm.');
+    getNoticeRow("img/token_league.png",'You have a League Unlimited Pass.',"openDeck('1 Month League Unlimited Pass')");
+    getNoticeRow("img/token_tourney.png",'You have a Tourney Unlimited Pass.',"openDeck('1 Month Tourney Unlimited Pass')");
 
 }
 

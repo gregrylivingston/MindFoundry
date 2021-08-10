@@ -117,7 +117,7 @@ function wHeader(c){
       var topmargin ="-16px";
       var alignItems="center"
       if (c.type=="Challenge Pack" || c.type=="Card Pack"){
-        type = c.parentCard
+        (c.type!=="Card Pack")? type = c.parentCard:'';
         topmargin = "0px";
         alignItems="top"
       }

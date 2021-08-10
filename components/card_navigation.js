@@ -123,15 +123,9 @@ function getSocial(){
 }
 
 function openDeck(deckName = null){
-  document.getElementById("unlockCards").style.display="";
-  document.getElementById("unlockCards").innerHTML = `
-
-
+  document.getElementById("cards").innerHTML = `
     <h1>Unlock</h1>
      ${get_cards("title",deckName)}
-    <button class="half-button" onclick="this.parentElement.style.display='none';">Close Popup</button>
-
-
 
   `
   activateCards();

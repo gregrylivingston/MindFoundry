@@ -1,7 +1,14 @@
 
 function init (){
     makeAllCards();
-    breakDecks('Demo');
+    document.getElementById("cards").innerHTML = `
+    <div class="page-section playerStyles-bg">
+      ${get_cards("title","Demo - Public Landing")}
+      ${get_cards("title","Demo - Player Homepage")}
+
+    </div>
+`
+
 }
 var cardDiv = document.getElementById("cards");
 
