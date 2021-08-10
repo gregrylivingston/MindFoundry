@@ -1,6 +1,5 @@
-document.write(`
 
-<div class="topnav">
+var topNav = `
 
 <div class="nav-left"  id="nav-player">
   <button class="topnav-button"  onclick="getHomePage()">
@@ -26,8 +25,20 @@ document.write(`
   <div class="nav-right">
 
 
+</div>
+</div>
+</div>`
+
+
+function getTopNav(){
+      document.getElementsByClassName("topnav")[0].innerHTML = topNav;
+}
+
+
+document.write(`
+  <div class="topnav">
   </div>
-</div>
-</div>
-</div>
   `);
+
+
+getTopNav();

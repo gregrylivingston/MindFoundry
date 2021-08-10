@@ -62,7 +62,7 @@ function getDeckCSSClass(d){
   //basically the  deck switch menu...
   function makeDeckReport(thisCard){
     thisCard.deckReport = `
-    <h2 style="width:80%;text-align:center;padding:0 5% 0 5%">
+    <h2 style="width:80%;text-align:center;padding:0 5% 0 5%;margin-top:2em;">
       <button class="playerStylesButton  ${thisCard.rules.defaultColor}" style="height:2em;width:4em;width:30%;max-width:10em" onclick="previousCard(this)"><</button>
         <div style="width:30%;display:inline-flex;justify-content:center;max-width:10em">
           <div id="deckIt${thisCard.index}Parent" style="display:none;">
@@ -125,41 +125,15 @@ function getSocial(){
 function openDeckPopup(deckName = null){
   document.getElementById("unlockCards").style.display="";
   document.getElementById("unlockCards").innerHTML = `
+  <div class="page-section mf-red" style="height:100%">
     <h1>Unlock</h1>
      ${get_cards("title",deckName)}
-    <button class="half-button" onclick="this.parentElement.style.display='none';">Close Popup</button>
-
-  `
-  activateCards();
-
-}
-
-
-function addFriendPopup(deckName = null){
-  document.getElementById("unlockCards").style.display="";
-  document.getElementById("unlockCards").innerHTML = `
-    <div class="page-section mf-emerald" style="height:100%">
-      <h1>Friend Request</h1>
-      ${get_cards("title",deckName)}
-       <div class="card-wrapper">
-          <div class="card-block">
-              <h1>Create, Compete, Collaborate, Share with Friends</h1>
-              Your <b>Friends List</b> helps you...
-              <ul>
-                <li>Invite and make friends.</li>
-                <li>See friends profile, progression, and showcase.</li>
-                <li>Invite friends to awesome online events.</li>
-              </ul>
-          </div>
-          <div class="card-block"><b>GMs</b> and <b>Coaches</b> work hard to make sure Mind Foundry's programs and platform are fun, easy to use, and safe.
-          If you have questions or concerns, please contact a GM or Coach using the message feature on their Player Card.
-          </div>
-          <div class="card-block" style="margin-top:2em;">
-              <button class="half-button" style="height:2em;" onclick="this.parentElement.parentElement.parentElement.parentElement.style.display='none';">Add Friend</button>
-              <button class="half-button" style="height:2em;"  onclick="this.parentElement.parentElement.parentElement.parentElement.style.display='none';">Dismiss</button>
-          </div>
+     <div class="card-wrapper">
+        <div class="card-block" style="margin-top:2em;">
+            <button class="half-button" onclick="this.parentElement.parentElement.parentElement.parentElement.style.display='none';">Close Popup</button>
         </div>
-      </div>
+     </div>
+  </div>
   `
   activateCards();
 

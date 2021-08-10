@@ -7,7 +7,7 @@ class wFooter{
     return `
   <div class="card-footer">
     <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.5em;">
-        2 <img src="img/resource.svg" style="height:1em;">
+      0 <img src="img/resource.svg" style="height:1em;">
     </div>
     <div class="card-footer-left">
         <div class="rating" style="border-top-right-radius:.5em;border-top-left-radius:.5em">
@@ -22,7 +22,7 @@ class wFooter{
         </div>
     </div>
     <div style="width:33%;display:inline-flex;align-items:center;justify-content:center;font-size:1.3em">
-       Rank #49
+       Rank #712
     </div>
   </div>
   `

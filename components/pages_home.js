@@ -1,67 +1,72 @@
 
-function getHomePage(){
-  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0;
-  document.getElementById("cards").innerHTML =
-  `
-          <div class="page-section mf-emerald">
-            <h1>Spellbound  <img src="img/question-circle.svg" onclick="makeDictionaryByGroup('Player Types').style.display='';"></h1>
+var home = `
+        <div class="page-section mf-emerald">
+          <h1>Spellbound  <img src="img/question-circle.svg" onclick="makeDictionaryByGroup('Player Types').style.display='';"></h1>
 
-            ${get_cards("title","Spellbound")}
+          ${get_cards("title","Spellbound")}
 
-            <div class="card-wrapper" style="margin-top:-.5em;height:35em;">
-              <!-- Important / Events / Inventory / Showcase-->
-              <div style="width:98%;display:inline-flex;align-items:center;justify-content:space-between;">
-                  <button class="topnav-button playerStylesButton tooltip" style="width:23%" onclick="showNotificationList('Notifications')">
-                   <img src="img/exclamation-lg.svg">
-                   <div class="tooltiptext">Notifications</div>
-                  </button>
-                  <button class="topnav-button playerStylesButton tooltip" style="width:23%" onclick="showNotificationList('Events')">
-                    <img src="img/calendar.svg">
-                    <div class="tooltiptext">Events</div>
-                  </button>
-                  <button class="topnav-button playerStylesButton tooltip" style="width:23%" onclick="showNotificationList('Inventory')">
-                    <img src="img/columns-gap.svg">
-                    <div class="tooltiptext">Inventory</div>
-                  </button>
-                  <button class="topnav-button playerStylesButton tooltip" style="width:23%"  onclick="showNotificationList('Showcase')">
-                    <img src="img/collection-play.svg">
-                    <div class="tooltiptext">Showcase</div>
-                  </button>
-                </div>
-              <div id="Notifications" class="notificationList">
-
+          <div class="card-wrapper" style="margin-top:-.5em;height:35em;">
+            <!-- Important / Events / Inventory / Showcase-->
+            <div style="width:98%;display:inline-flex;align-items:center;justify-content:space-between;">
+                <button class="topnav-button playerStylesButton tooltip" style="width:23%" onclick="showNotificationList('Notifications')">
+                 <img src="img/exclamation-lg.svg">
+                 <div class="tooltiptext">Notifications</div>
+                </button>
+                <button class="topnav-button playerStylesButton tooltip" style="width:23%" onclick="showNotificationList('Events')">
+                  <img src="img/calendar.svg">
+                  <div class="tooltiptext">Events</div>
+                </button>
+                <button class="topnav-button playerStylesButton tooltip" style="width:23%" onclick="showNotificationList('Inventory')">
+                  <img src="img/columns-gap.svg">
+                  <div class="tooltiptext">Inventory</div>
+                </button>
+                <button class="topnav-button playerStylesButton tooltip" style="width:23%"  onclick="showNotificationList('Showcase')">
+                  <img src="img/collection-play.svg">
+                  <div class="tooltiptext">Showcase</div>
+                </button>
               </div>
-              <div id="Events" class="notificationList" style="display:none;">
-                    <h1>These are events</h1>
-              </div>
-              <div id="Inventory" class="notificationList" style="display:none;">
-                    <h1 style="width:100%">Inventory Items &nbsp; &nbsp; 12 <img src="img/coin.png" style="height:1em;"></h1>
-                    ${getInventory()}
-              </div>
-              <div id="Showcase" class="notificationList" style="display:none;">
-                    <h1>These are Showcase Items</h1>
-              </div>
+            <div id="Notifications" class="notificationList">
 
             </div>
-          </div>
+            <div id="Events" class="notificationList" style="display:none;">
+                  <h1>These are events</h1>
+            </div>
+            <div id="Inventory" class="notificationList" style="display:none;">
+                  <h1 style="width:100%">Inventory Items &nbsp; &nbsp; 12 <img src="img/coin.png" style="height:1em;"></h1>
+                  ${getInventory()}
+            </div>
+            <div id="Showcase" class="notificationList" style="display:none;">
+                  <h1>These are Showcase Items</h1>
+            </div>
 
-          <div class="page-section mf-purple1">
-            <h1>Social</h1>
-            ${get_cards("title","Friends")}
+          </div>
+        </div>
+
+        <div class="page-section mf-purple1">
+          <h1>Social</h1>
+          ${get_cards("title","Friends")}
+        </div>
+        <div class="page-section mf-blue2">
+          <h1>Club</h1>
+
             ${get_cards("title","Korora")}
             ${get_cards("title","Join A Club")}
-            ${get_cards("title","YoungerPetr")}
-          </div>
-          <div class="page-section mf-yellow">
-               <h1>Rewards</h1>
-               ${get_cards("title","Rewards")}
-          </div>
-          <div class="page-section mf-orange">
-               <h1>Membership</h1>
-               ${get_cards("title","Create")}
-          </div>
+        </div>
+        <div class="page-section mf-yellow">
+             <h1>Rewards</h1>
+             ${get_cards("title","Rewards")}
+        </div>
+        <div class="page-section mf-orange">
+             <h1>Membership</h1>
+             ${get_cards("title","Create")}
+        </div>
 
-        `;
+      `;
+
+function getHomePage(){
+  document.getElementsByClassName("innerScrollDesktop")[0].scrollTop = 0;
+  document.getElementById("cards").innerHTML = home;
+
         buildNotices();
         activateCards();
 }
