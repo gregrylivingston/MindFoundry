@@ -1,3 +1,5 @@
+
+function getNewPlayerPage(){
   home = `
 
   <div class="page-section mf-emerald">
@@ -26,8 +28,6 @@
 
     </div>
   </div>`
-
-function getNewPlayerPage(){
   document.getElementById("cards").innerHTML = home;
   buildStarterNotices();
   activateCards();
@@ -38,6 +38,8 @@ function getNewPlayerPage(){
         </button>
       </div>
   `;
+
+
    getTopNav();
 }
 
@@ -96,4 +98,26 @@ function addGregry(){
       <h1>Social</h1>
         ${get_cards("title","Friends")}
         </div>`;
+  document.getElementById("smallPopup").style.display="";
+  document.getElementById("smallPopup").innerHTML = `
+      <div class="card-wrapper mf-red card">
+          <div class="cardBlock">
+              You have a new Home Page Section --- Social.
+          </div>
+          <div class="cardBlock">
+              Gregry has given you a Club Key.
+              Click on it in your notifications to open up a Club Pack.
+          </div>
+          <div class="cardBlock">
+            <button class="half-button" onclick="this.parentElement.parentElement.parentElement.style.display='none'">
+              Ok Thanks
+            </button>
+          </div>
+      </div>
+  `;
+  getNoticeRow("img/avatar/avatar_tinkerawil.png",
+        `Join a Club Using Your Club Key
+        `, "", ""
+  );
+
 }

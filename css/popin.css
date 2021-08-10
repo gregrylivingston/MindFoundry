@@ -18,3 +18,16 @@
   z-index:100;
   background-color:var(--mf-redOpaque);
 }
+
+#smallPopup{
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  width:100vw;
+  height:100vh;
+  z-index:100;
+  padding:10% 10% 10% 10%;
+  background-color:rgba(0,0,0,.7);
+}
