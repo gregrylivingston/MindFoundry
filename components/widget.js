@@ -37,12 +37,16 @@ function getOwnerWidget(c){
     return html
 }
 
-widget["Tokens"]= function(c){
+widget["Description"]= function(c){
   return c.desc
 }
 
-widget["Card Pack"] = widget["Tokens"];
-widget["Award Pack"] = widget["Tokens"];
-widget["Challenge"] = widget["Tokens"];
-widget["Mind Foundry"] = widget["Tokens"];
-widget["Rewards"] = widget["Tokens"];
+widget["Tokens"] = widget["Description"];
+widget["Card Pack"] = widget["Description"];
+widget["Award Pack"] = widget["Description"];
+widget["Challenge"] = widget["Description"];
+widget["Mind Foundry"] = widget["Description"];
+widget["Rewards"] = widget["Description"];
+widget["Tasklist"] = widget["Description"];
+widget["Style"] = widget["Description"];
+widget["Avatar"] = widget["Description"];

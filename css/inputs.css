@@ -1,4 +1,4 @@
-.menuButton, input, select{
+.menuButton, select{
   display:inline-flex;
   width:23%;
   margin-left:0.5%;
@@ -92,10 +92,6 @@
   text-align:left;
 }
 
-input{
-  width:100%;
-  background:white;
-}
 
 .createButton{
   width:46%;

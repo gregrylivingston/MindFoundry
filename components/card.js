@@ -107,9 +107,7 @@ class card {
        <h2 style="display:inline-flex;width:100%;">
           <div style="width:90%;">${this.title}</div>
        </h2>
-       <div class="cardFrame highlight">
           ${this.media}
-       </div>
        <div class="cardDesc">
       <!--   <h4>${getOwnerWidget(this)}</h4>-->
         ${this.cardWidget}

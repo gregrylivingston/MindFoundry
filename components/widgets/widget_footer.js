@@ -131,7 +131,6 @@ function wHeader(c){
 
         <div style="width:100%;display:inline-flex;align-items:${alignItems};height:1.4em;">
             <div style="width:32%;">
-                ${widget_fPin()}
 
                 <button class="headerButton" onclick="viewCard('${c.index}')">
 
@@ -145,6 +144,7 @@ function wHeader(c){
               </button>
             </div>
             <div style="width:32%;text-align:right;">
+                ${widget_fPin()}
 
                 <button class="headerButton" onclick="document.getElementsByClassName('card${c.index}')[0].classList.add('flipped')">
                 <img src="img/tornado.svg" style="height:1.5em;">

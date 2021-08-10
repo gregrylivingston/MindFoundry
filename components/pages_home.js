@@ -57,21 +57,10 @@ function getHomePage(){
                ${get_cards("title","Rewards")}
           </div>
           <div class="page-section mf-orange">
-               <h1>Create</h1>
+               <h1>Membership</h1>
                ${get_cards("title","Create")}
           </div>
-          <div class="page-section mf-blue2">
-               <h1>Collaborate</h1>
-               ${get_cards("title","Collaborate")}
-          </div>
-          <div class="page-section mf-purple">
-               <h1>Compete</h1>
-               ${get_cards("title","Compete")}
-          </div>
-          <div class="page-section mf-yellow">
-               <h1>Share</h1>
-               ${get_cards("title","Share")}
-          </div>
+
         `;
         buildNotices();
         activateCards();
@@ -85,26 +74,26 @@ function showNotificationList(myId){
 }
 
 
-function getNoticeRow(img,text,action){
+function getNoticeRow(img,text,action,id=""){
     var myButtons = "";
-    if ( text.indexOf("Card Pack") > 1 ){
+  /*  if ( text.indexOf("Card Pack") > 1 ){
       myButtons = `
-        <button class="half-button playerStylesButton" style="width:100%" onclick="${action}">
+        <button class="half-button playerStylesButton" style="width:100%" onclick="${action};">
              View
         </button>`;
-    } else {
+    } else {*/
        myButtons = `
-         <button class="half-button playerStylesButton" onclick="${action}">
+         <button class="half-button playerStylesButton" onclick="${action};">
               <img src="img/check2-circle.svg">
          </button>
           <button class="half-button playerStylesButton" style="z-index:100;" onclick="this.parentElement.parentElement.remove()">
              <img src="img/x-circle.svg">
          </button>
          `;
-    }
+  //  }
     document.getElementById("Notifications").innerHTML+= `
-    <div class="notice-row highlight" >
-        <div class="" style="width:8%;height:2.5em;padding-left:.5em;" onclick="${action}">
+    <div class="notice-row highlight" id="${id}">
+        <div class="" style="width:8%;height:2.5em;padding-left:.5em;" onclick="${action};">
           <img style="height:2.5em" src="${img}">
         </div>
         <div class="" style="width:58%;font-size:1.1em;padding:.5em;" onclick="${action}">
@@ -121,18 +110,18 @@ function getNoticeRow(img,text,action){
 function buildNotices(){
     getNoticeRow("img/info/profile-card.png",
         `2021 New Player Bonus Pack
-      `, "openDeck('New Player Pack')"
+      `, "openDeckPopup('New Player Pack')"
     );
     getNoticeRow("img/avatar/avatar_tinkerawil.png",
           `Friend request from Gregry
-          `, "openDeck('Gregry')"
+          `, "openDeckPopup('Gregry')"
     );
     getNoticeRow("img/coin.png",
     `Login Streak Bonus - 1 Day - 1 Coin`
     );
     getNoticeRow("img/info/profile-card.png",'Minecraft Creative League. Mondays and Wednesday at 2pm.');
-    getNoticeRow("img/token_league.png",'You have a League Unlimited Pass.',"openDeck('1 Month League Unlimited Pass')");
-    getNoticeRow("img/token_tourney.png",'You have a Tourney Unlimited Pass.',"openDeck('1 Month Tourney Unlimited Pass')");
+    getNoticeRow("img/token_league.png",'You have a League Unlimited Pass.',"openDeckPopup('1 Month League Unlimited Pass')");
+    getNoticeRow("img/token_tourney.png",'You have a Tourney Unlimited Pass.',"openDeckPopup('1 Month Tourney Unlimited Pass')");
 
 }
 

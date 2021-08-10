@@ -38,10 +38,26 @@ function getNewPlayerPage(){
 function buildStarterNotices(){
     getNoticeRow("img/info/profile-card.png",
         `New Player Card Pack
-      `, "openDeck('New Player Pack')"
+      `, "newTut2()" , "newTut2"
     );
     getNoticeRow("img/avatar/avatar_tinkerawil.png",
           `Friend request from Gregry
-          `, "openDeck('Gregry')"
+          `, "addFriendPopup('Gregry')"
     );
+}
+
+function newTut2(){
+  document.getElementById("newTut2").remove();
+  openDeckPopup('New Player Pack');
+  getNoticeRow("img/avatar/avatar_tinkerawil.png",`
+      <div style="display:inline-block">
+        <div class="cardBlock highlight"><input type="checkbox">Add an Avatar to your Player Card.</div>
+        <div class="cardBlock highlight"><input type="checkbox">Add a nickname to your Player Card.</div>
+        <div class="cardBlock highlight"><input type="checkbox">Give your Player Card a new color.</div>
+        <p>Rewards: Club Key, Member Key</p>
+        </div>`,
+        ""
+  );
+  document.getElementById("cards").children[0].innerHTML += get_cards("title","New Player Card");
+
 }
