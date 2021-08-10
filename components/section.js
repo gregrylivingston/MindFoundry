@@ -3,8 +3,8 @@ function init (){
     makeAllCards();
     document.getElementById("cards").innerHTML = `
     <div class="page-section playerStyles-bg">
-      ${get_cards("title","Demo - Public Landing")}
-      ${get_cards("title","Demo - Player Homepage")}
+      ${get_cards("title","New Player")}
+      ${get_cards("title","Full Features")}
 
     </div>
 `

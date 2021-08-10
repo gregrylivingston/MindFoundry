@@ -116,8 +116,8 @@ function wHeader(c){
       var type = c.type;
       var topmargin ="-16px";
       var alignItems="center"
-      if (c.type=="Challenge Pack" || c.type=="Card Pack"){
-        (c.type!=="Card Pack")? type = c.parentCard:'';
+      if (c.type=="Challenge Pack" || c.type=="Card Pack" || c.type=="Demo"){
+        (c.type=="Challenge Pack")? type = c.parentCard: type=c.type;
         topmargin = "0px";
         alignItems="top"
       }

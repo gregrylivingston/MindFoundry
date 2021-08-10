@@ -130,7 +130,7 @@ function openDeckPopup(deckName = null){
      ${get_cards("title",deckName)}
      <div class="card-wrapper">
         <div class="card-block" style="margin-top:2em;">
-            <button class="half-button" onclick="this.parentElement.parentElement.parentElement.parentElement.style.display='none';">Close Popup</button>
+            <button class="half-button" onclick="this.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.style.display='none';">Close Popup</button>
         </div>
      </div>
   </div>

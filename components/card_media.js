@@ -1,6 +1,6 @@
 
 function getCardMediaRules(thisCard){
-    if (thisCard.type == "Challenge Pack" || thisCard.type =="Card Pack"){
+    if (thisCard.type == "Challenge Pack" || thisCard.type =="Card Pack" || thisCard.type=="Demo"){
       return `
       <div class="cardFrame highlight" style="height:20em;">
           <img style="object-fit:fill;" src="${thisCard.img}">

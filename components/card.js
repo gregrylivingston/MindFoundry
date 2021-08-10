@@ -78,7 +78,10 @@ class card {
 
   }
   makeInnerCardHtml(){
-    if (this.type == "Challenge Pack" || this.type=="Card Pack"){this.deck = "mf-blue3 box"}
+    if (this.type == "Challenge Pack" || this.type=="Card Pack" || this.type=="Demo")
+    {
+        this.deck = "mf-blue3 box"
+    }
       return  `
       <div class="card ${this.specialStyle}">
         <div class="card-inner card${this.index} ${this.deck}">

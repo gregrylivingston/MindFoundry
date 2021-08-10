@@ -50,3 +50,4 @@ widget["Rewards"] = widget["Description"];
 widget["Tasklist"] = widget["Description"];
 widget["Style"] = widget["Description"];
 widget["Avatar"] = widget["Description"];
+widget["Demo"] = widget["Description"];
