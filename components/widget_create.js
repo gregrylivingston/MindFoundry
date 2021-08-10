@@ -191,3 +191,30 @@ widget["Club"]= function(c){return `
   `
 
 }
+
+widget["Badge"]= function(c){
+  return `
+    <div class="cardBlock">
+      <div class="half-button"  style="width:31%;">
+          0 / ${c.cardsInDeck.length}
+          Challenge Packs
+      </div>
+      <div class="half-button" style="width:31%;">
+          0 / ${c.cardsInDeck.length * 6}
+          Challenges
+      </div>
+      <div class="half-button" style="width:31%;">
+          7 Points
+      </div>
+    </div>
+
+    <div class="cardBlock" style="align-items:center;margin-top:1em">
+        <div style="width:60%">Accumulate 10 Points in ${c.title} by  responding to ${c.title} challenges.
+        </div>
+        <button class="createButton">Lvl 2 Rewards</button>
+    </div>
+
+
+
+`
+}

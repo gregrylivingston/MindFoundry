@@ -128,7 +128,8 @@ function getInventory(){
               Create
             </div>
             <div class="shelf mf-purple2" style="width:24%">
-              Keys
+              <div>Keys</div>
+              <div style="height:75%"> 1 &nbsp; <img src="img/key.svg" style="height:4em;"></div>
             </div>
             <div class="shelf mf-purple1" style="width:24%">
               Avatars
@@ -140,7 +141,6 @@ function getInventory(){
             </div>
             <div class="shelf mf-blue3" style="width:24%">
               <div>League Tokens</div>
-
                 <div style="height:75%">1 <img src="img/token_league.png"  style="height:4em;"></div>
             </div>
             <div class="shelf mf-blue2">
@@ -165,8 +165,8 @@ function getInventory(){
               Emoticons
             </div>
             <div class="shelf mf-orange" style="width:24%">
-              Friends
-            </div>
+                <div>Friend Tokens</div>
+                <div style="height:75%">3 <img src="img/token_tourney.png"  style="height:4em;"></div>            </div>
             <div class="shelf mf-yellow">
               Share
             </div>

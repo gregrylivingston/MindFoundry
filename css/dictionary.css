@@ -1,0 +1,21 @@
+.dictionary-menu{
+
+}
+
+
+#tutorial{
+  padding:1% 1% 1% 1%;
+  width:100vw;
+  height:100vh;
+  vertical-align:top;
+}
+.tutorialHeader{
+    background:none;
+    border:1px solid black;
+    border-radius:.5em;
+    padding:.2em;
+    height:3em;
+    display:inline-flex;
+    margin-right:.4em;
+    align-items:center;
+}

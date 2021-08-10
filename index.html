@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/badgeEffects.css">
 <link rel="stylesheet" href="css/mfStyles.css">
 <link rel="stylesheet" href="css/special.css">
+<link rel="stylesheet" href="css/dictionary.css">
 
 
 <script src="js/masonry.js"></script>
@@ -77,8 +78,40 @@
   init();
 </script>
   <div id="tutorial" style="display:none;" class="popups">
-     <h1>This is a helpful tutorial page</h1>
-     <button class="half-button" onclick="this.parentElement.style.display='none';">Close Popup</button>
+     <div style="width:100%;display:inline-flex;padding-top:2em;">
+
+        <button class="tutorialHeader"
+                onclick="this.parentElement.parentElement.style.display='none';"
+                style="padding-left:1em;padding-right:1em;"
+                >
+            X
+        </button>
+        <script>
+            for (var i = 0 ; i < data["cardGroups"].length ; i ++ ){
+              document.write(`
+                <button class="tutorialHeader">
+                  <div class="mini-deck ${[data["cardGroups"][i][2]]}">
+                    <img src="${data["cardGroups"][i][1]}" style="height:1.6em;">
+                  </div> &nbsp;
+                  ${data["cardGroups"][i][0]}
+                </button>
+
+                `);
+            }
+        </script>
+
+    </div>
+    <div>
+      <script>
+          for (var i = 0 ; i < data["cardType"].length ; i ++ ){
+            document.write(`
+                    <div>
+                        ${data["cardType"][i][0]}
+                    </div>
+              `);
+          }
+      </script>
+    </div>
   </div>
   <div id="unlockCards" style="display:none;" class="popups">
   </div>
