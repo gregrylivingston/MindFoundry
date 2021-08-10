@@ -58,6 +58,25 @@ class card {
     </div>
       `;
   }
+  makeCardBothSidesVis(){
+    return `
+    <div class="card-wrapper" id="${this.index}">
+    <div class="card ${this.specialStyle}">
+      <div class="card-inner card${this.index} ${this.deck}">
+          ${this.makeCardFront()}
+        </div>
+      </div>
+    </div>
+    <div class="card-wrapper" id="${this.index}">
+    <div class="card ${this.specialStyle}">
+      <div class="card-inner card${this.index} ${this.deck} flipped">
+          ${this.makeCardBack()}
+        </div>
+      </div>
+    </div>
+      `;
+
+  }
   makeInnerCardHtml(){
     if (this.type == "Challenge Pack" || this.type=="Card Pack"){this.deck = "mf-blue3 box"}
       return  `

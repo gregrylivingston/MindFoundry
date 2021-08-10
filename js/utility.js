@@ -23,6 +23,8 @@ card shininess
 var styleElem = document.head.appendChild(document.createElement("style"));
 var x;
 var allCards;
+
+
 function activateCards(){
 
     allCards = document.getElementsByClassName("card");
@@ -56,8 +58,8 @@ function updateCardFx(e , theCard){
   var px_spark = (50+(px - 50)/10);
   var py_spark = (50+(py - 50)/10);
   var p_opc = Math.abs(pa)*1.5;
-  var ty = ((tp - 50)/2) * -1;
-  var tx = ((lp - 50)/1.5) * .5;
+  var ty = ((tp - 50)/2) * -.5;
+  var tx = ((lp - 50)/1.5) * .25;
   var grad = `background-position: ${lp}% ${tp}%;`
   var sprk = `background-position: ${px_spark}% ${py_spark}%;`
   var opc = `opacity: ${p_opc/100};`

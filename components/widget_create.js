@@ -214,7 +214,10 @@ widget["Badge"]= function(c){
         <button class="createButton">Lvl 2 Rewards</button>
     </div>
 
-
-
 `
 }
+
+widget["Create Badge"] = widget["Badge"];
+widget["Collaborate Badge"] = widget["Badge"];
+widget["Share Badge"] = widget["Badge"];
+widget["Compete Badge"] = widget["Compete"];
