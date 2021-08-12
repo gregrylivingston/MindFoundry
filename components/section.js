@@ -5,6 +5,8 @@ function init (){
     <div class="page-section playerStyles-bg">
       ${get_cards("title","New Player")}
       ${get_cards("title","Full Features")}
+      ${get_cards("title","Coach Demo")}
+      ${get_cards("title","GM Demo")}
 
     </div>
 `
